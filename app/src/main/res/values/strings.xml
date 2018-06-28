@@ -10,15 +10,15 @@
         <item>@string/section_discover</item>
     </string-array>
 
-    <string name="app_name">哔哩哔哩</string>
+    <string name="app_name">易周围</string>
     <string name="info_play_times_format">%d</string>
     <string name="info_reviews_format">%d</string>
     <string name="luomorad">烙馍网</string>
-    <string name="github_link">https://github.com/HotBitmapGG</string>
+    <string name="github_link">https://github.com/zhangchunsheng</string>
     <string name="sina_weibo_link">新浪微博:http://m.weibo.cn/users/3223089177/qq</string>
     <string name="jianshu_link">简书:http://www.jianshu.com/notebooks/5181955/latest</string>
     <string name="add_follow">+关注</string>
-    <string name="login_hint_account">请输入您的哔哩哔哩账号</string>
+    <string name="login_hint_account">请输入您的易周围账号</string>
     <string name="login_hint_password">请输入您的密码</string>
     <string name="login">登录</string>
     <string name="all_start">全部开始</string>
@@ -116,14 +116,14 @@
 
     <!--App 介绍-->
     <string name="about_user_head_layout">硬币: 47</string>
-    <string name="about_introduce">「哔哩哔哩」</string>
+    <string name="about_introduce">「易周围」</string>
     <string name="about_menu_action_share">分享</string>
     <string name="about_developers">关于我</string>
-    <string name="about">关于哔哩哔哩</string>
+    <string name="about">关于易周围</string>
     <string name="about_version">V1.0</string>
 
 
-    <!--哔哩哔哩-->
+    <!--易周围-->
     <string name="home_tab_more">更多</string>
     <string name="section_recommend">推荐</string>
     <string name="section_live">直播</string>
@@ -141,7 +141,7 @@
     <string name="quality_medium">清晰</string>
     <string name="quality_smooth">流畅</string>
     <string name="quality_super">超清</string>
-    <string name="about_app_net">© 2014-2016 Netopen.com</string>
+    <string name="about_app_net">© 2014-2016 luomor.com</string>
     <string name="all_rights_reserved">All rights reserved</string>
     <string name="about_open_source">向开源致敬</string>
     <string name="about_network_diagnosis">网络诊断</string>
@@ -153,8 +153,8 @@
     <string name="new_videos">最新视频</string>
     <string name="hot_videos">最热视频</string>
     <string name="news_videos">最新视频</string>
-    <string name="github_url">https://github.com/HotBitmapGG/bilibili-android-client</string>
-    <string name="share_title">分享哔哩哔哩App</string>
+    <string name="github_url">https://github.com/zhangchunsheng/yi-around-ad</string>
+    <string name="share_title">分享易周围App</string>
     <string name="feedback_titlle">意见反馈</string>
     <string name="feedback_message">如果您有任何意见或者发现了Bug，可以在GitHub上给我提Issuse，我会第一时间关注并解决，谢谢。</string>
     <string name="load_more_no_text">╮(╯3╰)╭ 没有更多数据了</string>

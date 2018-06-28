@@ -66,7 +66,7 @@ public class SettingFragment extends RxLazyFragment {
                 startActivity(new Intent(getActivity(), HotBitmapGGInfoActivity.class));
                 break;
             case R.id.layout_about_app:
-                //关于哔哩哔哩
+                //关于易周围
                 startActivity(new Intent(getActivity(), AppIntroduceActivity.class));
                 break;
             case R.id.btn_logout:

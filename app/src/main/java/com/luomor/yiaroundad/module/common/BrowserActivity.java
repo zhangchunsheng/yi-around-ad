@@ -110,7 +110,7 @@ public class BrowserActivity extends RxBaseActivity {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_SUBJECT, "分享");
-        intent.putExtra(Intent.EXTRA_TEXT, "来自「哔哩哔哩」的分享:" + url);
+        intent.putExtra(Intent.EXTRA_TEXT, "来自「易周围」的分享:" + url);
         startActivity(Intent.createChooser(intent, mTitle));
     }
 
