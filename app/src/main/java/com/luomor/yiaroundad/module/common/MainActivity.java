@@ -102,7 +102,7 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
         TextView mUserSign = (TextView) headerView.findViewById(R.id.user_other_info);
         ImageView mSwitchMode = (ImageView) headerView.findViewById(R.id.iv_head_switch_mode);
         //设置头像
-        mUserAvatarView.setImageResource(R.drawable.ic_hotbitmapgg_avatar);
+        mUserAvatarView.setImageResource(R.drawable.ic_yiaroundad_avatar);
         //设置用户名 签名
         mUserName.setText(getResources().getText(R.string.luomorad));
         mUserSign.setText(getResources().getText(R.string.about_user_head_layout));

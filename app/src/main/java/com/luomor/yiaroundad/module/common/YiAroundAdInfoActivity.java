@@ -16,19 +16,18 @@ import butterknife.BindView;
  * <p/>
  * 关于我
  */
-public class HotBitmapGGInfoActivity extends RxBaseActivity {
+public class YiAroundAdInfoActivity extends RxBaseActivity {
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_hotbitmapgg;
+        return R.layout.activity_yiaroundad;
     }
 
     @Override
     public void initViews(Bundle savedInstanceState) {
     }
-
 
     @Override
     public void initToolBar() {
@@ -39,7 +38,6 @@ public class HotBitmapGGInfoActivity extends RxBaseActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

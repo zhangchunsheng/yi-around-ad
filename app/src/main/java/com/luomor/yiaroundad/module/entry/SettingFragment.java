@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.luomor.yiaroundad.base.RxLazyFragment;
 import com.luomor.yiaroundad.module.common.AppIntroduceActivity;
-import com.luomor.yiaroundad.module.common.HotBitmapGGInfoActivity;
+import com.luomor.yiaroundad.module.common.YiAroundAdInfoActivity;
 import com.luomor.yiaroundad.module.common.LoginActivity;
 import com.luomor.yiaroundad.module.common.MainActivity;
 import com.luomor.yiaroundad.utils.ConstantUtil;
@@ -63,7 +63,7 @@ public class SettingFragment extends RxLazyFragment {
         switch (view.getId()) {
             case R.id.layout_about_me:
                 //关于我
-                startActivity(new Intent(getActivity(), HotBitmapGGInfoActivity.class));
+                startActivity(new Intent(getActivity(), YiAroundAdInfoActivity.class));
                 break;
             case R.id.layout_about_app:
                 //关于易周围

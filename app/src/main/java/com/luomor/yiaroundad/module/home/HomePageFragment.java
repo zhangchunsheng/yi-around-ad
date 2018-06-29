@@ -65,7 +65,7 @@ public class HomePageFragment extends RxLazyFragment {
     private void initToolBar() {
         mToolbar.setTitle("");
         ((MainActivity) getActivity()).setSupportActionBar(mToolbar);
-        mCircleImageView.setImageResource(R.drawable.ic_hotbitmapgg_avatar);
+        mCircleImageView.setImageResource(R.drawable.ic_yiaroundad_avatar);
     }
 
     private void initSearchView() {

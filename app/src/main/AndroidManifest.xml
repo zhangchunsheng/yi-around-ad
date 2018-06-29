@@ -118,7 +118,7 @@
 
         <!-- 关于我 -->
         <activity
-            android:name="com.luomor.yiaroundad.module.common.HotBitmapGGInfoActivity"
+            android:name="com.luomor.yiaroundad.module.common.YiAroundAdInfoActivity"
             android:screenOrientation="portrait" />
 
 
