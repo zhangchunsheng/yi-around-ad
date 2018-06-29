@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -79,10 +80,9 @@
                 android:background="@android:color/transparent"
                 android:drawablePadding="@dimen/default_general_margin"
                 android:drawableStart="@drawable/ic_login_username_default"
-                android:ellipsize="start"
+                android:singleLine="true"
                 android:hint="@string/login_hint_account"
                 android:inputType="textVisiblePassword"
-                android:maxLines="1"
                 android:textColor="@color/black_80"
                 android:textColorHint="@color/gray_20"
                 android:textSize="@dimen/default_medium_text_size" />
