@@ -59,7 +59,7 @@ public class RegionDetailsHotVideoSection extends StatelessSection {
                 .load(recommendBean.getCover())
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.drawable.bili_default_image_tv)
+                .placeholder(R.drawable.yiaa_default_image_tv)
                 .dontAnimate()
                 .into(itemViewHolder.mVideoPic);
 

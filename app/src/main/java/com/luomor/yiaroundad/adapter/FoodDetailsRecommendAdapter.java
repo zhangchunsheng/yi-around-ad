@@ -53,7 +53,7 @@ public class FoodDetailsRecommendAdapter extends AbsRecyclerViewAdapter {
                     .load(listBean.getCover())
                     .centerCrop()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.bili_default_image_tv)
+                    .placeholder(R.drawable.yiaa_default_image_tv)
                     .dontAnimate()
                     .into(itemViewHolder.mImage);
 

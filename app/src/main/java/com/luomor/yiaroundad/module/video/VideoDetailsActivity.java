@@ -93,7 +93,7 @@ public class VideoDetailsActivity extends RxBaseActivity {
                 .load(UrlHelper.getClearVideoPreviewUrl(imgUrl))
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.drawable.bili_default_image_tv)
+                .placeholder(R.drawable.yiaa_default_image_tv)
                 .dontAnimate()
                 .into(mVideoPreview);
         loadData();
@@ -218,7 +218,7 @@ public class VideoDetailsActivity extends RxBaseActivity {
                     .load(mVideoDetailsInfo)
                     .centerCrop()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.bili_default_image_tv)
+                    .placeholder(R.drawable.yiaa_default_image_tv)
                     .dontAnimate()
                     .into(mVideoPreview);
         }

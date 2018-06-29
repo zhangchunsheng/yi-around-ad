@@ -163,7 +163,7 @@ public class SpecialDetailsActivity extends RxBaseActivity {
                 .load(cover)
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.drawable.bili_default_image_tv)
+                .placeholder(R.drawable.yiaa_default_image_tv)
                 .dontAnimate()
                 .into(mPreviewImage);
         mTitleText.setText(spTitle);

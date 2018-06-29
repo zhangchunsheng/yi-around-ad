@@ -67,7 +67,7 @@ public class HomeFoodBobySection extends StatelessSection {
                 .load(foodbobys.get(0).getImg())
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.drawable.bili_default_image_tv)
+                .placeholder(R.drawable.yiaa_default_image_tv)
                 .dontAnimate()
                 .into(foodBobyViewHolder.mBobyImage);
 

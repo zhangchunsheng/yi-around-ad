@@ -162,7 +162,7 @@ public class FoodDetailsActivity extends RxBaseActivity {
                 .load(result.getCover())
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.drawable.bili_default_image_tv)
+                .placeholder(R.drawable.yiaa_default_image_tv)
                 .dontAnimate()
                 .into(mFoodPic);
         //设置背景高斯模糊图片

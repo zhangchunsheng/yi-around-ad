@@ -53,7 +53,7 @@ public class VideoPlayerActivity extends RxBaseActivity implements DanmukuSwitch
     View mBufferingIndicator;
     @BindView(R.id.video_start)
     RelativeLayout mVideoPrepareLayout;
-    @BindView(R.id.bili_anim)
+    @BindView(R.id.yiaa_anim)
     ImageView mAnimImageView;
     @BindView(R.id.video_start_info)
     TextView mPrepareText;

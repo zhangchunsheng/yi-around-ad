@@ -46,7 +46,7 @@ import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 public class LivePlayerActivity extends RxBaseActivity {
     @BindView(R.id.video_view)
     SurfaceView videoView;
-    @BindView(R.id.bili_anim)
+    @BindView(R.id.yiaa_anim)
     ImageView mAnimView;
     @BindView(R.id.right_play)
     ImageView mRightPlayBtn;

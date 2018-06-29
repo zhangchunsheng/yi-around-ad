@@ -54,7 +54,7 @@ public class AllAreasRankAdapter extends AbsRecyclerViewAdapter {
                     .load(listBean.getPic())
                     .centerCrop()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.bili_default_image_tv)
+                    .placeholder(R.drawable.yiaa_default_image_tv)
                     .dontAnimate()
                     .into(itemViewHolder.mVideoImg);
         }

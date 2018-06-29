@@ -17,7 +17,7 @@
             android:layout_centerInParent="true"
             android:layout_marginStart="@dimen/default_general_margin"
             android:padding="@dimen/default_general_margin"
-            android:src="@drawable/bili_player_back_button"
+            android:src="@drawable/yiaa_player_back_button"
             android:tint="@color/white" />
 
         <TextView
@@ -94,7 +94,7 @@
                 android:layout_marginStart="@dimen/default_general_margin"
                 android:background="@null"
                 android:gravity="center"
-                android:src="@drawable/bili_player_play_can_play" />
+                android:src="@drawable/yiaa_player_play_can_play" />
 
 
             <TextView
@@ -148,7 +148,7 @@
                     android:id="@+id/media_controller_danmaku_switch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bili_player_danmaku_is_open" />
+                    android:src="@drawable/yiaa_player_danmaku_is_open" />
 
                 <TextView
                     android:id="@+id/media_controller_danmaku_text"

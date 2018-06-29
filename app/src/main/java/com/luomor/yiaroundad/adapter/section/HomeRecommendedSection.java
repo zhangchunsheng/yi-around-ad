@@ -99,7 +99,7 @@ public class HomeRecommendedSection extends StatelessSection {
                 .load(Uri.parse(bodyBean.getCover()))
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.drawable.bili_default_image_tv)
+                .placeholder(R.drawable.yiaa_default_image_tv)
                 .dontAnimate()
                 .into(itemViewHolder.mVideoImg);
 

@@ -51,7 +51,7 @@ public class UserInterestQuanAdapter extends AbsRecyclerViewAdapter {
                     .load(resultBean.getThumb())
                     .centerCrop()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.bili_default_image_tv)
+                    .placeholder(R.drawable.yiaa_default_image_tv)
                     .into(itemViewHolder.mImage);
 
             itemViewHolder.mTitle.setText(resultBean.getName());

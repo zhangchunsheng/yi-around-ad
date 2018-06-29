@@ -45,6 +45,8 @@ public class FoodDetailsInfo {
         private int arealimit;
         private String food_id;
         private String food_title;
+        private String bangumi_id;
+        private String bangumi_title;
         private String brief;
         private String coins;
         private String copyright;
@@ -133,6 +135,22 @@ public class FoodDetailsInfo {
 
         public void setFood_title(String food_title) {
             this.food_title = food_title;
+        }
+
+        public String getBangumi_id() {
+            return bangumi_id;
+        }
+
+        public void setBangumi_id(String bangumi_id) {
+            this.bangumi_id = bangumi_id;
+        }
+
+        public String getBangumi_title() {
+            return bangumi_title;
+        }
+
+        public void setBangumi_title(String bangumi_title) {
+            this.bangumi_title = bangumi_title;
         }
 
         public String getBrief() {

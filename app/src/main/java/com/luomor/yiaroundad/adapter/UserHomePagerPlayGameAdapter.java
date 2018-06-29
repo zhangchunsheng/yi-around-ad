@@ -49,7 +49,7 @@ public class UserHomePagerPlayGameAdapter extends AbsRecyclerViewAdapter {
                     .load(gamesBean.getImage())
                     .centerCrop()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.bili_default_image_tv)
+                    .placeholder(R.drawable.yiaa_default_image_tv)
                     .into(itemViewHolder.mImage);
 
             itemViewHolder.mTitle.setText(gamesBean.getName());

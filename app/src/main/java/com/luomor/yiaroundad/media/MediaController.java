@@ -268,12 +268,12 @@ public class MediaController extends FrameLayout {
         TextView mDanmakuText = (TextView) v.findViewById(R.id.media_controller_danmaku_text);
         mDanmakuLayout.setOnClickListener(v1 -> {
             if (mDanmakuShow) {
-                mDanmakuImage.setImageResource(R.drawable.bili_player_danmaku_is_open);
+                mDanmakuImage.setImageResource(R.drawable.yiaa_player_danmaku_is_open);
                 mDanmakuText.setText("弹幕开");
                 mDanmukuSwitchListener.setDanmakuShow(true);
                 mDanmakuShow = false;
             } else {
-                mDanmakuImage.setImageResource(R.drawable.bili_player_danmaku_is_closed);
+                mDanmakuImage.setImageResource(R.drawable.yiaa_player_danmaku_is_closed);
                 mDanmakuText.setText("弹幕关");
                 mDanmukuSwitchListener.setDanmakuShow(false);
                 mDanmakuShow = true;
@@ -494,10 +494,10 @@ public class MediaController extends FrameLayout {
             return;
         }
         if (mPlayer.isPlaying()) {
-            mPauseButton.setImageResource(R.drawable.bili_player_play_can_pause);
+            mPauseButton.setImageResource(R.drawable.yiaa_player_play_can_pause);
             mTvPlay.setImageResource(R.drawable.ic_tv_stop);
         } else {
-            mPauseButton.setImageResource(R.drawable.bili_player_play_can_play);
+            mPauseButton.setImageResource(R.drawable.yiaa_player_play_can_play);
             mTvPlay.setImageResource(R.drawable.ic_tv_play);
         }
     }
