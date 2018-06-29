@@ -69,7 +69,7 @@ public class FoodDetailsRecommendInfo {
 
         public static class ListBean {
             private String food_id;
-            private String bangumi_id;
+            //private String bangumi_id;
             private String cover;
             private String follow;
             private String isfinish;
@@ -85,13 +85,13 @@ public class FoodDetailsRecommendInfo {
                 this.food_id = food_id;
             }
 
-            public String getBangumi_id() {
+            /*public String getBangumi_id() {
                 return bangumi_id;
             }
 
             public void setBangumi_id(String bangumi_id) {
                 this.bangumi_id = bangumi_id;
-            }
+            }*/
 
             public String getCover() {
                 return cover;
