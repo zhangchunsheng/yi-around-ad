@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.luomor.yiaroundad.R;
-import com.luomor.yiaroundad.entity.bangumi.BangumiAppIndexInfo;
+import com.luomor.yiaroundad.entity.food.FoodAppIndexInfo;
 import com.luomor.yiaroundad.module.common.BrowserActivity;
 import com.luomor.yiaroundad.widget.sectioned.StatelessSection;
 
@@ -23,16 +23,16 @@ import butterknife.ButterKnife;
  * Created by Peter on 16/8/27 14:06
  * 1097692918@qq.com
  * <p/>
- * 首页番剧界面内容Section
+ * 首页美食界面内容Section
  */
 public class HomeBangumiBobySection extends StatelessSection {
     private Context mContext;
-    private List<BangumiAppIndexInfo.ResultBean.AdBean.BodyBean> bangumibobys;
+    private List<FoodAppIndexInfo.ResultBean.AdBean.BodyBean> foodbobys;
 
-    public HomeBangumiBobySection(Context context, List<BangumiAppIndexInfo.ResultBean.AdBean.BodyBean> bangumibobys) {
-        super(R.layout.layout_home_bangumi_boby, R.layout.layout_home_recommend_empty);
+    public HomeBangumiBobySection(Context context, List<FoodAppIndexInfo.ResultBean.AdBean.BodyBean> foodbobys) {
+        super(R.layout.layout_home_food_boby, R.layout.layout_home_recommend_empty);
         this.mContext = context;
-        this.bangumibobys = bangumibobys;
+        this.foodbobys = foodbobys;
     }
 
 
@@ -61,18 +61,18 @@ public class HomeBangumiBobySection extends StatelessSection {
 
     @Override
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder) {
-        BangumiBobyViewHolder bangumiBobyViewHolder = (BangumiBobyViewHolder) holder;
+        BangumiBobyViewHolder foodBobyViewHolder = (BangumiBobyViewHolder) holder;
 
         Glide.with(mContext)
-                .load(bangumibobys.get(0).getImg())
+                .load(foodbobys.get(0).getImg())
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(R.drawable.bili_default_image_tv)
                 .dontAnimate()
-                .into(bangumiBobyViewHolder.mBobyImage);
+                .into(foodBobyViewHolder.mBobyImage);
 
-        bangumiBobyViewHolder.mCardView.setOnClickListener(v -> BrowserActivity.launch(
-                (Activity) mContext, bangumibobys.get(0).getLink(), bangumibobys.get(0).getTitle()));
+        foodBobyViewHolder.mCardView.setOnClickListener(v -> BrowserActivity.launch(
+                (Activity) mContext, foodbobys.get(0).getLink(), foodbobys.get(0).getTitle()));
     }
 
 
@@ -83,7 +83,7 @@ public class HomeBangumiBobySection extends StatelessSection {
     }
 
     static class BangumiBobyViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.home_bangumi_boby_image)
+        @BindView(R.id.home_food_boby_image)
         ImageView mBobyImage;
         @BindView(R.id.card_view)
         CardView mCardView;

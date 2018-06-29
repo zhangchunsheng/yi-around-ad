@@ -19,7 +19,7 @@ import java.util.List;
  * Created by Peter on 16/8/29 21:18
  * 1097692918@qq.com
  * <p/>
- * 综合搜索头部番剧Adapter
+ * 综合搜索头部美食Adapter
  */
 public class ArchiveHeadBangumiAdapter extends AbsRecyclerViewAdapter {
     private List<SearchArchiveInfo.DataBean.ItemsBean.SeasonBean> seasons;
@@ -34,7 +34,7 @@ public class ArchiveHeadBangumiAdapter extends AbsRecyclerViewAdapter {
     public ClickableViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         bindContext(parent.getContext());
         return new ItemViewHolder(LayoutInflater.from(getContext()).
-                inflate(R.layout.item_archive_head_bangumi, parent, false));
+                inflate(R.layout.item_archive_head_food, parent, false));
     }
 
 
@@ -50,14 +50,14 @@ public class ArchiveHeadBangumiAdapter extends AbsRecyclerViewAdapter {
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .placeholder(R.drawable.bili_default_image_tv)
                     .dontAnimate()
-                    .into(itemViewHolder.mBangumiPic);
+                    .into(itemViewHolder.mFoodPic);
 
-            itemViewHolder.mBangumiTitle.setText(seasonBean.getTitle());
+            itemViewHolder.mFoodTitle.setText(seasonBean.getTitle());
             if (seasonBean.getFinish() == 1) {
-                itemViewHolder.mBangumiCount.setText(
+                itemViewHolder.mFoodCount.setText(
                         seasonBean.getNewest_season() + "," + seasonBean.getTotal_count() + "话全");
             } else {
-                itemViewHolder.mBangumiCount.setText(
+                itemViewHolder.mFoodCount.setText(
                         seasonBean.getNewest_season() + "," + "更新至第" + seasonBean.getTotal_count() + "话");
             }
             itemViewHolder.mBangumiDetails.setText(seasonBean.getCat_desc());
@@ -75,18 +75,18 @@ public class ArchiveHeadBangumiAdapter extends AbsRecyclerViewAdapter {
 
     public class ItemViewHolder extends ClickableViewHolder {
 
-        ImageView mBangumiPic;
-        TextView mBangumiTitle;
+        ImageView mFoodPic;
+        TextView mFoodTitle;
         TextView mBangumiDetails;
-        TextView mBangumiCount;
+        TextView mFoodCount;
 
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-            mBangumiPic = $(R.id.item_img);
-            mBangumiTitle = $(R.id.item_title);
+            mFoodPic = $(R.id.item_img);
+            mFoodTitle = $(R.id.item_title);
             mBangumiDetails = $(R.id.item_details);
-            mBangumiCount = $(R.id.item_count);
+            mFoodCount = $(R.id.item_count);
         }
     }
 }

@@ -22,8 +22,8 @@
     <dimen name="default_long_margin">30dp</dimen>
     <dimen name="head_image_bg_height">128dp</dimen>
 
-    <!--weekday bangumi layout size-->
-    <dimen name="weekday_bangumi_head_height">60dp</dimen>
+    <!--weekday food layout size-->
+    <dimen name="weekday_food_head_height">60dp</dimen>
 
     <!--load more layout size-->
     <dimen name="load_more_layout_height">50dp</dimen>
@@ -45,8 +45,8 @@
     <dimen name="card_image_default_height">120dp</dimen>
 
     <!--search size-->
-    <dimen name="search_item_bangumi_image_height">150dp</dimen>
-    <dimen name="search_item_bangumi_image_width">120dp</dimen>
+    <dimen name="search_item_food_image_height">150dp</dimen>
+    <dimen name="search_item_food_image_width">120dp</dimen>
     <dimen name="search_item_text_margin_top">15dp</dimen>
     <dimen name="search_top_layout_height">50dp</dimen>
     <dimen name="search_back_padding">12dp</dimen>
@@ -85,17 +85,17 @@
     <dimen name="home_recommend_foot_button_width">120dp</dimen>
     <dimen name="home_recommend_foot_button_height">35dp</dimen>
     <dimen name="home_recommend_foot_refresh_margin">7dp</dimen>
-    <dimen name="home_recommend_foot_bangumi_layout_height">40dp</dimen>
+    <dimen name="home_recommend_foot_food_layout_height">40dp</dimen>
 
-    <!--bangumi index size-->
-    <dimen name="bangumi_index_image_size">120dp</dimen>
+    <!--food index size-->
+    <dimen name="food_index_image_size">120dp</dimen>
 
-    <!--bangumi recomend size-->
-    <dimen name="bangumi_recommend_image_height">140dp</dimen>
-    <dimen name="bangumi_recommend_image_big_height">170dp</dimen>
-    <dimen name="bangumi_recommend_title_height">50dp</dimen>
-    <dimen name="bangumi_recommend_title_margin">5dp</dimen>
-    <dimen name="bangumi_recommend_image_size">22dp</dimen>
+    <!--food recomend size-->
+    <dimen name="food_recommend_image_height">140dp</dimen>
+    <dimen name="food_recommend_image_big_height">170dp</dimen>
+    <dimen name="food_recommend_title_height">50dp</dimen>
+    <dimen name="food_recommend_title_margin">5dp</dimen>
+    <dimen name="food_recommend_image_size">22dp</dimen>
 
 
     <!--splash size-->
@@ -210,20 +210,20 @@
     <dimen name="mediacontroller_bottom_layout_center_margin">12dp</dimen>
     <dimen name="mediacontroller_bottom_layout_danmaku_padding">3dp</dimen>
 
-    <!--bangumi details size-->
-    <dimen name="bangumi_details_image_height">180dp</dimen>
-    <dimen name="bangumi_details_top_layout_height">250dp</dimen>
-    <dimen name="bangumi_details_top_layout_margin">70dp</dimen>
-    <dimen name="bangumi_details_pic_height">130dp</dimen>
-    <dimen name="bangumi_details_pic_width">100dp</dimen>
-    <dimen name="bangumi_details_card_view_height">130dp</dimen>
-    <dimen name="bangumi_details_user_avatar_layout_width">80dp</dimen>
-    <dimen name="bangumi_details_user_avatar_size">24dp</dimen>
-    <dimen name="bangumi_details_user_avatar_margin_1">15dp</dimen>
-    <dimen name="bangumi_details_user_avatar_margin_2">30dp</dimen>
-    <dimen name="bangumi_details_user_avatar_margin_3">45dp</dimen>
-    <dimen name="bangumi_details_look_btn_height">25dp</dimen>
-    <dimen name="bangumi_details_more_layout_height">50dp</dimen>
+    <!--food details size-->
+    <dimen name="food_details_image_height">180dp</dimen>
+    <dimen name="food_details_top_layout_height">250dp</dimen>
+    <dimen name="food_details_top_layout_margin">70dp</dimen>
+    <dimen name="food_details_pic_height">130dp</dimen>
+    <dimen name="food_details_pic_width">100dp</dimen>
+    <dimen name="food_details_card_view_height">130dp</dimen>
+    <dimen name="food_details_user_avatar_layout_width">80dp</dimen>
+    <dimen name="food_details_user_avatar_size">24dp</dimen>
+    <dimen name="food_details_user_avatar_margin_1">15dp</dimen>
+    <dimen name="food_details_user_avatar_margin_2">30dp</dimen>
+    <dimen name="food_details_user_avatar_margin_3">45dp</dimen>
+    <dimen name="food_details_look_btn_height">25dp</dimen>
+    <dimen name="food_details_more_layout_height">50dp</dimen>
 
     <!--user details size-->
     <dimen name="user_interest_quan_card_height">100dp</dimen>
@@ -233,10 +233,10 @@
     <dimen name="user_favorites_layout_height">200dp</dimen>
     <dimen name="user_home_pager_live_layout_height">40dp</dimen>
 
-    <!--chase bangumi size-->
-    <dimen name="chase_bangumi_card_height">150dp</dimen>
-    <dimen name="chase_bangumi_image_width">100dp</dimen>
-    <dimen name="chase_bangumi_image_height">130dp</dimen>
+    <!--chase food size-->
+    <dimen name="chase_food_card_height">150dp</dimen>
+    <dimen name="chase_food_image_width">100dp</dimen>
+    <dimen name="chase_food_image_height">130dp</dimen>
     <dimen name="vip_head_layout_height">330dp</dimen>
     <dimen name="vip_head_image_margin_top">50dp</dimen>
     <dimen name="vip_toolbar_title_margin_start">30dp</dimen>

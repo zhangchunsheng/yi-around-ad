@@ -130,7 +130,7 @@ public class UserContributeFragment extends RxLazyFragment {
     }
 
     private void createHeadView() {
-        View headView = LayoutInflater.from(getActivity()).inflate(R.layout.layout_user_chase_bangumi_head, mRecyclerView, false);
+        View headView = LayoutInflater.from(getActivity()).inflate(R.layout.layout_user_chase_food_head, mRecyclerView, false);
         mHeaderViewRecyclerAdapter.addHeaderView(headView);
     }
 

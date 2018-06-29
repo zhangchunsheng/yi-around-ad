@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.luomor.yiaroundad.adapter.helper.AbsRecyclerViewAdapter;
-import com.luomor.yiaroundad.entity.bangumi.BangumiDetailsInfo;
+import com.luomor.yiaroundad.entity.food.FoodDetailsInfo;
 import com.luomor.yiaroundad.R;
 
 import java.util.List;
@@ -17,14 +17,14 @@ import java.util.List;
  * Created by Peter on 2016/10/1 17:12
  * 1097692918@qq.com
  * <p>
- * 番剧选集adapter
+ * 美食选集adapter
  */
 
 public class BangumiDetailsSelectionAdapter extends AbsRecyclerViewAdapter {
     private int layoutPosition = 0;
-    private List<BangumiDetailsInfo.ResultBean.EpisodesBean> episodes;
+    private List<FoodDetailsInfo.ResultBean.EpisodesBean> episodes;
 
-    public BangumiDetailsSelectionAdapter(RecyclerView recyclerView, List<BangumiDetailsInfo.ResultBean.EpisodesBean> episodes) {
+    public BangumiDetailsSelectionAdapter(RecyclerView recyclerView, List<FoodDetailsInfo.ResultBean.EpisodesBean> episodes) {
         super(recyclerView);
         this.episodes = episodes;
     }
@@ -34,7 +34,7 @@ public class BangumiDetailsSelectionAdapter extends AbsRecyclerViewAdapter {
     public ClickableViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         bindContext(parent.getContext());
         return new ItemViewHolder(
-                LayoutInflater.from(getContext()).inflate(R.layout.item_bangumi_selection, parent, false));
+                LayoutInflater.from(getContext()).inflate(R.layout.item_food_selection, parent, false));
     }
 
 
@@ -42,7 +42,7 @@ public class BangumiDetailsSelectionAdapter extends AbsRecyclerViewAdapter {
     public void onBindViewHolder(ClickableViewHolder holder, int position) {
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-            BangumiDetailsInfo.ResultBean.EpisodesBean episodesBean = episodes.get(position);
+            FoodDetailsInfo.ResultBean.EpisodesBean episodesBean = episodes.get(position);
             itemViewHolder.mIndex.setText("第 " + episodesBean.getIndex() + " 话");
             itemViewHolder.mTitle.setText(episodesBean.getIndex_title());
 

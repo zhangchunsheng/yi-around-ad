@@ -177,12 +177,12 @@ public class TotalStationSearchActivity extends RxBaseActivity {
         titles.add(navs.get(2).getName() + "(" + checkNumResults(navs.get(2).getTotal()) + ")");
 
         ArchiveResultsFragment archiveResultsFragment = ArchiveResultsFragment.newInstance(content);
-        BangumiResultsFragment bangumiResultsFragment = BangumiResultsFragment.newInstance(content);
+        FoodResultsFragment foodResultsFragment = FoodResultsFragment.newInstance(content);
         UpperResultsFragment upperResultsFragment = UpperResultsFragment.newInstance(content);
         MovieResultsFragment movieResultsFragment = MovieResultsFragment.newInstance(content);
 
         fragments.add(archiveResultsFragment);
-        fragments.add(bangumiResultsFragment);
+        fragments.add(foodResultsFragment);
         fragments.add(upperResultsFragment);
         fragments.add(movieResultsFragment);
 

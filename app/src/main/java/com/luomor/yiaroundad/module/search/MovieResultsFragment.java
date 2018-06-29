@@ -13,7 +13,7 @@ import com.luomor.yiaroundad.adapter.helper.EndlessRecyclerOnScrollListener;
 import com.luomor.yiaroundad.adapter.helper.HeaderViewRecyclerAdapter;
 import com.luomor.yiaroundad.base.RxLazyFragment;
 import com.luomor.yiaroundad.entity.search.SearchMovieInfo;
-import com.luomor.yiaroundad.module.home.bangumi.SpecialDetailsActivity;
+import com.luomor.yiaroundad.module.home.food.SpecialDetailsActivity;
 import com.luomor.yiaroundad.network.RetrofitHelper;
 import com.luomor.yiaroundad.utils.ConstantUtil;
 import com.luomor.yiaroundad.R;

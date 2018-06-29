@@ -76,7 +76,7 @@
 
         <!-- 专题详情界面 -->
         <activity
-            android:name="com.luomor.yiaroundad.module.home.bangumi.SpecialDetailsActivity"
+            android:name="com.luomor.yiaroundad.module.home.food.SpecialDetailsActivity"
             android:screenOrientation="portrait" />
 
 
@@ -86,12 +86,12 @@
             android:screenOrientation="portrait" />
 
 
-        <!-- 番剧时间表界面 -->
+        <!-- 美食时间表界面 -->
         <activity
-            android:name="com.luomor.yiaroundad.module.home.bangumi.BangumiScheduleActivity"
+            android:name="com.luomor.yiaroundad.module.home.food.FoodScheduleActivity"
             android:screenOrientation="portrait" />
 
-        <!--追番界面-->
+        <!--追美食界面-->
 
 
         <!-- 游戏中心界面 -->
@@ -111,9 +111,9 @@
             android:screenOrientation="portrait" />
 
 
-        <!-- 番剧索引界面 -->
+        <!-- 美食索引界面 -->
         <activity
-            android:name="com.luomor.yiaroundad.module.home.bangumi.BangumiIndexActivity"
+            android:name="com.luomor.yiaroundad.module.home.food.FoodIndexActivity"
             android:screenOrientation="portrait" />
 
         <!-- 关于我 -->
@@ -141,21 +141,21 @@
             android:screenOrientation="portrait" />
 
 
-        <!-- 分季全部新番界面 -->
+        <!-- 分季全部新美食界面 -->
         <activity
-            android:name="com.luomor.yiaroundad.module.home.bangumi.SeasonNewBangumiActivity"
+            android:name="com.luomor.yiaroundad.module.home.food.SeasonNewBangumiActivity"
             android:screenOrientation="portrait" />
 
 
-        <!--新番连载全部界面-->
+        <!--新美食连载全部界面-->
         <activity
-            android:name="com.luomor.yiaroundad.module.home.bangumi.NewBangumiSerialActivity"
+            android:name="com.luomor.yiaroundad.module.home.food.NewFoodSerialActivity"
             android:screenOrientation="portrait" />
 
 
-        <!-- 番剧详情界面 -->
+        <!-- 美食详情界面 -->
         <activity
-            android:name="com.luomor.yiaroundad.module.home.bangumi.BangumiDetailsActivity"
+            android:name="com.luomor.yiaroundad.module.home.food.FoodDetailsActivity"
             android:screenOrientation="portrait" />
 
 

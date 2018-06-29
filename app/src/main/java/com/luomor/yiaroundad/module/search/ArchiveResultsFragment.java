@@ -150,7 +150,7 @@ public class ArchiveResultsFragment extends RxLazyFragment {
 
     private void createHeadView() {
         View headView = LayoutInflater.from(getActivity()).inflate(R.layout.layout_search_archive_head_view, mRecyclerView, false);
-        RecyclerView mHeadBangumiRecycler = (RecyclerView) headView.findViewById(R.id.search_archive_bangumi_head_recycler);
+        RecyclerView mHeadBangumiRecycler = (RecyclerView) headView.findViewById(R.id.search_archive_food_head_recycler);
         mHeadBangumiRecycler.setHasFixedSize(false);
         mHeadBangumiRecycler.setNestedScrollingEnabled(false);
         mHeadBangumiRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));

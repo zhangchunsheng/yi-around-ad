@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.luomor.yiaroundad.adapter.helper.AbsRecyclerViewAdapter;
-import com.luomor.yiaroundad.entity.bangumi.SpecialTopic;
+import com.luomor.yiaroundad.entity.food.SpecialTopic;
 import com.luomor.yiaroundad.R;
 
 import java.util.ArrayList;

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.luomor.yiaroundad.adapter.helper.AbsRecyclerViewAdapter;
-import com.luomor.yiaroundad.entity.bangumi.BangumiDetailsRecommendInfo;
+import com.luomor.yiaroundad.entity.food.FoodDetailsRecommendInfo;
 import com.luomor.yiaroundad.utils.NumberUtil;
 import com.luomor.yiaroundad.R;
 
@@ -21,14 +21,14 @@ import java.util.List;
  * Created by Peter on 16/8/6 11:51
  * 1097692918@qq.com
  * <p/>
- * 番剧详情番剧推荐adapter
+ * 美食详情美食推荐adapter
  */
 public class BangumiDetailsRecommendAdapter extends AbsRecyclerViewAdapter {
-    private List<BangumiDetailsRecommendInfo.ResultBean.ListBean> bangumiRecommends;
+    private List<FoodDetailsRecommendInfo.ResultBean.ListBean> foodRecommends;
 
-    public BangumiDetailsRecommendAdapter(RecyclerView recyclerView, List<BangumiDetailsRecommendInfo.ResultBean.ListBean> bangumiRecommends) {
+    public BangumiDetailsRecommendAdapter(RecyclerView recyclerView, List<FoodDetailsRecommendInfo.ResultBean.ListBean> foodRecommends) {
         super(recyclerView);
-        this.bangumiRecommends = bangumiRecommends;
+        this.foodRecommends = foodRecommends;
     }
 
 
@@ -37,7 +37,7 @@ public class BangumiDetailsRecommendAdapter extends AbsRecyclerViewAdapter {
 
         bindContext(parent.getContext());
         return new ItemViewHolder(LayoutInflater.from(getContext())
-                .inflate(R.layout.item_bangumi_details_recommend, parent, false));
+                .inflate(R.layout.item_food_details_recommend, parent, false));
     }
 
 
@@ -47,7 +47,7 @@ public class BangumiDetailsRecommendAdapter extends AbsRecyclerViewAdapter {
 
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-            BangumiDetailsRecommendInfo.ResultBean.ListBean listBean = bangumiRecommends.get(position);
+            FoodDetailsRecommendInfo.ResultBean.ListBean listBean = foodRecommends.get(position);
 
             Glide.with(getContext())
                     .load(listBean.getCover())
@@ -59,7 +59,7 @@ public class BangumiDetailsRecommendAdapter extends AbsRecyclerViewAdapter {
 
             itemViewHolder.mTitle.setText(listBean.getTitle());
             itemViewHolder.mFollow.setText(
-                    NumberUtil.converString(Integer.valueOf(listBean.getFollow())) + "人追番");
+                    NumberUtil.converString(Integer.valueOf(listBean.getFollow())) + "人追美食");
         }
         super.onBindViewHolder(holder, position);
     }
@@ -68,7 +68,7 @@ public class BangumiDetailsRecommendAdapter extends AbsRecyclerViewAdapter {
     @Override
     public int getItemCount() {
 
-        return bangumiRecommends.size();
+        return foodRecommends.size();
     }
 
 

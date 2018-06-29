@@ -35,7 +35,7 @@ public class AllAreasRankActivity extends RxBaseActivity {
 
     private int position;
     private String[] titles = new String[]{
-            "番剧", "动画", "音乐", "舞蹈", "游戏",
+            "美食", "动画", "音乐", "舞蹈", "游戏",
             "科技", "生活", "鬼畜", "时尚", "娱乐", "电影", "电视剧"
     };
     private String[] types = new String[]{

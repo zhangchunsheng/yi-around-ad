@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.luomor.yiaroundad.adapter.helper.AbsRecyclerViewAdapter;
-import com.luomor.yiaroundad.entity.search.SearchBangumiInfo;
+import com.luomor.yiaroundad.entity.search.SearchFoodInfo;
 import com.luomor.yiaroundad.R;
 
 import java.util.List;
@@ -19,14 +19,14 @@ import java.util.List;
  * Created by Peter on 16/8/29 21:18
  * 1097692918@qq.com
  * <p/>
- * 番剧搜索数据Adapter
+ * 美食搜索数据Adapter
  */
 public class BangumiResultsAdapter extends AbsRecyclerViewAdapter {
-    private List<SearchBangumiInfo.DataBean.ItemsBean> bangumis;
+    private List<SearchFoodInfo.DataBean.ItemsBean> foods;
 
-    public BangumiResultsAdapter(RecyclerView recyclerView, List<SearchBangumiInfo.DataBean.ItemsBean> bangumis) {
+    public BangumiResultsAdapter(RecyclerView recyclerView, List<SearchFoodInfo.DataBean.ItemsBean> foods) {
         super(recyclerView);
-        this.bangumis = bangumis;
+        this.foods = foods;
     }
 
 
@@ -34,7 +34,7 @@ public class BangumiResultsAdapter extends AbsRecyclerViewAdapter {
     public ClickableViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         bindContext(parent.getContext());
         return new ItemViewHolder(LayoutInflater.from(getContext()).
-                inflate(R.layout.item_search_bangumi, parent, false));
+                inflate(R.layout.item_search_food, parent, false));
     }
 
 
@@ -42,7 +42,7 @@ public class BangumiResultsAdapter extends AbsRecyclerViewAdapter {
     public void onBindViewHolder(ClickableViewHolder holder, int position) {
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-            SearchBangumiInfo.DataBean.ItemsBean itemsBean = bangumis.get(position);
+            SearchFoodInfo.DataBean.ItemsBean itemsBean = foods.get(position);
 
             Glide.with(getContext())
                     .load(itemsBean.getCover())
@@ -50,14 +50,14 @@ public class BangumiResultsAdapter extends AbsRecyclerViewAdapter {
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .placeholder(R.drawable.bili_default_image_tv)
                     .dontAnimate()
-                    .into(itemViewHolder.mBangumiPic);
+                    .into(itemViewHolder.mFoodPic);
 
-            itemViewHolder.mBangumiTitle.setText(itemsBean.getTitle());
+            itemViewHolder.mFoodTitle.setText(itemsBean.getTitle());
             if (itemsBean.getFinish() == 1) {
-                itemViewHolder.mBangumiCount.setText(
+                itemViewHolder.mFoodCount.setText(
                         itemsBean.getNewest_season() + "," + itemsBean.getTotal_count() + "话全");
             } else {
-                itemViewHolder.mBangumiCount.setText(
+                itemViewHolder.mFoodCount.setText(
                         itemsBean.getNewest_season() + "," + "更新至第" + itemsBean.getTotal_count() + "话");
             }
             itemViewHolder.mBangumiDetails.setText(itemsBean.getCat_desc());
@@ -68,23 +68,23 @@ public class BangumiResultsAdapter extends AbsRecyclerViewAdapter {
 
     @Override
     public int getItemCount() {
-        return bangumis.size();
+        return foods.size();
     }
 
 
     public class ItemViewHolder extends ClickableViewHolder {
 
-        ImageView mBangumiPic;
-        TextView mBangumiTitle;
+        ImageView mFoodPic;
+        TextView mFoodTitle;
         TextView mBangumiDetails;
-        TextView mBangumiCount;
+        TextView mFoodCount;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-            mBangumiPic = $(R.id.item_img);
-            mBangumiTitle = $(R.id.item_title);
+            mFoodPic = $(R.id.item_img);
+            mFoodTitle = $(R.id.item_title);
             mBangumiDetails = $(R.id.item_details);
-            mBangumiCount = $(R.id.item_count);
+            mFoodCount = $(R.id.item_count);
         }
     }
 }

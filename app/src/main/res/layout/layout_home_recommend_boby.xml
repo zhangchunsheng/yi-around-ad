@@ -121,7 +121,7 @@
 
 
         <RelativeLayout
-            android:id="@+id/layout_bangumi"
+            android:id="@+id/layout_food"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -130,7 +130,7 @@
             android:visibility="gone">
 
             <TextView
-                android:id="@+id/item_bangumi_update"
+                android:id="@+id/item_food_update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"

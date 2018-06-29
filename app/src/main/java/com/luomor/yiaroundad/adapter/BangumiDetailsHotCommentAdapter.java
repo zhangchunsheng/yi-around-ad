@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.luomor.yiaroundad.adapter.helper.AbsRecyclerViewAdapter;
-import com.luomor.yiaroundad.entity.bangumi.BangumiDetailsCommentInfo;
+import com.luomor.yiaroundad.entity.food.FoodDetailsCommentInfo;
 import com.luomor.yiaroundad.utils.DateUtil;
 import com.luomor.yiaroundad.widget.CircleImageView;
 import com.luomor.yiaroundad.R;
@@ -22,12 +22,12 @@ import java.util.List;
  * Created by Peter on 16/8/4 14:12
  * 1097692918@qq.com
  * <p/>
- * 番剧详情热门评论adapter
+ * 美食详情热门评论adapter
  */
 public class BangumiDetailsHotCommentAdapter extends AbsRecyclerViewAdapter {
-    private List<BangumiDetailsCommentInfo.DataBean.HotsBean> hotComments;
+    private List<FoodDetailsCommentInfo.DataBean.HotsBean> hotComments;
 
-    public BangumiDetailsHotCommentAdapter(RecyclerView recyclerView, List<BangumiDetailsCommentInfo.DataBean.HotsBean> hotComments) {
+    public BangumiDetailsHotCommentAdapter(RecyclerView recyclerView, List<FoodDetailsCommentInfo.DataBean.HotsBean> hotComments) {
         super(recyclerView);
         this.hotComments = hotComments;
     }
@@ -46,7 +46,7 @@ public class BangumiDetailsHotCommentAdapter extends AbsRecyclerViewAdapter {
     public void onBindViewHolder(ClickableViewHolder holder, int position) {
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder mHolder = (ItemViewHolder) holder;
-            BangumiDetailsCommentInfo.DataBean.HotsBean hotsBean = hotComments.get(position);
+            FoodDetailsCommentInfo.DataBean.HotsBean hotsBean = hotComments.get(position);
             mHolder.mUserName.setText(hotsBean.getMember().getUname());
 
             Glide.with(getContext())

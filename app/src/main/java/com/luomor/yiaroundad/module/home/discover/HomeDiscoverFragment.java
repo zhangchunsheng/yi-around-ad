@@ -186,6 +186,6 @@ public class HomeDiscoverFragment extends RxLazyFragment {
 
     @OnClick(R.id.layout_shop)
     void startShop() {
-        BrowserActivity.launch(getActivity(), ConstantUtil.SHOP_URL, "bilibili - 周边商城");
+        BrowserActivity.launch(getActivity(), ConstantUtil.SHOP_URL, "yiaroundad - 周边商城");
     }
 }

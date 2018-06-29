@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.luomor.yiaroundad.adapter.helper.AbsRecyclerViewAdapter;
-import com.luomor.yiaroundad.entity.bangumi.BangumiDetailsCommentInfo;
+import com.luomor.yiaroundad.entity.food.FoodDetailsCommentInfo;
 import com.luomor.yiaroundad.utils.DateUtil;
 import com.luomor.yiaroundad.widget.CircleImageView;
 import com.luomor.yiaroundad.R;
@@ -22,12 +22,12 @@ import java.util.List;
  * Created by Peter on 16/11/2 14:12
  * 1097692918@qq.com
  * <p/>
- * 番剧详情番剧评论adapter
+ * 美食详情美食评论adapter
  */
 public class BangumiDetailsCommentAdapter extends AbsRecyclerViewAdapter {
-    private List<BangumiDetailsCommentInfo.DataBean.RepliesBean> replies;
+    private List<FoodDetailsCommentInfo.DataBean.RepliesBean> replies;
 
-    public BangumiDetailsCommentAdapter(RecyclerView recyclerView, List<BangumiDetailsCommentInfo.DataBean.RepliesBean> replies) {
+    public BangumiDetailsCommentAdapter(RecyclerView recyclerView, List<FoodDetailsCommentInfo.DataBean.RepliesBean> replies) {
         super(recyclerView);
         this.replies = replies;
     }
@@ -46,7 +46,7 @@ public class BangumiDetailsCommentAdapter extends AbsRecyclerViewAdapter {
     public void onBindViewHolder(ClickableViewHolder holder, int position) {
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder mHolder = (ItemViewHolder) holder;
-            BangumiDetailsCommentInfo.DataBean.RepliesBean repliesBean = replies.get(position);
+            FoodDetailsCommentInfo.DataBean.RepliesBean repliesBean = replies.get(position);
             mHolder.mUserName.setText(repliesBean.getMember().getUname());
 
             Glide.with(getContext())

@@ -4,7 +4,7 @@
     <string-array name="sections">
         <item>@string/section_live</item>
         <item>@string/section_recommend</item>
-        <item>@string/section_bangumi</item>
+        <item>@string/section_food</item>
         <item>@string/section_more</item>
         <item>@string/section_focus</item>
         <item>@string/section_discover</item>
@@ -30,7 +30,7 @@
     <string name="sp_introduction">专题简介:</string>
     <string name="sp_videos">专题剧集</string>
     <string name="goto_look">进去看看</string>
-    <string name="discover_search_hint">搜索视频 番剧 up主或av号</string>
+    <string name="discover_search_hint">搜索视频 美食 up主或av号</string>
     <string name="everyone_in_the_search">大家都在搜</string>
     <string name="look_more">查看更多</string>
     <string name="interest_in_circle">兴趣圈</string>
@@ -44,7 +44,7 @@
     <string name="introduction">简介</string>
     <string name="coin">投硬币</string>
     <string name="collection">收藏</string>
-    <string name="bangumi_follow">追番</string>
+    <string name="food_follow">追美食</string>
     <string name="cache">缓存</string>
     <string name="charging">请赐予我电量吧 !</string>
     <string name="charg">充电</string>
@@ -52,19 +52,19 @@
     <string name="video_about">视频相关</string>
     <string name="more">更多</string>
     <string name="download">下载</string>
-    <string name="to_them">追番</string>
+    <string name="to_them">追美食</string>
     <string name="time_line">放送表</string>
     <string name="index">索引</string>
-    <string name="bangumi_recommend">番剧推荐</string>
-    <string name="new_bangumi_serial">新番连载</string>
-    <string name="season_new_bangumi">7月新番</string>
+    <string name="food_recommend">美食推荐</string>
+    <string name="new_food_serial">新美食连载</string>
+    <string name="season_new_food">7月新美食</string>
     <string name="season_list">分季列表</string>
-    <string name="more_new_bangumi_serial">所有连载</string>
+    <string name="more_new_food_serial">所有连载</string>
     <string name="change_recommend">换一波推荐</string>
     <string name="rank">排行榜</string>
     <string name="topic">话题</string>
     <string name="load_more">加载中…</string>
-    <string name="search_hint">搜索视频,番剧,up主或av号</string>
+    <string name="search_hint">搜索视频,美食,up主或av号</string>
     <string name="danmaku_switch">弹幕开</string>
     <string name="play_immediately">立即播放</string>
     <string name="activity_center">活动中心</string>
@@ -72,9 +72,9 @@
     <string name="not_watch">尚未观看</string>
     <string name="selection">选集</string>
     <string name="please_contract_me">请承包我吧</string>
-    <string name="have_been_contracting_out_of_me">已有383人承包了这部番</string>
+    <string name="have_been_contracting_out_of_me">已有383人承包了这部美食</string>
     <string name="contract">承包</string>
-    <string name="contract_text">等34人七日内承包了这部番</string>
+    <string name="contract_text">等34人七日内承包了这部美食</string>
     <string name="look_top_list">查看榜单</string>
     <string name="commend">评论</string>
     <string name="more_commend">更多评论</string>
@@ -88,7 +88,7 @@
     <string name="all_contribute">全部投稿</string>
     <string name="coins_video">最近投硬币的视频</string>
     <string name="ta_favorites">TA的收藏夹</string>
-    <string name="ta_chase_bangumi">TA的追番</string>
+    <string name="ta_chase_food">TA的追美食</string>
     <string name="ta_quanzi">TA的圈子</string>
     <string name="ta_play_game">TA玩的游戏</string>
 
@@ -127,7 +127,7 @@
     <string name="home_tab_more">更多</string>
     <string name="section_live">直播</string>
     <string name="section_recommend">推荐</string>
-    <string name="section_bangumi">美食</string>
+    <string name="section_food">美食</string>
     <string name="section_more">分区</string>
     <string name="section_focus">关注</string>
     <string name="section_discover">发现</string>

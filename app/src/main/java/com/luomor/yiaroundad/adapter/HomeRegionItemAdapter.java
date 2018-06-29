@@ -19,7 +19,7 @@ import com.luomor.yiaroundad.R;
 
 public class HomeRegionItemAdapter extends AbsRecyclerViewAdapter {
     private String[] itemNames = new String[]{
-            "直播", "番剧", "动画",
+            "直播", "美食", "动画",
             "音乐", "舞蹈", "游戏",
             "科技", "生活", "鬼畜",
             "时尚", "广告", "娱乐",

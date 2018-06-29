@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.luomor.yiaroundad.module.home.attention.HomeAttentionFragment;
-import com.luomor.yiaroundad.module.home.bangumi.HomeBangumiFragment;
+import com.luomor.yiaroundad.module.home.food.HomeFoodFragment;
 import com.luomor.yiaroundad.module.home.discover.HomeDiscoverFragment;
 import com.luomor.yiaroundad.module.home.live.HomeLiveFragment;
 import com.luomor.yiaroundad.module.home.recommend.HomeRecommendedFragment;
@@ -42,7 +42,7 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
           fragments[position] = HomeRecommendedFragment.newInstance();
           break;
         case 2:
-          fragments[position] = HomeBangumiFragment.newInstance();
+          fragments[position] = HomeFoodFragment.newInstance();
           break;
         case 3:
           fragments[position] = HomeRegionFragment.newInstance();

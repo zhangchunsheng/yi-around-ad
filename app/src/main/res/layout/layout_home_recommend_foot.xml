@@ -80,7 +80,7 @@
 
 
     <LinearLayout
-        android:id="@+id/item_bangumi_layout"
+        android:id="@+id/item_food_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -90,13 +90,13 @@
 
 
         <ImageView
-            android:id="@+id/item_btn_bangumi_timeline"
+            android:id="@+id/item_btn_food_timeline"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/home_recommend_foot_bangumi_layout_height"
+            android:layout_height="@dimen/home_recommend_foot_food_layout_height"
             android:layout_weight="1"
-            android:background="@drawable/bangumi_timeline_background"
+            android:background="@drawable/food_timeline_background"
             android:scaleType="center"
-            android:src="@drawable/bangumi_timeline_text" />
+            android:src="@drawable/food_timeline_text" />
 
         <Space
             android:layout_width="@dimen/default_general_margin"
@@ -104,13 +104,13 @@
 
 
         <ImageView
-            android:id="@+id/item_btn_bangumi_index"
+            android:id="@+id/item_btn_food_index"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/home_recommend_foot_bangumi_layout_height"
+            android:layout_height="@dimen/home_recommend_foot_food_layout_height"
             android:layout_weight="1"
-            android:background="@drawable/bangumi_index_background"
+            android:background="@drawable/food_index_background"
             android:scaleType="center"
-            android:src="@drawable/bangumi_index_text" />
+            android:src="@drawable/food_index_text" />
 
     </LinearLayout>
 

@@ -23,13 +23,14 @@ import butterknife.ButterKnife;
 public class RegionRecommendTypesSection extends StatelessSection {
     private Context mContext;
     private int rid;
-    //番剧类型Icons
-    private int[] bangumiIcons = new int[]{
+    //美食类型Icons
+    private int[] foodIcons = new int[]{
             R.drawable.ic_category_t33, R.drawable.ic_category_t32,
             R.drawable.ic_category_t153, R.drawable.ic_category_t51, R.drawable.ic_category_t152
     };
-    //番剧类型titles
-    private String[] bangumiTitles = new String[]{"连载动画", "完结动画", "国产动画", "资讯", "官方延伸"};
+    //美食类型titles
+    // todo
+    private String[] foodTitles = new String[]{"连载动画", "完结动画", "国产动画", "资讯", "官方延伸"};
     //动画类型Icons
     private int[] animationIcons = new int[]{
             R.drawable.ic_category_t24, R.drawable.ic_category_t25,
@@ -158,9 +159,9 @@ public class RegionRecommendTypesSection extends StatelessSection {
         RegionRecommendTypesAdapter mAdapter = null;
         switch (rid) {
             case 13:
-                //番剧
+                //美食
                 typesViewHolder.mRecyclerView.setLayoutManager(new GridLayoutManager(mContext, 4));
-                mAdapter = new RegionRecommendTypesAdapter(typesViewHolder.mRecyclerView, bangumiIcons, bangumiTitles);
+                mAdapter = new RegionRecommendTypesAdapter(typesViewHolder.mRecyclerView, foodIcons, foodTitles);
                 break;
             case 1:
                 //动画

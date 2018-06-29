@@ -32,8 +32,8 @@
                     android:padding="@dimen/default_general_margin">
 
                     <ImageView
-                        android:layout_width="@dimen/bangumi_recommend_image_size"
-                        android:layout_height="@dimen/bangumi_recommend_image_size"
+                        android:layout_width="@dimen/food_recommend_image_size"
+                        android:layout_height="@dimen/food_recommend_image_size"
                         android:src="@drawable/ic_header_dynamic" />
 
                     <TextView

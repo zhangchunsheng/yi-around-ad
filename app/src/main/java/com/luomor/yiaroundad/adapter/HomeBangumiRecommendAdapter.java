@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.luomor.yiaroundad.adapter.helper.AbsRecyclerViewAdapter;
-import com.luomor.yiaroundad.entity.bangumi.BangumiRecommendInfo;
+import com.luomor.yiaroundad.entity.food.FoodRecommendInfo;
 import com.luomor.yiaroundad.R;
 
 import java.util.List;
@@ -19,13 +19,13 @@ import java.util.List;
  * Created by Peter on 2016/10/2 17:06
  * 1097692918@qq.com
  * <p>
- * 首页番剧推荐adapter
+ * 首页美食推荐adapter
  */
 
 public class HomeBangumiRecommendAdapter extends AbsRecyclerViewAdapter {
-    private List<BangumiRecommendInfo.ResultBean> mBangumiDetailsRecommends;
+    private List<FoodRecommendInfo.ResultBean> mBangumiDetailsRecommends;
 
-    public HomeBangumiRecommendAdapter(RecyclerView recyclerView, List<BangumiRecommendInfo.ResultBean> mBangumiDetailsRecommends) {
+    public HomeBangumiRecommendAdapter(RecyclerView recyclerView, List<FoodRecommendInfo.ResultBean> mBangumiDetailsRecommends) {
         super(recyclerView);
         this.mBangumiDetailsRecommends = mBangumiDetailsRecommends;
     }
@@ -35,7 +35,7 @@ public class HomeBangumiRecommendAdapter extends AbsRecyclerViewAdapter {
     public ClickableViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         bindContext(parent.getContext());
         return new ItemViewHolder(
-                LayoutInflater.from(getContext()).inflate(R.layout.item_bangumi_recommend, parent, false));
+                LayoutInflater.from(getContext()).inflate(R.layout.item_food_recommend, parent, false));
     }
 
 
@@ -43,7 +43,7 @@ public class HomeBangumiRecommendAdapter extends AbsRecyclerViewAdapter {
     public void onBindViewHolder(ClickableViewHolder holder, int position) {
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-            BangumiRecommendInfo.ResultBean resultBean = mBangumiDetailsRecommends.get(position);
+            FoodRecommendInfo.ResultBean resultBean = mBangumiDetailsRecommends.get(position);
 
             Glide.with(getContext())
                     .load(resultBean.getCover())

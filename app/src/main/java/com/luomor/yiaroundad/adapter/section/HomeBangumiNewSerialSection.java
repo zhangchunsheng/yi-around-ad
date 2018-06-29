@@ -12,9 +12,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.luomor.yiaroundad.entity.bangumi.BangumiAppIndexInfo;
-import com.luomor.yiaroundad.module.home.bangumi.BangumiDetailsActivity;
-import com.luomor.yiaroundad.module.home.bangumi.NewBangumiSerialActivity;
+import com.luomor.yiaroundad.entity.food.FoodAppIndexInfo;
+import com.luomor.yiaroundad.module.home.food.FoodDetailsActivity;
+import com.luomor.yiaroundad.module.home.food.NewFoodSerialActivity;
 import com.luomor.yiaroundad.utils.NumberUtil;
 import com.luomor.yiaroundad.widget.sectioned.StatelessSection;
 import com.luomor.yiaroundad.R;
@@ -28,23 +28,23 @@ import butterknife.ButterKnife;
  * Created by Peter on 2016/10/14 19:29
  * 1097692918@qq.com
  * <p>
- * 首页番剧新番连载Section
+ * 首页美食新美食连载Section
  */
 
 public class HomeBangumiNewSerialSection extends StatelessSection {
     private Context mContext;
-    private List<BangumiAppIndexInfo.ResultBean.SerializingBean> newBangumiSerials;
+    private List<FoodAppIndexInfo.ResultBean.SerializingBean> newFoodSerials;
 
-    public HomeBangumiNewSerialSection(Context context, List<BangumiAppIndexInfo.ResultBean.SerializingBean> newBangumiSerials) {
-        super(R.layout.layout_home_bangumi_new_serial_head, R.layout.layout_home_bangumi_new_serial_body);
+    public HomeBangumiNewSerialSection(Context context, List<FoodAppIndexInfo.ResultBean.SerializingBean> newFoodSerials) {
+        super(R.layout.layout_home_food_new_serial_head, R.layout.layout_home_food_new_serial_body);
         this.mContext = context;
-        this.newBangumiSerials = newBangumiSerials;
+        this.newFoodSerials = newFoodSerials;
     }
 
 
     @Override
     public int getContentItemsTotal() {
-        return newBangumiSerials.size();
+        return newFoodSerials.size();
     }
 
 
@@ -58,7 +58,7 @@ public class HomeBangumiNewSerialSection extends StatelessSection {
     @Override
     public void onBindItemViewHolder(RecyclerView.ViewHolder holder, int position) {
         ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-        BangumiAppIndexInfo.ResultBean.SerializingBean serializingBean = newBangumiSerials.get(
+        FoodAppIndexInfo.ResultBean.SerializingBean serializingBean = newFoodSerials.get(
                 position);
 
         Glide.with(mContext)
@@ -73,7 +73,7 @@ public class HomeBangumiNewSerialSection extends StatelessSection {
         itemViewHolder.mPlay.setText(
                 NumberUtil.converString(serializingBean.getWatching_count()) + "人在看");
         itemViewHolder.mUpdate.setText("更新至第" + serializingBean.getNewest_ep_index() + "话");
-        itemViewHolder.mCardView.setOnClickListener(v -> BangumiDetailsActivity.launch(
+        itemViewHolder.mCardView.setOnClickListener(v -> FoodDetailsActivity.launch(
                 (Activity) mContext, serializingBean.getSeason_id()));
     }
 
@@ -90,7 +90,7 @@ public class HomeBangumiNewSerialSection extends StatelessSection {
         HomeBangumiNewSerialSection.HeaderViewHolder headerViewHolder
                 = (HomeBangumiNewSerialSection.HeaderViewHolder) holder;
         headerViewHolder.mAllSerial.setOnClickListener(v -> mContext.startActivity(
-                new Intent(mContext, NewBangumiSerialActivity.class)));
+                new Intent(mContext, NewFoodSerialActivity.class)));
     }
 
 

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.luomor.yiaroundad.entity.bangumi.SeasonNewBangumiInfo;
+import com.luomor.yiaroundad.entity.food.SeasonNewBangumiInfo;
 import com.luomor.yiaroundad.utils.NumberUtil;
 import com.luomor.yiaroundad.widget.sectioned.StatelessSection;
 import com.luomor.yiaroundad.R;
@@ -24,27 +24,27 @@ import butterknife.ButterKnife;
  * Created by Peter on 2016/11/1 12:52
  * 1097692918@qq.com
  * <p>
- * 分季新番Section
+ * 分季新美食Section
  */
 
 public class SeasonNewBangumiSection extends StatelessSection {
     private Context mContext;
     private int season;
     private int year;
-    private List<SeasonNewBangumiInfo.ResultBean.ListBean> seasonNewBangumis;
+    private List<SeasonNewBangumiInfo.ResultBean.ListBean> seasonNewFoods;
 
-    public SeasonNewBangumiSection(Context context, int season, int year, List<SeasonNewBangumiInfo.ResultBean.ListBean> seasonNewBangumis) {
-        super(R.layout.layout_season_new_bangumi_head, R.layout.layout_home_bangumi_season_new_body);
+    public SeasonNewBangumiSection(Context context, int season, int year, List<SeasonNewBangumiInfo.ResultBean.ListBean> seasonNewFoods) {
+        super(R.layout.layout_season_new_food_head, R.layout.layout_home_food_season_new_body);
         this.mContext = context;
         this.season = season;
         this.year = year;
-        this.seasonNewBangumis = seasonNewBangumis;
+        this.seasonNewFoods = seasonNewFoods;
     }
 
 
     @Override
     public int getContentItemsTotal() {
-        return seasonNewBangumis.size();
+        return seasonNewFoods.size();
     }
 
 
@@ -57,7 +57,7 @@ public class SeasonNewBangumiSection extends StatelessSection {
     @Override
     public void onBindItemViewHolder(RecyclerView.ViewHolder holder, int position) {
         SeasonNewBangumiSection.ItemViewHolder itemViewHolder = (SeasonNewBangumiSection.ItemViewHolder) holder;
-        SeasonNewBangumiInfo.ResultBean.ListBean listBean = seasonNewBangumis.get(position);
+        SeasonNewBangumiInfo.ResultBean.ListBean listBean = seasonNewFoods.get(position);
 
         Glide.with(mContext)
                 .load(listBean.getCover())
@@ -68,7 +68,7 @@ public class SeasonNewBangumiSection extends StatelessSection {
                 .into(itemViewHolder.mImage);
 
         itemViewHolder.mTitle.setText(listBean.getTitle());
-        itemViewHolder.mPlay.setText(NumberUtil.converString(Integer.valueOf(listBean.getFavourites())) + "人追番");
+        itemViewHolder.mPlay.setText(NumberUtil.converString(Integer.valueOf(listBean.getFavourites())) + "人追美食");
     }
 
 
@@ -90,22 +90,22 @@ public class SeasonNewBangumiSection extends StatelessSection {
             case 1:
                 //冬季
                 headViewHolder.mSeasonText.setText(year + "年1月");
-                headViewHolder.mSeasonIcon.setImageResource(R.drawable.bangumi_home_ic_season_1);
+                headViewHolder.mSeasonIcon.setImageResource(R.drawable.food_home_ic_season_1);
                 break;
             case 2:
                 //春季
                 headViewHolder.mSeasonText.setText(year + "年4月");
-                headViewHolder.mSeasonIcon.setImageResource(R.drawable.bangumi_home_ic_season_2);
+                headViewHolder.mSeasonIcon.setImageResource(R.drawable.food_home_ic_season_2);
                 break;
             case 3:
                 //夏季
                 headViewHolder.mSeasonText.setText(year + "年7月");
-                headViewHolder.mSeasonIcon.setImageResource(R.drawable.bangumi_home_ic_season_3);
+                headViewHolder.mSeasonIcon.setImageResource(R.drawable.food_home_ic_season_3);
                 break;
             case 4:
                 //秋季
                 headViewHolder.mSeasonText.setText(year + "年10月");
-                headViewHolder.mSeasonIcon.setImageResource(R.drawable.bangumi_home_ic_season_4);
+                headViewHolder.mSeasonIcon.setImageResource(R.drawable.food_home_ic_season_4);
                 break;
         }
     }

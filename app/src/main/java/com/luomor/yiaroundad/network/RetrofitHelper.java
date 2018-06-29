@@ -3,10 +3,10 @@ package com.luomor.yiaroundad.network;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.luomor.yiaroundad.YiAroundAdApp;
 import com.luomor.yiaroundad.network.api.AccountService;
-import com.luomor.yiaroundad.network.api.BangumiService;
-import com.luomor.yiaroundad.network.api.BiliApiService;
-import com.luomor.yiaroundad.network.api.BiliAppService;
-import com.luomor.yiaroundad.network.api.BiliGoService;
+import com.luomor.yiaroundad.network.api.FoodService;
+import com.luomor.yiaroundad.network.api.YiAdApiService;
+import com.luomor.yiaroundad.network.api.YiAdAppService;
+import com.luomor.yiaroundad.network.api.YiAdGoService;
 import com.luomor.yiaroundad.network.api.Im9Service;
 import com.luomor.yiaroundad.network.api.LiveService;
 import com.luomor.yiaroundad.network.api.RankService;
@@ -48,16 +48,16 @@ public class RetrofitHelper {
         return createApi(LiveService.class, ApiConstants.LIVE_BASE_URL);
     }
 
-    public static BiliAppService getBiliAppAPI() {
-        return createApi(BiliAppService.class, ApiConstants.APP_BASE_URL);
+    public static YiAdAppService getBiliAppAPI() {
+        return createApi(YiAdAppService.class, ApiConstants.APP_BASE_URL);
     }
 
-    public static BiliApiService getBiliAPI() {
-        return createApi(BiliApiService.class, ApiConstants.API_BASE_URL);
+    public static YiAdApiService getBiliAPI() {
+        return createApi(YiAdApiService.class, ApiConstants.API_BASE_URL);
     }
 
-    public static BiliGoService getBiliGoAPI() {
-        return createApi(BiliGoService.class, ApiConstants.BILI_GO_BASE_URL);
+    public static YiAdGoService getBiliGoAPI() {
+        return createApi(YiAdGoService.class, ApiConstants.BILI_GO_BASE_URL);
     }
 
     public static RankService getRankAPI() {
@@ -72,8 +72,8 @@ public class RetrofitHelper {
         return createApi(VipService.class, ApiConstants.VIP_BASE_URL);
     }
 
-    public static BangumiService getBangumiAPI() {
-        return createApi(BangumiService.class, ApiConstants.BANGUMI_BASE_URL);
+    public static FoodService getFoodAPI() {
+        return createApi(FoodService.class, ApiConstants.FOOD_BASE_URL);
     }
 
     public static SearchService getSearchAPI() {

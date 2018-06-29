@@ -30,7 +30,7 @@ public class OriginalRankActivity extends RxBaseActivity {
     @BindView(R.id.view_pager)
     NoScrollViewPager mViewPager;
 
-    private String[] titles = new String[]{"原创", "全站", "番剧"};
+    private String[] titles = new String[]{"原创", "全站", "美食"};
     private String[] orders = new String[]{"origin-03.json", "all-03.json", "all-3-33.json"};
 
     @Override

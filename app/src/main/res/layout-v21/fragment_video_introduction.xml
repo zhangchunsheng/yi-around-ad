@@ -262,7 +262,7 @@
             android:layout_height="@dimen/line_height"
             android:background="@color/gray_light" />
 
-        <include layout="@layout/layout_user_chase_bangumi_head" />
+        <include layout="@layout/layout_user_chase_food_head" />
 
         <View
             android:layout_width="match_parent"

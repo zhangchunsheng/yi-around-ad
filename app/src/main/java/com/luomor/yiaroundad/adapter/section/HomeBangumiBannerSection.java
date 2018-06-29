@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
  * Created by Peter on 16/8/27 14:06
  * 1097692918@qq.com
  * <p/>
- * 首页番剧界面轮播图Section
+ * 首页美食界面轮播图Section
  */
 public class HomeBangumiBannerSection extends StatelessSection {
     private List<BannerEntity> banners;

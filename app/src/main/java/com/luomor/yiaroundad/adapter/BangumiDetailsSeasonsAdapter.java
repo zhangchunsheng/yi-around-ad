@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.luomor.yiaroundad.adapter.helper.AbsRecyclerViewAdapter;
-import com.luomor.yiaroundad.entity.bangumi.BangumiDetailsInfo;
+import com.luomor.yiaroundad.entity.food.FoodDetailsInfo;
 import com.luomor.yiaroundad.R;
 
 import java.util.List;
@@ -17,14 +17,14 @@ import java.util.List;
  * Created by Peter on 2016/11/1 20:34
  * 1097692918@qq.com
  * <p>
- * 番剧详情分季版本adapter
+ * 美食详情分季版本adapter
  */
 
 public class BangumiDetailsSeasonsAdapter extends AbsRecyclerViewAdapter {
     private int layoutPosition = 0;
-    private List<BangumiDetailsInfo.ResultBean.SeasonsBean> seasons;
+    private List<FoodDetailsInfo.ResultBean.SeasonsBean> seasons;
 
-    public BangumiDetailsSeasonsAdapter(RecyclerView recyclerView, List<BangumiDetailsInfo.ResultBean.SeasonsBean> seasons) {
+    public BangumiDetailsSeasonsAdapter(RecyclerView recyclerView, List<FoodDetailsInfo.ResultBean.SeasonsBean> seasons) {
         super(recyclerView);
         this.seasons = seasons;
     }
@@ -34,7 +34,7 @@ public class BangumiDetailsSeasonsAdapter extends AbsRecyclerViewAdapter {
     public ClickableViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         bindContext(parent.getContext());
         return new ItemViewHolder(LayoutInflater.from(getContext())
-                .inflate(R.layout.item_bangumi_details_seasons, parent, false));
+                .inflate(R.layout.item_food_details_seasons, parent, false));
     }
 
 
@@ -42,7 +42,7 @@ public class BangumiDetailsSeasonsAdapter extends AbsRecyclerViewAdapter {
     public void onBindViewHolder(ClickableViewHolder holder, int position) {
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-            BangumiDetailsInfo.ResultBean.SeasonsBean seasonsBean = seasons.get(position);
+            FoodDetailsInfo.ResultBean.SeasonsBean seasonsBean = seasons.get(position);
             itemViewHolder.mSeasons.setText(seasonsBean.getTitle());
 
             if (position == layoutPosition) {

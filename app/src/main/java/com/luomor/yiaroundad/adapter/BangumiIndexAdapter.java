@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.luomor.yiaroundad.adapter.helper.AbsRecyclerViewAdapter;
-import com.luomor.yiaroundad.entity.bangumi.BangumiIndexInfo;
+import com.luomor.yiaroundad.entity.food.FoodIndexInfo;
 import com.luomor.yiaroundad.R;
 
 import java.util.List;
@@ -19,12 +19,12 @@ import java.util.List;
  * Created by Peter on 16/8/4 14:12
  * 1097692918@qq.com
  * <p/>
- * 番剧索引Adapter
+ * 美食索引Adapter
  */
 public class BangumiIndexAdapter extends AbsRecyclerViewAdapter {
-    private List<BangumiIndexInfo.ResultBean.CategoryBean> categorys;
+    private List<FoodIndexInfo.ResultBean.CategoryBean> categorys;
 
-    public BangumiIndexAdapter(RecyclerView recyclerView, List<BangumiIndexInfo.ResultBean.CategoryBean> categorys) {
+    public BangumiIndexAdapter(RecyclerView recyclerView, List<FoodIndexInfo.ResultBean.CategoryBean> categorys) {
         super(recyclerView);
         this.categorys = categorys;
     }
@@ -34,7 +34,7 @@ public class BangumiIndexAdapter extends AbsRecyclerViewAdapter {
     public ClickableViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         bindContext(parent.getContext());
         return new ItemViewHolder(LayoutInflater.from(getContext()).
-                inflate(R.layout.item_bangumi_index, parent, false));
+                inflate(R.layout.item_food_index, parent, false));
     }
 
 
@@ -42,7 +42,7 @@ public class BangumiIndexAdapter extends AbsRecyclerViewAdapter {
     public void onBindViewHolder(ClickableViewHolder holder, int position) {
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-            BangumiIndexInfo.ResultBean.CategoryBean categoryBean = categorys.get(position);
+            FoodIndexInfo.ResultBean.CategoryBean categoryBean = categorys.get(position);
 
             Glide.with(getContext())
                     .load(categoryBean.getCover())

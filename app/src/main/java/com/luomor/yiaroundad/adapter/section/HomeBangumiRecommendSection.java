@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.luomor.yiaroundad.adapter.HomeBangumiRecommendAdapter;
-import com.luomor.yiaroundad.entity.bangumi.BangumiRecommendInfo;
+import com.luomor.yiaroundad.entity.food.FoodRecommendInfo;
 import com.luomor.yiaroundad.R;
 import com.luomor.yiaroundad.module.common.BrowserActivity;
 import com.luomor.yiaroundad.widget.sectioned.StatelessSection;
@@ -22,17 +22,17 @@ import butterknife.ButterKnife;
  * Created by Peter on 2016/10/14 20:02
  * 1097692918@qq.com
  * <p>
- * 首页番剧推荐Section
+ * 首页美食推荐Section
  */
 
 public class HomeBangumiRecommendSection extends StatelessSection {
     private Context mContext;
-    private List<BangumiRecommendInfo.ResultBean> bangumiRecommends;
+    private List<FoodRecommendInfo.ResultBean> foodRecommends;
 
-    public HomeBangumiRecommendSection(Context context, List<BangumiRecommendInfo.ResultBean> bangumiRecommends) {
-        super(R.layout.layout_home_bangumi_recommend_head, R.layout.layout_home_recommend_empty);
+    public HomeBangumiRecommendSection(Context context, List<FoodRecommendInfo.ResultBean> foodRecommends) {
+        super(R.layout.layout_home_food_recommend_head, R.layout.layout_home_recommend_empty);
         this.mContext = context;
-        this.bangumiRecommends = bangumiRecommends;
+        this.foodRecommends = foodRecommends;
     }
 
 
@@ -68,16 +68,16 @@ public class HomeBangumiRecommendSection extends StatelessSection {
         recyclerViewHolder.mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext,
                 LinearLayoutManager.VERTICAL, false));
         HomeBangumiRecommendAdapter mAdapter = new HomeBangumiRecommendAdapter(
-                recyclerViewHolder.mRecyclerView, bangumiRecommends);
+                recyclerViewHolder.mRecyclerView, foodRecommends);
         recyclerViewHolder.mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(
                 (position, holder1) -> BrowserActivity.launch((Activity) mContext,
-                        bangumiRecommends.get(position).getLink(), bangumiRecommends.get(position).getTitle()));
+                        foodRecommends.get(position).getLink(), foodRecommends.get(position).getTitle()));
     }
 
 
     static class RecyclerViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.home_bangumi_recommend_recycler)
+        @BindView(R.id.home_food_recommend_recycler)
         RecyclerView mRecyclerView;
 
         RecyclerViewHolder(View itemView) {

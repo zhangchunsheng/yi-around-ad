@@ -97,7 +97,7 @@ public class RegionRecommendHotSection extends StatelessSection {
     private void startRankActivityById() {
         switch (rid) {
             case 13:
-                //番剧
+                //美食
                 AllAreasRankActivity.launch((Activity) mContext, 0);
                 break;
             case 1:

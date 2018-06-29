@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.luomor.yiaroundad.adapter.helper.AbsRecyclerViewAdapter;
-import com.luomor.yiaroundad.entity.bangumi.NewBangumiSerialInfo;
+import com.luomor.yiaroundad.entity.food.NewBangumiSerialInfo;
 import com.luomor.yiaroundad.utils.NumberUtil;
 import com.luomor.yiaroundad.R;
 
@@ -22,15 +22,15 @@ import java.util.List;
  * Created by Peter on 16/8/6 14:31
  * 1097692918@qq.com
  * <p/>
- * 首页番剧新番连载Adapter
+ * 首页美食新美食连载Adapter
  */
 public class NewBangumiSerialAdapter extends AbsRecyclerViewAdapter {
-    private List<NewBangumiSerialInfo.ListBean> newBangumiSerials = new ArrayList<>();
+    private List<NewBangumiSerialInfo.ListBean> newFoodSerials = new ArrayList<>();
     private boolean isShowAll = false;
 
-    public NewBangumiSerialAdapter(RecyclerView recyclerView, List<NewBangumiSerialInfo.ListBean> newBangumiSerials, boolean isShowAll) {
+    public NewBangumiSerialAdapter(RecyclerView recyclerView, List<NewBangumiSerialInfo.ListBean> newFoodSerials, boolean isShowAll) {
         super(recyclerView);
-        this.newBangumiSerials = newBangumiSerials;
+        this.newFoodSerials = newFoodSerials;
         this.isShowAll = isShowAll;
     }
 
@@ -39,7 +39,7 @@ public class NewBangumiSerialAdapter extends AbsRecyclerViewAdapter {
     public ClickableViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         bindContext(parent.getContext());
         return new ItemViewHolder(LayoutInflater.from(getContext())
-                .inflate(R.layout.item_recommend_bangumi, parent, false));
+                .inflate(R.layout.item_recommend_food, parent, false));
     }
 
 
@@ -48,7 +48,7 @@ public class NewBangumiSerialAdapter extends AbsRecyclerViewAdapter {
     public void onBindViewHolder(ClickableViewHolder holder, int position) {
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-            NewBangumiSerialInfo.ListBean listBean = newBangumiSerials.get(position);
+            NewBangumiSerialInfo.ListBean listBean = newFoodSerials.get(position);
 
             Glide.with(getContext())
                     .load(listBean.getCover())
@@ -68,7 +68,7 @@ public class NewBangumiSerialAdapter extends AbsRecyclerViewAdapter {
 
     @Override
     public int getItemCount() {
-        return isShowAll ? newBangumiSerials.size() : 6;
+        return isShowAll ? newFoodSerials.size() : 6;
     }
 
 

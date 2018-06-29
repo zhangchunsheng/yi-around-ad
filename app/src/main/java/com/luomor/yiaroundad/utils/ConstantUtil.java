@@ -14,7 +14,7 @@ public class ConstantUtil {
     public static final String USER_CONTRIBUTE = "0";
     //用户收藏夹
     public static final String USER_FAVORITES = "1";
-    //用户追番
+    //用户追美食
     public static final String USER_CHASE_BANGUMI = "2";
     //用户兴趣圈
     public static final String USER_INTEREST_QUAN = "3";

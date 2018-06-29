@@ -106,7 +106,7 @@ public class HomeRegionFragment extends RxLazyFragment {
                     startActivity(new Intent(getActivity(), LiveAppIndexActivity.class));
                     break;
                 case 1:
-                    //番剧
+                    //美食
                     RegionTypesInfo.DataBean mBangumi = regionTypes.get(1);
                     RegionTypeDetailsActivity.launch(getActivity(), mBangumi);
                     break;

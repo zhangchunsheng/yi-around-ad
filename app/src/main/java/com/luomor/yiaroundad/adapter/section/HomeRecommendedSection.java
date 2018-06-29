@@ -22,10 +22,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.luomor.yiaroundad.entity.recommend.RecommendInfo;
+import com.luomor.yiaroundad.module.home.food.FoodScheduleActivity;
 import com.luomor.yiaroundad.module.home.live.LivePlayerActivity;
 import com.luomor.yiaroundad.R;
-import com.luomor.yiaroundad.module.home.bangumi.BangumiIndexActivity;
-import com.luomor.yiaroundad.module.home.bangumi.BangumiScheduleActivity;
+import com.luomor.yiaroundad.module.home.food.FoodIndexActivity;
 import com.luomor.yiaroundad.module.home.discover.OriginalRankActivity;
 import com.luomor.yiaroundad.module.video.VideoDetailsActivity;
 import com.luomor.yiaroundad.utils.DisplayUtil;
@@ -51,8 +51,8 @@ public class HomeRecommendedSection extends StatelessSection {
     private int liveCount;
     private static final String TYPE_RECOMMENDED = "recommend";
     private static final String TYPE_LIVE = "live";
-    private static final String TYPE_BANGUMI = "bangumi_2";
-    private static final String GOTO_BANGUMI = "bangumi_list";
+    private static final String TYPE_FOOD = "food_2";
+    private static final String GOTO_FOOD = "food_list";
     private static final String TYPE_ACTIVITY = "activity";
     private List<RecommendInfo.ResultBean.BodyBean> datas = new ArrayList<>();
     private final Random mRandom;
@@ -112,7 +112,7 @@ public class HomeRecommendedSection extends StatelessSection {
                             Integer.valueOf(bodyBean.getParam()), bodyBean.getTitle(),
                             bodyBean.getOnline(), bodyBean.getUpFace(), bodyBean.getUp(), 0);
                     break;
-                case GOTO_BANGUMI:
+                case GOTO_FOOD:
                     break;
                 default:
                     VideoDetailsActivity.launch((Activity) mContext,
@@ -126,16 +126,16 @@ public class HomeRecommendedSection extends StatelessSection {
                 //直播item
                 itemViewHolder.mLiveLayout.setVisibility(View.VISIBLE);
                 itemViewHolder.mVideoLayout.setVisibility(View.GONE);
-                itemViewHolder.mBangumiLayout.setVisibility(View.GONE);
+                itemViewHolder.mFoodLayout.setVisibility(View.GONE);
                 itemViewHolder.mLiveUp.setText(bodyBean.getUp());
                 itemViewHolder.mLiveOnline.setText(String.valueOf(bodyBean.getOnline()));
                 break;
-            case TYPE_BANGUMI:
-                // 番剧item
+            case TYPE_FOOD:
+                // 美食item
                 itemViewHolder.mLiveLayout.setVisibility(View.GONE);
                 itemViewHolder.mVideoLayout.setVisibility(View.GONE);
-                itemViewHolder.mBangumiLayout.setVisibility(View.VISIBLE);
-                itemViewHolder.mBangumiUpdate.setText(bodyBean.getDesc1());
+                itemViewHolder.mFoodLayout.setVisibility(View.VISIBLE);
+                itemViewHolder.mFoodUpdate.setText(bodyBean.getDesc1());
                 break;
             case TYPE_ACTIVITY:
                 ViewGroup.LayoutParams layoutParams = itemViewHolder.mCardView.getLayoutParams();
@@ -143,11 +143,11 @@ public class HomeRecommendedSection extends StatelessSection {
                 itemViewHolder.mCardView.setLayoutParams(layoutParams);
                 itemViewHolder.mLiveLayout.setVisibility(View.GONE);
                 itemViewHolder.mVideoLayout.setVisibility(View.GONE);
-                itemViewHolder.mBangumiLayout.setVisibility(View.GONE);
+                itemViewHolder.mFoodLayout.setVisibility(View.GONE);
                 break;
             default:
                 itemViewHolder.mLiveLayout.setVisibility(View.GONE);
-                itemViewHolder.mBangumiLayout.setVisibility(View.GONE);
+                itemViewHolder.mFoodLayout.setVisibility(View.GONE);
                 itemViewHolder.mVideoLayout.setVisibility(View.VISIBLE);
                 itemViewHolder.mVideoPlayNum.setText(bodyBean.getPlay());
                 itemViewHolder.mVideoReviewCount.setText(bodyBean.getDanmaku());
@@ -207,7 +207,7 @@ public class HomeRecommendedSection extends StatelessSection {
             case "正在直播":
                 headerViewHolder.mTypeImg.setImageResource(icons[1]);
                 break;
-            case "番剧推荐":
+            case "美食推荐":
                 headerViewHolder.mTypeImg.setImageResource(icons[2]);
                 break;
             case "动画区":
@@ -268,32 +268,32 @@ public class HomeRecommendedSection extends StatelessSection {
                 .rotation(360)
                 .setInterpolator(new LinearInterpolator())
                 .setDuration(1000).start());
-        footViewHolder.mBangumiIndexBtn.setOnClickListener(v -> mContext.startActivity(
-                new Intent(mContext, BangumiIndexActivity.class)));
-        footViewHolder.mBangumiTimelineBtn.setOnClickListener(v -> mContext.startActivity(
-                new Intent(mContext, BangumiScheduleActivity.class)));
+        footViewHolder.mFoodIndexBtn.setOnClickListener(v -> mContext.startActivity(
+                new Intent(mContext, FoodIndexActivity.class)));
+        footViewHolder.mFoodTimelineBtn.setOnClickListener(v -> mContext.startActivity(
+                new Intent(mContext, FoodScheduleActivity.class)));
         switch (type) {
             case TYPE_RECOMMENDED:
                 footViewHolder.mMoreBtn.setVisibility(View.GONE);
                 footViewHolder.mRefreshLayout.setVisibility(View.GONE);
-                footViewHolder.mBangumiLayout.setVisibility(View.GONE);
+                footViewHolder.mFoodLayout.setVisibility(View.GONE);
                 footViewHolder.mRecommendRefreshLayout.setVisibility(View.VISIBLE);
                 break;
-            case TYPE_BANGUMI:
+            case TYPE_FOOD:
                 footViewHolder.mMoreBtn.setVisibility(View.GONE);
                 footViewHolder.mRefreshLayout.setVisibility(View.GONE);
                 footViewHolder.mRecommendRefreshLayout.setVisibility(View.GONE);
-                footViewHolder.mBangumiLayout.setVisibility(View.VISIBLE);
+                footViewHolder.mFoodLayout.setVisibility(View.VISIBLE);
                 break;
             case TYPE_ACTIVITY:
                 footViewHolder.mRecommendRefreshLayout.setVisibility(View.GONE);
-                footViewHolder.mBangumiLayout.setVisibility(View.GONE);
+                footViewHolder.mFoodLayout.setVisibility(View.GONE);
                 footViewHolder.mMoreBtn.setVisibility(View.GONE);
                 footViewHolder.mRefreshLayout.setVisibility(View.GONE);
                 break;
             default:
                 footViewHolder.mRecommendRefreshLayout.setVisibility(View.GONE);
-                footViewHolder.mBangumiLayout.setVisibility(View.GONE);
+                footViewHolder.mFoodLayout.setVisibility(View.GONE);
                 footViewHolder.mMoreBtn.setVisibility(View.VISIBLE);
                 footViewHolder.mRefreshLayout.setVisibility(View.VISIBLE);
                 break;
@@ -338,10 +338,10 @@ public class HomeRecommendedSection extends StatelessSection {
         TextView mLiveUp;
         @BindView(R.id.item_live_online)
         TextView mLiveOnline;
-        @BindView(R.id.layout_bangumi)
-        RelativeLayout mBangumiLayout;
-        @BindView(R.id.item_bangumi_update)
-        TextView mBangumiUpdate;
+        @BindView(R.id.layout_food)
+        RelativeLayout mFoodLayout;
+        @BindView(R.id.item_food_update)
+        TextView mFoodUpdate;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
@@ -362,12 +362,12 @@ public class HomeRecommendedSection extends StatelessSection {
         LinearLayout mRecommendRefreshLayout;
         @BindView(R.id.item_recommend_refresh)
         ImageView mRecommendRefresh;
-        @BindView(R.id.item_bangumi_layout)
-        LinearLayout mBangumiLayout;
-        @BindView(R.id.item_btn_bangumi_index)
-        ImageView mBangumiIndexBtn;
-        @BindView(R.id.item_btn_bangumi_timeline)
-        ImageView mBangumiTimelineBtn;
+        @BindView(R.id.item_food_layout)
+        LinearLayout mFoodLayout;
+        @BindView(R.id.item_btn_food_index)
+        ImageView mFoodIndexBtn;
+        @BindView(R.id.item_btn_food_timeline)
+        ImageView mFoodTimelineBtn;
 
         FootViewHolder(View itemView) {
             super(itemView);

@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.luomor.yiaroundad.entity.bangumi.BangumiScheduleInfo;
+import com.luomor.yiaroundad.entity.food.FoodScheduleInfo;
 import com.luomor.yiaroundad.utils.ConstantUtil;
 import com.luomor.yiaroundad.utils.DateUtil;
 import com.luomor.yiaroundad.utils.WeekDayUtil;
@@ -25,26 +25,26 @@ import butterknife.ButterKnife;
  * Created by Peter on 16/8/25 20:52
  * 1097692918@qq.com
  * <p/>
- * 番剧放送表section
+ * 美食放送表section
  */
 public class BangumiScheduleSection extends StatelessSection {
     private Context mContext;
     private String weekDay;
     private String date;
-    private List<BangumiScheduleInfo.ResultBean> bangumiSchedules;
+    private List<FoodScheduleInfo.ResultBean> foodSchedules;
 
-    public BangumiScheduleSection(Context context, List<BangumiScheduleInfo.ResultBean> bangumiSchedules, String weekDay, String date) {
-        super(R.layout.layout_bangumi_schedule_head, R.layout.layout_bangumi_schedule_boby);
+    public BangumiScheduleSection(Context context, List<FoodScheduleInfo.ResultBean> foodSchedules, String weekDay, String date) {
+        super(R.layout.layout_food_schedule_head, R.layout.layout_food_schedule_boby);
         this.mContext = context;
         this.weekDay = weekDay;
         this.date = date;
-        this.bangumiSchedules = bangumiSchedules;
+        this.foodSchedules = foodSchedules;
     }
 
 
     @Override
     public int getContentItemsTotal() {
-        return bangumiSchedules.size();
+        return foodSchedules.size();
     }
 
 
@@ -57,7 +57,7 @@ public class BangumiScheduleSection extends StatelessSection {
     @Override
     public void onBindItemViewHolder(RecyclerView.ViewHolder holder, int position) {
         ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-        BangumiScheduleInfo.ResultBean resultBean = bangumiSchedules.get(position);
+        FoodScheduleInfo.ResultBean resultBean = foodSchedules.get(position);
         Glide.with(mContext)
                 .load(resultBean.getCover())
                 .centerCrop()
@@ -88,25 +88,25 @@ public class BangumiScheduleSection extends StatelessSection {
     private void setWeekDay(HeaderViewHolder headerViewHolder) {
         switch (weekDay) {
             case ConstantUtil.SUNDAY_TYPE:
-                setWeekDayIconAndTitle(headerViewHolder, R.drawable.bangumi_timeline_weekday_7, "周日");
+                setWeekDayIconAndTitle(headerViewHolder, R.drawable.food_timeline_weekday_7, "周日");
                 break;
             case ConstantUtil.MONDAY_TYPE:
-                setWeekDayIconAndTitle(headerViewHolder, R.drawable.bangumi_timeline_weekday_1, "周一");
+                setWeekDayIconAndTitle(headerViewHolder, R.drawable.food_timeline_weekday_1, "周一");
                 break;
             case ConstantUtil.TUESDAY_TYPE:
-                setWeekDayIconAndTitle(headerViewHolder, R.drawable.bangumi_timeline_weekday_2, "周二");
+                setWeekDayIconAndTitle(headerViewHolder, R.drawable.food_timeline_weekday_2, "周二");
                 break;
             case ConstantUtil.WEDNESDAY_TYPE:
-                setWeekDayIconAndTitle(headerViewHolder, R.drawable.bangumi_timeline_weekday_3, "周三");
+                setWeekDayIconAndTitle(headerViewHolder, R.drawable.food_timeline_weekday_3, "周三");
                 break;
             case ConstantUtil.THURSDAY_TYPE:
-                setWeekDayIconAndTitle(headerViewHolder, R.drawable.bangumi_timeline_weekday_4, "周四");
+                setWeekDayIconAndTitle(headerViewHolder, R.drawable.food_timeline_weekday_4, "周四");
                 break;
             case ConstantUtil.FRIDAY_TYEP:
-                setWeekDayIconAndTitle(headerViewHolder, R.drawable.bangumi_timeline_weekday_5, "周五");
+                setWeekDayIconAndTitle(headerViewHolder, R.drawable.food_timeline_weekday_5, "周五");
                 break;
             case ConstantUtil.SATURDAY_TYPE:
-                setWeekDayIconAndTitle(headerViewHolder, R.drawable.bangumi_timeline_weekday_6, "周六");
+                setWeekDayIconAndTitle(headerViewHolder, R.drawable.food_timeline_weekday_6, "周六");
                 break;
         }
     }
