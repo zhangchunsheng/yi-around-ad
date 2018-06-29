@@ -20,11 +20,11 @@ import java.util.List;
  * 美食详情分季版本adapter
  */
 
-public class BangumiDetailsSeasonsAdapter extends AbsRecyclerViewAdapter {
+public class FoodDetailsSeasonsAdapter extends AbsRecyclerViewAdapter {
     private int layoutPosition = 0;
     private List<FoodDetailsInfo.ResultBean.SeasonsBean> seasons;
 
-    public BangumiDetailsSeasonsAdapter(RecyclerView recyclerView, List<FoodDetailsInfo.ResultBean.SeasonsBean> seasons) {
+    public FoodDetailsSeasonsAdapter(RecyclerView recyclerView, List<FoodDetailsInfo.ResultBean.SeasonsBean> seasons) {
         super(recyclerView);
         this.seasons = seasons;
     }

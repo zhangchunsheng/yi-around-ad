@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.luomor.yiaroundad.adapter.HomeBangumiRecommendAdapter;
+import com.luomor.yiaroundad.adapter.HomeFoodRecommendAdapter;
 import com.luomor.yiaroundad.entity.food.FoodRecommendInfo;
 import com.luomor.yiaroundad.R;
 import com.luomor.yiaroundad.module.common.BrowserActivity;
@@ -25,11 +25,11 @@ import butterknife.ButterKnife;
  * 首页美食推荐Section
  */
 
-public class HomeBangumiRecommendSection extends StatelessSection {
+public class HomeFoodRecommendSection extends StatelessSection {
     private Context mContext;
     private List<FoodRecommendInfo.ResultBean> foodRecommends;
 
-    public HomeBangumiRecommendSection(Context context, List<FoodRecommendInfo.ResultBean> foodRecommends) {
+    public HomeFoodRecommendSection(Context context, List<FoodRecommendInfo.ResultBean> foodRecommends) {
         super(R.layout.layout_home_food_recommend_head, R.layout.layout_home_recommend_empty);
         this.mContext = context;
         this.foodRecommends = foodRecommends;
@@ -44,7 +44,7 @@ public class HomeBangumiRecommendSection extends StatelessSection {
 
     @Override
     public RecyclerView.ViewHolder getItemViewHolder(View view) {
-        return new HomeBangumiRecommendSection.EmptyViewHolder(view);
+        return new HomeFoodRecommendSection.EmptyViewHolder(view);
     }
 
 
@@ -55,19 +55,19 @@ public class HomeBangumiRecommendSection extends StatelessSection {
 
     @Override
     public RecyclerView.ViewHolder getHeaderViewHolder(View view) {
-        return new HomeBangumiRecommendSection.RecyclerViewHolder(view);
+        return new HomeFoodRecommendSection.RecyclerViewHolder(view);
     }
 
 
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder) {
-        HomeBangumiRecommendSection.RecyclerViewHolder recyclerViewHolder = (HomeBangumiRecommendSection.RecyclerViewHolder) holder;
+        HomeFoodRecommendSection.RecyclerViewHolder recyclerViewHolder = (HomeFoodRecommendSection.RecyclerViewHolder) holder;
         recyclerViewHolder.mRecyclerView.setHasFixedSize(false);
         recyclerViewHolder.mRecyclerView.setNestedScrollingEnabled(false);
         recyclerViewHolder.mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext,
                 LinearLayoutManager.VERTICAL, false));
-        HomeBangumiRecommendAdapter mAdapter = new HomeBangumiRecommendAdapter(
+        HomeFoodRecommendAdapter mAdapter = new HomeFoodRecommendAdapter(
                 recyclerViewHolder.mRecyclerView, foodRecommends);
         recyclerViewHolder.mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(

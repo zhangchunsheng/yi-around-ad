@@ -50,7 +50,7 @@ public interface YiAdAppService {
      * 美食搜索
      */
     @GET("x/v2/search/type?actionKey=appkey&appkey=27eb53fc9058f8c3&build=3710&device=phone&mobi_app=iphone&platform=ios&type=1")
-    Observable<SearchFoodInfo> searchBangumi(
+    Observable<SearchFoodInfo> searchFood(
             @Query("keyword") String content, @Query("pn") int page, @Query("ps") int pagesize);
 
     /**

@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.luomor.yiaroundad.adapter.BangumiResultsAdapter;
+import com.luomor.yiaroundad.adapter.FoodResultsAdapter;
 import com.luomor.yiaroundad.adapter.helper.EndlessRecyclerOnScrollListener;
 import com.luomor.yiaroundad.adapter.helper.HeaderViewRecyclerAdapter;
 import com.luomor.yiaroundad.base.RxLazyFragment;
@@ -86,7 +86,7 @@ public class FoodResultsFragment extends RxLazyFragment {
         mRecyclerView.setHasFixedSize(true);
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
-        BangumiResultsAdapter mAdapter = new BangumiResultsAdapter(mRecyclerView, foods);
+        FoodResultsAdapter mAdapter = new FoodResultsAdapter(mRecyclerView, foods);
         mHeaderViewRecyclerAdapter = new HeaderViewRecyclerAdapter(mAdapter);
         mRecyclerView.setAdapter(mHeaderViewRecyclerAdapter);
         createLoadMoreView();
@@ -103,7 +103,7 @@ public class FoodResultsFragment extends RxLazyFragment {
     @Override
     protected void loadData() {
         RetrofitHelper.getBiliAppAPI()
-                .searchBangumi(content, pageNum, pageSize)
+                .searchFood(content, pageNum, pageSize)
                 .compose(bindToLifecycle())
                 .map(SearchFoodInfo::getData)
                 .delay(1000, TimeUnit.MILLISECONDS)

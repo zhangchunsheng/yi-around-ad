@@ -127,11 +127,11 @@ public class FoodDetailsInfo {
             this.food_id = food_id;
         }
 
-        public String getBangumi_title() {
+        public String getFood_title() {
             return food_title;
         }
 
-        public void setBangumi_title(String food_title) {
+        public void setFood_title(String food_title) {
             this.food_title = food_title;
         }
 

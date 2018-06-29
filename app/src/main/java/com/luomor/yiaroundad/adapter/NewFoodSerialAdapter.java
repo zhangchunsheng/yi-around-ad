@@ -11,43 +11,44 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.luomor.yiaroundad.adapter.helper.AbsRecyclerViewAdapter;
-import com.luomor.yiaroundad.entity.food.FoodDetailsRecommendInfo;
+import com.luomor.yiaroundad.entity.food.NewFoodSerialInfo;
 import com.luomor.yiaroundad.utils.NumberUtil;
 import com.luomor.yiaroundad.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Peter on 16/8/6 11:51
+ * Created by Peter on 16/8/6 14:31
  * 1097692918@qq.com
  * <p/>
- * 美食详情美食推荐adapter
+ * 首页美食新美食连载Adapter
  */
-public class BangumiDetailsRecommendAdapter extends AbsRecyclerViewAdapter {
-    private List<FoodDetailsRecommendInfo.ResultBean.ListBean> foodRecommends;
+public class NewFoodSerialAdapter extends AbsRecyclerViewAdapter {
+    private List<NewFoodSerialInfo.ListBean> newFoodSerials = new ArrayList<>();
+    private boolean isShowAll = false;
 
-    public BangumiDetailsRecommendAdapter(RecyclerView recyclerView, List<FoodDetailsRecommendInfo.ResultBean.ListBean> foodRecommends) {
+    public NewFoodSerialAdapter(RecyclerView recyclerView, List<NewFoodSerialInfo.ListBean> newFoodSerials, boolean isShowAll) {
         super(recyclerView);
-        this.foodRecommends = foodRecommends;
+        this.newFoodSerials = newFoodSerials;
+        this.isShowAll = isShowAll;
     }
 
 
     @Override
     public ClickableViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         bindContext(parent.getContext());
         return new ItemViewHolder(LayoutInflater.from(getContext())
-                .inflate(R.layout.item_food_details_recommend, parent, false));
+                .inflate(R.layout.item_recommend_food, parent, false));
     }
 
 
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(ClickableViewHolder holder, int position) {
-
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-            FoodDetailsRecommendInfo.ResultBean.ListBean listBean = foodRecommends.get(position);
+            NewFoodSerialInfo.ListBean listBean = newFoodSerials.get(position);
 
             Glide.with(getContext())
                     .load(listBean.getCover())
@@ -58,8 +59,8 @@ public class BangumiDetailsRecommendAdapter extends AbsRecyclerViewAdapter {
                     .into(itemViewHolder.mImage);
 
             itemViewHolder.mTitle.setText(listBean.getTitle());
-            itemViewHolder.mFollow.setText(
-                    NumberUtil.converString(Integer.valueOf(listBean.getFollow())) + "人追美食");
+            itemViewHolder.mPlay.setText(NumberUtil.converString(listBean.getPlay_count()) + "人在看");
+            itemViewHolder.mUpdate.setText("更新至第" + listBean.getBgmcount() + "话");
         }
         super.onBindViewHolder(holder, position);
     }
@@ -67,26 +68,23 @@ public class BangumiDetailsRecommendAdapter extends AbsRecyclerViewAdapter {
 
     @Override
     public int getItemCount() {
-
-        return foodRecommends.size();
+        return isShowAll ? newFoodSerials.size() : 6;
     }
 
 
     private class ItemViewHolder extends AbsRecyclerViewAdapter.ClickableViewHolder {
 
         ImageView mImage;
-
         TextView mTitle;
-
-        TextView mFollow;
-
+        TextView mPlay;
+        TextView mUpdate;
 
         public ItemViewHolder(View itemView) {
-
             super(itemView);
             mImage = $(R.id.item_img);
             mTitle = $(R.id.item_title);
-            mFollow = $(R.id.item_follow);
+            mPlay = $(R.id.item_play);
+            mUpdate = $(R.id.item_update);
         }
     }
 }

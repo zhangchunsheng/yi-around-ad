@@ -1,6 +1,6 @@
 package com.luomor.yiaroundad.network.api;
 
-import com.luomor.yiaroundad.entity.food.NewBangumiSerialInfo;
+import com.luomor.yiaroundad.entity.food.NewFoodSerialInfo;
 import com.luomor.yiaroundad.entity.video.HDVideoInfo;
 
 import retrofit2.http.GET;
@@ -28,5 +28,5 @@ public interface YiAdGoService {
      * 新美食连载
      */
     @GET("food")
-    Observable<NewBangumiSerialInfo> getNewFoodSerialList();
+    Observable<NewFoodSerialInfo> getNewFoodSerialList();
 }

@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.luomor.yiaroundad.adapter.BangumiIndexAdapter;
+import com.luomor.yiaroundad.adapter.FoodIndexAdapter;
 import com.luomor.yiaroundad.adapter.helper.HeaderViewRecyclerAdapter;
 import com.luomor.yiaroundad.base.RxBaseActivity;
 import com.luomor.yiaroundad.entity.food.FoodIndexInfo;
@@ -65,7 +65,7 @@ public class FoodIndexActivity extends RxBaseActivity {
       }
     });
     mRecyclerView.setLayoutManager(mGridLayoutManager);
-    BangumiIndexAdapter mAdapter = new BangumiIndexAdapter(mRecyclerView, categorys);
+    FoodIndexAdapter mAdapter = new FoodIndexAdapter(mRecyclerView, categorys);
     mHeaderViewRecyclerAdapter = new HeaderViewRecyclerAdapter(mAdapter);
     createHeadLayout();
     mRecyclerView.setAdapter(mHeaderViewRecyclerAdapter);

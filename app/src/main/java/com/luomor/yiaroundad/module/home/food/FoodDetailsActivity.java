@@ -21,11 +21,11 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.luomor.yiaroundad.adapter.BangumiDetailsCommentAdapter;
-import com.luomor.yiaroundad.adapter.BangumiDetailsHotCommentAdapter;
-import com.luomor.yiaroundad.adapter.BangumiDetailsRecommendAdapter;
-import com.luomor.yiaroundad.adapter.BangumiDetailsSeasonsAdapter;
-import com.luomor.yiaroundad.adapter.BangumiDetailsSelectionAdapter;
+import com.luomor.yiaroundad.adapter.FoodDetailsCommentAdapter;
+import com.luomor.yiaroundad.adapter.FoodDetailsHotCommentAdapter;
+import com.luomor.yiaroundad.adapter.FoodDetailsRecommendAdapter;
+import com.luomor.yiaroundad.adapter.FoodDetailsSeasonsAdapter;
+import com.luomor.yiaroundad.adapter.FoodDetailsSelectionAdapter;
 import com.luomor.yiaroundad.adapter.helper.HeaderViewRecyclerAdapter;
 import com.luomor.yiaroundad.base.RxBaseActivity;
 import com.luomor.yiaroundad.entity.food.FoodDetailsCommentInfo;
@@ -63,7 +63,7 @@ public class FoodDetailsActivity extends RxBaseActivity {
     @BindView(R.id.nested_scroll_view)
     NestedScrollView mNestedScrollView;
     @BindView(R.id.food_bg)
-    ImageView mBangumiBackgroundImage;
+    ImageView mFoodBackgroundImage;
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
     @BindView(R.id.food_pic)
@@ -77,23 +77,23 @@ public class FoodDetailsActivity extends RxBaseActivity {
     @BindView(R.id.food_update)
     TextView mFoodUpdate;
     @BindView(R.id.food_play)
-    TextView mBangumiPlay;
+    TextView mFoodPlay;
     @BindView(R.id.food_selection_recycler)
-    RecyclerView mBangumiSelectionRecycler;
+    RecyclerView mFoodSelectionRecycler;
     @BindView(R.id.tags_layout)
     TagFlowLayout mTagsLayout;
     @BindView(R.id.food_details_introduction)
-    TextView mBangumiIntroduction;
+    TextView mFoodIntroduction;
     @BindView(R.id.tv_update_index)
     TextView mUpdateIndex;
     @BindView(R.id.food_seasons_recycler)
-    RecyclerView mBangumiSeasonsRecycler;
+    RecyclerView mFoodSeasonsRecycler;
     @BindView(R.id.food_comment_recycler)
-    RecyclerView mBangumiCommentRecycler;
+    RecyclerView mFoodCommentRecycler;
     @BindView(R.id.food_recommend_recycler)
-    RecyclerView mBangumiRecommendRecycler;
+    RecyclerView mFoodRecommendRecycler;
     @BindView(R.id.tv_food_comment_count)
-    TextView mBangumiCommentCount;
+    TextView mFoodCommentCount;
 
     private int seasonId;
     private FoodDetailsInfo.ResultBean result;
@@ -169,7 +169,7 @@ public class FoodDetailsActivity extends RxBaseActivity {
         Glide.with(this)
                 .load(result.getCover())
                 .bitmapTransform(new BlurTransformation(this))
-                .into(mBangumiBackgroundImage);
+                .into(mFoodBackgroundImage);
         //设置美食标题
         mFoodTitle.setText(result.getTitle());
         //设置美食更新状态
@@ -181,12 +181,12 @@ public class FoodDetailsActivity extends RxBaseActivity {
             mFoodUpdate.setText("已完结" + result.getNewest_ep_index() + "话全");
         }
         //设置美食播放和追美食数量
-        mBangumiPlay.setText("播放：" + NumberUtil.converString(Integer.valueOf(result.getPlay_count()))
+        mFoodPlay.setText("播放：" + NumberUtil.converString(Integer.valueOf(result.getPlay_count()))
                 + "  " + "追美食：" + NumberUtil.converString(Integer.valueOf(result.getFavorites())));
         //设置美食简介
-        mBangumiIntroduction.setText(result.getEvaluate());
+        mFoodIntroduction.setText(result.getEvaluate());
         //设置评论数量
-        mBangumiCommentCount.setText("评论 第1话(" + mPageInfo.getAcount() + ")");
+        mFoodCommentCount.setText("评论 第1话(" + mPageInfo.getAcount() + ")");
         //设置标签布局
         List<FoodDetailsInfo.ResultBean.TagsBean> tags = result.getTags();
         mTagsLayout.setAdapter(new TagAdapter<FoodDetailsInfo.ResultBean.TagsBean>(tags) {
@@ -215,21 +215,21 @@ public class FoodDetailsActivity extends RxBaseActivity {
      * 初始化评论recyclerView
      */
     private void initCommentRecycler() {
-        mBangumiCommentRecycler.setHasFixedSize(false);
-        mBangumiCommentRecycler.setNestedScrollingEnabled(false);
+        mFoodCommentRecycler.setHasFixedSize(false);
+        mFoodCommentRecycler.setNestedScrollingEnabled(false);
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this);
-        mBangumiCommentRecycler.setLayoutManager(mLinearLayoutManager);
-        BangumiDetailsCommentAdapter mCommentAdapter = new BangumiDetailsCommentAdapter(mBangumiCommentRecycler, replies);
+        mFoodCommentRecycler.setLayoutManager(mLinearLayoutManager);
+        FoodDetailsCommentAdapter mCommentAdapter = new FoodDetailsCommentAdapter(mFoodCommentRecycler, replies);
         HeaderViewRecyclerAdapter mHeaderViewRecyclerAdapter = new HeaderViewRecyclerAdapter(mCommentAdapter);
-        View headView = LayoutInflater.from(this).inflate(R.layout.layout_video_hot_comment_head, mBangumiCommentRecycler, false);
+        View headView = LayoutInflater.from(this).inflate(R.layout.layout_video_hot_comment_head, mFoodCommentRecycler, false);
         RecyclerView mHotCommentRecycler = (RecyclerView) headView.findViewById(R.id.hot_comment_recycler);
         mHotCommentRecycler.setHasFixedSize(false);
         mHotCommentRecycler.setNestedScrollingEnabled(false);
         mHotCommentRecycler.setLayoutManager(new LinearLayoutManager(this));
-        BangumiDetailsHotCommentAdapter mVideoHotCommentAdapter = new BangumiDetailsHotCommentAdapter(mHotCommentRecycler, hotComments);
+        FoodDetailsHotCommentAdapter mVideoHotCommentAdapter = new FoodDetailsHotCommentAdapter(mHotCommentRecycler, hotComments);
         mHotCommentRecycler.setAdapter(mVideoHotCommentAdapter);
         mHeaderViewRecyclerAdapter.addHeaderView(headView);
-        mBangumiCommentRecycler.setAdapter(mHeaderViewRecyclerAdapter);
+        mFoodCommentRecycler.setAdapter(mHeaderViewRecyclerAdapter);
     }
 
 
@@ -238,15 +238,15 @@ public class FoodDetailsActivity extends RxBaseActivity {
      */
     private void initSeasonsRecycler() {
         List<FoodDetailsInfo.ResultBean.SeasonsBean> seasons = result.getSeasons();
-        mBangumiSeasonsRecycler.setHasFixedSize(false);
-        mBangumiSeasonsRecycler.setNestedScrollingEnabled(false);
+        mFoodSeasonsRecycler.setHasFixedSize(false);
+        mFoodSeasonsRecycler.setNestedScrollingEnabled(false);
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        mBangumiSeasonsRecycler.setLayoutManager(mLinearLayoutManager);
-        BangumiDetailsSeasonsAdapter mBangumiDetailsSeasonsAdapter = new BangumiDetailsSeasonsAdapter(mBangumiSeasonsRecycler, seasons);
-        mBangumiSeasonsRecycler.setAdapter(mBangumiDetailsSeasonsAdapter);
+        mFoodSeasonsRecycler.setLayoutManager(mLinearLayoutManager);
+        FoodDetailsSeasonsAdapter mFoodDetailsSeasonsAdapter = new FoodDetailsSeasonsAdapter(mFoodSeasonsRecycler, seasons);
+        mFoodSeasonsRecycler.setAdapter(mFoodDetailsSeasonsAdapter);
         for (int i = 0, size = seasons.size(); i < size; i++) {
             if (seasons.get(i).getSeason_id().equals(result.getSeason_id())) {
-                mBangumiDetailsSeasonsAdapter.notifyItemForeground(i);
+                mFoodDetailsSeasonsAdapter.notifyItemForeground(i);
             }
         }
     }
@@ -257,17 +257,17 @@ public class FoodDetailsActivity extends RxBaseActivity {
      */
     private void initSelectionRecycler() {
         List<FoodDetailsInfo.ResultBean.EpisodesBean> episodes = result.getEpisodes();
-        mBangumiSelectionRecycler.setHasFixedSize(false);
-        mBangumiSelectionRecycler.setNestedScrollingEnabled(false);
+        mFoodSelectionRecycler.setHasFixedSize(false);
+        mFoodSelectionRecycler.setNestedScrollingEnabled(false);
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mLinearLayoutManager.setReverseLayout(true);
-        mBangumiSelectionRecycler.setLayoutManager(mLinearLayoutManager);
-        BangumiDetailsSelectionAdapter mBangumiDetailsSelectionAdapter = new BangumiDetailsSelectionAdapter(mBangumiSelectionRecycler, episodes);
-        mBangumiSelectionRecycler.setAdapter(mBangumiDetailsSelectionAdapter);
-        mBangumiDetailsSelectionAdapter.notifyItemForeground(episodes.size() - 1);
-        mBangumiSelectionRecycler.scrollToPosition(episodes.size() - 1);
-        mBangumiDetailsSelectionAdapter.setOnItemClickListener((position, holder) -> {
-            mBangumiDetailsSelectionAdapter.notifyItemForeground(holder.getLayoutPosition());
+        mFoodSelectionRecycler.setLayoutManager(mLinearLayoutManager);
+        FoodDetailsSelectionAdapter mFoodDetailsSelectionAdapter = new FoodDetailsSelectionAdapter(mFoodSelectionRecycler, episodes);
+        mFoodSelectionRecycler.setAdapter(mFoodDetailsSelectionAdapter);
+        mFoodDetailsSelectionAdapter.notifyItemForeground(episodes.size() - 1);
+        mFoodSelectionRecycler.scrollToPosition(episodes.size() - 1);
+        mFoodDetailsSelectionAdapter.setOnItemClickListener((position, holder) -> {
+            mFoodDetailsSelectionAdapter.notifyItemForeground(holder.getLayoutPosition());
             VideoDetailsActivity.launch(FoodDetailsActivity.this,
                     Integer.valueOf(episodes.get(position).getAv_id()), episodes.get(position).getCover());
         });
@@ -278,11 +278,11 @@ public class FoodDetailsActivity extends RxBaseActivity {
      * 初始化美食推荐recyclerView
      */
     private void initRecommendRecycler() {
-        mBangumiRecommendRecycler.setHasFixedSize(false);
-        mBangumiRecommendRecycler.setNestedScrollingEnabled(false);
-        mBangumiRecommendRecycler.setLayoutManager(new GridLayoutManager(FoodDetailsActivity.this, 3));
-        BangumiDetailsRecommendAdapter mBangumiDetailsRecommendAdapter = new BangumiDetailsRecommendAdapter(mBangumiRecommendRecycler, foodRecommends);
-        mBangumiRecommendRecycler.setAdapter(mBangumiDetailsRecommendAdapter);
+        mFoodRecommendRecycler.setHasFixedSize(false);
+        mFoodRecommendRecycler.setNestedScrollingEnabled(false);
+        mFoodRecommendRecycler.setLayoutManager(new GridLayoutManager(FoodDetailsActivity.this, 3));
+        FoodDetailsRecommendAdapter mFoodDetailsRecommendAdapter = new FoodDetailsRecommendAdapter(mFoodRecommendRecycler, foodRecommends);
+        mFoodRecommendRecycler.setAdapter(mFoodDetailsRecommendAdapter);
     }
 
 

@@ -6,7 +6,7 @@ import com.luomor.yiaroundad.entity.food.FoodAppIndexInfo;
 import com.luomor.yiaroundad.entity.food.FoodDetailsInfo;
 import com.luomor.yiaroundad.entity.food.FoodDetailsRecommendInfo;
 import com.luomor.yiaroundad.entity.food.FoodIndexInfo;
-import com.luomor.yiaroundad.entity.food.SeasonNewBangumiInfo;
+import com.luomor.yiaroundad.entity.food.SeasonNewFoodInfo;
 
 import retrofit2.http.GET;
 import rx.Observable;
@@ -48,7 +48,7 @@ public interface FoodService {
      * 分季新美食
      */
     @GET("api/season_group.json?build=3940&device=phone&mobi_app=iphone&platform=ios")
-    Observable<SeasonNewBangumiInfo> getSeasonNewFoodList();
+    Observable<SeasonNewFoodInfo> getSeasonNewFoodList();
 
     /**
      * 美食时间表

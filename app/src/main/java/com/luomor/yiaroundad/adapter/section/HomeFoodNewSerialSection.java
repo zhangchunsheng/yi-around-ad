@@ -31,11 +31,11 @@ import butterknife.ButterKnife;
  * 首页美食新美食连载Section
  */
 
-public class HomeBangumiNewSerialSection extends StatelessSection {
+public class HomeFoodNewSerialSection extends StatelessSection {
     private Context mContext;
     private List<FoodAppIndexInfo.ResultBean.SerializingBean> newFoodSerials;
 
-    public HomeBangumiNewSerialSection(Context context, List<FoodAppIndexInfo.ResultBean.SerializingBean> newFoodSerials) {
+    public HomeFoodNewSerialSection(Context context, List<FoodAppIndexInfo.ResultBean.SerializingBean> newFoodSerials) {
         super(R.layout.layout_home_food_new_serial_head, R.layout.layout_home_food_new_serial_body);
         this.mContext = context;
         this.newFoodSerials = newFoodSerials;
@@ -80,15 +80,15 @@ public class HomeBangumiNewSerialSection extends StatelessSection {
 
     @Override
     public RecyclerView.ViewHolder getHeaderViewHolder(View view) {
-        return new HomeBangumiNewSerialSection.HeaderViewHolder(view);
+        return new HomeFoodNewSerialSection.HeaderViewHolder(view);
     }
 
 
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder) {
-        HomeBangumiNewSerialSection.HeaderViewHolder headerViewHolder
-                = (HomeBangumiNewSerialSection.HeaderViewHolder) holder;
+        HomeFoodNewSerialSection.HeaderViewHolder headerViewHolder
+                = (HomeFoodNewSerialSection.HeaderViewHolder) holder;
         headerViewHolder.mAllSerial.setOnClickListener(v -> mContext.startActivity(
                 new Intent(mContext, NewFoodSerialActivity.class)));
     }

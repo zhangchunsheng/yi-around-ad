@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.luomor.yiaroundad.adapter.ArchiveHeadBangumiAdapter;
+import com.luomor.yiaroundad.adapter.ArchiveHeadFoodAdapter;
 import com.luomor.yiaroundad.adapter.ArchiveResultsAdapter;
 import com.luomor.yiaroundad.adapter.helper.EndlessRecyclerOnScrollListener;
 import com.luomor.yiaroundad.adapter.helper.HeaderViewRecyclerAdapter;
@@ -46,7 +46,7 @@ public class ArchiveResultsFragment extends RxLazyFragment {
     private HeaderViewRecyclerAdapter mHeaderViewRecyclerAdapter;
     private List<SearchArchiveInfo.DataBean.ItemsBean.ArchiveBean> archives = new ArrayList<>();
     private List<SearchArchiveInfo.DataBean.ItemsBean.SeasonBean> seasons = new ArrayList<>();
-    private ArchiveHeadBangumiAdapter archiveHeadBangumiAdapter;
+    private ArchiveHeadFoodAdapter archiveHeadFoodAdapter;
 
     public static ArchiveResultsFragment newInstance(String content) {
         ArchiveResultsFragment fragment = new ArchiveResultsFragment();
@@ -139,7 +139,7 @@ public class ArchiveResultsFragment extends RxLazyFragment {
             }
         }
         loadMoreView.setVisibility(View.GONE);
-        archiveHeadBangumiAdapter.notifyDataSetChanged();
+        archiveHeadFoodAdapter.notifyDataSetChanged();
         if (pageNum * pageSize - pageSize - 1 > 0) {
             mHeaderViewRecyclerAdapter.notifyItemRangeChanged(pageNum * pageSize - pageSize - 1, pageSize);
         } else {
@@ -150,12 +150,12 @@ public class ArchiveResultsFragment extends RxLazyFragment {
 
     private void createHeadView() {
         View headView = LayoutInflater.from(getActivity()).inflate(R.layout.layout_search_archive_head_view, mRecyclerView, false);
-        RecyclerView mHeadBangumiRecycler = (RecyclerView) headView.findViewById(R.id.search_archive_food_head_recycler);
-        mHeadBangumiRecycler.setHasFixedSize(false);
-        mHeadBangumiRecycler.setNestedScrollingEnabled(false);
-        mHeadBangumiRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-        archiveHeadBangumiAdapter = new ArchiveHeadBangumiAdapter(mHeadBangumiRecycler, seasons);
-        mHeadBangumiRecycler.setAdapter(archiveHeadBangumiAdapter);
+        RecyclerView mHeadFoodRecycler = (RecyclerView) headView.findViewById(R.id.search_archive_food_head_recycler);
+        mHeadFoodRecycler.setHasFixedSize(false);
+        mHeadFoodRecycler.setNestedScrollingEnabled(false);
+        mHeadFoodRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        archiveHeadFoodAdapter = new ArchiveHeadFoodAdapter(mHeadFoodRecycler, seasons);
+        mHeadFoodRecycler.setAdapter(archiveHeadFoodAdapter);
         mHeaderViewRecyclerAdapter.addHeaderView(headView);
     }
 

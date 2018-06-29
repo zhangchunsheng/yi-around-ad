@@ -2,7 +2,6 @@ package com.luomor.yiaroundad.adapter.section;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,11 +10,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.luomor.yiaroundad.R;
-import com.luomor.yiaroundad.entity.food.FoodAppIndexInfo;
-import com.luomor.yiaroundad.module.home.food.SeasonNewBangumiActivity;
+import com.luomor.yiaroundad.entity.food.SeasonNewFoodInfo;
 import com.luomor.yiaroundad.utils.NumberUtil;
 import com.luomor.yiaroundad.widget.sectioned.StatelessSection;
+import com.luomor.yiaroundad.R;
 
 import java.util.List;
 
@@ -23,21 +21,23 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by Peter on 2016/10/14 19:44
+ * Created by Peter on 2016/11/1 12:52
  * 1097692918@qq.com
  * <p>
- * 首页美食分季新美食Section
+ * 分季新美食Section
  */
 
-public class HomeBangumiSeasonNewSection extends StatelessSection {
+public class SeasonNewFoodSection extends StatelessSection {
     private Context mContext;
     private int season;
-    private List<FoodAppIndexInfo.ResultBean.PreviousBean.ListBean> seasonNewFoods;
+    private int year;
+    private List<SeasonNewFoodInfo.ResultBean.ListBean> seasonNewFoods;
 
-    public HomeBangumiSeasonNewSection(Context context, int season, List<FoodAppIndexInfo.ResultBean.PreviousBean.ListBean> seasonNewFoods) {
-        super(R.layout.layout_home_food_season_new_head, R.layout.layout_home_food_season_new_body);
+    public SeasonNewFoodSection(Context context, int season, int year, List<SeasonNewFoodInfo.ResultBean.ListBean> seasonNewFoods) {
+        super(R.layout.layout_season_new_food_head, R.layout.layout_home_food_season_new_body);
         this.mContext = context;
         this.season = season;
+        this.year = year;
         this.seasonNewFoods = seasonNewFoods;
     }
 
@@ -50,15 +50,14 @@ public class HomeBangumiSeasonNewSection extends StatelessSection {
 
     @Override
     public RecyclerView.ViewHolder getItemViewHolder(View view) {
-        return new HomeBangumiSeasonNewSection.ItemViewHolder(view);
+        return new SeasonNewFoodSection.ItemViewHolder(view);
     }
-
 
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindItemViewHolder(RecyclerView.ViewHolder holder, int position) {
-        HomeBangumiSeasonNewSection.ItemViewHolder itemViewHolder = (HomeBangumiSeasonNewSection.ItemViewHolder) holder;
-        FoodAppIndexInfo.ResultBean.PreviousBean.ListBean listBean = seasonNewFoods.get(position);
+        SeasonNewFoodSection.ItemViewHolder itemViewHolder = (SeasonNewFoodSection.ItemViewHolder) holder;
+        SeasonNewFoodInfo.ResultBean.ListBean listBean = seasonNewFoods.get(position);
 
         Glide.with(mContext)
                 .load(listBean.getCover())
@@ -69,69 +68,48 @@ public class HomeBangumiSeasonNewSection extends StatelessSection {
                 .into(itemViewHolder.mImage);
 
         itemViewHolder.mTitle.setText(listBean.getTitle());
-        itemViewHolder.mPlay.setText(
-                NumberUtil.converString(Integer.valueOf(listBean.getFavourites())) + "人追美食");
-        itemViewHolder.mCardView.setOnClickListener(v -> {
-        });
+        itemViewHolder.mPlay.setText(NumberUtil.converString(Integer.valueOf(listBean.getFavourites())) + "人追美食");
     }
 
 
     @Override
     public RecyclerView.ViewHolder getHeaderViewHolder(View view) {
-        return new HomeBangumiSeasonNewSection.HeaderViewHolder(view);
+        return new SeasonNewFoodSection.HeadViewHolder(view);
     }
 
-
-    @SuppressLint("SetTextI18n")
     @Override
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder) {
-        HomeBangumiSeasonNewSection.HeaderViewHolder headerViewHolder = (HomeBangumiSeasonNewSection.HeaderViewHolder) holder;
-        setSeasonIcon(headerViewHolder);
-        headerViewHolder.mAllNewBangumi.setOnClickListener(v -> mContext.startActivity(
-                new Intent(mContext, SeasonNewBangumiActivity.class)));
+        SeasonNewFoodSection.HeadViewHolder headViewHolder = (SeasonNewFoodSection.HeadViewHolder) holder;
+        setSeasonIcon(headViewHolder);
     }
 
 
     @SuppressLint("SetTextI18n")
-    private void setSeasonIcon(HomeBangumiSeasonNewSection.HeaderViewHolder headViewHolder) {
+    private void setSeasonIcon(HeadViewHolder headViewHolder) {
         switch (season) {
             case 1:
                 //冬季
-                headViewHolder.mSeasonText.setText("1月新美食");
+                headViewHolder.mSeasonText.setText(year + "年1月");
                 headViewHolder.mSeasonIcon.setImageResource(R.drawable.food_home_ic_season_1);
                 break;
             case 2:
                 //春季
-                headViewHolder.mSeasonText.setText("4月新美食");
+                headViewHolder.mSeasonText.setText(year + "年4月");
                 headViewHolder.mSeasonIcon.setImageResource(R.drawable.food_home_ic_season_2);
                 break;
             case 3:
                 //夏季
-                headViewHolder.mSeasonText.setText("7月新美食");
+                headViewHolder.mSeasonText.setText(year + "年7月");
                 headViewHolder.mSeasonIcon.setImageResource(R.drawable.food_home_ic_season_3);
                 break;
             case 4:
                 //秋季
-                headViewHolder.mSeasonText.setText("10月新美食");
+                headViewHolder.mSeasonText.setText(year + "年10月");
                 headViewHolder.mSeasonIcon.setImageResource(R.drawable.food_home_ic_season_4);
                 break;
         }
     }
 
-
-    static class HeaderViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.tv_all_new_food)
-        TextView mAllNewBangumi;
-        @BindView(R.id.iv_season)
-        ImageView mSeasonIcon;
-        @BindView(R.id.tv_season)
-        TextView mSeasonText;
-
-        HeaderViewHolder(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-        }
-    }
 
     static class ItemViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.card_view)
@@ -144,6 +122,20 @@ public class HomeBangumiSeasonNewSection extends StatelessSection {
         TextView mPlay;
 
         public ItemViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+        }
+    }
+
+    static class HeadViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.iv_season)
+        ImageView mSeasonIcon;
+        @BindView(R.id.tv_season)
+        TextView mSeasonText;
+        @BindView(R.id.tv_more)
+        TextView mMore;
+
+        public HeadViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

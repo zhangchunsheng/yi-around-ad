@@ -21,10 +21,10 @@ import java.util.List;
  * <p/>
  * 美食搜索数据Adapter
  */
-public class BangumiResultsAdapter extends AbsRecyclerViewAdapter {
+public class FoodResultsAdapter extends AbsRecyclerViewAdapter {
     private List<SearchFoodInfo.DataBean.ItemsBean> foods;
 
-    public BangumiResultsAdapter(RecyclerView recyclerView, List<SearchFoodInfo.DataBean.ItemsBean> foods) {
+    public FoodResultsAdapter(RecyclerView recyclerView, List<SearchFoodInfo.DataBean.ItemsBean> foods) {
         super(recyclerView);
         this.foods = foods;
     }
@@ -60,7 +60,7 @@ public class BangumiResultsAdapter extends AbsRecyclerViewAdapter {
                 itemViewHolder.mFoodCount.setText(
                         itemsBean.getNewest_season() + "," + "更新至第" + itemsBean.getTotal_count() + "话");
             }
-            itemViewHolder.mBangumiDetails.setText(itemsBean.getCat_desc());
+            itemViewHolder.mFoodDetails.setText(itemsBean.getCat_desc());
         }
         super.onBindViewHolder(holder, position);
     }
@@ -76,14 +76,14 @@ public class BangumiResultsAdapter extends AbsRecyclerViewAdapter {
 
         ImageView mFoodPic;
         TextView mFoodTitle;
-        TextView mBangumiDetails;
+        TextView mFoodDetails;
         TextView mFoodCount;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
             mFoodPic = $(R.id.item_img);
             mFoodTitle = $(R.id.item_title);
-            mBangumiDetails = $(R.id.item_details);
+            mFoodDetails = $(R.id.item_details);
             mFoodCount = $(R.id.item_count);
         }
     }

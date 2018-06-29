@@ -19,10 +19,10 @@ import butterknife.ButterKnife;
  * <p/>
  * 首页美食界面轮播图Section
  */
-public class HomeBangumiBannerSection extends StatelessSection {
+public class HomeFoodBannerSection extends StatelessSection {
     private List<BannerEntity> banners;
 
-    public HomeBangumiBannerSection(List<BannerEntity> banners) {
+    public HomeFoodBannerSection(List<BannerEntity> banners) {
         super(R.layout.layout_banner, R.layout.layout_home_recommend_empty);
         this.banners = banners;
     }

@@ -19,17 +19,17 @@ import com.luomor.yiaroundad.R;
 import java.util.List;
 
 /**
- * Created by Peter on 16/11/2 14:12
+ * Created by Peter on 16/8/4 14:12
  * 1097692918@qq.com
  * <p/>
- * 美食详情美食评论adapter
+ * 美食详情热门评论adapter
  */
-public class BangumiDetailsCommentAdapter extends AbsRecyclerViewAdapter {
-    private List<FoodDetailsCommentInfo.DataBean.RepliesBean> replies;
+public class FoodDetailsHotCommentAdapter extends AbsRecyclerViewAdapter {
+    private List<FoodDetailsCommentInfo.DataBean.HotsBean> hotComments;
 
-    public BangumiDetailsCommentAdapter(RecyclerView recyclerView, List<FoodDetailsCommentInfo.DataBean.RepliesBean> replies) {
+    public FoodDetailsHotCommentAdapter(RecyclerView recyclerView, List<FoodDetailsCommentInfo.DataBean.HotsBean> hotComments) {
         super(recyclerView);
-        this.replies = replies;
+        this.hotComments = hotComments;
     }
 
 
@@ -46,21 +46,21 @@ public class BangumiDetailsCommentAdapter extends AbsRecyclerViewAdapter {
     public void onBindViewHolder(ClickableViewHolder holder, int position) {
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder mHolder = (ItemViewHolder) holder;
-            FoodDetailsCommentInfo.DataBean.RepliesBean repliesBean = replies.get(position);
-            mHolder.mUserName.setText(repliesBean.getMember().getUname());
+            FoodDetailsCommentInfo.DataBean.HotsBean hotsBean = hotComments.get(position);
+            mHolder.mUserName.setText(hotsBean.getMember().getUname());
 
             Glide.with(getContext())
-                    .load(repliesBean.getMember().getAvatar())
+                    .load(hotsBean.getMember().getAvatar())
                     .centerCrop()
                     .dontAnimate()
                     .placeholder(R.drawable.ico_user_default)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(mHolder.mUserAvatar);
 
-            int currentLevel = repliesBean.getMember().getLevel_info().getCurrent_level();
+            int currentLevel = hotsBean.getMember().getLevel_info().getCurrent_level();
             checkLevel(currentLevel, mHolder);
 
-            switch (repliesBean.getMember().getSex()) {
+            switch (hotsBean.getMember().getSex()) {
                 case "女":
                     mHolder.mUserSex.setImageResource(R.drawable.ic_user_female);
                     break;
@@ -72,14 +72,19 @@ public class BangumiDetailsCommentAdapter extends AbsRecyclerViewAdapter {
                     break;
             }
 
-            mHolder.mCommentNum.setText(String.valueOf(repliesBean.getCount()));
-            mHolder.mSpot.setText(String.valueOf(repliesBean.getLike()));
-            String time = DateUtil.longToString(repliesBean.getCtime(), DateUtil.FORMAT_DATE_TIME);
+            mHolder.mCommentNum.setText(String.valueOf(hotsBean.getCount()));
+            mHolder.mSpot.setText(String.valueOf(hotsBean.getLike()));
+            String time = DateUtil.longToString(hotsBean.getCtime(), DateUtil.FORMAT_DATE_TIME);
             mHolder.mCommentTime.setText(time);
-            mHolder.mContent.setText(repliesBean.getContent().getMessage());
-            mHolder.mFloor.setText("#" + repliesBean.getFloor());
-        }
+            mHolder.mContent.setText(hotsBean.getContent().getMessage());
+            mHolder.mFloor.setText("#" + hotsBean.getFloor());
 
+            if (position == hotComments.size() - 1) {
+                mHolder.mLine.setVisibility(View.GONE);
+            } else {
+                mHolder.mLine.setVisibility(View.VISIBLE);
+            }
+        }
         super.onBindViewHolder(holder, position);
     }
 
@@ -105,7 +110,7 @@ public class BangumiDetailsCommentAdapter extends AbsRecyclerViewAdapter {
 
     @Override
     public int getItemCount() {
-        return replies.size();
+        return hotComments.size() == 0 ? 0 : 3;
     }
 
 
@@ -120,6 +125,8 @@ public class BangumiDetailsCommentAdapter extends AbsRecyclerViewAdapter {
         TextView mCommentNum;
         TextView mSpot;
         TextView mContent;
+        View mLine;
+
 
         public ItemViewHolder(View itemView) {
             super(itemView);
@@ -132,6 +139,7 @@ public class BangumiDetailsCommentAdapter extends AbsRecyclerViewAdapter {
             mCommentNum = $(R.id.item_comment_num);
             mSpot = $(R.id.item_comment_spot);
             mContent = $(R.id.item_comment_content);
+            mLine = $(R.id.line);
         }
     }
 }

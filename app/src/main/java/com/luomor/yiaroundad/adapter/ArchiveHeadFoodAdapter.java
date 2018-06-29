@@ -21,10 +21,10 @@ import java.util.List;
  * <p/>
  * 综合搜索头部美食Adapter
  */
-public class ArchiveHeadBangumiAdapter extends AbsRecyclerViewAdapter {
+public class ArchiveHeadFoodAdapter extends AbsRecyclerViewAdapter {
     private List<SearchArchiveInfo.DataBean.ItemsBean.SeasonBean> seasons;
 
-    public ArchiveHeadBangumiAdapter(RecyclerView recyclerView, List<SearchArchiveInfo.DataBean.ItemsBean.SeasonBean> seasons) {
+    public ArchiveHeadFoodAdapter(RecyclerView recyclerView, List<SearchArchiveInfo.DataBean.ItemsBean.SeasonBean> seasons) {
         super(recyclerView);
         this.seasons = seasons;
     }
@@ -60,7 +60,7 @@ public class ArchiveHeadBangumiAdapter extends AbsRecyclerViewAdapter {
                 itemViewHolder.mFoodCount.setText(
                         seasonBean.getNewest_season() + "," + "更新至第" + seasonBean.getTotal_count() + "话");
             }
-            itemViewHolder.mBangumiDetails.setText(seasonBean.getCat_desc());
+            itemViewHolder.mFoodDetails.setText(seasonBean.getCat_desc());
         }
 
         super.onBindViewHolder(holder, position);
@@ -77,7 +77,7 @@ public class ArchiveHeadBangumiAdapter extends AbsRecyclerViewAdapter {
 
         ImageView mFoodPic;
         TextView mFoodTitle;
-        TextView mBangumiDetails;
+        TextView mFoodDetails;
         TextView mFoodCount;
 
 
@@ -85,7 +85,7 @@ public class ArchiveHeadBangumiAdapter extends AbsRecyclerViewAdapter {
             super(itemView);
             mFoodPic = $(R.id.item_img);
             mFoodTitle = $(R.id.item_title);
-            mBangumiDetails = $(R.id.item_details);
+            mFoodDetails = $(R.id.item_details);
             mFoodCount = $(R.id.item_count);
         }
     }

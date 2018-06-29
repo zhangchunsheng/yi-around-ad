@@ -25,11 +25,11 @@ import butterknife.ButterKnife;
  * <p/>
  * 首页美食界面内容Section
  */
-public class HomeBangumiBobySection extends StatelessSection {
+public class HomeFoodBobySection extends StatelessSection {
     private Context mContext;
     private List<FoodAppIndexInfo.ResultBean.AdBean.BodyBean> foodbobys;
 
-    public HomeBangumiBobySection(Context context, List<FoodAppIndexInfo.ResultBean.AdBean.BodyBean> foodbobys) {
+    public HomeFoodBobySection(Context context, List<FoodAppIndexInfo.ResultBean.AdBean.BodyBean> foodbobys) {
         super(R.layout.layout_home_food_boby, R.layout.layout_home_recommend_empty);
         this.mContext = context;
         this.foodbobys = foodbobys;
@@ -55,13 +55,13 @@ public class HomeBangumiBobySection extends StatelessSection {
 
     @Override
     public RecyclerView.ViewHolder getHeaderViewHolder(View view) {
-        return new BangumiBobyViewHolder(view);
+        return new FoodBobyViewHolder(view);
     }
 
 
     @Override
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder) {
-        BangumiBobyViewHolder foodBobyViewHolder = (BangumiBobyViewHolder) holder;
+        FoodBobyViewHolder foodBobyViewHolder = (FoodBobyViewHolder) holder;
 
         Glide.with(mContext)
                 .load(foodbobys.get(0).getImg())
@@ -82,13 +82,13 @@ public class HomeBangumiBobySection extends StatelessSection {
         }
     }
 
-    static class BangumiBobyViewHolder extends RecyclerView.ViewHolder {
+    static class FoodBobyViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.home_food_boby_image)
         ImageView mBobyImage;
         @BindView(R.id.card_view)
         CardView mCardView;
 
-        BangumiBobyViewHolder(View itemView) {
+        FoodBobyViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

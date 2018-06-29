@@ -12,8 +12,8 @@ import com.luomor.yiaroundad.base.RxBaseActivity;
 import com.luomor.yiaroundad.widget.CircleProgressView;
 import com.luomor.yiaroundad.widget.sectioned.SectionedRecyclerViewAdapter;
 import com.luomor.yiaroundad.R;
-import com.luomor.yiaroundad.adapter.section.SeasonNewBangumiSection;
-import com.luomor.yiaroundad.entity.food.SeasonNewBangumiInfo;
+import com.luomor.yiaroundad.adapter.section.SeasonNewFoodSection;
+import com.luomor.yiaroundad.entity.food.SeasonNewFoodInfo;
 import com.luomor.yiaroundad.network.RetrofitHelper;
 
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ import rx.schedulers.Schedulers;
  * 更多新美食列表界面
  */
 
-public class SeasonNewBangumiActivity extends RxBaseActivity {
+public class SeasonNewFoodActivity extends RxBaseActivity {
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
     @BindView(R.id.recycle)
@@ -40,7 +40,7 @@ public class SeasonNewBangumiActivity extends RxBaseActivity {
     CircleProgressView mCircleProgressView;
 
     private SectionedRecyclerViewAdapter mSectionedRecyclerViewAdapter;
-    private List<SeasonNewBangumiInfo.ResultBean> results = new ArrayList<>();
+    private List<SeasonNewFoodInfo.ResultBean> results = new ArrayList<>();
 
 
     @Override
@@ -64,8 +64,8 @@ public class SeasonNewBangumiActivity extends RxBaseActivity {
                 .doOnSubscribe(this::showProgressBar)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(seasonNewBangumiInfo -> {
-                    results.addAll(seasonNewBangumiInfo.getResult().subList(0,50));
+                .subscribe(seasonNewFoodInfo -> {
+                    results.addAll(seasonNewFoodInfo.getResult().subList(0,50));
                     finishTask();
                 }, throwable -> hideProgressBar());
     }
@@ -76,7 +76,7 @@ public class SeasonNewBangumiActivity extends RxBaseActivity {
         Observable.from(results)
                 .compose(bindToLifecycle())
                 .forEach(resultBean -> mSectionedRecyclerViewAdapter.addSection(
-                        new SeasonNewBangumiSection(SeasonNewBangumiActivity.this,
+                        new SeasonNewFoodSection(SeasonNewFoodActivity.this,
                                 resultBean.getSeason(), resultBean.getYear(), resultBean.getList())));
         mSectionedRecyclerViewAdapter.notifyDataSetChanged();
         hideProgressBar();
@@ -86,7 +86,7 @@ public class SeasonNewBangumiActivity extends RxBaseActivity {
     @Override
     public void initRecyclerView() {
         mSectionedRecyclerViewAdapter = new SectionedRecyclerViewAdapter();
-        GridLayoutManager mGridLayoutManager = new GridLayoutManager(SeasonNewBangumiActivity.this, 3);
+        GridLayoutManager mGridLayoutManager = new GridLayoutManager(SeasonNewFoodActivity.this, 3);
         mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {

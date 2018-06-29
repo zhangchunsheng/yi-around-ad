@@ -20,11 +20,11 @@ import java.util.List;
  * 美食选集adapter
  */
 
-public class BangumiDetailsSelectionAdapter extends AbsRecyclerViewAdapter {
+public class FoodDetailsSelectionAdapter extends AbsRecyclerViewAdapter {
     private int layoutPosition = 0;
     private List<FoodDetailsInfo.ResultBean.EpisodesBean> episodes;
 
-    public BangumiDetailsSelectionAdapter(RecyclerView recyclerView, List<FoodDetailsInfo.ResultBean.EpisodesBean> episodes) {
+    public FoodDetailsSelectionAdapter(RecyclerView recyclerView, List<FoodDetailsInfo.ResultBean.EpisodesBean> episodes) {
         super(recyclerView);
         this.episodes = episodes;
     }

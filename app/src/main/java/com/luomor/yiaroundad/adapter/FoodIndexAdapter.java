@@ -21,10 +21,10 @@ import java.util.List;
  * <p/>
  * 美食索引Adapter
  */
-public class BangumiIndexAdapter extends AbsRecyclerViewAdapter {
+public class FoodIndexAdapter extends AbsRecyclerViewAdapter {
     private List<FoodIndexInfo.ResultBean.CategoryBean> categorys;
 
-    public BangumiIndexAdapter(RecyclerView recyclerView, List<FoodIndexInfo.ResultBean.CategoryBean> categorys) {
+    public FoodIndexAdapter(RecyclerView recyclerView, List<FoodIndexInfo.ResultBean.CategoryBean> categorys) {
         super(recyclerView);
         this.categorys = categorys;
     }

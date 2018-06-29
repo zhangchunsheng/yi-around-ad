@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.luomor.yiaroundad.adapter.section.BangumiScheduleSection;
+import com.luomor.yiaroundad.adapter.section.FoodScheduleSection;
 import com.luomor.yiaroundad.base.RxBaseActivity;
 import com.luomor.yiaroundad.entity.food.FoodScheduleInfo;
 import com.luomor.yiaroundad.network.RetrofitHelper;
@@ -44,13 +44,13 @@ public class FoodScheduleActivity extends RxBaseActivity {
 
     private SectionedRecyclerViewAdapter mSectionedAdapter;
     private List<FoodScheduleInfo.ResultBean> foodSchedules = new ArrayList<>();
-    private List<FoodScheduleInfo.ResultBean> sundayBangumis = new ArrayList<>();
-    private List<FoodScheduleInfo.ResultBean> mondayBangumis = new ArrayList<>();
-    private List<FoodScheduleInfo.ResultBean> tuesdayBangumis = new ArrayList<>();
-    private List<FoodScheduleInfo.ResultBean> wednesdayBangumis = new ArrayList<>();
-    private List<FoodScheduleInfo.ResultBean> thursdayBangumis = new ArrayList<>();
-    private List<FoodScheduleInfo.ResultBean> fridayBangumis = new ArrayList<>();
-    private List<FoodScheduleInfo.ResultBean> saturdayBangumis = new ArrayList<>();
+    private List<FoodScheduleInfo.ResultBean> sundayFoods = new ArrayList<>();
+    private List<FoodScheduleInfo.ResultBean> mondayFoods = new ArrayList<>();
+    private List<FoodScheduleInfo.ResultBean> tuesdayFoods = new ArrayList<>();
+    private List<FoodScheduleInfo.ResultBean> wednesdayFoods = new ArrayList<>();
+    private List<FoodScheduleInfo.ResultBean> thursdayFoods = new ArrayList<>();
+    private List<FoodScheduleInfo.ResultBean> fridayFoods = new ArrayList<>();
+    private List<FoodScheduleInfo.ResultBean> saturdayFoods = new ArrayList<>();
 
 
     @Override
@@ -109,20 +109,20 @@ public class FoodScheduleActivity extends RxBaseActivity {
                 .compose(bindToLifecycle())
                 .forEach(this::accordingWeekGroup);
 
-        mSectionedAdapter.addSection(new BangumiScheduleSection(FoodScheduleActivity.this, sundayBangumis, ConstantUtil.SUNDAY_TYPE,
-                saturdayBangumis.size() > 0 ? WeekDayUtil.formatDate(sundayBangumis.get(0).getPub_date()) : ""));
-        mSectionedAdapter.addSection(new BangumiScheduleSection(FoodScheduleActivity.this, mondayBangumis, ConstantUtil.MONDAY_TYPE,
-                mondayBangumis.size() > 0 ? WeekDayUtil.formatDate(mondayBangumis.get(0).getPub_date()) : ""));
-        mSectionedAdapter.addSection(new BangumiScheduleSection(FoodScheduleActivity.this, tuesdayBangumis, ConstantUtil.TUESDAY_TYPE,
-                tuesdayBangumis.size() > 0 ? WeekDayUtil.formatDate(tuesdayBangumis.get(0).getPub_date()) : ""));
-        mSectionedAdapter.addSection(new BangumiScheduleSection(FoodScheduleActivity.this, wednesdayBangumis, ConstantUtil.WEDNESDAY_TYPE,
-                wednesdayBangumis.size() > 0 ? WeekDayUtil.formatDate(wednesdayBangumis.get(0).getPub_date()) : ""));
-        mSectionedAdapter.addSection(new BangumiScheduleSection(FoodScheduleActivity.this, thursdayBangumis, ConstantUtil.THURSDAY_TYPE,
-                thursdayBangumis.size() > 0 ? WeekDayUtil.formatDate(thursdayBangumis.get(0).getPub_date()) : ""));
-        mSectionedAdapter.addSection(new BangumiScheduleSection(FoodScheduleActivity.this, fridayBangumis, ConstantUtil.FRIDAY_TYEP,
-                fridayBangumis.size() > 0 ? WeekDayUtil.formatDate(fridayBangumis.get(0).getPub_date()) : ""));
-        mSectionedAdapter.addSection(new BangumiScheduleSection(FoodScheduleActivity.this, saturdayBangumis, ConstantUtil.SATURDAY_TYPE,
-                saturdayBangumis.size() > 0 ? WeekDayUtil.formatDate(saturdayBangumis.get(0).getPub_date()) : ""));
+        mSectionedAdapter.addSection(new FoodScheduleSection(FoodScheduleActivity.this, sundayFoods, ConstantUtil.SUNDAY_TYPE,
+                saturdayFoods.size() > 0 ? WeekDayUtil.formatDate(sundayFoods.get(0).getPub_date()) : ""));
+        mSectionedAdapter.addSection(new FoodScheduleSection(FoodScheduleActivity.this, mondayFoods, ConstantUtil.MONDAY_TYPE,
+                mondayFoods.size() > 0 ? WeekDayUtil.formatDate(mondayFoods.get(0).getPub_date()) : ""));
+        mSectionedAdapter.addSection(new FoodScheduleSection(FoodScheduleActivity.this, tuesdayFoods, ConstantUtil.TUESDAY_TYPE,
+                tuesdayFoods.size() > 0 ? WeekDayUtil.formatDate(tuesdayFoods.get(0).getPub_date()) : ""));
+        mSectionedAdapter.addSection(new FoodScheduleSection(FoodScheduleActivity.this, wednesdayFoods, ConstantUtil.WEDNESDAY_TYPE,
+                wednesdayFoods.size() > 0 ? WeekDayUtil.formatDate(wednesdayFoods.get(0).getPub_date()) : ""));
+        mSectionedAdapter.addSection(new FoodScheduleSection(FoodScheduleActivity.this, thursdayFoods, ConstantUtil.THURSDAY_TYPE,
+                thursdayFoods.size() > 0 ? WeekDayUtil.formatDate(thursdayFoods.get(0).getPub_date()) : ""));
+        mSectionedAdapter.addSection(new FoodScheduleSection(FoodScheduleActivity.this, fridayFoods, ConstantUtil.FRIDAY_TYEP,
+                fridayFoods.size() > 0 ? WeekDayUtil.formatDate(fridayFoods.get(0).getPub_date()) : ""));
+        mSectionedAdapter.addSection(new FoodScheduleSection(FoodScheduleActivity.this, saturdayFoods, ConstantUtil.SATURDAY_TYPE,
+                saturdayFoods.size() > 0 ? WeekDayUtil.formatDate(saturdayFoods.get(0).getPub_date()) : ""));
 
         mSectionedAdapter.notifyDataSetChanged();
         hideProgressBar();
@@ -132,25 +132,25 @@ public class FoodScheduleActivity extends RxBaseActivity {
     private void accordingWeekGroup(FoodScheduleInfo.ResultBean resultBean) {
         switch (WeekDayUtil.getWeek(resultBean.getPub_date())) {
             case ConstantUtil.SUNDAY_TYPE:
-                sundayBangumis.add(resultBean);
+                sundayFoods.add(resultBean);
                 break;
             case ConstantUtil.MONDAY_TYPE:
-                mondayBangumis.add(resultBean);
+                mondayFoods.add(resultBean);
                 break;
             case ConstantUtil.TUESDAY_TYPE:
-                tuesdayBangumis.add(resultBean);
+                tuesdayFoods.add(resultBean);
                 break;
             case ConstantUtil.WEDNESDAY_TYPE:
-                wednesdayBangumis.add(resultBean);
+                wednesdayFoods.add(resultBean);
                 break;
             case ConstantUtil.THURSDAY_TYPE:
-                thursdayBangumis.add(resultBean);
+                thursdayFoods.add(resultBean);
                 break;
             case ConstantUtil.FRIDAY_TYEP:
-                fridayBangumis.add(resultBean);
+                fridayFoods.add(resultBean);
                 break;
             case ConstantUtil.SATURDAY_TYPE:
-                saturdayBangumis.add(resultBean);
+                saturdayFoods.add(resultBean);
                 break;
         }
     }

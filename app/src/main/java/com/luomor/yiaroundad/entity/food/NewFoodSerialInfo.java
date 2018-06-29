@@ -10,7 +10,7 @@ import java.util.List;
  * <p/>
  * 新美食连载
  */
-public class NewBangumiSerialInfo {
+public class NewFoodSerialInfo {
     private String count;
     private List<ListBean> list;
 

@@ -8,9 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.luomor.yiaroundad.adapter.NewBangumiSerialAdapter;
+import com.luomor.yiaroundad.adapter.NewFoodSerialAdapter;
 import com.luomor.yiaroundad.base.RxBaseActivity;
-import com.luomor.yiaroundad.entity.food.NewBangumiSerialInfo;
+import com.luomor.yiaroundad.entity.food.NewFoodSerialInfo;
 import com.luomor.yiaroundad.widget.CircleProgressView;
 import com.luomor.yiaroundad.R;
 import com.luomor.yiaroundad.network.RetrofitHelper;
@@ -37,8 +37,8 @@ public class NewFoodSerialActivity extends RxBaseActivity {
     @BindView(R.id.circle_progress)
     CircleProgressView mCircleProgressView;
 
-    private NewBangumiSerialAdapter mAdapter;
-    private List<NewBangumiSerialInfo.ListBean> newFoodSerials = new ArrayList<>();
+    private NewFoodSerialAdapter mAdapter;
+    private List<NewFoodSerialInfo.ListBean> newFoodSerials = new ArrayList<>();
 
     @Override
     public int getLayoutId() {
@@ -57,7 +57,7 @@ public class NewFoodSerialActivity extends RxBaseActivity {
                 .getNewFoodSerialList()
                 .compose(this.bindToLifecycle())
                 .doOnSubscribe(this::showProgressBar)
-                .map(NewBangumiSerialInfo::getList)
+                .map(NewFoodSerialInfo::getList)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(listBeans -> {
@@ -98,7 +98,7 @@ public class NewFoodSerialActivity extends RxBaseActivity {
     public void initRecyclerView() {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new GridLayoutManager(NewFoodSerialActivity.this, 3));
-        mAdapter = new NewBangumiSerialAdapter(mRecyclerView, newFoodSerials, true);
+        mAdapter = new NewFoodSerialAdapter(mRecyclerView, newFoodSerials, true);
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener((position, holder) -> {
 

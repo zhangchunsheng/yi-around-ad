@@ -27,13 +27,13 @@ import butterknife.ButterKnife;
  * <p/>
  * 美食放送表section
  */
-public class BangumiScheduleSection extends StatelessSection {
+public class FoodScheduleSection extends StatelessSection {
     private Context mContext;
     private String weekDay;
     private String date;
     private List<FoodScheduleInfo.ResultBean> foodSchedules;
 
-    public BangumiScheduleSection(Context context, List<FoodScheduleInfo.ResultBean> foodSchedules, String weekDay, String date) {
+    public FoodScheduleSection(Context context, List<FoodScheduleInfo.ResultBean> foodSchedules, String weekDay, String date) {
         super(R.layout.layout_food_schedule_head, R.layout.layout_food_schedule_boby);
         this.mContext = context;
         this.weekDay = weekDay;

@@ -107,8 +107,8 @@ public class HomeRegionFragment extends RxLazyFragment {
                     break;
                 case 1:
                     //美食
-                    RegionTypesInfo.DataBean mBangumi = regionTypes.get(1);
-                    RegionTypeDetailsActivity.launch(getActivity(), mBangumi);
+                    RegionTypesInfo.DataBean mFood = regionTypes.get(1);
+                    RegionTypeDetailsActivity.launch(getActivity(), mFood);
                     break;
                 case 2:
                     //动画

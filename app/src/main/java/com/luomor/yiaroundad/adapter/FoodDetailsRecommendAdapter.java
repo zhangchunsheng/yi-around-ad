@@ -1,5 +1,6 @@
 package com.luomor.yiaroundad.adapter;
 
+import android.annotation.SuppressLint;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,56 +11,55 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.luomor.yiaroundad.adapter.helper.AbsRecyclerViewAdapter;
-import com.luomor.yiaroundad.entity.food.FoodRecommendInfo;
+import com.luomor.yiaroundad.entity.food.FoodDetailsRecommendInfo;
+import com.luomor.yiaroundad.utils.NumberUtil;
 import com.luomor.yiaroundad.R;
 
 import java.util.List;
 
 /**
- * Created by Peter on 2016/10/2 17:06
+ * Created by Peter on 16/8/6 11:51
  * 1097692918@qq.com
- * <p>
- * 首页美食推荐adapter
+ * <p/>
+ * 美食详情美食推荐adapter
  */
+public class FoodDetailsRecommendAdapter extends AbsRecyclerViewAdapter {
+    private List<FoodDetailsRecommendInfo.ResultBean.ListBean> foodRecommends;
 
-public class HomeBangumiRecommendAdapter extends AbsRecyclerViewAdapter {
-    private List<FoodRecommendInfo.ResultBean> mBangumiDetailsRecommends;
-
-    public HomeBangumiRecommendAdapter(RecyclerView recyclerView, List<FoodRecommendInfo.ResultBean> mBangumiDetailsRecommends) {
+    public FoodDetailsRecommendAdapter(RecyclerView recyclerView, List<FoodDetailsRecommendInfo.ResultBean.ListBean> foodRecommends) {
         super(recyclerView);
-        this.mBangumiDetailsRecommends = mBangumiDetailsRecommends;
+        this.foodRecommends = foodRecommends;
     }
 
 
     @Override
     public ClickableViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
         bindContext(parent.getContext());
-        return new ItemViewHolder(
-                LayoutInflater.from(getContext()).inflate(R.layout.item_food_recommend, parent, false));
+        return new ItemViewHolder(LayoutInflater.from(getContext())
+                .inflate(R.layout.item_food_details_recommend, parent, false));
     }
 
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(ClickableViewHolder holder, int position) {
+
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-            FoodRecommendInfo.ResultBean resultBean = mBangumiDetailsRecommends.get(position);
+            FoodDetailsRecommendInfo.ResultBean.ListBean listBean = foodRecommends.get(position);
 
             Glide.with(getContext())
-                    .load(resultBean.getCover())
+                    .load(listBean.getCover())
                     .centerCrop()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .placeholder(R.drawable.bili_default_image_tv)
                     .dontAnimate()
                     .into(itemViewHolder.mImage);
 
-            itemViewHolder.mTitle.setText(resultBean.getTitle());
-            itemViewHolder.mDesc.setText(resultBean.getDesc());
-            if (resultBean.getIs_new() == 1) {
-                itemViewHolder.mIsNew.setVisibility(View.VISIBLE);
-            } else {
-                itemViewHolder.mIsNew.setVisibility(View.GONE);
-            }
+            itemViewHolder.mTitle.setText(listBean.getTitle());
+            itemViewHolder.mFollow.setText(
+                    NumberUtil.converString(Integer.valueOf(listBean.getFollow())) + "人追美食");
         }
         super.onBindViewHolder(holder, position);
     }
@@ -67,23 +67,26 @@ public class HomeBangumiRecommendAdapter extends AbsRecyclerViewAdapter {
 
     @Override
     public int getItemCount() {
-        return mBangumiDetailsRecommends.size();
+
+        return foodRecommends.size();
     }
 
 
     private class ItemViewHolder extends AbsRecyclerViewAdapter.ClickableViewHolder {
 
         ImageView mImage;
+
         TextView mTitle;
-        TextView mDesc;
-        ImageView mIsNew;
+
+        TextView mFollow;
+
 
         public ItemViewHolder(View itemView) {
+
             super(itemView);
             mImage = $(R.id.item_img);
             mTitle = $(R.id.item_title);
-            mDesc = $(R.id.item_desc);
-            mIsNew = $(R.id.item_is_new);
+            mFollow = $(R.id.item_follow);
         }
     }
 }

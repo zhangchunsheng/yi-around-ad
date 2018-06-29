@@ -9,7 +9,7 @@ import java.util.List;
  * 分季新美食模型类
  */
 
-public class SeasonNewBangumiInfo {
+public class SeasonNewFoodInfo {
     private int code;
     private String message;
     private List<ResultBean> result;

@@ -6,12 +6,12 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.luomor.yiaroundad.adapter.section.HomeBangumiBannerSection;
-import com.luomor.yiaroundad.adapter.section.HomeBangumiBobySection;
-import com.luomor.yiaroundad.adapter.section.HomeBangumiItemSection;
-import com.luomor.yiaroundad.adapter.section.HomeBangumiNewSerialSection;
-import com.luomor.yiaroundad.adapter.section.HomeBangumiRecommendSection;
-import com.luomor.yiaroundad.adapter.section.HomeBangumiSeasonNewSection;
+import com.luomor.yiaroundad.adapter.section.HomeFoodBannerSection;
+import com.luomor.yiaroundad.adapter.section.HomeFoodBobySection;
+import com.luomor.yiaroundad.adapter.section.HomeFoodItemSection;
+import com.luomor.yiaroundad.adapter.section.HomeFoodNewSerialSection;
+import com.luomor.yiaroundad.adapter.section.HomeFoodRecommendSection;
+import com.luomor.yiaroundad.adapter.section.HomeFoodSeasonNewSection;
 import com.luomor.yiaroundad.base.RxLazyFragment;
 import com.luomor.yiaroundad.entity.food.FoodAppIndexInfo;
 import com.luomor.yiaroundad.entity.food.FoodRecommendInfo;
@@ -166,14 +166,14 @@ public class HomeFoodFragment extends RxLazyFragment {
                 .compose(bindToLifecycle())
                 .forEach(bannersBean -> bannerList.add(new BannerEntity(
                         bannersBean.getLink(), bannersBean.getTitle(), bannersBean.getImg())));
-        mSectionedRecyclerViewAdapter.addSection(new HomeBangumiBannerSection(bannerList));
-        mSectionedRecyclerViewAdapter.addSection(new HomeBangumiItemSection(getActivity()));
-        mSectionedRecyclerViewAdapter.addSection(new HomeBangumiNewSerialSection(getActivity(), newFoodSerials));
+        mSectionedRecyclerViewAdapter.addSection(new HomeFoodBannerSection(bannerList));
+        mSectionedRecyclerViewAdapter.addSection(new HomeFoodItemSection(getActivity()));
+        mSectionedRecyclerViewAdapter.addSection(new HomeFoodNewSerialSection(getActivity(), newFoodSerials));
         if (!foodbobys.isEmpty()) {
-            mSectionedRecyclerViewAdapter.addSection(new HomeBangumiBobySection(getActivity(), foodbobys));
+            mSectionedRecyclerViewAdapter.addSection(new HomeFoodBobySection(getActivity(), foodbobys));
         }
-        mSectionedRecyclerViewAdapter.addSection(new HomeBangumiSeasonNewSection(getActivity(), season, seasonNewFoods));
-        mSectionedRecyclerViewAdapter.addSection(new HomeBangumiRecommendSection(getActivity(), foodRecommends));
+        mSectionedRecyclerViewAdapter.addSection(new HomeFoodSeasonNewSection(getActivity(), season, seasonNewFoods));
+        mSectionedRecyclerViewAdapter.addSection(new HomeFoodRecommendSection(getActivity(), foodRecommends));
         mSectionedRecyclerViewAdapter.notifyDataSetChanged();
     }
 
