@@ -10,8 +10,8 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ScrollView;
 
 /**
- * Created by hcc on 16/8/7 21:18
- * 100332338@qq.com
+ * Created by Peter on 16/8/7 21:18
+ * 1097692918@qq.com
  * <p/>
  * 带弹性滑动的ScrollView
  */

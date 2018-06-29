@@ -3,8 +3,8 @@ package com.luomor.yiaroundad.entity.discover;
 import java.util.List;
 
 /**
- * Created by hcc on 2016/9/22 18:44
- * 100332338@qq.com
+ * Created by Peter on 2016/9/22 18:44
+ * 1097692918@qq.com
  * <p>
  * 原创排行榜模型类
  */

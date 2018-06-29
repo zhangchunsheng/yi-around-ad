@@ -16,8 +16,8 @@ import com.luomor.yiaroundad.entity.search.SearchArchiveInfo;
 import java.util.List;
 
 /**
- * Created by hcc on 16/8/29 21:18
- * 100332338@qq.com
+ * Created by Peter on 16/8/29 21:18
+ * 1097692918@qq.com
  * <p/>
  * 综合搜索头部番剧Adapter
  */

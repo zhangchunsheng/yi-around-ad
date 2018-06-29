@@ -3,8 +3,8 @@ package com.luomor.yiaroundad.event;
 import android.support.design.widget.AppBarLayout;
 
 /**
- * Created by hcc on 16/9/20 05:32
- * 100332338@qq.com
+ * Created by Peter on 16/9/20 05:32
+ * 1097692918@qq.com
  * <p>
  * 监听CollapsingToolbarLayout的折叠状态
  */

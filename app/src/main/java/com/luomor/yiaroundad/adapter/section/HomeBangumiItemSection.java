@@ -15,8 +15,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by hcc on 2016/10/14 19:15
- * 100332338@qq.com
+ * Created by Peter on 2016/10/14 19:15
+ * 1097692918@qq.com
  * <p>
  * 首页番剧顶部追番，放送表，索引条目Section
  */

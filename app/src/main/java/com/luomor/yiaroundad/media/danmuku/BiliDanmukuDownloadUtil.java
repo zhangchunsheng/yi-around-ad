@@ -21,8 +21,8 @@ import rx.Observable;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by hcc on 16/8/31 19:50
- * 100332338@qq.com
+ * Created by Peter on 16/8/31 19:50
+ * 1097692918@qq.com
  * <p/>
  * 视频弹幕下载工具类
  */

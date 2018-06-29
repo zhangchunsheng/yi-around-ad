@@ -39,8 +39,8 @@ import rx.schedulers.Schedulers;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 
 /**
- * Created by hcc on 16/8/30 19:50
- * 100332338@qq.com
+ * Created by Peter on 16/8/30 19:50
+ * 1097692918@qq.com
  * <p/>
  * 视频播放界面
  */

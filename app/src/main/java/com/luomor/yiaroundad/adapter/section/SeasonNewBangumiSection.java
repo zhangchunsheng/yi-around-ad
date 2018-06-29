@@ -21,8 +21,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by hcc on 2016/11/1 12:52
- * 100332338@qq.com
+ * Created by Peter on 2016/11/1 12:52
+ * 1097692918@qq.com
  * <p>
  * 分季新番Section
  */

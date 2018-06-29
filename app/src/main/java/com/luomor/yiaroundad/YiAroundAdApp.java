@@ -6,8 +6,8 @@ import com.facebook.stetho.Stetho;
 import com.squareup.leakcanary.LeakCanary;
 
 /**
- * Created by hcc on 16/8/7 21:18
- * 100332338@qq.com
+ * Created by Peter on 16/8/7 21:18
+ * 1097692918@qq.com
  * <p/>
  * 易周围动画App
  */

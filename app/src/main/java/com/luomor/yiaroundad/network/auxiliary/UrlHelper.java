@@ -3,8 +3,8 @@ package com.luomor.yiaroundad.network.auxiliary;
 import com.luomor.yiaroundad.entity.user.UserDetailsInfo;
 
 /**
- * Created by hcc on 16/8/4 21:18
- * 100332338@qq.com
+ * Created by Peter on 16/8/4 21:18
+ * 1097692918@qq.com
  * <p/>
  * 根据B站返回的数据 个人参数由于返回限制
  * 需要进行特殊处理，如视频封面

@@ -18,8 +18,8 @@ import com.luomor.yiaroundad.R;
 import java.util.List;
 
 /**
- * Created by hcc on 16/8/6 11:51
- * 100332338@qq.com
+ * Created by Peter on 16/8/6 11:51
+ * 1097692918@qq.com
  * <p/>
  * 番剧详情番剧推荐adapter
  */

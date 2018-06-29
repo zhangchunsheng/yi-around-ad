@@ -4,8 +4,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 /**
- * Created by hcc on 16/8/7 21:18
- * 100332338@qq.com
+ * Created by Peter on 16/8/7 21:18
+ * 1097692918@qq.com
  * <p/>
  * 自定义RecylcerView上拉加载处理
  */

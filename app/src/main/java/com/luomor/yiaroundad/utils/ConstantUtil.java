@@ -1,8 +1,8 @@
 package com.luomor.yiaroundad.utils;
 
 /**
- * Created by hcc on 2016/10/13 11:13
- * 100332338@qq.com
+ * Created by Peter on 2016/10/13 11:13
+ * 1097692918@qq.com
  * <p>
  * 常量工具类
  */

@@ -3,8 +3,8 @@ package com.luomor.yiaroundad.entity.live;
 import java.util.List;
 
 /**
- * Created by hcc on 2016/10/19 18:31
- * 100332338@qq.com
+ * Created by Peter on 2016/10/19 18:31
+ * 1097692918@qq.com
  * <p>
  * 直播模型类
  */

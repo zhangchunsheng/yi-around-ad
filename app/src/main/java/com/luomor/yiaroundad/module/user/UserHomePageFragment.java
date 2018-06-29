@@ -31,8 +31,8 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * Created by hcc on 2016/10/12 13:29
- * 100332338@qq.com
+ * Created by Peter on 2016/10/12 13:29
+ * 1097692918@qq.com
  * <p>
  * 用户详情界面的主页
  */

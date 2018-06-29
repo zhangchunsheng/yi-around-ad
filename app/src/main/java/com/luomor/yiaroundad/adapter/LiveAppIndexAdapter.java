@@ -31,8 +31,8 @@ import butterknife.ButterKnife;
 import rx.Observable;
 
 /**
- * Created by hcc on 16/8/4 14:12
- * 100332338@qq.com
+ * Created by Peter on 16/8/4 14:12
+ * 1097692918@qq.com
  * <p/>
  * 首页直播adapter
  */

@@ -12,8 +12,8 @@ import retrofit2.http.GET;
 import rx.Observable;
 
 /**
- * Created by hcc on 2016/11/1 10:43
- * 100332338@qq.com
+ * Created by Peter on 2016/11/1 10:43
+ * 1097692918@qq.com
  * <p>
  * 番剧相关api
  */

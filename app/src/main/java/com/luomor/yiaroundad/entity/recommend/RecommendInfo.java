@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * Created by hcc on 16/8/20 12:38
- * 100332338@qq.com
+ * Created by Peter on 16/8/20 12:38
+ * 1097692918@qq.com
  * <p/>
  * 首页推荐界面数据
  */

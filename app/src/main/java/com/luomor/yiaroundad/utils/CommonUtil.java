@@ -9,8 +9,8 @@ import android.os.StatFs;
 import java.io.File;
 
 /**
- * Created by hcc on 16/8/4 21:18
- * 100332338@qq.com
+ * Created by Peter on 16/8/4 21:18
+ * 1097692918@qq.com
  * <p/>
  * 通用工具类
  */

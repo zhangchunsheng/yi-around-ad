@@ -9,8 +9,8 @@ import retrofit2.http.Query;
 import rx.Observable;
 
 /**
- * Created by hcc on 16/8/30 19:52
- * 100332338@qq.com
+ * Created by Peter on 16/8/30 19:52
+ * 1097692918@qq.com
  * <p>
  * bilibili-go相关api
  */

@@ -8,8 +8,8 @@ import retrofit2.http.Path;
 import rx.Observable;
 
 /**
- * Created by hcc on 2016/9/22 18:40
- * 100332338@qq.com
+ * Created by Peter on 2016/9/22 18:40
+ * 1097692918@qq.com
  * <p>
  * 排行榜相关api
  */

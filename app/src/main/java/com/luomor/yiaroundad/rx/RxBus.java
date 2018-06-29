@@ -6,8 +6,8 @@ import rx.subjects.SerializedSubject;
 import rx.subjects.Subject;
 
 /**
- * Created by hcc on 16/8/14 17:51
- * 100332338@qq.com
+ * Created by Peter on 16/8/14 17:51
+ * 1097692918@qq.com
  * RxBus
  * <p/>
  * Subject同时充当了Observer和Observable的角色，Subject是非线程安全的，

@@ -26,8 +26,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by hcc on 16/8/29 21:08
- * 100332338@qq.com
+ * Created by Peter on 16/8/29 21:08
+ * 1097692918@qq.com
  * <p/>
  * 番剧搜索内容列表界面
  */

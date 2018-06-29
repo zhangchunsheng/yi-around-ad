@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by hcc on 16/8/6 14:31
- * 100332338@qq.com
+ * Created by Peter on 16/8/6 14:31
+ * 1097692918@qq.com
  * <p/>
  * 首页番剧新番连载Adapter
  */

@@ -17,8 +17,8 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * Created by hcc on 2016/10/12 18:19
- * 100332338@qq.com
+ * Created by Peter on 2016/10/12 18:19
+ * 1097692918@qq.com
  * <p>
  * 用户详情界面的游戏
  */

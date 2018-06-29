@@ -3,8 +3,8 @@ package com.luomor.yiaroundad.entity.user;
 import java.util.List;
 
 /**
- * Created by hcc on 16/8/22 20:48
- * 100332338@qq.com
+ * Created by Peter on 16/8/22 20:48
+ * 1097692918@qq.com
  * <p/>
  * 用户详情模型类
  */

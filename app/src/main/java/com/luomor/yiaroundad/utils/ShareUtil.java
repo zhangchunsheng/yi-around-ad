@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 
 /**
- * Created by hcc on 16/6/25 18:05
- * 100332338@qq.com
+ * Created by Peter on 16/6/25 18:05
+ * 1097692918@qq.com
  * <p>
  * 分享工具类
  */

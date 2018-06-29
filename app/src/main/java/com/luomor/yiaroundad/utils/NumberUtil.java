@@ -1,8 +1,8 @@
 package com.luomor.yiaroundad.utils;
 
 /**
- * Created by hcc on 2016/10/11 14:35
- * 100332338@qq.com
+ * Created by Peter on 2016/10/11 14:35
+ * 1097692918@qq.com
  */
 
 public class NumberUtil {

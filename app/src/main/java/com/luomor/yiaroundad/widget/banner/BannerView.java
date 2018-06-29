@@ -29,8 +29,8 @@ import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
 /**
- * Created by hcc on 16/8/4 21:18
- * 100332338@qq.com
+ * Created by Peter on 16/8/4 21:18
+ * 1097692918@qq.com
  * <p/>
  * 自定义Banner无限轮播控件
  */

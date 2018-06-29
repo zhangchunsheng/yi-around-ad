@@ -1,8 +1,8 @@
 package com.luomor.yiaroundad.media.callback;
 
 /**
- * Created by hcc on 16/8/31 21:44
- * 100332338@qq.com
+ * Created by Peter on 16/8/31 21:44
+ * 1097692918@qq.com
  * <p/>
  * 弹幕开关回调接口
  */

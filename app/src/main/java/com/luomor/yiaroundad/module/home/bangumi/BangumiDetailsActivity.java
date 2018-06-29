@@ -54,8 +54,8 @@ import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by hcc on 16/8/14 17:51
- * 100332338@qq.com
+ * Created by Peter on 16/8/14 17:51
+ * 1097692918@qq.com
  * <p/>
  * 番剧详情界面
  */

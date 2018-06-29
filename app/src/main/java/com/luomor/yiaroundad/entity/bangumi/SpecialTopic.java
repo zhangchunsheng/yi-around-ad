@@ -3,8 +3,8 @@ package com.luomor.yiaroundad.entity.bangumi;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by hcc on 16/8/9 20:48
- * 100332338@qq.com
+ * Created by Peter on 16/8/9 20:48
+ * 1097692918@qq.com
  * <p/>
  * 专题视频(包括二三次元番剧)
  */

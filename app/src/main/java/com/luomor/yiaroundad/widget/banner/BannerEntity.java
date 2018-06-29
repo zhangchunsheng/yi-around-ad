@@ -1,8 +1,8 @@
 package com.luomor.yiaroundad.widget.banner;
 
 /**
- * Created by hcc on 16/8/24 21:37
- * 100332338@qq.com
+ * Created by Peter on 16/8/24 21:37
+ * 1097692918@qq.com
  * <p>
  * Banner模型类
  */

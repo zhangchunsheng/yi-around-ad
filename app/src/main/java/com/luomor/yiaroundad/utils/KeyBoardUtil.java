@@ -5,8 +5,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 /**
- * Created by hcc on 16/9/4 19:44
- * 100332338@qq.com
+ * Created by Peter on 16/9/4 19:44
+ * 1097692918@qq.com
  * <p/>
  * 软键盘工具类
  */

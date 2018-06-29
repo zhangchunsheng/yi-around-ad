@@ -1,8 +1,8 @@
 package com.luomor.yiaroundad.entity.discover;
 
 /**
- * Created by hcc on 2016/10/31 23:26
- * 100332338@qq.com
+ * Created by Peter on 2016/10/31 23:26
+ * 1097692918@qq.com
  * <p>
  * 大会员游戏礼包模型类
  */

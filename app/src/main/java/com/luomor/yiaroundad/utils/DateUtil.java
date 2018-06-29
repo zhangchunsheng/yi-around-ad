@@ -7,8 +7,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by hcc on 2016/10/11 16:30
- * 100332338@qq.com
+ * Created by Peter on 2016/10/11 16:30
+ * 1097692918@qq.com
  * <p>
  * 时间工具类
  */

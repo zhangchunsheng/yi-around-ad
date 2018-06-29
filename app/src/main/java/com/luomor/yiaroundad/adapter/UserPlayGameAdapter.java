@@ -16,8 +16,8 @@ import com.luomor.yiaroundad.R;
 import java.util.List;
 
 /**
- * Created by hcc on 2016/10/12 22:53
- * 100332338@qq.com
+ * Created by Peter on 2016/10/12 22:53
+ * 1097692918@qq.com
  * <p>
  * 用户详情所玩游戏adapter
  */

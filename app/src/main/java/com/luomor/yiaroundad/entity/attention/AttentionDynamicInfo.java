@@ -3,8 +3,8 @@ package com.luomor.yiaroundad.entity.attention;
 import java.util.List;
 
 /**
- * Created by hcc on 2016/9/28 19:49
- * 100332338@qq.com
+ * Created by Peter on 2016/9/28 19:49
+ * 1097692918@qq.com
  * <p>
  * 关注动态模型类
  */

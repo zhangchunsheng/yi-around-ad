@@ -6,8 +6,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
- * Created by hcc on 2016/11/1 15:34
- * 100332338@qq.com
+ * Created by Peter on 2016/11/1 15:34
+ * 1097692918@qq.com
  * <p>
  * 日期时间转星期工具类
  */

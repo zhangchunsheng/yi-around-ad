@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by hcc on 2016/10/12 17:11
- * 100332338@qq.com
+ * Created by Peter on 2016/10/12 17:11
+ * 1097692918@qq.com
  * <p>
  * 用户投稿视频模型类
  */

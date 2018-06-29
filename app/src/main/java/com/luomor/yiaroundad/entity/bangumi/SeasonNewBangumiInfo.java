@@ -3,8 +3,8 @@ package com.luomor.yiaroundad.entity.bangumi;
 import java.util.List;
 
 /**
- * Created by hcc on 2016/9/25 14:32
- * 100332338@qq.com
+ * Created by Peter on 2016/9/25 14:32
+ * 1097692918@qq.com
  * <p>
  * 分季新番模型类
  */

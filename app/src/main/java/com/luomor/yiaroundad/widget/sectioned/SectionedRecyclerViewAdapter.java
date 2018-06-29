@@ -11,8 +11,8 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * Created by hcc on 16/8/27 11:51
- * 100332338@qq.com
+ * Created by Peter on 16/8/27 11:51
+ * 1097692918@qq.com
  * <p/>
  * A custom RecyclerView with Sections with custom Titles.
  * Sections are displayed in the same order they were added.

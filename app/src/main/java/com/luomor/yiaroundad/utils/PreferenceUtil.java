@@ -8,8 +8,8 @@ import android.preference.PreferenceManager;
 import com.luomor.yiaroundad.YiAroundAdApp;
 
 /**
- * Created by hcc on 16/8/4 21:18
- * 100332338@qq.com
+ * Created by Peter on 16/8/4 21:18
+ * 1097692918@qq.com
  * <p/>
  * SP缓存工具类
  */

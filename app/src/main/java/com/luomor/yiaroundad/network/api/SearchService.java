@@ -6,8 +6,8 @@ import retrofit2.http.GET;
 import rx.Observable;
 
 /**
- * Created by hcc on 2016/10/3 11:53
- * 100332338@qq.com
+ * Created by Peter on 2016/10/3 11:53
+ * 1097692918@qq.com
  * <p>
  * 搜索相关api
  */

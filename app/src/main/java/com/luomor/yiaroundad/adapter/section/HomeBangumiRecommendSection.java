@@ -19,8 +19,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by hcc on 2016/10/14 20:02
- * 100332338@qq.com
+ * Created by Peter on 2016/10/14 20:02
+ * 1097692918@qq.com
  * <p>
  * 首页番剧推荐Section
  */

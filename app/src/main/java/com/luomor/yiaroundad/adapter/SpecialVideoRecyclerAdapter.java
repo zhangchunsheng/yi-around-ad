@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by hcc on 16/8/4 14:12
- * 100332338@qq.com
+ * Created by Peter on 16/8/4 14:12
+ * 1097692918@qq.com
  * <p/>
  * 专题视频Adapter
  */

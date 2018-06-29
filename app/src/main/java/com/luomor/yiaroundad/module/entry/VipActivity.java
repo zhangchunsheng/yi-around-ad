@@ -15,8 +15,8 @@ import com.luomor.yiaroundad.R;
 import butterknife.BindView;
 
 /**
- * Created by hcc on 2016/10/16 13:49
- * 100332338@qq.com
+ * Created by Peter on 2016/10/16 13:49
+ * 1097692918@qq.com
  * <p>
  * 大会员界面
  */

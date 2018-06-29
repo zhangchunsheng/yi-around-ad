@@ -26,8 +26,8 @@ import master.flame.danmaku.danmaku.parser.android.AndroidFileSource;
 import master.flame.danmaku.danmaku.util.DanmakuUtils;
 
 /**
- * Created by hcc on 2016/11/13 20:11
- * 100332338@qq.com
+ * Created by Peter on 2016/11/13 20:11
+ * 1097692918@qq.com
  */
 public class BiliDanmukuParser extends BaseDanmakuParser {
     private float mDispScaleX;
