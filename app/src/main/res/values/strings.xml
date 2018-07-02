@@ -17,8 +17,8 @@
     <string name="info_reviews_format">%d</string>
     <string name="luomorad">烙馍网</string>
     <string name="github_link">https://github.com/zhangchunsheng</string>
-    <string name="sina_weibo_link">新浪微博:http://m.weibo.cn/users/3223089177/qq</string>
-    <string name="jianshu_link">简书:http://www.jianshu.com/notebooks/5181955/latest</string>
+    <string name="sina_weibo_link">新浪微博:https://weibo.com/justwannabewithyou</string>
+    <string name="jianshu_link">简书:https://www.jianshu.com/u/27594b2f088e</string>
     <string name="add_follow">+关注</string>
     <string name="login_hint_account">请输入您的易周围账号</string>
     <string name="login_hint_password">请输入您的密码</string>
@@ -145,7 +145,7 @@
     <string name="quality_medium">清晰</string>
     <string name="quality_smooth">流畅</string>
     <string name="quality_super">超清</string>
-    <string name="about_app_net">© 2014-2016 luomor.com</string>
+    <string name="about_app_net">© 2010-2018 luomor.com</string>
     <string name="all_rights_reserved">All rights reserved</string>
     <string name="about_open_source">向开源致敬</string>
     <string name="about_network_diagnosis">网络诊断</string>
