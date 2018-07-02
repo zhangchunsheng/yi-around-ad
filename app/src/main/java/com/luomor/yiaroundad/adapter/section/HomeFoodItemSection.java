@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
  * Created by Peter on 2018/06/14 19:15
  * 1097692918@qq.com
  * <p>
- * 首页美食顶部追美食，放送表，索引条目Section
+ * 首页美食顶部西餐，中餐，索引条目Section
  */
 
 public class HomeFoodItemSection extends StatelessSection {
