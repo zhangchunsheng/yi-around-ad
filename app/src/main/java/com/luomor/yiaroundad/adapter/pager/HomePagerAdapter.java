@@ -45,12 +45,18 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
           fragments[position] = HomeFoodFragment.newInstance();
           break;
         case 3:
-          fragments[position] = HomeRegionFragment.newInstance();
+          fragments[position] = HomeFoodFragment.newInstance();
           break;
         case 4:
-          fragments[position] = HomeAttentionFragment.newInstance();
+          fragments[position] = HomeFoodFragment.newInstance();
           break;
         case 5:
+          fragments[position] = HomeRegionFragment.newInstance();
+          break;
+        case 6:
+          fragments[position] = HomeAttentionFragment.newInstance();
+          break;
+        case 7:
           fragments[position] = HomeDiscoverFragment.newInstance();
           break;
         default:
