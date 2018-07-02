@@ -58,10 +58,10 @@ public class HomeFoodItemSection extends StatelessSection {
         HomeFoodItemSection.TopItemViewHolder topItemViewHolder
                 = (HomeFoodItemSection.TopItemViewHolder) holder;
         //前往追美食
-        topItemViewHolder.mChaseFood.setOnClickListener(v -> {
+        topItemViewHolder.mWesternFood.setOnClickListener(v -> {
         });
         //前往美食放送表
-        topItemViewHolder.mFoodSchedule.setOnClickListener(v -> mContext.startActivity(
+        topItemViewHolder.mChineseFood.setOnClickListener(v -> mContext.startActivity(
                 new Intent(mContext, FoodScheduleActivity.class)));
         //前往美食索引
         topItemViewHolder.mFoodIndex.setOnClickListener(v -> mContext.startActivity(
@@ -76,10 +76,10 @@ public class HomeFoodItemSection extends StatelessSection {
     }
 
     static class TopItemViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.layout_chase_food)
-        TextView mChaseFood;
-        @BindView(R.id.layout_food_schedule)
-        TextView mFoodSchedule;
+        @BindView(R.id.layout_western_food)
+        TextView mWesternFood;
+        @BindView(R.id.layout_chinese_food)
+        TextView mChineseFood;
         @BindView(R.id.layout_food_index)
         TextView mFoodIndex;
 
