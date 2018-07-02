@@ -11,7 +11,7 @@ import com.luomor.yiaroundad.adapter.helper.AbsRecyclerViewAdapter;
 import com.luomor.yiaroundad.R;
 
 /**
- * Created by Peter on 2016/10/21 21:55
+ * Created by Peter on 2018/06/21 21:55
  * 1097692918@qq.com
  * <p>
  * 分区推荐页面类型分类Icons的adapter

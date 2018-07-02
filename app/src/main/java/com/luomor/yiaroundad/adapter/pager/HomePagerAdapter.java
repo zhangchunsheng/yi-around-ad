@@ -14,7 +14,7 @@ import com.luomor.yiaroundad.module.home.region.HomeRegionFragment;
 import com.luomor.yiaroundad.R;
 
 /**
- * Created by Peter on 16/8/4 14:12
+ * Created by Peter on 18/6/14 14:12
  * 1097692918@qq.com
  * <p/>
  * 主界面Fragment模块Adapter

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Peter on 2016/10/12 19:33
+ * Created by Peter on 2018/06/20 19:33
  * 1097692918@qq.com
  * <p>
  * 用户详情兴趣圈模型类

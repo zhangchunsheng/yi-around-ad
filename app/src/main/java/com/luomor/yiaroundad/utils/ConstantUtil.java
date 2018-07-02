@@ -1,7 +1,7 @@
 package com.luomor.yiaroundad.utils;
 
 /**
- * Created by Peter on 2016/10/13 11:13
+ * Created by Peter on 2018/06/13 11:13
  * 1097692918@qq.com
  * <p>
  * 常量工具类

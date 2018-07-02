@@ -14,7 +14,7 @@ import com.luomor.yiaroundad.R;
 import java.util.List;
 
 /**
- * Created by Peter on 2016/11/1 20:34
+ * Created by Peter on 2018/06/1 20:34
  * 1097692918@qq.com
  * <p>
  * 美食详情分季版本adapter

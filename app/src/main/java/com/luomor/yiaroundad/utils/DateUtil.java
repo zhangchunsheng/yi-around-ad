@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by Peter on 2016/10/11 16:30
+ * Created by Peter on 2018/06/16 16:30
  * 1097692918@qq.com
  * <p>
  * 时间工具类

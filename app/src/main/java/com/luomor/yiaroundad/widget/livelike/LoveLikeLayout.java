@@ -23,7 +23,7 @@ import com.luomor.yiaroundad.R;
 import java.util.Random;
 
 /**
- * Created by Peter on 16/9/14 21:37
+ * Created by Peter on 18/6/14 21:37
  * 1097692918@qq.com
  * <p/>
  * 直播送礼物特效自定义控件

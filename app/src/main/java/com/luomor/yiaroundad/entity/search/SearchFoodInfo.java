@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * Created by Peter on 2016/10/24 21:12
+ * Created by Peter on 2018/06/24 21:12
  * 1097692918@qq.com
  * <p>
  * 美食搜索模型类

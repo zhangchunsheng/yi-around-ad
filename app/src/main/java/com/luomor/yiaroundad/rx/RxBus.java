@@ -6,7 +6,7 @@ import rx.subjects.SerializedSubject;
 import rx.subjects.Subject;
 
 /**
- * Created by Peter on 16/8/14 17:51
+ * Created by Peter on 18/6/14 17:51
  * 1097692918@qq.com
  * RxBus
  * <p/>

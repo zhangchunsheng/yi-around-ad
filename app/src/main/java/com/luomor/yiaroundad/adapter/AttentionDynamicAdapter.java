@@ -20,7 +20,7 @@ import com.luomor.yiaroundad.R;
 import java.util.List;
 
 /**
- * Created by Peter on 2016/9/28 20:53
+ * Created by Peter on 2018/06/28 20:53
  * 1097692918@qq.com
  * <p>
  * 关注界面动态Adapter

@@ -3,7 +3,7 @@ package com.luomor.yiaroundad.entity.user;
 import java.util.List;
 
 /**
- * Created by Peter on 16/8/22 20:48
+ * Created by Peter on 18/6/22 20:48
  * 1097692918@qq.com
  * <p/>
  * 用户详情模型类

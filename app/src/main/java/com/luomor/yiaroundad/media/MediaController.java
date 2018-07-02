@@ -32,7 +32,7 @@ import com.luomor.yiaroundad.media.callback.VideoBackListener;
 import java.util.Locale;
 
 /**
- * Created by Peter on 16/8/31 19:50
+ * Created by Peter on 18/6/31 19:50
  * 1097692918@qq.com
  * <p/>
  * 播放器控制器

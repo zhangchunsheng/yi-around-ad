@@ -29,7 +29,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by Peter on 2016/10/21 20:39
+ * Created by Peter on 2018/06/21 20:39
  * 1097692918@qq.com
  * <p>
  * 分区推荐页面

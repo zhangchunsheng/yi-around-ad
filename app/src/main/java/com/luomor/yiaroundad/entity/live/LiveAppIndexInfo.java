@@ -3,7 +3,7 @@ package com.luomor.yiaroundad.entity.live;
 import java.util.List;
 
 /**
- * Created by Peter on 2016/10/19 18:31
+ * Created by Peter on 2018/06/19 18:31
  * 1097692918@qq.com
  * <p>
  * 直播模型类

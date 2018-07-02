@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Peter on 2016/10/12 17:11
+ * Created by Peter on 2018/06/20 17:11
  * 1097692918@qq.com
  * <p>
  * 用户投稿视频模型类

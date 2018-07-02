@@ -1,7 +1,7 @@
 package com.luomor.yiaroundad.network.auxiliary;
 
 /**
- * Created by Peter on 2016/11/20 21:32
+ * Created by Peter on 2018/06/20 21:32
  * 1097692918@qq.com
  * <p>
  * API常量类

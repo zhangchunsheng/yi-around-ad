@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
- * Created by Peter on 2016/11/1 15:34
+ * Created by Peter on 2018/06/1 15:34
  * 1097692918@qq.com
  * <p>
  * 日期时间转星期工具类

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Peter on 2016/10/12 22:39
+ * Created by Peter on 2018/06/20 22:39
  * 1097692918@qq.com
  * <p>
  * 用户详情所玩游戏模型类

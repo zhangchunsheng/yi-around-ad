@@ -3,7 +3,7 @@ package com.luomor.yiaroundad.entity.recommend;
 import java.util.List;
 
 /**
- * Created by Peter on 2016/9/24 19:25
+ * Created by Peter on 2018/06/24 19:25
  * 1097692918@qq.com
  * <p>
  * 首页Banner推荐

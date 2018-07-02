@@ -11,7 +11,7 @@ import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 
 /**
- * Created by Peter on 2016/10/2 00:05
+ * Created by Peter on 2018/06/2 00:05
  * 1097692918@qq.com
  * <p>
  * 图片模糊工具类

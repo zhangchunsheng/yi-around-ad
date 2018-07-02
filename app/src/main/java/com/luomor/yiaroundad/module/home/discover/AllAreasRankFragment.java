@@ -22,7 +22,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by Peter on 16/8/11 20:23
+ * Created by Peter on 18/6/11 20:23
  * 1097692918@qq.com
  * <p/>
  * 全区排行榜界面

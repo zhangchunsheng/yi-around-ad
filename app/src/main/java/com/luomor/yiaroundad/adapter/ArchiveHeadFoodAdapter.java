@@ -16,7 +16,7 @@ import com.luomor.yiaroundad.entity.search.SearchArchiveInfo;
 import java.util.List;
 
 /**
- * Created by Peter on 16/8/29 21:18
+ * Created by Peter on 18/6/29 21:18
  * 1097692918@qq.com
  * <p/>
  * 综合搜索头部美食Adapter

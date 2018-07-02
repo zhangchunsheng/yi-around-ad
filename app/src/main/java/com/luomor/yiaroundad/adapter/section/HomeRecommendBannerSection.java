@@ -15,7 +15,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by Peter on 16/8/27 14:06
+ * Created by Peter on 18/6/27 14:06
  * 1097692918@qq.com
  * <p/>
  * 首页推荐界面轮播图Section

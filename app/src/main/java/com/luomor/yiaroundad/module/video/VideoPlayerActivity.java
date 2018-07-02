@@ -39,7 +39,7 @@ import rx.schedulers.Schedulers;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 
 /**
- * Created by Peter on 16/8/30 19:50
+ * Created by Peter on 18/6/30 19:50
  * 1097692918@qq.com
  * <p/>
  * 视频播放界面

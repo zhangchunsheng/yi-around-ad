@@ -3,7 +3,7 @@ package com.luomor.yiaroundad.entity.food;
 import java.util.List;
 
 /**
- * Created by Peter on 16/8/6 11:08
+ * Created by Peter on 18/6/6 11:08
  * 1097692918@qq.com
  * <p/>
  * 美食索引模型类

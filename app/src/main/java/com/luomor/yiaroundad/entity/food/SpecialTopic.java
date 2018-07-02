@@ -3,7 +3,7 @@ package com.luomor.yiaroundad.entity.food;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by Peter on 16/8/9 20:48
+ * Created by Peter on 18/6/9 20:48
  * 1097692918@qq.com
  * <p/>
  * 专题视频(包括二三次元美食)

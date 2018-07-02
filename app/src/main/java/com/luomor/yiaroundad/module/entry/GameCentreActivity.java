@@ -39,7 +39,7 @@ import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by Peter on 16/8/7 14:12
+ * Created by Peter on 18/6/12 10:16
  * 1097692918@qq.com
  * <p/>
  * 游戏中心界面

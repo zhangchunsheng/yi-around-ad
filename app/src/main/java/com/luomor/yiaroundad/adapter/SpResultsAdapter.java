@@ -18,7 +18,7 @@ import com.luomor.yiaroundad.R;
 import java.util.List;
 
 /**
- * Created by Peter on 16/9/4 12:28
+ * Created by Peter on 18/6/4 12:28
  * 1097692918@qq.com
  * <p/>
  * 专题搜索结果Adapter

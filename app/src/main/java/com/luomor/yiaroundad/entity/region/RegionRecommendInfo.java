@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * Created by Peter on 2016/10/21 20:31
+ * Created by Peter on 2018/06/21 20:31
  * 1097692918@qq.com
  * <p>
  * 分区推荐页模型类

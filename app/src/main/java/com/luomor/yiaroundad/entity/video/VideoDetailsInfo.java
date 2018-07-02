@@ -3,7 +3,7 @@ package com.luomor.yiaroundad.entity.video;
 import java.util.List;
 
 /**
- * Created by Peter on 16/8/8 10:09
+ * Created by Peter on 18/6/8 10:09
  * 1097692918@qq.com
  * <p/>
  * 视频详情模型类

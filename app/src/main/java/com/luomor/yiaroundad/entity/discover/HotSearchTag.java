@@ -3,7 +3,7 @@ package com.luomor.yiaroundad.entity.discover;
 import java.util.List;
 
 /**
- * Created by Peter on 2016/10/3 11:49
+ * Created by Peter on 2018/06/3 11:49
  * 1097692918@qq.com
  * <p>
  * 热搜标签模型类

@@ -17,7 +17,7 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * Created by Peter on 2016/10/12 18:19
+ * Created by Peter on 2018/06/20 18:19
  * 1097692918@qq.com
  * <p>
  * 用户详情界面的游戏

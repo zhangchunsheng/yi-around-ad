@@ -13,7 +13,7 @@ import retrofit2.http.Query;
 import rx.Observable;
 
 /**
- * Created by Peter on 16/8/8 21:08
+ * Created by Peter on 18/6/8 21:08
  * 1097692918@qq.com
  */
 public interface YiAdApiService {

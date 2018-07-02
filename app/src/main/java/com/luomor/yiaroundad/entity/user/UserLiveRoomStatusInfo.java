@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Created by Peter on 2016/10/14 11:46
+ * Created by Peter on 2018/06/14 11:46
  * 1097692918@qq.com
  * <p>
  * 用户详情界面的直播状态模型类

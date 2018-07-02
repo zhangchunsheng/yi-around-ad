@@ -1,7 +1,7 @@
 package com.luomor.yiaroundad.media.callback;
 
 /**
- * Created by Peter on 16/8/31 21:42
+ * Created by Peter on 18/6/31 21:42
  * 1097692918@qq.com
  * <p/>
  * 视频控制回调接口

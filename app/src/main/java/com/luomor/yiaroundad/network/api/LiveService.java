@@ -9,7 +9,7 @@ import retrofit2.http.Query;
 import rx.Observable;
 
 /**
- * Created by Peter on 16/8/4 12:03
+ * Created by Peter on 18/6/14 12:03
  * 1097692918@qq.com
  * <p>
  * 直播相关api

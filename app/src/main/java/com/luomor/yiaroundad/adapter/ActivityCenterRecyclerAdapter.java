@@ -16,7 +16,7 @@ import com.luomor.yiaroundad.R;
 import java.util.List;
 
 /**
- * Created by Peter on 16/8/27 19:19
+ * Created by Peter on 18/6/27 19:19
  * 1097692918@qq.com
  * <p/>
  * 活动中心横向滑动RecyclerAdapter

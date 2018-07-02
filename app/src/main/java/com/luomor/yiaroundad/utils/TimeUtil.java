@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * Created by Peter on 16/9/20 16:49
+ * Created by Peter on 18/6/20 16:49
  * 1097692918@qq.com
  * <p>
  * 常用时间工具类

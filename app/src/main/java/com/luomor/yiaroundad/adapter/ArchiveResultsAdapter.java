@@ -17,7 +17,7 @@ import com.luomor.yiaroundad.utils.NumberUtil;
 import java.util.List;
 
 /**
- * Created by Peter on 16/9/4 12:16
+ * Created by Peter on 18/6/4 12:16
  * 1097692918@qq.com
  * <p/>
  * 综合搜索结果Adapter

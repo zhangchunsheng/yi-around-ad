@@ -18,7 +18,7 @@ import com.luomor.yiaroundad.R;
 import java.util.List;
 
 /**
- * Created by Peter on 16/8/6 11:51
+ * Created by Peter on 18/6/6 11:51
  * 1097692918@qq.com
  * <p/>
  * 美食详情美食推荐adapter
