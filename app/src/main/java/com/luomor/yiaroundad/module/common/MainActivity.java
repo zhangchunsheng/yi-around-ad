@@ -148,7 +148,7 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
                 startActivity(new Intent(MainActivity.this, OffLineDownloadActivity.class));
                 return true;
             case R.id.item_vip:
-                //大会员
+                // 大会员
                 startActivity(new Intent(MainActivity.this, VipActivity.class));
                 return true;
             case R.id.item_favourite:
