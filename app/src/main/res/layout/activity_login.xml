@@ -44,7 +44,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
             android:layout_marginTop="@dimen/default_tiny_padding"
-            android:src="@drawable/ic_bili_logo_2016" />
+            android:src="@drawable/ic_yiaa_logo_2016" />
 
         <ImageView
             android:id="@+id/iv_icon_right"
