@@ -26,7 +26,7 @@ import rx.schedulers.Schedulers;
  * <p/>
  * 视频弹幕下载工具类
  */
-public class BiliDanmukuDownloadUtil {
+public class YiaaDanmukuDownloadUtil {
     public static Observable<BaseDanmakuParser> downloadXML(final String uri) {
         return Observable.create((Observable.OnSubscribe<BaseDanmakuParser>) subscriber -> {
             if (TextUtils.isEmpty(uri)) {
@@ -41,7 +41,7 @@ public class BiliDanmukuDownloadUtil {
             try {
                 HttpConnection.Response rsp = (HttpConnection.Response)
                         Jsoup.connect(uri).timeout(20000).execute();
-                InputStream stream = new ByteArrayInputStream(BiliDanmukuCompressionTools.
+                InputStream stream = new ByteArrayInputStream(YiaaDanmukuCompressionTools.
                         decompressXML(rsp.bodyAsBytes()));
                 loader = DanmakuLoaderFactory.
                         create(DanmakuLoaderFactory.TAG_BILI);
@@ -49,7 +49,7 @@ public class BiliDanmukuDownloadUtil {
             } catch (IOException | DataFormatException | IllegalDataException e) {
                 e.printStackTrace();
             }
-            BaseDanmakuParser parser = new BiliDanmukuParser();
+            BaseDanmakuParser parser = new YiaaDanmukuParser();
             assert loader != null;
             IDataSource<?> dataSource = loader.getDataSource();
             parser.load(dataSource);

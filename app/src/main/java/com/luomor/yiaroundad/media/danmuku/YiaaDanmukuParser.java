@@ -29,7 +29,7 @@ import master.flame.danmaku.danmaku.util.DanmakuUtils;
  * Created by Peter on 2018/06/13 20:11
  * 1097692918@qq.com
  */
-public class BiliDanmukuParser extends BaseDanmakuParser {
+public class YiaaDanmukuParser extends BaseDanmakuParser {
     private float mDispScaleX;
     private float mDispScaleY;
 

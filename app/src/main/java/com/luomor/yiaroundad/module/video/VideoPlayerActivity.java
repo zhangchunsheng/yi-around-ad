@@ -17,7 +17,7 @@ import com.luomor.yiaroundad.media.MediaController;
 import com.luomor.yiaroundad.media.VideoPlayerView;
 import com.luomor.yiaroundad.media.callback.DanmukuSwitchListener;
 import com.luomor.yiaroundad.media.callback.VideoBackListener;
-import com.luomor.yiaroundad.media.danmuku.BiliDanmukuDownloadUtil;
+import com.luomor.yiaroundad.media.danmuku.YiaaDanmukuDownloadUtil;
 import com.luomor.yiaroundad.network.RetrofitHelper;
 import com.luomor.yiaroundad.utils.ConstantUtil;
 import com.luomor.yiaroundad.R;
@@ -161,7 +161,7 @@ public class VideoPlayerActivity extends RxBaseActivity implements DanmukuSwitch
                             mVideoPrepareLayout.setVisibility(View.GONE);
                         });
                         String url = "http://comment.bilibili.com/" + cid + ".xml";
-                        return BiliDanmukuDownloadUtil.downloadXML(url);
+                        return YiaaDanmukuDownloadUtil.downloadXML(url);
                     }
                 })
                 .subscribeOn(Schedulers.io())

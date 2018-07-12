@@ -12,9 +12,9 @@ import java.io.IOException;
  * <p/>
  * 压缩工具类
  */
-public class BiliDanmukuCompressionTools {
+public class YiaaDanmukuCompressionTools {
 
-    private BiliDanmukuCompressionTools() {
+    private YiaaDanmukuCompressionTools() {
     }
 
     public static byte[] compress(byte[] value, int offset, int length, int compressionLevel) {
