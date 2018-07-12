@@ -110,7 +110,7 @@ public class UpperResultsFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
-        RetrofitHelper.getBiliAppAPI()
+        RetrofitHelper.getYiAdAppAPI()
                 .searchUpper(content, pageNum, pageSize)
                 .compose(bindToLifecycle())
                 .map(SearchUpperInfo::getData)

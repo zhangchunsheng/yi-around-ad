@@ -120,7 +120,7 @@ public class RegionTypeRecommendFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
-        RetrofitHelper.getBiliAppAPI()
+        RetrofitHelper.getYiAdAppAPI()
                 .getRegionRecommends(rid)
                 .compose(bindToLifecycle())
                 .map(RegionRecommendInfo::getData)

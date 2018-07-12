@@ -136,7 +136,7 @@ public class FoodDetailsActivity extends RxBaseActivity {
                     @Override
                     public Observable<FoodDetailsCommentInfo> call(List<FoodDetailsRecommendInfo.ResultBean.ListBean> listBeans) {
                         foodRecommends.addAll(listBeans);
-                        return RetrofitHelper.getBiliAPI().getFoodDetailsComments();
+                        return RetrofitHelper.getYiAdAPI().getFoodDetailsComments();
                     }
                 })
                 .compose(bindToLifecycle())

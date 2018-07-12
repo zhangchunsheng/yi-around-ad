@@ -48,15 +48,15 @@ public class RetrofitHelper {
         return createApi(LiveService.class, ApiConstants.LIVE_BASE_URL);
     }
 
-    public static YiAdAppService getBiliAppAPI() {
+    public static YiAdAppService getYiAdAppAPI() {
         return createApi(YiAdAppService.class, ApiConstants.APP_BASE_URL);
     }
 
-    public static YiAdApiService getBiliAPI() {
+    public static YiAdApiService getYiAdAPI() {
         return createApi(YiAdApiService.class, ApiConstants.API_BASE_URL);
     }
 
-    public static YiAdGoService getBiliGoAPI() {
+    public static YiAdGoService getYiAdGoAPI() {
         return createApi(YiAdGoService.class, ApiConstants.BILI_GO_BASE_URL);
     }
 

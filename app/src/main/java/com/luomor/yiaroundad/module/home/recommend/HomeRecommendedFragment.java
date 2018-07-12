@@ -117,7 +117,7 @@ public class HomeRecommendedFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
-        RetrofitHelper.getBiliAppAPI()
+        RetrofitHelper.getYiAdAppAPI()
                 .getRecommendedBannerInfo()
                 .compose(bindToLifecycle())
                 .map(RecommendBannerInfo::getData)
@@ -125,7 +125,7 @@ public class HomeRecommendedFragment extends RxLazyFragment {
                     @Override
                     public Observable<RecommendInfo> call(List<RecommendBannerInfo.DataBean> dataBeans) {
                         recommendBanners.addAll(dataBeans);
-                        return RetrofitHelper.getBiliAppAPI().getRecommendedInfo();
+                        return RetrofitHelper.getYiAdAppAPI().getRecommendedInfo();
                     }
                 })
                 .compose(bindToLifecycle())

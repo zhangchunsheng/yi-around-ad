@@ -53,7 +53,7 @@ public class NewFoodSerialActivity extends RxBaseActivity {
 
     @Override
     public void loadData() {
-        RetrofitHelper.getBiliGoAPI()
+        RetrofitHelper.getYiAdGoAPI()
                 .getNewFoodSerialList()
                 .compose(this.bindToLifecycle())
                 .doOnSubscribe(this::showProgressBar)

@@ -138,7 +138,7 @@ public class AdvertisingActivity extends RxBaseActivity {
 
     @Override
     public void loadData() {
-        RetrofitHelper.getBiliAppAPI()
+        RetrofitHelper.getYiAdAppAPI()
                 .getRegionRecommends(ConstantUtil.ADVERTISING_RID)
                 .compose(bindToLifecycle())
                 .map(RegionRecommendInfo::getData)

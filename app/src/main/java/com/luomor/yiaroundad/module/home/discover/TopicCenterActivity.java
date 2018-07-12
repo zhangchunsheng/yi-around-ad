@@ -107,7 +107,7 @@ public class TopicCenterActivity extends RxBaseActivity {
 
     @Override
     public void loadData() {
-        RetrofitHelper.getBiliAPI()
+        RetrofitHelper.getYiAdAPI()
                 .getTopicCenterList()
                 .compose(bindToLifecycle())
                 .map(TopicCenterInfo::getList)
