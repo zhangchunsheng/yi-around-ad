@@ -1,4 +1,4 @@
-package com.luomor.yiaroundad.media.danmuku;
+package com.luomor.yiaroundad.media.barrage;
 
 import android.graphics.Color;
 import android.text.TextUtils;
@@ -29,7 +29,7 @@ import master.flame.danmaku.danmaku.util.DanmakuUtils;
  * Created by Peter on 2018/06/13 20:11
  * 1097692918@qq.com
  */
-public class YiaaDanmukuParser extends BaseDanmakuParser {
+public class YiAdBarrageParser extends BaseDanmakuParser {
     private float mDispScaleX;
     private float mDispScaleY;
 

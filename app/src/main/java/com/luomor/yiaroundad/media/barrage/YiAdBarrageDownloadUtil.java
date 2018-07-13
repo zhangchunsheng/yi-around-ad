@@ -1,4 +1,4 @@
-package com.luomor.yiaroundad.media.danmuku;
+package com.luomor.yiaroundad.media.barrage;
 
 import android.text.TextUtils;
 
@@ -26,7 +26,7 @@ import rx.schedulers.Schedulers;
  * <p/>
  * 视频弹幕下载工具类
  */
-public class YiaaDanmukuDownloadUtil {
+public class YiAdBarrageDownloadUtil {
     public static Observable<BaseDanmakuParser> downloadXML(final String uri) {
         return Observable.create((Observable.OnSubscribe<BaseDanmakuParser>) subscriber -> {
             if (TextUtils.isEmpty(uri)) {
@@ -41,7 +41,7 @@ public class YiaaDanmukuDownloadUtil {
             try {
                 HttpConnection.Response rsp = (HttpConnection.Response)
                         Jsoup.connect(uri).timeout(20000).execute();
-                InputStream stream = new ByteArrayInputStream(YiaaDanmukuCompressionTools.
+                InputStream stream = new ByteArrayInputStream(YiAdBarrageCompressionTools.
                         decompressXML(rsp.bodyAsBytes()));
                 loader = DanmakuLoaderFactory.
                         create(DanmakuLoaderFactory.TAG_BILI);
@@ -49,7 +49,7 @@ public class YiaaDanmukuDownloadUtil {
             } catch (IOException | DataFormatException | IllegalDataException e) {
                 e.printStackTrace();
             }
-            BaseDanmakuParser parser = new YiaaDanmukuParser();
+            BaseDanmakuParser parser = new YiAdBarrageParser();
             assert loader != null;
             IDataSource<?> dataSource = loader.getDataSource();
             parser.load(dataSource);

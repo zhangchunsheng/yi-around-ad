@@ -1,4 +1,4 @@
-package com.luomor.yiaroundad.media.danmuku;
+package com.luomor.yiaroundad.media.barrage;
 
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
@@ -12,9 +12,9 @@ import java.io.IOException;
  * <p/>
  * 压缩工具类
  */
-public class YiaaDanmukuCompressionTools {
+public class YiAdBarrageCompressionTools {
 
-    private YiaaDanmukuCompressionTools() {
+    private YiAdBarrageCompressionTools() {
     }
 
     public static byte[] compress(byte[] value, int offset, int length, int compressionLevel) {
