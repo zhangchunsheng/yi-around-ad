@@ -17,7 +17,7 @@ import rx.Observable;
 public interface YiAdGoService {
 
     /**
-     * b站高清视频
+     * 网站高清视频
      * quailty:清晰度(1~2，根据视频有不同)
      * type: 格式(mp4/flv)
      */
