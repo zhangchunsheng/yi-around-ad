@@ -6,7 +6,7 @@ import java.util.List;
  * Created by Peter on 18/6/30 19:50
  * 1097692918@qq.com
  * <p/>
- * B站高清视频
+ * 网站高清视频
  */
 public class HDVideoInfo {
     private String from;

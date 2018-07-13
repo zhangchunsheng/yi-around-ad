@@ -131,7 +131,7 @@ public class RetrofitHelper {
 
 
     /**
-     * 添加UA拦截器，B站请求API需要加上UA才能正常使用
+     * 添加UA拦截器，请求API需要加上UA才能正常使用
      */
     private static class UserAgentInterceptor implements Interceptor {
         @Override

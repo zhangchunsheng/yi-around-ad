@@ -6,7 +6,7 @@ import com.luomor.yiaroundad.entity.user.UserDetailsInfo;
  * Created by Peter on 18/6/14 21:18
  * 1097692918@qq.com
  * <p/>
- * 根据B站返回的数据 个人参数由于返回限制
+ * 根据接口返回的数据 个人参数由于返回限制
  * 需要进行特殊处理，如视频封面
  * 用户头像等url 进行url改装
  * 才能进行展示.
