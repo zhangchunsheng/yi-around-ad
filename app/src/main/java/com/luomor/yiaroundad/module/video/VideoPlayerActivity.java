@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.luomor.yiaroundad.base.RxBaseActivity;
 import com.luomor.yiaroundad.media.MediaController;
 import com.luomor.yiaroundad.media.VideoPlayerView;
-import com.luomor.yiaroundad.media.callback.DanmukuSwitchListener;
+import com.luomor.yiaroundad.media.callback.BarrageSwitchListener;
 import com.luomor.yiaroundad.media.callback.VideoBackListener;
 import com.luomor.yiaroundad.media.barrage.YiAdBarrageDownloadUtil;
 import com.luomor.yiaroundad.network.RetrofitHelper;
@@ -44,7 +44,7 @@ import tv.danmaku.ijk.media.player.IMediaPlayer;
  * <p/>
  * 视频播放界面
  */
-public class VideoPlayerActivity extends RxBaseActivity implements DanmukuSwitchListener, VideoBackListener {
+public class VideoPlayerActivity extends RxBaseActivity implements BarrageSwitchListener, VideoBackListener {
     @BindView(R.id.sv_danmaku)
     IDanmakuView mDanmakuView;
     @BindView(R.id.playerView)

@@ -23,10 +23,10 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
+import com.luomor.yiaroundad.media.callback.BarrageSwitchListener;
 import com.luomor.yiaroundad.media.callback.MediaPlayerListener;
 import com.luomor.yiaroundad.utils.LogUtil;
 import com.luomor.yiaroundad.R;
-import com.luomor.yiaroundad.media.callback.DanmukuSwitchListener;
 import com.luomor.yiaroundad.media.callback.VideoBackListener;
 
 import java.util.Locale;
@@ -62,13 +62,13 @@ public class MediaController extends FrameLayout {
     private OnShownListener mShownListener;
     private OnHiddenListener mHiddenListener;
     private boolean mDanmakuShow = false;
-    private DanmukuSwitchListener mDanmukuSwitchListener;
+    private BarrageSwitchListener mBarrageSwitchListener;
     private ImageView mBack;
     private VideoBackListener mVideoBackListener;
     private ImageView mTvPlay;
 
-    public void setDanmakuSwitchListener(DanmukuSwitchListener danmukuSwitchListener) {
-        this.mDanmukuSwitchListener = danmukuSwitchListener;
+    public void setDanmakuSwitchListener(BarrageSwitchListener barrageSwitchListener) {
+        this.mBarrageSwitchListener = barrageSwitchListener;
     }
 
     public void setVideoBackEvent(VideoBackListener videoBackListener) {
@@ -270,12 +270,12 @@ public class MediaController extends FrameLayout {
             if (mDanmakuShow) {
                 mDanmakuImage.setImageResource(R.drawable.yiaa_player_danmaku_is_open);
                 mDanmakuText.setText("弹幕开");
-                mDanmukuSwitchListener.setDanmakuShow(true);
+                mBarrageSwitchListener.setDanmakuShow(true);
                 mDanmakuShow = false;
             } else {
                 mDanmakuImage.setImageResource(R.drawable.yiaa_player_danmaku_is_closed);
                 mDanmakuText.setText("弹幕关");
-                mDanmukuSwitchListener.setDanmakuShow(false);
+                mBarrageSwitchListener.setDanmakuShow(false);
                 mDanmakuShow = true;
             }
         });

@@ -6,6 +6,6 @@ package com.luomor.yiaroundad.media.callback;
  * <p/>
  * 弹幕开关回调接口
  */
-public interface DanmukuSwitchListener {
+public interface BarrageSwitchListener {
     void setDanmakuShow(boolean isShow);
 }
