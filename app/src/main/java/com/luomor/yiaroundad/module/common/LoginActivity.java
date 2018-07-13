@@ -129,6 +129,7 @@ public class LoginActivity extends RxBaseActivity {
             ToastUtil.ShortToast("密码不能为空");
             return;
         }
+        // TODO
         PreferenceUtil.putBoolean(ConstantUtil.KEY, true);
         startActivity(new Intent(LoginActivity.this, MainActivity.class));
         finish();
