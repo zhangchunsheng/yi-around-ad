@@ -184,16 +184,16 @@ public class YiAdBarrageParser extends BaseDanmakuParser {
                         }
                     }
                     if (isPercentageNumber(beginX)) {
-                        beginX *= DanmakuFactory.BILI_PLAYER_WIDTH;
+                        beginX *= YiAdBarrageFactory.YIAD_PLAYER_WIDTH;
                     }
                     if (isPercentageNumber(beginY)) {
-                        beginY *= DanmakuFactory.BILI_PLAYER_HEIGHT;
+                        beginY *= YiAdBarrageFactory.YIAD_PLAYER_HEIGHT;
                     }
                     if (isPercentageNumber(endX)) {
-                        endX *= DanmakuFactory.BILI_PLAYER_WIDTH;
+                        endX *= YiAdBarrageFactory.YIAD_PLAYER_WIDTH;
                     }
                     if (isPercentageNumber(endY)) {
-                        endY *= DanmakuFactory.BILI_PLAYER_HEIGHT;
+                        endY *= YiAdBarrageFactory.YIAD_PLAYER_HEIGHT;
                     }
                     item.duration = new Duration(alphaDuraion);
                     item.rotationZ = rotateZ;
@@ -262,8 +262,8 @@ public class YiAdBarrageParser extends BaseDanmakuParser {
     @Override
     public BaseDanmakuParser setDisplayer(IDisplayer disp) {
         super.setDisplayer(disp);
-        mDispScaleX = mDispWidth / DanmakuFactory.BILI_PLAYER_WIDTH;
-        mDispScaleY = mDispHeight / DanmakuFactory.BILI_PLAYER_HEIGHT;
+        mDispScaleX = mDispWidth / YiAdBarrageFactory.YIAD_PLAYER_WIDTH;
+        mDispScaleY = mDispHeight / YiAdBarrageFactory.YIAD_PLAYER_HEIGHT;
         return this;
     }
 }
