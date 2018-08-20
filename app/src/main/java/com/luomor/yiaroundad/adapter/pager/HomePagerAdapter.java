@@ -12,6 +12,7 @@ import com.luomor.yiaroundad.module.home.live.HomeLiveFragment;
 import com.luomor.yiaroundad.module.home.recommend.HomeRecommendedFragment;
 import com.luomor.yiaroundad.module.home.region.HomeRegionFragment;
 import com.luomor.yiaroundad.R;
+import com.luomor.yiaroundad.module.home.shop.HomeFoodShopFragment;
 
 /**
  * Created by Peter on 18/6/14 14:12
@@ -42,13 +43,13 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
                     fragments[position] = HomeRecommendedFragment.newInstance();
                     break;
                 case 2:
-                    fragments[position] = HomeFoodFragment.newInstance();
+                    fragments[position] = HomeFoodShopFragment.newInstance();
                     break;
                 case 3:
-                    fragments[position] = HomeFoodFragment.newInstance();
+                    fragments[position] = HomeFoodShopFragment.newInstance();
                     break;
                 case 4:
-                    fragments[position] = HomeFoodFragment.newInstance();
+                    fragments[position] = HomeFoodShopFragment.newInstance();
                     break;
                 case 5:
                     fragments[position] = HomeAttentionFragment.newInstance();
