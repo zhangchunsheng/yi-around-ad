@@ -60,10 +60,10 @@
     <string name="chinese_food">中餐</string>
     <string name="index">分类</string>
     <string name="food_recommend">美食推荐</string>
-    <string name="new_food_serial">新美食连载</string>
+    <string name="new_food_serial">新美食推荐</string>
     <string name="season_new_food">7月新美食</string>
     <string name="season_list">分季列表</string>
-    <string name="more_new_food_serial">所有连载</string>
+    <string name="more_new_food_serial">所有推荐</string>
     <string name="change_recommend">换一波推荐</string>
     <string name="rank">排行榜</string>
     <string name="topic">话题</string>

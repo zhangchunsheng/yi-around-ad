@@ -59,8 +59,7 @@ public class HomeFoodShopNewSerialSection extends StatelessSection {
     @Override
     public void onBindItemViewHolder(RecyclerView.ViewHolder holder, int position) {
         ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-        ShopListInfo.ResultBean.SerializingBean serializingBean = newFoodSerials.get(
-                position);
+        ShopListInfo.ResultBean.SerializingBean serializingBean = newFoodSerials.get(position);
 
         Glide.with(mContext)
                 .load(serializingBean.getCover())
@@ -124,7 +123,6 @@ public class HomeFoodShopNewSerialSection extends StatelessSection {
 
 
         public ItemViewHolder(View itemView) {
-
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
