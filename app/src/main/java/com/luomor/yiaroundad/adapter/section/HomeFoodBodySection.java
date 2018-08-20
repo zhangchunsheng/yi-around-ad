@@ -25,12 +25,12 @@ import butterknife.ButterKnife;
  * <p/>
  * 首页美食界面内容Section
  */
-public class HomeFoodBobySection extends StatelessSection {
+public class HomeFoodBodySection extends StatelessSection {
     private Context mContext;
     private List<FoodAppIndexInfo.ResultBean.AdBean.BodyBean> foodbobys;
 
-    public HomeFoodBobySection(Context context, List<FoodAppIndexInfo.ResultBean.AdBean.BodyBean> foodbobys) {
-        super(R.layout.layout_home_food_boby, R.layout.layout_home_recommend_empty);
+    public HomeFoodBodySection(Context context, List<FoodAppIndexInfo.ResultBean.AdBean.BodyBean> foodbobys) {
+        super(R.layout.layout_home_food_body, R.layout.layout_home_recommend_empty);
         this.mContext = context;
         this.foodbobys = foodbobys;
     }

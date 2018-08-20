@@ -1,4 +1,4 @@
-package com.luomor.yiaroundad.module.home.food;
+package com.luomor.yiaroundad.module.home.shop;
 
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -6,21 +6,24 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.luomor.yiaroundad.R;
 import com.luomor.yiaroundad.adapter.section.HomeFoodBannerSection;
 import com.luomor.yiaroundad.adapter.section.HomeFoodBodySection;
 import com.luomor.yiaroundad.adapter.section.HomeFoodItemSection;
-import com.luomor.yiaroundad.adapter.section.HomeFoodNewSerialSection;
 import com.luomor.yiaroundad.adapter.section.HomeFoodRecommendSection;
 import com.luomor.yiaroundad.adapter.section.HomeFoodSeasonNewSection;
+import com.luomor.yiaroundad.adapter.section.HomeFoodShopBodySection;
+import com.luomor.yiaroundad.adapter.section.HomeFoodShopNewSerialSection;
+import com.luomor.yiaroundad.adapter.section.HomeFoodShopRecommendSection;
+import com.luomor.yiaroundad.adapter.section.HomeFoodShopSeasonNewSection;
 import com.luomor.yiaroundad.base.RxLazyFragment;
-import com.luomor.yiaroundad.entity.food.FoodAppIndexInfo;
-import com.luomor.yiaroundad.entity.food.FoodRecommendInfo;
+import com.luomor.yiaroundad.entity.shop.FoodShopRecommendInfo;
+import com.luomor.yiaroundad.entity.shop.ShopListInfo;
 import com.luomor.yiaroundad.network.RetrofitHelper;
 import com.luomor.yiaroundad.utils.SnackbarUtil;
 import com.luomor.yiaroundad.widget.CustomEmptyView;
 import com.luomor.yiaroundad.widget.banner.BannerEntity;
 import com.luomor.yiaroundad.widget.sectioned.SectionedRecyclerViewAdapter;
-import com.luomor.yiaroundad.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,12 +35,12 @@ import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by Peter on 18/6/14 21:18
- * 1097692918@qq.com
- * <p/>
- * 首页美食界面
+ * Created by peterzhang on 20/08/2018.
+ *
+ * 首页美食店铺页面
  */
-public class HomeFoodFragment extends RxLazyFragment {
+
+public class HomeFoodShopFragment extends RxLazyFragment {
     @BindView(R.id.swipe_refresh_layout)
     SwipeRefreshLayout mSwipeRefreshLayout;
     @BindView(R.id.recycle)
@@ -49,19 +52,19 @@ public class HomeFoodFragment extends RxLazyFragment {
     private boolean mIsRefreshing = false;
     private List<BannerEntity> bannerList = new ArrayList<>();
     private SectionedRecyclerViewAdapter mSectionedRecyclerViewAdapter;
-    private List<FoodRecommendInfo.ResultBean> foodRecommends = new ArrayList<>();
-    private List<FoodAppIndexInfo.ResultBean.AdBean.HeadBean> banners = new ArrayList<>();
-    private List<FoodAppIndexInfo.ResultBean.AdBean.BodyBean> foodbobys = new ArrayList<>();
-    private List<FoodAppIndexInfo.ResultBean.PreviousBean.ListBean> seasonNewFoods = new ArrayList<>();
-    private List<FoodAppIndexInfo.ResultBean.SerializingBean> newFoodSerials = new ArrayList<>();
+    private List<FoodShopRecommendInfo.ResultBean> foodRecommends = new ArrayList<>();
+    private List<ShopListInfo.ResultBean.AdBean.HeadBean> banners = new ArrayList<>();
+    private List<ShopListInfo.ResultBean.AdBean.BodyBean> foodbobys = new ArrayList<>();
+    private List<ShopListInfo.ResultBean.PreviousBean.ListBean> seasonNewFoods = new ArrayList<>();
+    private List<ShopListInfo.ResultBean.SerializingBean> newFoodSerials = new ArrayList<>();
 
-    public static HomeFoodFragment newInstance() {
-        return new HomeFoodFragment();
+    public static HomeFoodShopFragment newInstance() {
+        return new HomeFoodShopFragment();
     }
 
     @Override
     public int getLayoutResId() {
-        return R.layout.fragment_home_food;
+        return R.layout.fragment_home_food_shop;
     }
 
     @Override
@@ -132,22 +135,22 @@ public class HomeFoodFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
-        RetrofitHelper.getFoodAPI()
-                .getFoodAppIndex()
+        RetrofitHelper.getFoodShopAPI()
+                .getShopList()
                 .compose(bindToLifecycle())
-                .flatMap(new Func1<FoodAppIndexInfo, Observable<FoodRecommendInfo>>() {
+                .flatMap(new Func1<ShopListInfo, Observable<FoodShopRecommendInfo>>() {
                     @Override
-                    public Observable<FoodRecommendInfo> call(FoodAppIndexInfo foodAppIndexInfo) {
-                        banners.addAll(foodAppIndexInfo.getResult().getAd().getHead());
-                        foodbobys.addAll(foodAppIndexInfo.getResult().getAd().getBody());
-                        seasonNewFoods.addAll(foodAppIndexInfo.getResult().getPrevious().getList());
-                        season = foodAppIndexInfo.getResult().getPrevious().getSeason();
-                        newFoodSerials.addAll(foodAppIndexInfo.getResult().getSerializing());
-                        return RetrofitHelper.getFoodAPI().getFoodRecommended();
+                    public Observable<FoodShopRecommendInfo> call(ShopListInfo shopListInfo) {
+                        banners.addAll(shopListInfo.getResult().getAd().getHead());
+                        foodbobys.addAll(shopListInfo.getResult().getAd().getBody());
+                        seasonNewFoods.addAll(shopListInfo.getResult().getPrevious().getList());
+                        season = shopListInfo.getResult().getPrevious().getSeason();
+                        newFoodSerials.addAll(shopListInfo.getResult().getSerializing());
+                        return RetrofitHelper.getFoodShopAPI().getFoodRecommended();
                     }
                 })
                 .compose(bindToLifecycle())
-                .map(FoodRecommendInfo::getResult)
+                .map(FoodShopRecommendInfo::getResult)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(resultBeans -> {
@@ -168,12 +171,12 @@ public class HomeFoodFragment extends RxLazyFragment {
                         bannersBean.getLink(), bannersBean.getTitle(), bannersBean.getImg())));
         mSectionedRecyclerViewAdapter.addSection(new HomeFoodBannerSection(bannerList));
         mSectionedRecyclerViewAdapter.addSection(new HomeFoodItemSection(getActivity()));
-        mSectionedRecyclerViewAdapter.addSection(new HomeFoodNewSerialSection(getActivity(), newFoodSerials));
+        mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopNewSerialSection(getActivity(), newFoodSerials));
         if (!foodbobys.isEmpty()) {
-            mSectionedRecyclerViewAdapter.addSection(new HomeFoodBodySection(getActivity(), foodbobys));
+            mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopBodySection(getActivity(), foodbobys));
         }
-        mSectionedRecyclerViewAdapter.addSection(new HomeFoodSeasonNewSection(getActivity(), season, seasonNewFoods));
-        mSectionedRecyclerViewAdapter.addSection(new HomeFoodRecommendSection(getActivity(), foodRecommends));
+        mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopSeasonNewSection(getActivity(), season, seasonNewFoods));
+        mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopRecommendSection(getActivity(), foodRecommends));
         mSectionedRecyclerViewAdapter.notifyDataSetChanged();
     }
 

@@ -16,6 +16,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name="com.luomor.yiaroundad.YiAroundAdApp"
@@ -114,6 +115,11 @@
         <!-- 美食索引界面 -->
         <activity
             android:name="com.luomor.yiaroundad.module.home.food.FoodIndexActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 美食列表界面 -->
+        <activity
+            android:name="com.luomor.yiaroundad.module.home.shop.ShopIndexActivity"
             android:screenOrientation="portrait" />
 
         <!-- 关于我 -->

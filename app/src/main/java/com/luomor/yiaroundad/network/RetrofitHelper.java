@@ -13,6 +13,7 @@ import com.luomor.yiaroundad.network.api.RankService;
 import com.luomor.yiaroundad.network.api.SearchService;
 import com.luomor.yiaroundad.network.api.UserService;
 import com.luomor.yiaroundad.network.api.VipService;
+import com.luomor.yiaroundad.network.around.FoodShopService;
 import com.luomor.yiaroundad.network.auxiliary.ApiConstants;
 import com.luomor.yiaroundad.utils.CommonUtil;
 
@@ -86,6 +87,10 @@ public class RetrofitHelper {
 
     public static Im9Service getIm9API() {
         return createApi(Im9Service.class, ApiConstants.IM9_BASE_URL);
+    }
+
+    public static FoodShopService getFoodShopAPI() {
+        return createApi(FoodShopService.class, ApiConstants.AROUND_BASE_URL);
     }
 
     /**

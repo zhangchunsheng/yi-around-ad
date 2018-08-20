@@ -19,5 +19,8 @@ public class ApiConstants {
     public static final String USER_BASE_URL = "http://space.bilibili.com/";
     public static final String VIP_BASE_URL = "http://vip.bilibili.com/";
     public static final String IM9_BASE_URL = "http://www.im9.com/";
+
+    public static final String AROUND_BASE_URL = "https://around.luomor.com/";
+
     public static final String COMMON_UA_STR = "OhYiAroundAd Android Client/2.1 (1097692918@qq.com)";
 }
