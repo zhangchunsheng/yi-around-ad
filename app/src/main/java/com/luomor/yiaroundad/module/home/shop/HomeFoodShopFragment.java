@@ -54,7 +54,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     private SectionedRecyclerViewAdapter mSectionedRecyclerViewAdapter;
     private List<FoodShopRecommendInfo.ResultBean> foodRecommends = new ArrayList<>();
     private List<ShopListInfo.ResultBean.AdBean.HeadBean> banners = new ArrayList<>();
-    private List<ShopListInfo.ResultBean.AdBean.BodyBean> foodbobys = new ArrayList<>();
+    private List<ShopListInfo.ResultBean.AdBean.BodyBean> foodbodys = new ArrayList<>();
     private List<ShopListInfo.ResultBean.PreviousBean.ListBean> seasonNewFoods = new ArrayList<>();
     private List<ShopListInfo.ResultBean.SerializingBean> newFoodSerials = new ArrayList<>();
 
@@ -125,7 +125,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
         mIsRefreshing = true;
         banners.clear();
         bannerList.clear();
-        foodbobys.clear();
+        foodbodys.clear();
         foodRecommends.clear();
         newFoodSerials.clear();
         seasonNewFoods.clear();
@@ -142,7 +142,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
                     @Override
                     public Observable<FoodShopRecommendInfo> call(ShopListInfo shopListInfo) {
                         banners.addAll(shopListInfo.getResult().getAd().getHead());
-                        foodbobys.addAll(shopListInfo.getResult().getAd().getBody());
+                        foodbodys.addAll(shopListInfo.getResult().getAd().getBody());
                         seasonNewFoods.addAll(shopListInfo.getResult().getPrevious().getList());
                         season = shopListInfo.getResult().getPrevious().getSeason();
                         newFoodSerials.addAll(shopListInfo.getResult().getSerializing());
@@ -172,8 +172,8 @@ public class HomeFoodShopFragment extends RxLazyFragment {
         mSectionedRecyclerViewAdapter.addSection(new HomeFoodBannerSection(bannerList));
         mSectionedRecyclerViewAdapter.addSection(new HomeFoodItemSection(getActivity()));
         mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopNewSerialSection(getActivity(), newFoodSerials));
-        if (!foodbobys.isEmpty()) {
-            mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopBodySection(getActivity(), foodbobys));
+        if (!foodbodys.isEmpty()) {
+            mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopBodySection(getActivity(), foodbodys));
         }
         mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopSeasonNewSection(getActivity(), season, seasonNewFoods));
         mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopRecommendSection(getActivity(), foodRecommends));
