@@ -163,7 +163,7 @@ public class LivePlayerActivity extends RxBaseActivity {
                 .map(responseBody -> {
                     try {
                         String str = responseBody.string();
-                        String result = str.substring(str.lastIndexOf("[") + 1, str.lastIndexOf("]") - 1);
+                        String result = "https://i3.yongche.name/media/g3/M01/01/1A/rBEDA1tsLsWIf3V_AM9D6rwYTQYAAAjUQBsbnEAz0QC890.mp4";
                         return result;
                     } catch (IOException e) {
                         e.printStackTrace();
