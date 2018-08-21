@@ -190,6 +190,17 @@ public class BrowserActivity extends RxBaseActivity {
             view.loadDataWithBaseURL(null, errorHtml, "text/html", "UTF-8", null);
         }
 
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            if (url != null && !(url.startsWith("http://") || url.startsWith("https://"))) {
+                //view.getContext().startActivity(
+                //        new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                return true;
+            } else {
+                return false;
+            }
+        }
+
     }
 
 
