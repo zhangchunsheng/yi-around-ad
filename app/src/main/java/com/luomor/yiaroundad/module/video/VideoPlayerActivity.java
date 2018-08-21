@@ -162,7 +162,7 @@ public class VideoPlayerActivity extends RxBaseActivity implements BarrageSwitch
                         });
                         String url = "http://comment.bilibili.com/" + cid + ".xml";
                         //http://comment.bilibili.com/768.xml
-                        url = "http://comment.bilibili.com/768.xml";
+                        url = "https://around.luomor.com/danmaku/getList";
                         return YiAdBarrageDownloadUtil.downloadXML(url);
                     }
                 })
