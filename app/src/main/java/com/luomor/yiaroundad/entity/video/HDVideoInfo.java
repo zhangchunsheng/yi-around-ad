@@ -9,86 +9,117 @@ import java.util.List;
  * 网站高清视频
  */
 public class HDVideoInfo {
-    private String from;
-    private String result;
-    private String format;
-    private int timelength;
-    private String accept_format;
-    private String seek_param;
-    private String seek_type;
-    private List<Integer> accept_quality;
-    private List<DurlEntity> durl;
 
-    public String getFrom() {
-        return from;
+    private int code;
+    private HDVideoBean result;
+    private String msg;
+
+    public int getCode() {
+        return code;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
+    public void setCode(int code) {
+        this.code = code;
     }
 
-    public String getResult() {
+    public HDVideoBean getResult() {
         return result;
     }
 
-    public void setResult(String result) {
+    public void setResult(HDVideoBean result) {
         this.result = result;
     }
 
-    public String getFormat() {
-        return format;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setFormat(String format) {
-        this.format = format;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
-    public int getTimelength() {
-        return timelength;
-    }
+    public static class HDVideoBean {
+        private String from;
+        private String data;
+        private String format;
+        private int timelength;
+        private String accept_format;
+        private String seek_param;
+        private String seek_type;
+        private List<Integer> accept_quality;
+        private List<DurlEntity> durl;
 
-    public void setTimelength(int timelength) {
-        this.timelength = timelength;
-    }
+        public String getFrom() {
+            return from;
+        }
 
-    public String getAccept_format() {
-        return accept_format;
-    }
+        public void setFrom(String from) {
+            this.from = from;
+        }
 
-    public void setAccept_format(String accept_format) {
-        this.accept_format = accept_format;
-    }
+        public String getData() {
+            return data;
+        }
 
-    public String getSeek_param() {
-        return seek_param;
-    }
+        public void setData(String data) {
+            this.data = data;
+        }
 
-    public void setSeek_param(String seek_param) {
-        this.seek_param = seek_param;
-    }
+        public String getFormat() {
+            return format;
+        }
 
-    public String getSeek_type() {
-        return seek_type;
-    }
+        public void setFormat(String format) {
+            this.format = format;
+        }
 
-    public void setSeek_type(String seek_type) {
-        this.seek_type = seek_type;
-    }
+        public int getTimelength() {
+            return timelength;
+        }
 
-    public List<Integer> getAccept_quality() {
-        return accept_quality;
-    }
+        public void setTimelength(int timelength) {
+            this.timelength = timelength;
+        }
 
-    public void setAccept_quality(List<Integer> accept_quality) {
-        this.accept_quality = accept_quality;
-    }
+        public String getAccept_format() {
+            return accept_format;
+        }
 
-    public List<DurlEntity> getDurl() {
-        return durl;
-    }
+        public void setAccept_format(String accept_format) {
+            this.accept_format = accept_format;
+        }
 
-    public void setDurl(List<DurlEntity> durl) {
-        this.durl = durl;
+        public String getSeek_param() {
+            return seek_param;
+        }
+
+        public void setSeek_param(String seek_param) {
+            this.seek_param = seek_param;
+        }
+
+        public String getSeek_type() {
+            return seek_type;
+        }
+
+        public void setSeek_type(String seek_type) {
+            this.seek_type = seek_type;
+        }
+
+        public List<Integer> getAccept_quality() {
+            return accept_quality;
+        }
+
+        public void setAccept_quality(List<Integer> accept_quality) {
+            this.accept_quality = accept_quality;
+        }
+
+        public List<DurlEntity> getDurl() {
+            return durl;
+        }
+
+        public void setDurl(List<DurlEntity> durl) {
+            this.durl = durl;
+        }
     }
 
     public static class DurlEntity {

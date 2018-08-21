@@ -24,6 +24,9 @@ public interface YiAdGoService {
     @GET("/video/{cid}")
     Observable<HDVideoInfo> getHDVideoUrl(@Path("cid") int cid, @Query("quailty") int quailty, @Query("type") String type);
 
+    @GET("video/getHDVideo")
+    Observable<HDVideoInfo> getHDVideo(@Query("cid") int cid, @Query("quailty") int quailty, @Query("type") String type);
+
     /**
      * 新美食连载
      */

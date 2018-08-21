@@ -53,10 +53,6 @@ public class RetrofitHelper {
         return createApi(YiAdApiService.class, ApiConstants.API_BASE_URL);
     }
 
-    public static YiAdGoService getYiAdGoAPI() {
-        return createApi(YiAdGoService.class, ApiConstants.BILI_GO_BASE_URL);
-    }
-
     public static RankService getRankAPI() {
         return createApi(RankService.class, ApiConstants.RANK_BASE_URL);
     }
@@ -83,6 +79,10 @@ public class RetrofitHelper {
 
     public static Im9Service getIm9API() {
         return createApi(Im9Service.class, ApiConstants.IM9_BASE_URL);
+    }
+
+    public static YiAdGoService getYiAdGoAPI() {
+        return createApi(YiAdGoService.class, ApiConstants.AROUND_BASE_URL);
     }
 
     public static LiveService getLiveAPI() {

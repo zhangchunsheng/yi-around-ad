@@ -123,7 +123,7 @@ public class HomeRecommendedSection extends StatelessSection {
 
         switch (type) {
             case TYPE_LIVE:
-                //直播item
+                // 直播item
                 itemViewHolder.mLiveLayout.setVisibility(View.VISIBLE);
                 itemViewHolder.mVideoLayout.setVisibility(View.GONE);
                 itemViewHolder.mFoodLayout.setVisibility(View.GONE);

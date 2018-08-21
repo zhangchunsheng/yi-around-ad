@@ -146,9 +146,9 @@ public class VideoPlayerActivity extends RxBaseActivity implements BarrageSwitch
     @Override
     public void loadData() {
         RetrofitHelper.getYiAdGoAPI()
-                .getHDVideoUrl(cid, 4, ConstantUtil.VIDEO_TYPE_MP4)
+                .getHDVideo(cid, 4, ConstantUtil.VIDEO_TYPE_MP4)
                 .compose(bindToLifecycle())
-                .map(videoInfo -> Uri.parse(videoInfo.getDurl().get(0).getUrl()))
+                .map(videoInfo -> Uri.parse(videoInfo.getResult().getDurl().get(0).getUrl()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .flatMap(new Func1<Uri, Observable<BaseDanmakuParser>>() {
                     @Override

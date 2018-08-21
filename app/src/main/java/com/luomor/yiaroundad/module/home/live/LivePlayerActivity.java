@@ -260,7 +260,6 @@ public class LivePlayerActivity extends RxBaseActivity {
         }
     }
 
-
     private void ControlVideo() {
         if (isPlay) {
             ijkMediaPlayer.pause();
