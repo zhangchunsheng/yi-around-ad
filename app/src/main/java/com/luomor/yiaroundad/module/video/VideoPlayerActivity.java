@@ -161,6 +161,8 @@ public class VideoPlayerActivity extends RxBaseActivity implements BarrageSwitch
                             mVideoPrepareLayout.setVisibility(View.GONE);
                         });
                         String url = "http://comment.bilibili.com/" + cid + ".xml";
+                        //http://comment.bilibili.com/768.xml
+                        url = "http://comment.bilibili.com/768.xml";
                         return YiAdBarrageDownloadUtil.downloadXML(url);
                     }
                 })
