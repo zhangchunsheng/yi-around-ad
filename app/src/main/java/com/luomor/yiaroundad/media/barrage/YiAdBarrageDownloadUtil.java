@@ -56,4 +56,34 @@ public class YiAdBarrageDownloadUtil {
             subscriber.onNext(parser);
         }).subscribeOn(Schedulers.io());
     }
+
+    public static Observable<BaseDanmakuParser> downloadJson(final String uri) {
+        return Observable.create((Observable.OnSubscribe<BaseDanmakuParser>) subscriber -> {
+            if (TextUtils.isEmpty(uri)) {
+                subscriber.onNext(new BaseDanmakuParser() {
+                    @Override
+                    protected IDanmakus parse() {
+                        return new Danmakus();
+                    }
+                });
+            }
+            ILoader loader = null;
+            try {
+                HttpConnection.Response rsp = (HttpConnection.Response)
+                        Jsoup.connect(uri).timeout(20000).execute();
+                InputStream stream = new ByteArrayInputStream(YiAdBarrageCompressionTools.
+                        decompressXML(rsp.bodyAsBytes()));
+                loader = DanmakuLoaderFactory.
+                        create(DanmakuLoaderFactory.TAG_BILI);
+                loader.load(stream);
+            } catch (IOException | DataFormatException | IllegalDataException e) {
+                e.printStackTrace();
+            }
+            BaseDanmakuParser parser = new YiAdBarrageParser();
+            assert loader != null;
+            IDataSource<?> dataSource = loader.getDataSource();
+            parser.load(dataSource);
+            subscriber.onNext(parser);
+        }).subscribeOn(Schedulers.io());
+    }
 }
