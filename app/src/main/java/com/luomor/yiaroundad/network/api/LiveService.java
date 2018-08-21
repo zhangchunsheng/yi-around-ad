@@ -25,7 +25,7 @@ public interface LiveService {
     /**
      * 直播url
      */
-    @GET("api/playurl?player=1&quality=0")
+    @GET("live/getPlayerUrl")
     Observable<ResponseBody> getLiveUrl(@Query("cid") int cid);
 
     /**

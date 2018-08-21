@@ -45,10 +45,6 @@ public class RetrofitHelper {
         initOkHttpClient();
     }
 
-    public static LiveService getLiveAPI() {
-        return createApi(LiveService.class, ApiConstants.LIVE_BASE_URL);
-    }
-
     public static YiAdAppService getYiAdAppAPI() {
         return createApi(YiAdAppService.class, ApiConstants.APP_BASE_URL);
     }
@@ -87,6 +83,10 @@ public class RetrofitHelper {
 
     public static Im9Service getIm9API() {
         return createApi(Im9Service.class, ApiConstants.IM9_BASE_URL);
+    }
+
+    public static LiveService getLiveAPI() {
+        return createApi(LiveService.class, ApiConstants.AROUND_BASE_URL);
     }
 
     public static FoodShopService getFoodShopAPI() {
