@@ -163,7 +163,7 @@ public class LivePlayerActivity extends RxBaseActivity {
                 .map(responseBody -> {
                     try {
                         String str = responseBody.string();
-                        String result = "https://i3.yongche.name/media/g3/M01/01/1A/rBEDA1tsLsWIf3V_AM9D6rwYTQYAAAjUQBsbnEAz0QC890.mp4";
+                        String result = "http://i3.yongche.name/media/g2/M01/1D/26/rBEBP1q-I9yIFhbsACHbIxXLhwMAALhDACGphUAIds7350.mp4";
                         return result;
                     } catch (IOException e) {
                         e.printStackTrace();
