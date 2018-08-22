@@ -117,10 +117,10 @@ public class HomeRecommendedFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
-        RetrofitHelper.getYiAdAppAPI()
+        RetrofitHelper.getAdAppAPI()
                 .getRecommendedBannerInfo()
                 .compose(bindToLifecycle())
-                .map(RecommendBannerInfo::getData)
+                .map(RecommendBannerInfo::getResult)
                 .flatMap(new Func1<List<RecommendBannerInfo.DataBean>, Observable<RecommendInfo>>() {
                     @Override
                     public Observable<RecommendInfo> call(List<RecommendBannerInfo.DataBean> dataBeans) {

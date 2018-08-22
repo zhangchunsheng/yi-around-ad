@@ -20,6 +20,6 @@ public interface AdAppService {
     /**
      * 首页推荐banner
      */
-    @GET("x/banner?plat=4&build=411007&channel=bilih5")
+    @GET("recommend/getBanners?version=1")
     Observable<RecommendBannerInfo> getRecommendedBannerInfo();
 }

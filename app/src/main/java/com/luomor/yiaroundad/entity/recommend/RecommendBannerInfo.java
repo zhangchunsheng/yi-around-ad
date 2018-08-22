@@ -11,7 +11,9 @@ import java.util.List;
 
 public class RecommendBannerInfo {
     private int code;
-    private List<DataBean> data;
+    private String msg;
+
+    private List<DataBean> result;
 
     public int getCode() {
         return code;
@@ -21,12 +23,20 @@ public class RecommendBannerInfo {
         this.code = code;
     }
 
-    public List<DataBean> getData() {
-        return data;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setData(List<DataBean> data) {
-        this.data = data;
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public List<DataBean> getResult() {
+        return result;
+    }
+
+    public void setResult(List<DataBean> result) {
+        this.result = result;
     }
 
 
