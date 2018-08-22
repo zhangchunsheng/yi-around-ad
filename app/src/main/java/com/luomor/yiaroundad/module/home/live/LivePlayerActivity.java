@@ -163,6 +163,7 @@ public class LivePlayerActivity extends RxBaseActivity {
                 .map(responseBody -> {
                     try {
                         String str = responseBody.string();
+                        //http://js.live-play.acgvideo.com/live-js/341670/live_1757863_6687518.flv?wsSecret=6370839b32912657234d31c90d7b5fb5&wsTime=1534939802
                         String result = "http://i3.yongche.name/media/g2/M01/1D/26/rBEBP1q-I9yIFhbsACHbIxXLhwMAALhDACGphUAIds7350.mp4";
                         return result;
                     } catch (IOException e) {
