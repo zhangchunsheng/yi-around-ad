@@ -201,46 +201,46 @@ public class HomeRecommendedSection extends StatelessSection {
      */
     private void setTypeIcon(HeaderViewHolder headerViewHolder) {
         switch (title) {
-            case "热门焦点":
+            case "美食":
                 headerViewHolder.mTypeImg.setImageResource(icons[0]);
                 break;
-            case "正在直播":
+            case "休闲娱乐":
                 headerViewHolder.mTypeImg.setImageResource(icons[1]);
                 break;
-            case "美食推荐":
+            case "结婚":
                 headerViewHolder.mTypeImg.setImageResource(icons[2]);
                 break;
-            case "动画区":
+            case "电影演出赛事":
                 headerViewHolder.mTypeImg.setImageResource(icons[3]);
                 break;
-            case "音乐区":
+            case "丽人":
                 headerViewHolder.mTypeImg.setImageResource(icons[4]);
                 break;
-            case "舞蹈区":
+            case "酒店":
                 headerViewHolder.mTypeImg.setImageResource(icons[5]);
                 break;
-            case "游戏区":
+            case "亲子":
                 headerViewHolder.mTypeImg.setImageResource(icons[6]);
                 break;
-            case "鬼畜区":
+            case "周边游":
                 headerViewHolder.mTypeImg.setImageResource(icons[7]);
                 break;
-            case "科技区":
+            case "运动健身":
                 headerViewHolder.mTypeImg.setImageResource(icons[8]);
                 break;
-            case "生活区":
+            case "购物":
                 headerViewHolder.mTypeImg.setImageResource(icons[9]);
                 break;
-            case "时尚区":
+            case "家装":
                 headerViewHolder.mTypeImg.setImageResource(icons[10]);
                 break;
-            case "娱乐区":
+            case "学习培训":
                 headerViewHolder.mTypeImg.setImageResource(icons[11]);
                 break;
-            case "电视剧区":
+            case "生活服务":
                 headerViewHolder.mTypeImg.setImageResource(icons[12]);
                 break;
-            case "电影区":
+            case "医疗健康":
                 headerViewHolder.mTypeImg.setImageResource(icons[13]);
                 break;
         }
