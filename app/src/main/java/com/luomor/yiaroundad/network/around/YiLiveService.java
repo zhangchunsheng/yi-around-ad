@@ -1,7 +1,6 @@
-package com.luomor.yiaroundad.network.api;
+package com.luomor.yiaroundad.network.around;
 
 import com.luomor.yiaroundad.entity.live.LiveAppIndexInfo;
-import com.luomor.yiaroundad.entity.user.UserLiveRoomStatusInfo;
 
 import okhttp3.ResponseBody;
 import retrofit2.http.GET;
@@ -9,13 +8,10 @@ import retrofit2.http.Query;
 import rx.Observable;
 
 /**
- * Created by Peter on 18/6/14 12:03
- * 1097692918@qq.com
- * <p>
- * 直播相关api
+ * Created by peterzhang on 22/08/2018.
  */
-public interface LiveService {
 
+public interface YiLiveService {
     /**
      * 首页直播
      */
@@ -25,12 +21,6 @@ public interface LiveService {
     /**
      * 直播url
      */
-    @GET("api/playurl?player=1&quality=0")
+    @GET("live/getPlayerUrl")
     Observable<ResponseBody> getLiveUrl(@Query("cid") int cid);
-
-    /**
-     * 获取直播状态
-     */
-    @GET("AppRoom/getRoomInfo")
-    Observable<UserLiveRoomStatusInfo> getUserLiveRoomStatus(@Query("mid") int mid);
 }
