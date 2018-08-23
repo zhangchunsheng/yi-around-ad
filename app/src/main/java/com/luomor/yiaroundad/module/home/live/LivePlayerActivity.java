@@ -167,7 +167,7 @@ public class LivePlayerActivity extends RxBaseActivity {
                         //http://js.live-play.acgvideo.com/live-js/341670/live_1757863_6687518.flv?wsSecret=6370839b32912657234d31c90d7b5fb5&wsTime=1534939802
                         //http://vali-dns.cp31.ott.cibntv.net/656F990A3B307131C73C5AFD/03000806005A6B2E579A2F2F8F11991B1F0665-871F-44B1-2AE6-BACCF96ACB33.mp4?ccode=0501&duration=391&expire=18000&psid=525123228a042d0995f6d69b818bb316&sp=&ups_client_netip=794556f2&ups_ts=1534939258&ups_userid=18207299&utid=UKaGEpD8Ow8CAXVJkO2XaxCD&vid=XMzM1NjA2OTEyNA%3D%3D&vkey=B4256243befba9655fec62060ead28c3f&s=efbfbd206001d98711ef
                         //https://i2.yongche.name/media/g3/M02/00/00/rBEDA1t9eECAc94qAbA4GwHg_W0365.mp4
-                        String result = "http://vali-dns.cp31.ott.cibntv.net/656F990A3B307131C73C5AFD/03000806005A6B2E579A2F2F8F11991B1F0665-871F-44B1-2AE6-BACCF96ACB33.mp4?ccode=0501&duration=391&expire=18000&psid=525123228a042d0995f6d69b818bb316&sp=&ups_client_netip=794556f2&ups_ts=1534939258&ups_userid=18207299&utid=UKaGEpD8Ow8CAXVJkO2XaxCD&vid=XMzM1NjA2OTEyNA%3D%3D&vkey=B4256243befba9655fec62060ead28c3f&s=efbfbd206001d98711ef";
+                        String result = "https://i2.yongche.name/media/g3/M02/00/00/rBEDA1t9eECAc94qAbA4GwHg_W0365.mp4";
                         return result;
                     } catch (IOException e) {
                         e.printStackTrace();
