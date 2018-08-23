@@ -11,7 +11,7 @@ import java.util.List;
 
 public class LiveAppIndexInfo {
     private int code;
-    private String message;
+    private String msg;
     private DataBean data;
 
     public int getCode() {
@@ -22,12 +22,12 @@ public class LiveAppIndexInfo {
         this.code = code;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public DataBean getData() {
