@@ -73,16 +73,16 @@ public class LiveAppIndexAdapter extends RecyclerView.Adapter {
         liveSizes.clear();
         bannerEntitys.clear();
         int tempSize = 0;
-        int partitionSize = mLiveAppIndexInfo.getData().getPartitions().size();
+        int partitionSize = mLiveAppIndexInfo.getResult().getPartitions().size();
 
-        List<LiveAppIndexInfo.DataBean.BannerBean> banner = mLiveAppIndexInfo.getData().getBanner();
+        List<LiveAppIndexInfo.DataBean.BannerBean> banner = mLiveAppIndexInfo.getResult().getBanner();
         Observable.from(banner)
                 .forEach(bannerBean -> bannerEntitys.add(new BannerEntity(
                         bannerBean.getLink(), bannerBean.getTitle(), bannerBean.getImg())));
 
         for (int i = 0; i < partitionSize; i++) {
             liveSizes.add(tempSize);
-            tempSize += mLiveAppIndexInfo.getData().getPartitions().get(i).getLives().size();
+            tempSize += mLiveAppIndexInfo.getResult().getPartitions().get(i).getLives().size();
         }
     }
 
@@ -145,7 +145,7 @@ public class LiveAppIndexAdapter extends RecyclerView.Adapter {
 
             LiveItemViewHolder liveItemViewHolder = (LiveItemViewHolder) holder;
 
-            livesBean = mLiveAppIndexInfo.getData().getPartitions().get(getItemPosition(position))
+            livesBean = mLiveAppIndexInfo.getResult().getPartitions().get(getItemPosition(position))
                     .getLives().get(position - 1 - entranceSize - getItemPosition(position) * 5);
 
             Glide.with(context)
@@ -175,7 +175,7 @@ public class LiveAppIndexAdapter extends RecyclerView.Adapter {
 
             LivePartitionViewHolder livePartitionViewHolder = (LivePartitionViewHolder) holder;
             LiveAppIndexInfo.DataBean.PartitionsBean.PartitionBean partition = mLiveAppIndexInfo.
-                    getData().getPartitions().get(getItemPosition(position)).getPartition();
+                    getResult().getPartitions().get(getItemPosition(position)).getPartition();
             Glide.with(context)
                     .load(partition.getSub_icon().getSrc())
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -201,7 +201,7 @@ public class LiveAppIndexAdapter extends RecyclerView.Adapter {
     public int getItemCount() {
         if (mLiveAppIndexInfo != null) {
             return 1 + entranceIconRes.length
-                    + mLiveAppIndexInfo.getData().getPartitions().size() * 5;
+                    + mLiveAppIndexInfo.getResult().getPartitions().size() * 5;
         } else {
             return 0;
         }

@@ -12,7 +12,7 @@ import java.util.List;
 public class LiveAppIndexInfo {
     private int code;
     private String msg;
-    private DataBean data;
+    private DataBean result;
 
     public int getCode() {
         return code;
@@ -30,12 +30,12 @@ public class LiveAppIndexInfo {
         this.msg = msg;
     }
 
-    public DataBean getData() {
-        return data;
+    public DataBean getResult() {
+        return result;
     }
 
-    public void setData(DataBean data) {
-        this.data = data;
+    public void setResult(DataBean result) {
+        this.result = result;
     }
 
 
