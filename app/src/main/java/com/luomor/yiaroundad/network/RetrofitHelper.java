@@ -14,6 +14,7 @@ import com.luomor.yiaroundad.network.api.SearchService;
 import com.luomor.yiaroundad.network.api.UserService;
 import com.luomor.yiaroundad.network.api.VipService;
 import com.luomor.yiaroundad.network.around.AdAppService;
+import com.luomor.yiaroundad.network.around.AdApiService;
 import com.luomor.yiaroundad.network.around.FoodShopService;
 import com.luomor.yiaroundad.network.around.YiLiveService;
 import com.luomor.yiaroundad.network.auxiliary.ApiConstants;
@@ -47,10 +48,6 @@ public class RetrofitHelper {
         initOkHttpClient();
     }
 
-    public static YiAdApiService getYiAdAPI() {
-        return createApi(YiAdApiService.class, ApiConstants.API_BASE_URL);
-    }
-
     public static RankService getRankAPI() {
         return createApi(RankService.class, ApiConstants.RANK_BASE_URL);
     }
@@ -79,12 +76,20 @@ public class RetrofitHelper {
         return createApi(Im9Service.class, ApiConstants.IM9_BASE_URL);
     }
 
+    public static YiAdApiService getYiAdAPI() {
+        return createApi(YiAdApiService.class, ApiConstants.API_BASE_URL);
+    }
+
     public static YiAdAppService getYiAdAppAPI() {
         return createApi(YiAdAppService.class, ApiConstants.APP_BASE_URL);
     }
 
     public static LiveService getLiveAPI() {
         return createApi(LiveService.class, ApiConstants.LIVE_BASE_URL);
+    }
+
+    public static AdApiService getAdAPI() {
+        return createApi(AdApiService.class, ApiConstants.AROUND_BASE_URL);
     }
 
     public static AdAppService getAdAppAPI() {
