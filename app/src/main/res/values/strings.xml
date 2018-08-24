@@ -32,7 +32,7 @@
     <string name="sp_introduction">专题简介:</string>
     <string name="sp_videos">专题剧集</string>
     <string name="goto_look">进去看看</string>
-    <string name="discover_search_hint">搜索视频 美食 up主或av号</string>
+    <string name="discover_search_hint">搜索视频 美食 店铺</string>
     <string name="everyone_in_the_search">大家都在搜</string>
     <string name="look_more">查看更多</string>
     <string name="interest_in_circle">兴趣圈</string>
@@ -68,7 +68,7 @@
     <string name="rank">排行榜</string>
     <string name="topic">话题</string>
     <string name="load_more">加载中…</string>
-    <string name="search_hint">搜索视频,美食,up主或av号</string>
+    <string name="search_hint">搜索视频,美食,店铺</string>
     <string name="danmaku_switch">弹幕开</string>
     <string name="play_immediately">立即播放</string>
     <string name="activity_center">活动中心</string>
