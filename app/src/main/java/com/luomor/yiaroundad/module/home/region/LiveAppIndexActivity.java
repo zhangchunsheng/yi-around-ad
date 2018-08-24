@@ -92,7 +92,7 @@ public class LiveAppIndexActivity extends RxBaseActivity {
 
     @Override
     public void loadData() {
-        RetrofitHelper.getLiveAPI()
+        RetrofitHelper.getYiLiveAPI()
                 .getLiveAppIndex()
                 .compose(bindToLifecycle())
                 .subscribeOn(Schedulers.io())
