@@ -36,7 +36,7 @@ public class VipActivity extends RxBaseActivity {
 
     @Override
     public void initViews(Bundle savedInstanceState) {
-        mWebView.loadUrl(ConstantUtil.VIP_URL);
+        mWebView.loadUrl(ConstantUtil.YI_VIP_URL);
     }
 
 

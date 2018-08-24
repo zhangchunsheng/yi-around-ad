@@ -8,8 +8,10 @@ package com.luomor.yiaroundad.utils;
  */
 
 public class ConstantUtil {
-    public static final String SHOP_URL = "http://bmall.bilibili.com/";
-    public static final String VIP_URL = "http://vip.bilibili.com/site/vip-faq-h5.html#yv1";
+    public static final String SHOP_URL = "https://bmall.bilibili.com/";
+    public static final String VIP_URL = "https://vip.bilibili.com/site/vip-faq-h5.html#yv1";
+    public static final String YI_SHOP_URL = "https://pro.m.jd.com/mall/active/4P9a2T9osR9JvtzHVaYTPvsecRtg/index.html";
+    public static final String YI_VIP_URL = "https://around.luomor.com/vip/faq";
     //用户投稿
     public static final String USER_CONTRIBUTE = "0";
     //用户收藏夹
