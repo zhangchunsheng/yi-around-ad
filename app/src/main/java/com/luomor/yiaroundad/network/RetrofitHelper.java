@@ -17,6 +17,7 @@ import com.luomor.yiaroundad.network.around.AdAppService;
 import com.luomor.yiaroundad.network.around.AdApiService;
 import com.luomor.yiaroundad.network.around.FoodShopService;
 import com.luomor.yiaroundad.network.around.YiLiveService;
+import com.luomor.yiaroundad.network.around.YiSearchService;
 import com.luomor.yiaroundad.network.auxiliary.ApiConstants;
 import com.luomor.yiaroundad.utils.CommonUtil;
 
@@ -64,10 +65,6 @@ public class RetrofitHelper {
         return createApi(FoodService.class, ApiConstants.FOOD_BASE_URL);
     }
 
-    public static SearchService getSearchAPI() {
-        return createApi(SearchService.class, ApiConstants.SEARCH_BASE_URL);
-    }
-
     public static AccountService getAccountAPI() {
         return createApi(AccountService.class, ApiConstants.ACCOUNT_BASE_URL);
     }
@@ -80,12 +77,20 @@ public class RetrofitHelper {
         return createApi(YiAdApiService.class, ApiConstants.API_BASE_URL);
     }
 
+    public static SearchService getSearchAPI() {
+        return createApi(SearchService.class, ApiConstants.SEARCH_BASE_URL);
+    }
+
     public static YiAdAppService getYiAdAppAPI() {
         return createApi(YiAdAppService.class, ApiConstants.APP_BASE_URL);
     }
 
     public static LiveService getLiveAPI() {
         return createApi(LiveService.class, ApiConstants.LIVE_BASE_URL);
+    }
+
+    public static YiSearchService getYiSearchAPI() {
+        return createApi(YiSearchService.class, ApiConstants.AROUND_BASE_URL);
     }
 
     public static AdApiService getAdAPI() {

@@ -11,37 +11,65 @@ import java.util.List;
 
 public class HotSearchTag {
     private int code;
-    private String seid;
-    private String message;
-    private int timestamp;
-    private List<ListBean> list;
+    private String msg;
+    private ResultBean result;
 
-    public List<ListBean> getList() {
-        return list;
+    public int getCode() {
+        return code;
     }
 
-    public void setList(List<ListBean> list) {
-        this.list = list;
+    public void setCode(int code) {
+        this.code = code;
     }
 
-    public static class ListBean {
-        private String keyword;
-        private String status;
+    public String getMsg() {
+        return msg;
+    }
 
-        public String getKeyword() {
-            return keyword;
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public ResultBean getResult() {
+        return result;
+    }
+
+    public void setResult(ResultBean result) {
+        this.result = result;
+    }
+
+    public static class ResultBean {
+        private String seid;
+        private int timestamp;
+        private List<ListBean> list;
+
+        public List<ListBean> getList() {
+            return list;
         }
 
-        public void setKeyword(String keyword) {
-            this.keyword = keyword;
+        public void setList(List<ListBean> list) {
+            this.list = list;
         }
 
-        public String getStatus() {
-            return status;
-        }
+        public static class ListBean {
+            private String keyword;
+            private String status;
 
-        public void setStatus(String status) {
-            this.status = status;
+            public String getKeyword() {
+                return keyword;
+            }
+
+            public void setKeyword(String keyword) {
+                this.keyword = keyword;
+            }
+
+            public String getStatus() {
+                return status;
+            }
+
+            public void setStatus(String status) {
+                this.status = status;
+            }
         }
     }
 }

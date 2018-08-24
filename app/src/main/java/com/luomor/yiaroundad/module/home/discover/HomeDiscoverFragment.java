@@ -69,7 +69,7 @@ public class HomeDiscoverFragment extends RxLazyFragment {
 
 
     private void getTags() {
-        RetrofitHelper.getSearchAPI()
+        RetrofitHelper.getYiSearchAPI()
                 .getHotSearchTags()
                 .compose(bindToLifecycle())
                 .map(HotSearchTag::getList)
