@@ -4,10 +4,10 @@
   "items": [{
     "id": 1,
     "title": "王者荣耀",
-    "summary": "《王者荣耀》是腾讯第一5v5团队公平竞技游戏，国民MOBA手游大作！5V5王者峡谷，公平对战，还原MOBA经典体验；契约之战、迷雾模式等，带来花式作战乐趣！10秒实时跨区匹配，与好友开黑上分，向最强王者进击！多款英雄任凭选择——英雄对战王者峡谷，一血、五杀、超神，实力碾压，收割全场！敌军即将到达战场，王者召唤师快来集结好友，准备团战，就在《王者荣耀》！",
+    "summary": "《王者荣耀》是腾讯第一5v5团队公平竞技游戏！",
     "iOS_game_status": 1,
-    "download_link": "http://imtt.dd.qq.com/16891/94246247C48BE01F6991C752F4E1790C.apk?fsname=com.tencent.tmgp.sgame_1.36.1.8_36010802.apk&csr=1bbd",
-    "cover": "http://pp.myapp.com/ma_pic2/0/shot_12127266_1_1534988743/550",
+    "download_link": "http://a.app.qq.com/o/simple.jsp?pkgname=com.tencent.tmgp.sgame&channel=0002160650432d595942&fromcase=60001",
+    "cover": "http://i0.hdslb.com/bfs/game/76bfeb1728c213889b1419157f2fdcfac6696632.jpg",
     "hot": 1,
     "new": 1
   }]
