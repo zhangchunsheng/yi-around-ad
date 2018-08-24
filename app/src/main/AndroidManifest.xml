@@ -180,7 +180,7 @@
             android:name="com.luomor.yiaroundad.module.home.discover.ActivityCenterActivity"
             android:screenOrientation="portrait" />
 
-        <!-- 大会员界面 -->
+        <!-- 易会员界面 -->
         <activity
             android:name="com.luomor.yiaroundad.module.entry.VipActivity"
             android:screenOrientation="portrait" />

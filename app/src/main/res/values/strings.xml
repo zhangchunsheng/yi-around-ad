@@ -115,7 +115,7 @@
     <string name="item_settings">设置与帮助</string>
     <string name="item_theme">主题选择</string>
     <string name="item_app">应用推荐</string>
-    <string name="item_vip">我的大会员</string>
+    <string name="item_vip">我的易会员</string>
 
 
     <!--App 介绍-->
@@ -139,7 +139,7 @@
     <string name="section_more">更多</string>
     <string name="level_text">LV2</string>
     <string name="vip_message_1">您还不是</string>
-    <string name="vip">大会员</string>
+    <string name="vip">易会员</string>
     <string name="vip_message_2">哦</string>
     <string name="vip_message_3">黑科技在召唤</string>
     <string name="immediately_opened">立即开通</string>

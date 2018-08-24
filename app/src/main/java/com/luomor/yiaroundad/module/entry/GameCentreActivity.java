@@ -174,7 +174,7 @@ public class GameCentreActivity extends RxBaseActivity {
         Glide.with(GameCentreActivity.this).load(mVipGameInfoData.getImgPath())
                 .diskCacheStrategy(DiskCacheStrategy.ALL).into(mVipGameImage);
         mVipGameImage.setOnClickListener(v -> BrowserActivity.launch(GameCentreActivity.this,
-                mVipGameInfoData.getLink(), "年度大会员游戏礼包专区"));
+                mVipGameInfoData.getLink(), "年度易会员游戏礼包专区"));
         mHeaderViewRecyclerAdapter.addHeaderView(headView);
     }
 }

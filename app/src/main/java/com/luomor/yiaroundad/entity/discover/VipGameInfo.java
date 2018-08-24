@@ -4,7 +4,7 @@ package com.luomor.yiaroundad.entity.discover;
  * Created by Peter on 2018/06/31 23:26
  * 1097692918@qq.com
  * <p>
- * 大会员游戏礼包模型类
+ * 易会员游戏礼包模型类
  */
 
 public class VipGameInfo {

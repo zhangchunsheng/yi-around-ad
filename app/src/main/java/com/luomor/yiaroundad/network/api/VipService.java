@@ -9,7 +9,7 @@ import rx.Observable;
  * Created by Peter on 2018/06/31 23:27
  * 1097692918@qq.com
  * <p>
- * 大会员相关api
+ * 易会员相关api
  */
 
 public interface VipService {
