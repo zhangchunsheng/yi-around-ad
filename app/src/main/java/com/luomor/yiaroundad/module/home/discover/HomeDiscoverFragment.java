@@ -48,7 +48,7 @@ public class HomeDiscoverFragment extends RxLazyFragment {
     TextView mMoreText;
 
     private boolean isShowMore = true;
-    private List<HotSearchTag.ListBean> hotSearchTags = new ArrayList<>();
+    private List<HotSearchTag.ResultBean.ListBean> hotSearchTags = new ArrayList<>();
 
     public static HomeDiscoverFragment newInstance() {
         return new HomeDiscoverFragment();
@@ -72,11 +72,11 @@ public class HomeDiscoverFragment extends RxLazyFragment {
         RetrofitHelper.getYiSearchAPI()
                 .getHotSearchTags()
                 .compose(bindToLifecycle())
-                .map(HotSearchTag::getList)
+                .map(HotSearchTag::getResult)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(listBeans -> {
-                    hotSearchTags.addAll(listBeans);
+                .subscribe(result -> {
+                    hotSearchTags.addAll(result.getList());
                     initTagLayout();
                 }, throwable -> {
 
@@ -86,19 +86,19 @@ public class HomeDiscoverFragment extends RxLazyFragment {
 
     private void initTagLayout() {
         //获取热搜标签集合前9个默认显示
-        List<HotSearchTag.ListBean> frontTags = hotSearchTags.subList(0, 8);
-        mTagFlowLayout.setAdapter(new TagAdapter<HotSearchTag.ListBean>(frontTags) {
+        List<HotSearchTag.ResultBean.ListBean> frontTags = hotSearchTags.subList(0, 8);
+        mTagFlowLayout.setAdapter(new TagAdapter<HotSearchTag.ResultBean.ListBean>(frontTags) {
             @Override
-            public View getView(FlowLayout parent, int position, HotSearchTag.ListBean listBean) {
+            public View getView(FlowLayout parent, int position, HotSearchTag.ResultBean.ListBean listBean) {
                 TextView mTags = (TextView) LayoutInflater.from(getActivity()).inflate(R.layout.layout_tags_item, parent, false);
                 mTags.setText(listBean.getKeyword());
                 mTags.setOnClickListener(v -> TotalStationSearchActivity.launch(getActivity(), listBean.getKeyword()));
                 return mTags;
             }
         });
-        mHideTagLayout.setAdapter(new TagAdapter<HotSearchTag.ListBean>(hotSearchTags) {
+        mHideTagLayout.setAdapter(new TagAdapter<HotSearchTag.ResultBean.ListBean>(hotSearchTags) {
             @Override
-            public View getView(FlowLayout parent, int position, HotSearchTag.ListBean listBean) {
+            public View getView(FlowLayout parent, int position, HotSearchTag.ResultBean.ListBean listBean) {
                 TextView mTags = (TextView) LayoutInflater.from(getActivity()).inflate(R.layout.layout_tags_item, parent, false);
                 mTags.setText(listBean.getKeyword());
                 mTags.setOnClickListener(v -> TotalStationSearchActivity.launch(getActivity(), listBean.getKeyword()));
