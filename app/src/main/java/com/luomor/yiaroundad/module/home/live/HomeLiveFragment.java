@@ -78,9 +78,11 @@ public class HomeLiveFragment extends RxLazyFragment {
     @Override
     protected void initRefreshLayout() {
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
-        mSwipeRefreshLayout.setOnRefreshListener(this::loadData);
         mSwipeRefreshLayout.post(() -> {
             mSwipeRefreshLayout.setRefreshing(true);
+            loadData();
+        });
+        mSwipeRefreshLayout.setOnRefreshListener(() -> {
             loadData();
         });
     }
