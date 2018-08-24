@@ -29,7 +29,7 @@
                 android:scaleType="center" />
 
             <TextView
-                android:id="@+id/item_play"
+                android:id="@+id/item_recommend_num"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/bottom_shadow_height"
                 android:layout_gravity="bottom"
@@ -57,7 +57,7 @@
         android:textSize="@dimen/default_small_text_size" />
 
     <TextView
-        android:id="@+id/item_update"
+        android:id="@+id/item_distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingEnd="@dimen/default_tiny_padding"

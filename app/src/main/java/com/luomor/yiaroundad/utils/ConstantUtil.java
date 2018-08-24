@@ -32,6 +32,7 @@ public class ConstantUtil {
     public static final String EXTRA_TITLE = "title";
     public static final String KEY = "login";
     public final static String EXTRA_BANGUMI_KEY = "extra_season_id";
+    public final static String SHOP_ID = "shop_id";
     public static final String SUNDAY_TYPE = "周日";
     public static final String MONDAY_TYPE = "周一";
     public static final String TUESDAY_TYPE = "周二";

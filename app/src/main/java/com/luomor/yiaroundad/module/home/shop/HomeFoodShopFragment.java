@@ -57,6 +57,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     private List<ShopListInfo.ResultBean.AdBean.BodyBean> foodbodys = new ArrayList<>();
     private List<ShopListInfo.ResultBean.PreviousBean.ListBean> seasonNewFoods = new ArrayList<>();
     private List<ShopListInfo.ResultBean.SerializingBean> newFoodSerials = new ArrayList<>();
+    private List<ShopListInfo.ResultBean.ShopBean> shops = new ArrayList<>();
 
     public static HomeFoodShopFragment newInstance() {
         return new HomeFoodShopFragment();
@@ -128,6 +129,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
         foodbodys.clear();
         foodRecommends.clear();
         newFoodSerials.clear();
+        shops.clear();
         seasonNewFoods.clear();
         mSectionedRecyclerViewAdapter.removeAllSections();
     }
@@ -146,6 +148,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
                         seasonNewFoods.addAll(shopListInfo.getResult().getPrevious().getList());
                         season = shopListInfo.getResult().getPrevious().getSeason();
                         newFoodSerials.addAll(shopListInfo.getResult().getSerializing());
+                        shops.addAll(shopListInfo.getResult().getShops());
                         return RetrofitHelper.getFoodShopAPI().getFoodRecommended();
                     }
                 })
@@ -171,7 +174,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
                         bannersBean.getLink(), bannersBean.getTitle(), bannersBean.getImg())));
         mSectionedRecyclerViewAdapter.addSection(new HomeFoodBannerSection(bannerList));
         mSectionedRecyclerViewAdapter.addSection(new HomeFoodItemSection(getActivity()));
-        mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopNewSerialSection(getActivity(), newFoodSerials));
+        mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopNewSerialSection(getActivity(), shops));
         if (!foodbodys.isEmpty()) {
             mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopBodySection(getActivity(), foodbodys));
         }

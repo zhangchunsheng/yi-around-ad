@@ -164,6 +164,10 @@
             android:name="com.luomor.yiaroundad.module.home.food.FoodDetailsActivity"
             android:screenOrientation="portrait" />
 
+        <!-- 美食店铺详情界面 -->
+        <activity
+            android:name="com.luomor.yiaroundad.module.home.shop.ShopDetailsActivity"
+            android:screenOrientation="portrait" />
 
         <!-- 话题中心界面 -->
         <activity

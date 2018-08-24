@@ -17,6 +17,7 @@ import com.luomor.yiaroundad.entity.food.FoodAppIndexInfo;
 import com.luomor.yiaroundad.entity.shop.ShopListInfo;
 import com.luomor.yiaroundad.module.home.food.FoodDetailsActivity;
 import com.luomor.yiaroundad.module.home.food.NewFoodSerialActivity;
+import com.luomor.yiaroundad.module.home.shop.ShopDetailsActivity;
 import com.luomor.yiaroundad.utils.NumberUtil;
 import com.luomor.yiaroundad.widget.sectioned.StatelessSection;
 
@@ -34,18 +35,18 @@ import butterknife.ButterKnife;
 
 public class HomeFoodShopNewSerialSection extends StatelessSection {
     private Context mContext;
-    private List<ShopListInfo.ResultBean.SerializingBean> newFoodSerials;
+    private List<ShopListInfo.ResultBean.ShopBean> shops;
 
-    public HomeFoodShopNewSerialSection(Context context, List<ShopListInfo.ResultBean.SerializingBean> newFoodSerials) {
+    public HomeFoodShopNewSerialSection(Context context, List<ShopListInfo.ResultBean.ShopBean> shops) {
         super(R.layout.layout_home_food_shop_new_serial_head, R.layout.layout_home_food_shop_new_serial_body);
         this.mContext = context;
-        this.newFoodSerials = newFoodSerials;
+        this.shops = shops;
     }
 
 
     @Override
     public int getContentItemsTotal() {
-        return newFoodSerials.size();
+        return shops.size();
     }
 
 
@@ -59,22 +60,22 @@ public class HomeFoodShopNewSerialSection extends StatelessSection {
     @Override
     public void onBindItemViewHolder(RecyclerView.ViewHolder holder, int position) {
         ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-        ShopListInfo.ResultBean.SerializingBean serializingBean = newFoodSerials.get(position);
+        ShopListInfo.ResultBean.ShopBean shopBean = shops.get(position);
 
         Glide.with(mContext)
-                .load(serializingBean.getCover())
+                .load(shopBean.getShop_image())
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(R.drawable.yiaa_default_image_tv)
                 .dontAnimate()
                 .into(itemViewHolder.mImage);
 
-        itemViewHolder.mTitle.setText(serializingBean.getTitle());
+        itemViewHolder.mTitle.setText(shopBean.getShop_name());
         itemViewHolder.mPlay.setText(
-                NumberUtil.converString(serializingBean.getWatching_count()) + "人推荐");
+                NumberUtil.converString(shopBean.getComment_num()) + "人推荐");
         itemViewHolder.mUpdate.setText("距离您100米");
-        itemViewHolder.mCardView.setOnClickListener(v -> FoodDetailsActivity.launch(
-                (Activity) mContext, serializingBean.getSeason_id()));
+        itemViewHolder.mCardView.setOnClickListener(v -> ShopDetailsActivity.launch(
+                (Activity) mContext, shopBean.getShop_id()));
     }
 
 
@@ -89,14 +90,14 @@ public class HomeFoodShopNewSerialSection extends StatelessSection {
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder) {
         HomeFoodShopNewSerialSection.HeaderViewHolder headerViewHolder
                 = (HomeFoodShopNewSerialSection.HeaderViewHolder) holder;
-        headerViewHolder.mAllSerial.setOnClickListener(v -> mContext.startActivity(
+        headerViewHolder.mAllShop.setOnClickListener(v -> mContext.startActivity(
                 new Intent(mContext, NewFoodSerialActivity.class)));
     }
 
 
     static class HeaderViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.tv_all_serial)
-        TextView mAllSerial;
+        @BindView(R.id.tv_all_shop)
+        TextView mAllShop;
 
         HeaderViewHolder(View itemView) {
             super(itemView);
@@ -115,10 +116,10 @@ public class HomeFoodShopNewSerialSection extends StatelessSection {
         @BindView(R.id.item_title)
         TextView mTitle;
 
-        @BindView(R.id.item_play)
+        @BindView(R.id.item_recommend_num)
         TextView mPlay;
 
-        @BindView(R.id.item_update)
+        @BindView(R.id.item_distance)
         TextView mUpdate;
 
 
