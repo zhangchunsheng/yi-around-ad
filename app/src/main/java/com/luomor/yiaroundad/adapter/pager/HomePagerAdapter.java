@@ -37,7 +37,7 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
         if (fragments[position] == null) {
             switch (position) {
                 case 0:
-                    fragments[position] = HomeLiveFragment.newIntance();
+                    fragments[position] = HomeLiveFragment.newInstance();
                     break;
                 case 1:
                     fragments[position] = HomeRecommendedFragment.newInstance();

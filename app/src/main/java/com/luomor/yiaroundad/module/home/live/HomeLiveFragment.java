@@ -34,7 +34,7 @@ public class HomeLiveFragment extends RxLazyFragment {
 
     private LiveAppIndexAdapter mLiveAppIndexAdapter;
 
-    public static HomeLiveFragment newIntance() {
+    public static HomeLiveFragment newInstance() {
         return new HomeLiveFragment();
     }
 
