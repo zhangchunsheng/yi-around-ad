@@ -84,7 +84,7 @@ public class HomeAttentionFragment extends RxLazyFragment {
         RetrofitHelper.getAdAPI()
                 .getAttentionDynamic()
                 .compose(bindToLifecycle())
-                .map(attentionDynamicInfo -> attentionDynamicInfo.getData().getFeeds())
+                .map(attentionDynamicInfo -> attentionDynamicInfo.getResult().getFeeds())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(feedsBeans -> {
