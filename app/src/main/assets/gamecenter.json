@@ -4,10 +4,10 @@
   "items": [{
     "id": 1,
     "title": "王者荣耀",
-    "summary": "《王者荣耀》是腾讯第一5v5团队公平竞技游戏！",
+    "summary": "腾讯第一5v5团队公平竞技游戏",
     "iOS_game_status": 1,
     "download_link": "http://a.app.qq.com/o/simple.jsp?pkgname=com.tencent.tmgp.sgame&channel=0002160650432d595942&fromcase=60001",
-    "cover": "http://i0.hdslb.com/bfs/game/76bfeb1728c213889b1419157f2fdcfac6696632.jpg",
+    "cover": "https://i2.yongche.name/media/g3/M01/01/27/rBEDAlt_wOeIaEPUAACAHy9Ds40AAAogAOUNekAAIA3690.jpg",
     "hot": 1,
     "new": 1
   }]
