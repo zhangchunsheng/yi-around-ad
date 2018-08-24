@@ -90,7 +90,7 @@ public class HomePageFragment extends RxLazyFragment {
 
     private void initViewPager() {
         HomePagerAdapter mHomeAdapter = new HomePagerAdapter(getChildFragmentManager(), getApplicationContext());
-        mViewPager.setOffscreenPageLimit(8);
+        mViewPager.setOffscreenPageLimit(8);// can cause crash
         mViewPager.setAdapter(mHomeAdapter);
         mSlidingTab.setViewPager(mViewPager);
         mViewPager.setCurrentItem(1);
