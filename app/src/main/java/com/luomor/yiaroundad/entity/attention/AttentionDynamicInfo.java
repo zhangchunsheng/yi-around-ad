@@ -11,7 +11,8 @@ import java.util.List;
 
 public class AttentionDynamicInfo {
     private int code;
-    private DataBean data;
+    private String msg;
+    private DataBean result;
 
     public int getCode() {
         return code;
@@ -22,14 +23,20 @@ public class AttentionDynamicInfo {
         this.code = code;
     }
 
-
-    public DataBean getData() {
-        return data;
+    public String getMsg() {
+        return msg;
     }
 
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-    public void setData(DataBean data) {
-        this.data = data;
+    public DataBean getResult() {
+        return result;
+    }
+
+    public void setResult(DataBean result) {
+        this.result = result;
     }
 
 
