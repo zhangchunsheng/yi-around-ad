@@ -54,8 +54,8 @@ public class HomeLiveFragment extends RxLazyFragment {
         if (!isPrepared || !isVisible) {
             return;
         }
-        initRecyclerView();
         initRefreshLayout();
+        initRecyclerView();
         isPrepared = false;
     }
 
