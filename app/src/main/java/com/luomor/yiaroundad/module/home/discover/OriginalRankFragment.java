@@ -38,7 +38,7 @@ public class OriginalRankFragment extends RxLazyFragment {
     private String order;
     private boolean mIsRefreshing = false;
     private OriginalRankAdapter mAdapter;
-    private List<OriginalRankInfo.RankBean.ListBean> originalRanks = new ArrayList<>();
+    private List<OriginalRankInfo.ResultBean.ListBean> originalRanks = new ArrayList<>();
 
     public static OriginalRankFragment newInstance(String order) {
         OriginalRankFragment mFragment = new OriginalRankFragment();
@@ -82,7 +82,7 @@ public class OriginalRankFragment extends RxLazyFragment {
         RetrofitHelper.getYiRankAPI()
                 .getOriginalRanks(order)
                 .compose(this.bindToLifecycle())
-                .map(originalRankInfo -> originalRankInfo.getRank().getList())
+                .map(originalRankInfo -> originalRankInfo.getResult().getLists())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(listBeans -> {
