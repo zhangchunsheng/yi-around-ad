@@ -34,8 +34,8 @@ public interface AdAppService {
             @Query("keyword") String content, @Query("pn") int page, @Query("ps") int pagesize);
 
     /**
-     * 店铺详情数据
+     * 视频详情数据
      */
-    @GET("shop/getShopDetail")
+    @GET("video/getVideoDetail")
     Observable<VideoDetailsInfo> getShopDetails(@Query("shop_id") int shopId);
 }
