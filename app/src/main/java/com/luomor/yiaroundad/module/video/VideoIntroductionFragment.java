@@ -88,7 +88,7 @@ public class VideoIntroductionFragment extends RxLazyFragment {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(videoDetails -> {
-                    mVideoDetailsInfo = videoDetails.getData();
+                    mVideoDetailsInfo = videoDetails.getResult();
                     finishTask();
                 }, throwable -> {
                 });
