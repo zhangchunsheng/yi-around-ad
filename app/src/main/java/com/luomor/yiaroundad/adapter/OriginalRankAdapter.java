@@ -23,9 +23,9 @@ import java.util.List;
  */
 
 public class OriginalRankAdapter extends AbsRecyclerViewAdapter {
-    private List<OriginalRankInfo.RankBean.ListBean> originalRanks;
+    private List<OriginalRankInfo.ResultBean.ListBean> originalRanks;
 
-    public OriginalRankAdapter(RecyclerView recyclerView, List<OriginalRankInfo.RankBean.ListBean> originalRanks) {
+    public OriginalRankAdapter(RecyclerView recyclerView, List<OriginalRankInfo.ResultBean.ListBean> originalRanks) {
         super(recyclerView);
         this.originalRanks = originalRanks;
     }
@@ -44,7 +44,7 @@ public class OriginalRankAdapter extends AbsRecyclerViewAdapter {
         if (holder instanceof OriginalRankAdapter.ItemViewHolder) {
             OriginalRankAdapter.ItemViewHolder itemViewHolder
                     = (OriginalRankAdapter.ItemViewHolder) holder;
-            OriginalRankInfo.RankBean.ListBean listBean = originalRanks.get(position);
+            OriginalRankInfo.ResultBean.ListBean listBean = originalRanks.get(position);
             itemViewHolder.mVideoTitle.setText(listBean.getTitle());
             itemViewHolder.mVideoPlayNum.setText(String.valueOf(listBean.getPlay()));
             itemViewHolder.mVideoReviewCount.setText(String.valueOf(listBean.getVideo_review()));
