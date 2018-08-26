@@ -149,7 +149,7 @@ public class HomeDiscoverFragment extends RxLazyFragment {
 
 
     /**
-     * 前往全区排行榜界面
+     * 前往全部排行榜界面
      */
     @OnClick(R.id.layout_all_rank)
     void startAllRankActivity() {
