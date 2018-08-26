@@ -35,14 +35,14 @@ public class AllAreasRankActivity extends RxBaseActivity {
 
     private int position;
     private String[] titles = new String[]{
-            "美食", "动画", "音乐", "舞蹈", "游戏",
-            "科技", "生活", "鬼畜", "时尚", "娱乐", "电影", "电视剧"
+            "美食", "休闲娱乐", "结婚", "电影演出赛事", "丽人",
+            "酒店", "亲子", "周边游", "运动健身", "购物", "家装", "学习培训"
     };
     private String[] types = new String[]{
-            "all-03-13.json", "all-03-1.json", "all-03-3.json",
-            "all-03-129.json", "all-03-4.json", "all-03-36.json",
-            "all-03-160.json", "all-03-155.json", "all-03-5.json",
-            "all-03-119.json", "all-03-23.json", "all-03-11.json"
+            "001", "002", "003",
+            "004", "005", "006",
+            "007", "008", "009",
+            "010", "011", "012",
     };
 
     @Override
