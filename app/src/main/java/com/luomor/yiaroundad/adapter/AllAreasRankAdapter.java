@@ -22,9 +22,9 @@ import java.util.List;
  * 全区排行榜adapter
  */
 public class AllAreasRankAdapter extends AbsRecyclerViewAdapter {
-    private List<AllareasRankInfo.RankBean.ListBean> allRanks;
+    private List<AllareasRankInfo.ResultBean.ListBean> allRanks;
 
-    public AllAreasRankAdapter(RecyclerView recyclerView, List<AllareasRankInfo.RankBean.ListBean> allRanks) {
+    public AllAreasRankAdapter(RecyclerView recyclerView, List<AllareasRankInfo.ResultBean.ListBean> allRanks) {
         super(recyclerView);
         this.allRanks = allRanks;
     }
@@ -42,7 +42,7 @@ public class AllAreasRankAdapter extends AbsRecyclerViewAdapter {
     public void onBindViewHolder(ClickableViewHolder holder, int position) {
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-            AllareasRankInfo.RankBean.ListBean listBean = allRanks.get(position);
+            AllareasRankInfo.ResultBean.ListBean listBean = allRanks.get(position);
             itemViewHolder.mVideoTitle.setText(listBean.getTitle());
             itemViewHolder.mVideoPlayNum.setText(String.valueOf(listBean.getPlay()));
             itemViewHolder.mVideoReviewCount.setText(String.valueOf(listBean.getVideo_review()));

@@ -35,7 +35,7 @@ public class AllAreasRankFragment extends RxLazyFragment {
 
     private String type;
     private AllAreasRankAdapter mAdapter;
-    private List<AllareasRankInfo.RankBean.ListBean> allRanks = new ArrayList<>();
+    private List<AllareasRankInfo.ResultBean.ListBean> allRanks = new ArrayList<>();
 
     public static AllAreasRankFragment newInstance(String type) {
         AllAreasRankFragment mFragment = new AllAreasRankFragment();
@@ -69,10 +69,10 @@ public class AllAreasRankFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
-        RetrofitHelper.getRankAPI()
+        RetrofitHelper.getYiRankAPI()
                 .getAllareasRanks(type)
                 .compose(bindToLifecycle())
-                .map(allareasRankInfo -> allareasRankInfo.getRank().getList())
+                .map(allareasRankInfo -> allareasRankInfo.getResult().getLists())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(listBeans -> {

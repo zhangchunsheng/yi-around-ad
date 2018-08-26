@@ -10,22 +10,40 @@ import java.util.List;
  */
 
 public class AllareasRankInfo {
-    private RankBean rank;
+    private int code;
+    private String msg;
+    private ResultBean result;
 
-    public RankBean getRank() {
-        return rank;
+    public int getCode() {
+        return code;
     }
 
-    public void setRank(RankBean rank) {
-        this.rank = rank;
+    public void setCode(int code) {
+        this.code = code;
     }
 
-    public static class RankBean {
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public ResultBean getResult() {
+        return result;
+    }
+
+    public void setResult(ResultBean result) {
+        this.result = result;
+    }
+
+    public static class ResultBean {
         private String note;
         private int code;
         private int pages;
         private int num;
-        private List<ListBean> list;
+        private List<ListBean> lists;
 
         public String getNote() {
             return note;
@@ -59,12 +77,12 @@ public class AllareasRankInfo {
             this.num = num;
         }
 
-        public List<ListBean> getList() {
-            return list;
+        public List<ListBean> getLists() {
+            return lists;
         }
 
-        public void setList(List<ListBean> list) {
-            this.list = list;
+        public void setLists(List<ListBean> lists) {
+            this.lists = lists;
         }
 
         public static class ListBean {

@@ -22,6 +22,6 @@ public interface YiRankService {
     /**
      * 全区排行榜数据请求
      */
-    @GET("index/rank/{type}")
-    Observable<AllareasRankInfo> getAllareasRanks(@Path("type") String type);
+    @GET("rank/getShopRank")
+    Observable<AllareasRankInfo> getAllareasRanks(@Query("shop_type") String shopType);
 }
