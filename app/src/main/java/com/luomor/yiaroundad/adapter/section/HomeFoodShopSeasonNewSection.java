@@ -71,7 +71,7 @@ public class HomeFoodShopSeasonNewSection extends StatelessSection {
 
         itemViewHolder.mTitle.setText(listBean.getTitle());
         itemViewHolder.mPlay.setText(
-                NumberUtil.converString(Integer.valueOf(listBean.getFavourites())) + "人追美食");
+                NumberUtil.converString(Integer.valueOf(listBean.getFavourites())) + "人追推荐");
         itemViewHolder.mCardView.setOnClickListener(v -> {
         });
     }
