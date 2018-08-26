@@ -36,11 +36,13 @@ import butterknife.ButterKnife;
 public class HomeFoodShopNewSerialSection extends StatelessSection {
     private Context mContext;
     private List<ShopListInfo.ResultBean.ShopBean> shops;
+    private String shopTypeName;
 
-    public HomeFoodShopNewSerialSection(Context context, List<ShopListInfo.ResultBean.ShopBean> shops) {
+    public HomeFoodShopNewSerialSection(Context context, List<ShopListInfo.ResultBean.ShopBean> shops, String shopTypeName) {
         super(R.layout.layout_home_food_shop_new_serial_head, R.layout.layout_home_food_shop_new_serial_body);
         this.mContext = context;
         this.shops = shops;
+        this.shopTypeName = shopTypeName;
     }
 
 
@@ -70,6 +72,7 @@ public class HomeFoodShopNewSerialSection extends StatelessSection {
                 .dontAnimate()
                 .into(itemViewHolder.mImage);
 
+        itemViewHolder.mCardTitle.setText("新" + this.shopTypeName + "推荐");
         itemViewHolder.mTitle.setText(shopBean.getShop_name());
         itemViewHolder.mPlay.setText(
                 NumberUtil.converString(shopBean.getComment_num()) + "人推荐");
@@ -109,6 +112,9 @@ public class HomeFoodShopNewSerialSection extends StatelessSection {
 
         @BindView(R.id.card_view)
         LinearLayout mCardView;
+
+        @BindView(R.id.home_new_food_serial)
+        TextView mCardTitle;
 
         @BindView(R.id.item_img)
         ImageView mImage;

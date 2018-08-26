@@ -26,7 +26,9 @@ import com.luomor.yiaroundad.widget.banner.BannerEntity;
 import com.luomor.yiaroundad.widget.sectioned.SectionedRecyclerViewAdapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import rx.Observable;
@@ -51,6 +53,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     private int season;
     private boolean mIsRefreshing = false;
     private String shopType = "001";
+    private static Map<String, String> SHOPTYPES = new HashMap<String, String>();
     private List<BannerEntity> bannerList = new ArrayList<>();
     private SectionedRecyclerViewAdapter mSectionedRecyclerViewAdapter;
     private List<FoodShopRecommendInfo.ResultBean> foodRecommends = new ArrayList<>();
@@ -63,6 +66,9 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     public static HomeFoodShopFragment newInstance(String shopType) {
         HomeFoodShopFragment fragment = new HomeFoodShopFragment();
         fragment.shopType = shopType;
+        HomeFoodShopFragment.SHOPTYPES.put("001", "美食");
+        HomeFoodShopFragment.SHOPTYPES.put("004", "电影");
+        HomeFoodShopFragment.SHOPTYPES.put("012", "书店");
         return fragment;
     }
 
@@ -179,12 +185,13 @@ public class HomeFoodShopFragment extends RxLazyFragment {
         if(this.shopType.equals("001")) {
             mSectionedRecyclerViewAdapter.addSection(new HomeFoodItemSection(getActivity()));
         }
-        mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopNewSerialSection(getActivity(), shops));
+        String shopTypeName = HomeFoodShopFragment.SHOPTYPES.get(this.shopType);
+        mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopNewSerialSection(getActivity(), shops, shopTypeName));
         if (!foodbodys.isEmpty()) {
             mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopBodySection(getActivity(), foodbodys));
         }
-        mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopSeasonNewSection(getActivity(), season, seasonNewFoods));
-        mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopRecommendSection(getActivity(), foodRecommends));
+        mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopSeasonNewSection(getActivity(), season, seasonNewFoods, shopTypeName));
+        mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopRecommendSection(getActivity(), foodRecommends, shopTypeName));
         mSectionedRecyclerViewAdapter.notifyDataSetChanged();
     }
 

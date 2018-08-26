@@ -34,12 +34,14 @@ public class HomeFoodShopSeasonNewSection extends StatelessSection {
     private Context mContext;
     private int season;
     private List<ShopListInfo.ResultBean.PreviousBean.ListBean> seasonNewFoods;
+    private String shopTypeName;
 
-    public HomeFoodShopSeasonNewSection(Context context, int season, List<ShopListInfo.ResultBean.PreviousBean.ListBean> seasonNewFoods) {
+    public HomeFoodShopSeasonNewSection(Context context, int season, List<ShopListInfo.ResultBean.PreviousBean.ListBean> seasonNewFoods, String shopTypeName) {
         super(R.layout.layout_home_food_shop_season_new_head, R.layout.layout_home_food_shop_season_new_body);
         this.mContext = context;
         this.season = season;
         this.seasonNewFoods = seasonNewFoods;
+        this.shopTypeName = shopTypeName;
     }
 
 
@@ -98,22 +100,22 @@ public class HomeFoodShopSeasonNewSection extends StatelessSection {
         switch (season) {
             case 1:
                 //冬季
-                headViewHolder.mSeasonText.setText("1月新美食");
+                headViewHolder.mSeasonText.setText("1月新" + this.shopTypeName);
                 headViewHolder.mSeasonIcon.setImageResource(R.drawable.food_home_ic_season_1);
                 break;
             case 2:
                 //春季
-                headViewHolder.mSeasonText.setText("4月新美食");
+                headViewHolder.mSeasonText.setText("4月新" + this.shopTypeName);
                 headViewHolder.mSeasonIcon.setImageResource(R.drawable.food_home_ic_season_2);
                 break;
             case 3:
                 //夏季
-                headViewHolder.mSeasonText.setText("7月新美食");
+                headViewHolder.mSeasonText.setText("7月新" + this.shopTypeName);
                 headViewHolder.mSeasonIcon.setImageResource(R.drawable.food_home_ic_season_3);
                 break;
             case 4:
                 //秋季
-                headViewHolder.mSeasonText.setText("10月新美食");
+                headViewHolder.mSeasonText.setText("10月新" + this.shopTypeName);
                 headViewHolder.mSeasonIcon.setImageResource(R.drawable.food_home_ic_season_4);
                 break;
         }

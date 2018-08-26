@@ -6,6 +6,7 @@ import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 
 import com.luomor.yiaroundad.R;
 import com.luomor.yiaroundad.adapter.HomeFoodRecommendAdapter;
@@ -14,6 +15,8 @@ import com.luomor.yiaroundad.entity.food.FoodRecommendInfo;
 import com.luomor.yiaroundad.entity.shop.FoodShopRecommendInfo;
 import com.luomor.yiaroundad.module.common.BrowserActivity;
 import com.luomor.yiaroundad.widget.sectioned.StatelessSection;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -30,11 +33,13 @@ import butterknife.ButterKnife;
 public class HomeFoodShopRecommendSection extends StatelessSection {
     private Context mContext;
     private List<FoodShopRecommendInfo.ResultBean> foodRecommends;
+    private String shopTypeName;
 
-    public HomeFoodShopRecommendSection(Context context, List<FoodShopRecommendInfo.ResultBean> foodRecommends) {
+    public HomeFoodShopRecommendSection(Context context, List<FoodShopRecommendInfo.ResultBean> foodRecommends, String shopTypeName) {
         super(R.layout.layout_home_food_recommend_head, R.layout.layout_home_recommend_empty);
         this.mContext = context;
         this.foodRecommends = foodRecommends;
+        this.shopTypeName = shopTypeName;
     }
 
 
@@ -65,6 +70,7 @@ public class HomeFoodShopRecommendSection extends StatelessSection {
     @Override
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder) {
         HomeFoodShopRecommendSection.RecyclerViewHolder recyclerViewHolder = (HomeFoodShopRecommendSection.RecyclerViewHolder) holder;
+        recyclerViewHolder.mCardTitle.setText(this.shopTypeName + "推荐");
         recyclerViewHolder.mRecyclerView.setHasFixedSize(false);
         recyclerViewHolder.mRecyclerView.setNestedScrollingEnabled(false);
         recyclerViewHolder.mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext,
@@ -79,6 +85,9 @@ public class HomeFoodShopRecommendSection extends StatelessSection {
 
 
     static class RecyclerViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.home_food_recommend)
+        TextView mCardTitle;
+
         @BindView(R.id.home_food_recommend_recycler)
         RecyclerView mRecyclerView;
 
