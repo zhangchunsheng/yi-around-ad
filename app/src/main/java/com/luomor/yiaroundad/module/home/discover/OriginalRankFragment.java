@@ -79,7 +79,7 @@ public class OriginalRankFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
-        RetrofitHelper.getRankAPI()
+        RetrofitHelper.getYiRankAPI()
                 .getOriginalRanks(order)
                 .compose(this.bindToLifecycle())
                 .map(originalRankInfo -> originalRankInfo.getRank().getList())

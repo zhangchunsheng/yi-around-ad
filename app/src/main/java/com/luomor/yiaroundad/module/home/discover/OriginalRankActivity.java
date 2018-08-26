@@ -20,7 +20,7 @@ import butterknife.BindView;
  * Created by Peter on 18/6/12 20:20
  * 1097692918@qq.com
  * <p/>
- * 创意菜排行榜界面
+ * 美食排行榜界面
  */
 public class OriginalRankActivity extends RxBaseActivity {
     @BindView(R.id.toolbar)
@@ -30,8 +30,8 @@ public class OriginalRankActivity extends RxBaseActivity {
     @BindView(R.id.view_pager)
     NoScrollViewPager mViewPager;
 
-    private String[] titles = new String[]{"创意菜", "全站", "美食"};
-    private String[] orders = new String[]{"origin-03.json", "all-03.json", "all-3-33.json"};
+    private String[] titles = new String[]{"美食", "全站", "湘菜"};
+    private String[] orders = new String[]{"001", "0", "001001016"};
 
     @Override
     public int getLayoutId() {
