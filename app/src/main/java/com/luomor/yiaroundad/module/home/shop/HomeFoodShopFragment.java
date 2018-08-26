@@ -50,6 +50,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
 
     private int season;
     private boolean mIsRefreshing = false;
+    private String shopType = "001";
     private List<BannerEntity> bannerList = new ArrayList<>();
     private SectionedRecyclerViewAdapter mSectionedRecyclerViewAdapter;
     private List<FoodShopRecommendInfo.ResultBean> foodRecommends = new ArrayList<>();
@@ -59,8 +60,10 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     private List<ShopListInfo.ResultBean.SerializingBean> newFoodSerials = new ArrayList<>();
     private List<ShopListInfo.ResultBean.ShopBean> shops = new ArrayList<>();
 
-    public static HomeFoodShopFragment newInstance() {
-        return new HomeFoodShopFragment();
+    public static HomeFoodShopFragment newInstance(String shopType) {
+        HomeFoodShopFragment fragment = new HomeFoodShopFragment();
+        fragment.shopType = shopType;
+        return fragment;
     }
 
     @Override
@@ -173,7 +176,9 @@ public class HomeFoodShopFragment extends RxLazyFragment {
                 .forEach(bannersBean -> bannerList.add(new BannerEntity(
                         bannersBean.getLink(), bannersBean.getTitle(), bannersBean.getImg())));
         mSectionedRecyclerViewAdapter.addSection(new HomeFoodBannerSection(bannerList));
-        mSectionedRecyclerViewAdapter.addSection(new HomeFoodItemSection(getActivity()));
+        if(this.shopType.equals("001")) {
+            mSectionedRecyclerViewAdapter.addSection(new HomeFoodItemSection(getActivity()));
+        }
         mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopNewSerialSection(getActivity(), shops));
         if (!foodbodys.isEmpty()) {
             mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopBodySection(getActivity(), foodbodys));
