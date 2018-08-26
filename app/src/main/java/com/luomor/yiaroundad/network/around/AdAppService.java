@@ -36,6 +36,6 @@ public interface AdAppService {
     /**
      * 店铺详情数据
      */
-    @GET("getShopDetail")
+    @GET("shop/getShopDetail")
     Observable<VideoDetailsInfo> getShopDetails(@Query("shop_id") int shopId);
 }
