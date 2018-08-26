@@ -82,8 +82,8 @@ public class VideoIntroductionFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
-        RetrofitHelper.getYiAdAppAPI()
-                .getVideoDetails(av)
+        RetrofitHelper.getAdAppAPI()
+                .getShopDetails(av)
                 .compose(this.bindToLifecycle())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
