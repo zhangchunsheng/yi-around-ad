@@ -1,5 +1,6 @@
 package com.luomor.yiaroundad.network.around;
 
+import com.luomor.yiaroundad.entity.food.FoodDetailsInfo;
 import com.luomor.yiaroundad.entity.shop.FoodShopRecommendInfo;
 import com.luomor.yiaroundad.entity.shop.ShopListInfo;
 
@@ -18,6 +19,15 @@ public interface FoodShopService {
     @GET("shop/getShopList")
     Observable<ShopListInfo> getShopList(@Query("shop_type") String shopType);
 
+    /**
+     * 首页美食推荐
+     */
     @GET("shop/getRecommendShopList")
     Observable<FoodShopRecommendInfo> getFoodRecommended(@Query("shop_type") String shopType);
+
+    /**
+     * 美食详情
+     */
+    @GET("shop/getShopDetail?shop_id=1")
+    Observable<FoodDetailsInfo> getShopDetails();
 }

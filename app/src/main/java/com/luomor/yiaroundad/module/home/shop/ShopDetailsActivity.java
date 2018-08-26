@@ -119,8 +119,8 @@ public class ShopDetailsActivity extends RxBaseActivity {
 
     @Override
     public void loadData() {
-        RetrofitHelper.getFoodAPI()
-                .getFoodDetails()
+        RetrofitHelper.getFoodShopAPI()
+                .getShopDetails()
                 .compose(bindToLifecycle())
                 .doOnSubscribe(this::showProgressBar)
                 .flatMap(new Func1<FoodDetailsInfo, Observable<FoodDetailsRecommendInfo>>() {
