@@ -138,7 +138,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     @Override
     protected void loadData() {
         RetrofitHelper.getFoodShopAPI()
-                .getShopList()
+                .getShopList("001")
                 .compose(bindToLifecycle())
                 .flatMap(new Func1<ShopListInfo, Observable<FoodShopRecommendInfo>>() {
                     @Override

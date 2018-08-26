@@ -4,6 +4,7 @@ import com.luomor.yiaroundad.entity.shop.FoodShopRecommendInfo;
 import com.luomor.yiaroundad.entity.shop.ShopListInfo;
 
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 import rx.Observable;
 
 /**
@@ -14,8 +15,8 @@ public interface FoodShopService {
     /**
      * 首页美食
      */
-    @GET("shop/getShopList?shop_type=001")
-    Observable<ShopListInfo> getShopList();
+    @GET("shop/getShopList")
+    Observable<ShopListInfo> getShopList( @Query("shop_type") String shopType);
 
     @GET("shop/getRecommendShopList?shop_type=001")
     Observable<FoodShopRecommendInfo> getFoodRecommended();
