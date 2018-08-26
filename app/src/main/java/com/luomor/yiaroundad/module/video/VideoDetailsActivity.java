@@ -191,8 +191,8 @@ public class VideoDetailsActivity extends RxBaseActivity {
 
     @Override
     public void loadData() {
-        RetrofitHelper.getYiAdAppAPI()
-                .getVideoDetails(av)
+        RetrofitHelper.getAdAppAPI()
+                .getShopDetails(av)
                 .compose(this.bindToLifecycle())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
