@@ -28,7 +28,7 @@ public interface YiAdGoService {
     Observable<HDVideoInfo> getHDVideo(@Query("cid") int cid, @Query("quailty") int quailty, @Query("type") String type);
 
     /**
-     * 新美食连载
+     * 新美食系列
      */
     @GET("food")
     Observable<NewFoodSerialInfo> getNewFoodSerialList();

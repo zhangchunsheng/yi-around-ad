@@ -26,7 +26,7 @@ import rx.schedulers.Schedulers;
  * Created by Peter on 2018/06/25 15:41
  * 1097692918@qq.com
  * <p>
- * 新美食连载全部界面
+ * 新美食系列全部界面
  */
 
 public class NewFoodSerialActivity extends RxBaseActivity {
@@ -76,7 +76,7 @@ public class NewFoodSerialActivity extends RxBaseActivity {
 
     @Override
     public void initToolBar() {
-        mToolbar.setTitle("全部新美食连载");
+        mToolbar.setTitle("全部新美食系列");
         setSupportActionBar(mToolbar);
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {

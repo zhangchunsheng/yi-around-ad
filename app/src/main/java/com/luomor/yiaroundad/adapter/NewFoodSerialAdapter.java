@@ -22,7 +22,7 @@ import java.util.List;
  * Created by Peter on 18/6/6 14:31
  * 1097692918@qq.com
  * <p/>
- * 首页美食新美食连载Adapter
+ * 首页美食新美食系列Adapter
  */
 public class NewFoodSerialAdapter extends AbsRecyclerViewAdapter {
     private List<NewFoodSerialInfo.ListBean> newFoodSerials = new ArrayList<>();

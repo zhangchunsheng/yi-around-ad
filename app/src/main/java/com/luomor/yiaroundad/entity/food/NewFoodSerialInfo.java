@@ -8,7 +8,7 @@ import java.util.List;
  * Created by Peter on 18/6/6 14:05
  * 1097692918@qq.com
  * <p/>
- * 新美食连载
+ * 新美食系列
  */
 public class NewFoodSerialInfo {
     private String count;

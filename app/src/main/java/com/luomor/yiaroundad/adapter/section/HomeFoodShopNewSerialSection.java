@@ -30,7 +30,7 @@ import butterknife.ButterKnife;
  * Created by Peter on 2018/06/14 19:29
  * 1097692918@qq.com
  * <p>
- * 首页美食新美食连载Section
+ * 首页美食新美食Section
  */
 
 public class HomeFoodShopNewSerialSection extends StatelessSection {
