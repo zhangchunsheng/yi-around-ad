@@ -16,8 +16,8 @@ public interface FoodShopService {
      * 首页美食
      */
     @GET("shop/getShopList")
-    Observable<ShopListInfo> getShopList( @Query("shop_type") String shopType);
+    Observable<ShopListInfo> getShopList(@Query("shop_type") String shopType);
 
-    @GET("shop/getRecommendShopList?shop_type=001")
-    Observable<FoodShopRecommendInfo> getFoodRecommended();
+    @GET("shop/getRecommendShopList")
+    Observable<FoodShopRecommendInfo> getFoodRecommended(@Query("shop_type") String shopType);
 }

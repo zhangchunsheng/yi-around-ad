@@ -146,8 +146,9 @@ public class HomeFoodShopFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
+        String shopType = this.shopType;
         RetrofitHelper.getFoodShopAPI()
-                .getShopList(this.shopType)
+                .getShopList(shopType)
                 .compose(bindToLifecycle())
                 .flatMap(new Func1<ShopListInfo, Observable<FoodShopRecommendInfo>>() {
                     @Override
@@ -158,7 +159,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
                         season = shopListInfo.getResult().getPrevious().getSeason();
                         newFoodSerials.addAll(shopListInfo.getResult().getSerializing());
                         shops.addAll(shopListInfo.getResult().getShops());
-                        return RetrofitHelper.getFoodShopAPI().getFoodRecommended();
+                        return RetrofitHelper.getFoodShopAPI().getFoodRecommended(shopType);
                     }
                 })
                 .compose(bindToLifecycle())
