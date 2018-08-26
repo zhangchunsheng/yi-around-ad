@@ -115,8 +115,9 @@ public class HomeRecommendedSection extends StatelessSection {
                 case GOTO_FOOD:
                     break;
                 default:
+                    int aid = 100;// Integer.parseInt(bodyBean.getParam())
                     VideoDetailsActivity.launch((Activity) mContext,
-                            Integer.parseInt(bodyBean.getParam()), bodyBean.getCover());
+                            aid, bodyBean.getCover());
                     break;
             }
         });
