@@ -72,7 +72,6 @@ public class HomeFoodShopNewSerialSection extends StatelessSection {
                 .dontAnimate()
                 .into(itemViewHolder.mImage);
 
-        itemViewHolder.mCardTitle.setText("新" + this.shopTypeName + "推荐");
         itemViewHolder.mTitle.setText(shopBean.getShop_name());
         itemViewHolder.mPlay.setText(
                 NumberUtil.converString(shopBean.getComment_num()) + "人推荐");
@@ -93,12 +92,17 @@ public class HomeFoodShopNewSerialSection extends StatelessSection {
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder) {
         HomeFoodShopNewSerialSection.HeaderViewHolder headerViewHolder
                 = (HomeFoodShopNewSerialSection.HeaderViewHolder) holder;
+        headerViewHolder.mCardTitle.setText("新" + this.shopTypeName + "推荐");
         headerViewHolder.mAllShop.setOnClickListener(v -> mContext.startActivity(
                 new Intent(mContext, NewFoodSerialActivity.class)));
     }
 
 
     static class HeaderViewHolder extends RecyclerView.ViewHolder {
+
+        @BindView(R.id.home_new_food_serial)
+        TextView mCardTitle;
+
         @BindView(R.id.tv_all_shop)
         TextView mAllShop;
 
@@ -112,9 +116,6 @@ public class HomeFoodShopNewSerialSection extends StatelessSection {
 
         @BindView(R.id.card_view)
         LinearLayout mCardView;
-
-        @BindView(R.id.home_new_food_serial)
-        TextView mCardTitle;
 
         @BindView(R.id.item_img)
         ImageView mImage;
