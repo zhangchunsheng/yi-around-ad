@@ -130,6 +130,10 @@ public class HomeFoodShopFragment extends RxLazyFragment {
             try {
                 this.locationManager.requestLocationUpdates(locationProvider.getName(), 0, 0,
                         this.locationListener);
+                Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                final double latitude = location.getLatitude();
+                final double longitude = location.getLongitude();
+                Log.d("com.luomor.yiaroundad", "latitude: " + latitude + ", longitude: " + longitude);
             } catch (SecurityException e) {
                 e.printStackTrace();
             }
@@ -143,7 +147,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     private final LocationListener locationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
-            final double latitude = (location.getLatitude());
+            final double latitude = location.getLatitude();
             final double longitude = location.getLongitude();
             new Thread(new Runnable() {
                 @Override
