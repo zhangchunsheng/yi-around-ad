@@ -288,7 +288,7 @@ public class ShopDetailsActivity extends RxBaseActivity {
 
     @Override
     public void initToolBar() {
-        mToolbar.setTitle("美食详情");
+        mToolbar.setTitle("店铺详情");
         setSupportActionBar(mToolbar);
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
