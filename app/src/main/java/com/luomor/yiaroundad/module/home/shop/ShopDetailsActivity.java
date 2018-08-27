@@ -181,7 +181,7 @@ public class ShopDetailsActivity extends RxBaseActivity {
             mFoodUpdate.setText("100人推荐");
         }
         //设置美食播放和追美食数量
-        mFoodPlay.setText("播放：" + NumberUtil.converString(Integer.valueOf(result.getPlay_count()))
+        mFoodPlay.setText("访问：" + NumberUtil.converString(Integer.valueOf(result.getPlay_count()))
                 + "  " + "收藏：" + NumberUtil.converString(Integer.valueOf(result.getFavorites())));
         //设置美食简介
         mFoodIntroduction.setText(result.getEvaluate());
