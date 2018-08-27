@@ -291,6 +291,8 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     @Override
     protected void loadData() {
         String shopType = this.shopType;
+        double latitude = this.latitude;
+        double longitude = this.longitude;
         RetrofitHelper.getFoodShopAPI()
                 .getShopList(shopType, this.latitude, this.longitude)
                 .compose(bindToLifecycle())
@@ -303,7 +305,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
                         season = shopListInfo.getResult().getPrevious().getSeason();
                         newFoodSerials.addAll(shopListInfo.getResult().getSerializing());
                         shops.addAll(shopListInfo.getResult().getShops());
-                        return RetrofitHelper.getFoodShopAPI().getFoodRecommended(shopType);
+                        return RetrofitHelper.getFoodShopAPI().getFoodRecommended(shopType, latitude, longitude);
                     }
                 })
                 .compose(bindToLifecycle())

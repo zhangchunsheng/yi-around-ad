@@ -24,7 +24,7 @@ public interface FoodShopService {
      * 首页美食推荐
      */
     @GET("shop/getRecommendShopList")
-    Observable<FoodShopRecommendInfo> getFoodRecommended(@Query("shop_type") String shopType);
+    Observable<FoodShopRecommendInfo> getFoodRecommended(@Query("shop_type") String shopType, @Query("latitude") double latitude, @Query("longitude") double longitude);
 
     /**
      * 美食详情
