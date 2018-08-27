@@ -130,7 +130,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
         if (locationProvider != null) {
             Toast.makeText(this.getActivity(), "Location listener registered!", Toast.LENGTH_SHORT).show();
             try {
-                this.locationManager.requestLocationUpdates(locationProvider.getName(), 3000, 10,
+                this.locationManager.requestLocationUpdates(locationProvider.getName(), 3000, 1,
                         this.locationListener);
                 Location location = this.locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                 this.latitude = location.getLatitude();
