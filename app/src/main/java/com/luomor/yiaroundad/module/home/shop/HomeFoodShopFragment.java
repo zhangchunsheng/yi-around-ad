@@ -1,13 +1,22 @@
 package com.luomor.yiaroundad.module.home.shop;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.location.LocationProvider;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -45,6 +54,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
+import static android.content.ContentValues.TAG;
+
 /**
  * Created by peterzhang on 20/08/2018.
  *
@@ -72,8 +83,11 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     private List<ShopListInfo.ResultBean.SerializingBean> newFoodSerials = new ArrayList<>();
     private List<ShopListInfo.ResultBean.ShopBean> shops = new ArrayList<>();
 
+    public static final int LOCATION_CODE = 10;
+
     //定位都要通过LocationManager这个类实现
     private LocationManager locationManager;
+    LocationProvider locationProvider;
     private String provider;
     Location location = null;
     private double latitude = 0;
@@ -85,77 +99,8 @@ public class HomeFoodShopFragment extends RxLazyFragment {
         HomeFoodShopFragment.SHOPTYPES.put("001", "美食");
         HomeFoodShopFragment.SHOPTYPES.put("004", "电影");
         HomeFoodShopFragment.SHOPTYPES.put("012", "书店");
-
-        //获取定位服务
-        fragment.locationManager = (LocationManager) fragment.getActivity().getSystemService(Context.LOCATION_SERVICE);
-        //获取当前可用的位置控制器
-        List<String> list = fragment.locationManager.getProviders(true);
-
-        if (list.contains(LocationManager.GPS_PROVIDER)) {
-            //是否为GPS位置控制器
-            fragment.provider = LocationManager.GPS_PROVIDER;
-        } else if (list.contains(LocationManager.NETWORK_PROVIDER)) {
-            //是否为网络位置控制器
-            fragment.provider = LocationManager.NETWORK_PROVIDER;
-
-        } else {
-            Toast.makeText(fragment.getActivity(), "请检查网络或GPS是否打开",
-                    Toast.LENGTH_LONG).show();
-        }
-
-        if (ActivityCompat.checkSelfPermission(fragment.getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission(fragment.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            fragment.location = fragment.locationManager.getLastKnownLocation(fragment.provider);
-        }
-
-        if (fragment.location != null) {
-            //获取当前位置，这里只用到了经纬度
-            String string = "纬度为：" + fragment.location.getLatitude() + ",经度为："
-                    + fragment.location.getLongitude();
-            Log.d("yiaroundad", string);
-
-            fragment.latitude = fragment.location.getLatitude();
-            fragment.longitude = fragment.location.getLongitude();
-        }
-        //绑定定位事件，监听位置是否改变
-        //第一个参数为控制器类型第二个参数为监听位置变化的时间间隔（单位：毫秒）
-        //第三个参数为位置变化的间隔（单位：米）第四个参数为位置监听器
-        fragment.locationManager.requestLocationUpdates(fragment.provider, 2000, 2, fragment.locationListener);
         return fragment;
     }
-
-    LocationListener locationListener = new LocationListener() {
-        @Override
-        public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
-            // TODO Auto-generated method stub
-
-        }
-
-        @Override
-        public void onProviderEnabled(String arg0) {
-            // TODO Auto-generated method stub
-
-        }
-
-        @Override
-        public void onProviderDisabled(String arg0) {
-            // TODO Auto-generated method stub
-
-        }
-
-        @Override
-        public void onLocationChanged(Location arg0) {
-            // TODO Auto-generated method stub
-            // 更新当前经纬度
-        }
-    };
 
     @Override
     public int getLayoutResId() {
@@ -164,8 +109,112 @@ public class HomeFoodShopFragment extends RxLazyFragment {
 
     @Override
     public void finishCreateView(Bundle state) {
+        //获取权限（如果没有开启权限，会弹出对话框，询问是否开启权限）
+        if (ContextCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                || ActivityCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            //请求权限
+            ActivityCompat.requestPermissions(this.getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION}, LOCATION_CODE);
+        } else {
+            accessLocation();
+        }
         isPrepared = true;
         lazyLoad();
+    }
+
+    private void accessLocation() {
+        this.locationManager = (LocationManager) this.getActivity().getSystemService(Context.LOCATION_SERVICE);
+        this.locationProvider = this.locationManager.getProvider(LocationManager.GPS_PROVIDER);
+        if (locationProvider != null) {
+            Toast.makeText(this.getActivity(), "Location listener registered!", Toast.LENGTH_SHORT).show();
+            try {
+                this.locationManager.requestLocationUpdates(locationProvider.getName(), 0, 0,
+                        this.locationListener);
+            } catch (SecurityException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Toast.makeText(this.getActivity(),
+                    "Location Provider is not avilable at the moment!",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private final LocationListener locationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(Location location) {
+            final double latitude = (location.getLatitude());
+            final double longitude = location.getLongitude();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d(TAG, "latitude: " + latitude + ", longitude: " + longitude);
+                }
+            }).start();
+            //kod obslugi najlepiej w osobnym wątku...
+        }
+
+        @Override
+        public void onStatusChanged(String s, int i, Bundle bundle) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String s) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(String s) {
+
+        }
+    };
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (locationProvider != null) {
+            Toast.makeText(this.getActivity(), "Location listener unregistered!", Toast.LENGTH_SHORT).show();
+            try {
+                this.locationManager.removeUpdates(this.locationListener);
+            } catch (SecurityException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Toast.makeText(this.getActivity(), "Location Provider is not avilable at the moment!",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case LOCATION_CODE: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED
+                        && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                    // 权限被用户同意。
+                    // 执形我们想要的操作
+                    accessLocation();
+                } else {
+                    // 权限被用户拒绝了。
+                    //若是点击了拒绝和不再提醒
+                    //关于shouldShowRequestPermissionRationale
+                    // 1、当用户第一次被询问是否同意授权的时候，返回false
+                    // 2、当之前用户被询问是否授权，点击了false,并且点击了不在询问（第一次询问不会出现“不再询问”的选项），
+                    // 之后便会返回false
+                    // 3、当用户被关闭了app的权限，该app不允许授权的时候，返回false
+                    // 4、当用户上一次不同意授权，没有点击“不再询问”的时候，下一次返回true
+                    if (!ActivityCompat.shouldShowRequestPermissionRationale(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)
+                            || !ActivityCompat.shouldShowRequestPermissionRationale(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)) {
+                        //提示用户前往设置界面自己打开权限
+                        Toast.makeText(this.getActivity(), "请前往设置界面打开定位权限", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                }
+            }
+        }
     }
 
     @Override
@@ -299,13 +348,5 @@ public class HomeFoodShopFragment extends RxLazyFragment {
 
     private void setRecycleNoScroll() {
         mRecyclerView.setOnTouchListener((v, event) -> mIsRefreshing);
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        if (this.locationManager != null) {
-            this.locationManager.removeUpdates(this.locationListener);
-        }
     }
 }
