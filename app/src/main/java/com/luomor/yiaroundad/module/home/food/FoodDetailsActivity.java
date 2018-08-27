@@ -143,9 +143,9 @@ public class FoodDetailsActivity extends RxBaseActivity {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(foodDetailsCommentInfo -> {
-                    hotComments.addAll(foodDetailsCommentInfo.getData().getHots());
-                    replies.addAll(foodDetailsCommentInfo.getData().getReplies());
-                    mPageInfo = foodDetailsCommentInfo.getData().getPage();
+                    hotComments.addAll(foodDetailsCommentInfo.getResult().getHots());
+                    replies.addAll(foodDetailsCommentInfo.getResult().getReplies());
+                    mPageInfo = foodDetailsCommentInfo.getResult().getPage();
                     finishTask();
                 }, throwable -> {
                     LogUtil.all(throwable.getMessage());
