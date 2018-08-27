@@ -56,7 +56,7 @@ public class HomeFoodShopLocationSection extends StatelessSection {
     @Override
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder) {
         LocationViewHolder bannerViewHolder = (LocationViewHolder) holder;
-        bannerViewHolder.mAddressView.setText(location.getFormatted_address());
+        bannerViewHolder.mAddressView.setText("位置：" + location.getFormatted_address());
     }
 
 
