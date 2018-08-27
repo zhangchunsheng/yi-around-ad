@@ -43,7 +43,7 @@ public class FoodDetailsSelectionAdapter extends AbsRecyclerViewAdapter {
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
             FoodDetailsInfo.ResultBean.EpisodesBean episodesBean = episodes.get(position);
-            itemViewHolder.mIndex.setText("第 " + episodesBean.getIndex() + " 话");
+            itemViewHolder.mIndex.setText("推荐菜 " + episodesBean.getIndex());
             itemViewHolder.mTitle.setText(episodesBean.getIndex_title());
 
             if (position == layoutPosition) {
