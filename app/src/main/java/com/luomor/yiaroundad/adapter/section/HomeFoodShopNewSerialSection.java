@@ -75,7 +75,7 @@ public class HomeFoodShopNewSerialSection extends StatelessSection {
         itemViewHolder.mTitle.setText(shopBean.getShop_name());
         itemViewHolder.mPlay.setText(
                 NumberUtil.converString(shopBean.getComment_num()) + "人推荐");
-        itemViewHolder.mUpdate.setText("距离您100米");
+        itemViewHolder.mUpdate.setText("距离您" + shopBean.getDistance() + "米");
         itemViewHolder.mCardView.setOnClickListener(v -> ShopDetailsActivity.launch(
                 (Activity) mContext, shopBean.getShop_id()));
     }

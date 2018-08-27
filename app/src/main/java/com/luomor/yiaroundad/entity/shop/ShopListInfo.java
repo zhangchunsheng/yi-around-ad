@@ -496,6 +496,15 @@ public class ShopListInfo {
             private String location;
             private String business_hours;
             private int founding_year;
+            private int distance;
+
+            public int getDistance() {
+                return distance;
+            }
+
+            public void setDistance(int distance) {
+                this.distance = distance;
+            }
 
             public long getShop_id() {
                 return shop_id;
