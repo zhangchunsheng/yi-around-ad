@@ -130,6 +130,9 @@ public class HomeFoodShopFragment extends RxLazyFragment {
             try {
                 this.locationManager.requestLocationUpdates(locationProvider.getName(), 0, 0,
                         this.locationListener);
+                Location location = this.locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                this.latitude = location.getLatitude();
+                this.longitude = location.getLongitude();
             } catch (SecurityException e) {
                 e.printStackTrace();
             }
@@ -140,6 +143,11 @@ public class HomeFoodShopFragment extends RxLazyFragment {
         }
     }
 
+    private void updateLatLng(double latitude, double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
     private final LocationListener locationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
@@ -148,6 +156,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
+                    updateLatLng(latitude, longitude);
                     Log.d("com.luomor.yiaroundad", "latitude: " + latitude + ", longitude: " + longitude);
                 }
             }).start();
