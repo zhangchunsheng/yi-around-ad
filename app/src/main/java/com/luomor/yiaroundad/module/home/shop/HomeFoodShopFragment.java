@@ -135,7 +135,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
                 Location location = this.locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                 this.latitude = location.getLatitude();
                 this.longitude = location.getLongitude();
-                Log.d("com.luomor.yiaroundad", "latitude: " + this.latitude + ", longitude: " + this.longitude);
+                Log.d("location", "latitude: " + this.latitude + ", longitude: " + this.longitude);
             } catch (SecurityException e) {
                 e.printStackTrace();
             }
@@ -160,25 +160,25 @@ public class HomeFoodShopFragment extends RxLazyFragment {
                 @Override
                 public void run() {
                     updateLatLng(latitude, longitude);
-                    Log.d("com.luomor.yiaroundad", "latitude: " + latitude + ", longitude: " + longitude);
+                    Log.d("location", "latitude: " + latitude + ", longitude: " + longitude);
                 }
             }).start();
-            //kod obslugi najlepiej w osobnym wątku...
+            Log.d("location", "latitude: " + latitude + ", longitude: " + longitude);
         }
 
         @Override
         public void onStatusChanged(String s, int i, Bundle bundle) {
-
+            Log.d("location", "onStatusChanged");
         }
 
         @Override
         public void onProviderEnabled(String s) {
-
+            Log.d("location", "onProviderEnabled");
         }
 
         @Override
         public void onProviderDisabled(String s) {
-
+            Log.d("location", "onProviderDisabled");
         }
     };
 
