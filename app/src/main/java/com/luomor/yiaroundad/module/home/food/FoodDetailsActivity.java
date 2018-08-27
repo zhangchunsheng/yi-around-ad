@@ -131,7 +131,7 @@ public class FoodDetailsActivity extends RxBaseActivity {
                     }
                 })
                 .compose(bindToLifecycle())
-                .map(foodDetailsRecommendInfo -> foodDetailsRecommendInfo.getResult().getList())
+                .map(foodDetailsRecommendInfo -> foodDetailsRecommendInfo.getResult().getLists())
                 .flatMap(new Func1<List<FoodDetailsRecommendInfo.ResultBean.ListBean>, Observable<FoodDetailsCommentInfo>>() {
                     @Override
                     public Observable<FoodDetailsCommentInfo> call(List<FoodDetailsRecommendInfo.ResultBean.ListBean> listBeans) {
