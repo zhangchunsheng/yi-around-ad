@@ -127,11 +127,11 @@ public class ShopDetailsActivity extends RxBaseActivity {
                     @Override
                     public Observable<FoodDetailsRecommendInfo> call(FoodDetailsInfo foodDetailsInfo) {
                         result = foodDetailsInfo.getResult();
-                        return RetrofitHelper.getFoodAPI().getFoodDetailsRecommend();
+                        return RetrofitHelper.getFoodShopAPI().getFoodDetailsRecommend();
                     }
                 })
                 .compose(bindToLifecycle())
-                .map(foodDetailsRecommendInfo -> foodDetailsRecommendInfo.getResult().getList())
+                .map(foodDetailsRecommendInfo -> foodDetailsRecommendInfo.getResult().getLists())
                 .flatMap(new Func1<List<FoodDetailsRecommendInfo.ResultBean.ListBean>, Observable<FoodDetailsCommentInfo>>() {
                     @Override
                     public Observable<FoodDetailsCommentInfo> call(List<FoodDetailsRecommendInfo.ResultBean.ListBean> listBeans) {

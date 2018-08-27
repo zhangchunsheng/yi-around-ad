@@ -11,7 +11,7 @@ import java.util.List;
 
 public class FoodDetailsRecommendInfo {
     private int code;
-    private String message;
+    private String msg;
     private ResultBean result;
 
     public int getCode() {
@@ -22,12 +22,12 @@ public class FoodDetailsRecommendInfo {
         this.code = code;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public ResultBean getResult() {
@@ -41,7 +41,7 @@ public class FoodDetailsRecommendInfo {
     public static class ResultBean {
         private String season_id;
         private String title;
-        private List<ListBean> list;
+        private List<ListBean> lists;
 
         public String getSeason_id() {
             return season_id;
@@ -59,12 +59,12 @@ public class FoodDetailsRecommendInfo {
             this.title = title;
         }
 
-        public List<ListBean> getList() {
-            return list;
+        public List<ListBean> getLists() {
+            return lists;
         }
 
-        public void setList(List<ListBean> list) {
-            this.list = list;
+        public void setLists(List<ListBean> lists) {
+            this.lists = lists;
         }
 
         public static class ListBean {
