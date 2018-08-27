@@ -171,8 +171,8 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     };
 
     @Override
-    public void onStop() {
-        super.onStop();
+    public void onDestroyView() {
+        super.onDestroyView();
         if (locationProvider != null) {
             Toast.makeText(this.getActivity(), "Location listener unregistered!", Toast.LENGTH_SHORT).show();
             try {
