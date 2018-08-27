@@ -11,8 +11,8 @@ import java.util.List;
 
 public class FoodDetailsCommentInfo {
     private int code;
-    private DataBean data;
-    private String message;
+    private DataBean result;
+    private String msg;
 
     public int getCode() {
         return code;
@@ -22,20 +22,20 @@ public class FoodDetailsCommentInfo {
         this.code = code;
     }
 
-    public DataBean getData() {
-        return data;
+    public DataBean getResult() {
+        return result;
     }
 
-    public void setData(DataBean data) {
-        this.data = data;
+    public void setResult(DataBean result) {
+        this.result = result;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public static class DataBean {

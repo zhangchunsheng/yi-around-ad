@@ -141,7 +141,7 @@ public class VideoDetailsActivity extends RxBaseActivity {
         //设置StatusBar透明
         SystemBarHelper.immersiveStatusBar(this);
         SystemBarHelper.setHeightAndPadding(this, mToolbar);
-        mAvText.setText("店铺" + av);
+        mAvText.setText("简介" + av);
     }
 
     @Override
