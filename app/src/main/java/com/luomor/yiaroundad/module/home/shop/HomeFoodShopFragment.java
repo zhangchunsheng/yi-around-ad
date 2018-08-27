@@ -148,7 +148,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    Log.d(TAG, "latitude: " + latitude + ", longitude: " + longitude);
+                    Log.d("com.luomor.yiaroundad", "latitude: " + latitude + ", longitude: " + longitude);
                 }
             }).start();
             //kod obslugi najlepiej w osobnym wątku...
