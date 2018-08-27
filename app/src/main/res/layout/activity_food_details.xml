@@ -265,7 +265,7 @@
                         android:paddingTop="@dimen/default_tiny_padding" />
 
 
-                    <include layout="@layout/layout_food_contracted_card" />
+                    <!--<include layout="@layout/layout_food_contracted_card" />-->
 
                     <View
                         android:layout_width="match_parent"
