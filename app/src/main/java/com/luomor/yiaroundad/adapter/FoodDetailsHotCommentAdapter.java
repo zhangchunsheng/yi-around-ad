@@ -110,7 +110,7 @@ public class FoodDetailsHotCommentAdapter extends AbsRecyclerViewAdapter {
 
     @Override
     public int getItemCount() {
-        return hotComments.size();
+        return hotComments.size() > 3 ? 3 : hotComments.size();
     }
 
 
