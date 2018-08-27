@@ -138,7 +138,14 @@ public class HomeFoodShopFragment extends RxLazyFragment {
                 if(location != null) {
                     this.latitude = location.getLatitude();
                     this.longitude = location.getLongitude();
-                    Log.d("location", "latitude: " + this.latitude + ", longitude: " + this.longitude);
+                    Log.d("location network", "latitude: " + this.latitude + ", longitude: " + this.longitude);
+                } else {
+                    location = this.locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    if(location != null) {
+                        this.latitude = location.getLatitude();
+                        this.longitude = location.getLongitude();
+                        Log.d("location gps", "latitude: " + this.latitude + ", longitude: " + this.longitude);
+                    }
                 }
             } catch (SecurityException e) {
                 e.printStackTrace();
@@ -163,7 +170,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
             final double latitude = location.getLatitude();
             final double longitude = location.getLongitude();
             updateLatLng(latitude, longitude);
-            Log.d("location", "latitude: " + latitude + ", longitude: " + longitude);
+            Log.d("location " + location.getProvider(), "latitude: " + latitude + ", longitude: " + longitude);
         }
 
         @Override
