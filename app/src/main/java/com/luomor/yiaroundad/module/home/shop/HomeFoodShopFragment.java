@@ -132,7 +132,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
             try {
                 this.locationManager.requestLocationUpdates(locationProvider.getName(), 3000, 1,
                         this.locationListener);
-                this.locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 3000, 1,
+                this.locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000, 1,
                         this.locationListener);
                 Location location = this.locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                 if(location != null) {
