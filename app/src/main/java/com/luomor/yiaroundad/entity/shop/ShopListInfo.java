@@ -37,6 +37,7 @@ public class ShopListInfo {
 
     public static class ResultBean {
         private List<ShopBean> shops;
+        private LocationBean location;
 
         public List<ShopBean> getShops() {
             return shops;
@@ -44,6 +45,14 @@ public class ShopListInfo {
 
         public void setShops(List<ShopBean> shops) {
             this.shops = shops;
+        }
+
+        public LocationBean getLocation() {
+            return location;
+        }
+
+        public void setLocation(LocationBean location) {
+            this.location = location;
         }
 
         private AdBean ad;
@@ -77,6 +86,17 @@ public class ShopListInfo {
             this.serializing = serializing;
         }
 
+        public static class LocationBean {
+            private String formatted_address;
+
+            public String getFormatted_address() {
+                return formatted_address;
+            }
+
+            public void setFormatted_address(String formatted_address) {
+                this.formatted_address = formatted_address;
+            }
+        }
 
         public static class AdBean {
             private List<AdBean.BodyBean> body;
@@ -236,6 +256,24 @@ public class ShopListInfo {
                 private int season_status;
                 private String title;
                 private int watching_count;
+                private int recommend_num;
+                private int distance;
+
+                public int getRecommend_num() {
+                    return recommend_num;
+                }
+
+                public void setRecommend_num(int recommend_num) {
+                    this.recommend_num = recommend_num;
+                }
+
+                public int getDistance() {
+                    return distance;
+                }
+
+                public void setDistance(int distance) {
+                    this.distance = distance;
+                }
 
                 public String getCover() {
                     return cover;

@@ -31,6 +31,7 @@ import com.luomor.yiaroundad.adapter.section.HomeFoodItemSection;
 import com.luomor.yiaroundad.adapter.section.HomeFoodRecommendSection;
 import com.luomor.yiaroundad.adapter.section.HomeFoodSeasonNewSection;
 import com.luomor.yiaroundad.adapter.section.HomeFoodShopBodySection;
+import com.luomor.yiaroundad.adapter.section.HomeFoodShopLocationSection;
 import com.luomor.yiaroundad.adapter.section.HomeFoodShopNewSerialSection;
 import com.luomor.yiaroundad.adapter.section.HomeFoodShopRecommendSection;
 import com.luomor.yiaroundad.adapter.section.HomeFoodShopSeasonNewSection;
@@ -82,6 +83,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     private List<ShopListInfo.ResultBean.PreviousBean.ListBean> seasonNewFoods = new ArrayList<>();
     private List<ShopListInfo.ResultBean.SerializingBean> newFoodSerials = new ArrayList<>();
     private List<ShopListInfo.ResultBean.ShopBean> shops = new ArrayList<>();
+    private ShopListInfo.ResultBean.LocationBean locationBean;
 
     public static final int LOCATION_CODE = 10;
 
@@ -305,6 +307,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
                         season = shopListInfo.getResult().getPrevious().getSeason();
                         newFoodSerials.addAll(shopListInfo.getResult().getSerializing());
                         shops.addAll(shopListInfo.getResult().getShops());
+                        locationBean = shopListInfo.getResult().getLocation();
                         return RetrofitHelper.getFoodShopAPI().getFoodRecommended(shopType, latitude, longitude);
                     }
                 })
@@ -328,6 +331,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
                 .compose(bindToLifecycle())
                 .forEach(bannersBean -> bannerList.add(new BannerEntity(
                         bannersBean.getLink(), bannersBean.getTitle(), bannersBean.getImg())));
+        mSectionedRecyclerViewAdapter.addSection(new HomeFoodShopLocationSection(locationBean));
         mSectionedRecyclerViewAdapter.addSection(new HomeFoodBannerSection(bannerList));
         if(this.shopType.equals("001")) {
             mSectionedRecyclerViewAdapter.addSection(new HomeFoodItemSection(getActivity()));
