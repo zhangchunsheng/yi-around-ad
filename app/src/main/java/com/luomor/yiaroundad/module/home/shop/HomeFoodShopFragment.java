@@ -211,8 +211,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
         switch (requestCode) {
             case LOCATION_CODE: {
                 if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED
-                        && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     // 权限被用户同意。
                     // 执形我们想要的操作
                     accessLocation();
