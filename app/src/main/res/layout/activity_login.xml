@@ -135,5 +135,18 @@
         android:textColor="@color/white"
         android:textSize="@dimen/default_medium_text_size" />
 
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_button_height"
+        android:layout_marginBottom="@dimen/default_general_margin"
+        android:layout_marginLeft="@dimen/default_general_margin"
+        android:layout_marginRight="@dimen/default_general_margin"
+        android:layout_marginTop="@dimen/line_height"
+        android:background="@drawable/corner_btn"
+        android:gravity="center"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        android:textSize="@dimen/default_medium_text_size" />
 
 </LinearLayout>
