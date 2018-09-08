@@ -106,10 +106,10 @@ public class ArchiveResultsFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
-        RetrofitHelper.getYiAdAppAPI()
+        RetrofitHelper.getAdAppAPI()
                 .searchArchive(content, pageNum, pageSize)
                 .compose(this.bindToLifecycle())
-                .map(SearchArchiveInfo::getData)
+                .map(SearchArchiveInfo::getResult)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnNext(dataBean -> {
