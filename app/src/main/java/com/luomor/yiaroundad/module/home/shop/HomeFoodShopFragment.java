@@ -161,7 +161,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
         this.latitude = latitude;
         this.longitude = longitude;
 
-        Toast.makeText(this.getActivity(), "位置更新，下拉更新数据", Toast.LENGTH_LONG).show();
+        Toast.makeText(this.getActivity(), "位置更新", Toast.LENGTH_SHORT).show();
     }
 
     private final LocationListener locationListener = new LocationListener() {
