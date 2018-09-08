@@ -113,7 +113,7 @@ public class UpperResultsFragment extends RxLazyFragment {
         RetrofitHelper.getYiAdAppAPI()
                 .searchUpper(content, pageNum, pageSize)
                 .compose(bindToLifecycle())
-                .map(SearchUpperInfo::getData)
+                .map(SearchUpperInfo::getResult)
                 .delay(1000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

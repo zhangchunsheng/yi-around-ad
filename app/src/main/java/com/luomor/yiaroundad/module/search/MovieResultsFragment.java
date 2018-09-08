@@ -109,7 +109,7 @@ public class MovieResultsFragment extends RxLazyFragment {
         RetrofitHelper.getYiAdAppAPI()
                 .searchMovie(content, pageNum, pageSize)
                 .compose(bindToLifecycle())
-                .map(SearchMovieInfo::getData)
+                .map(SearchMovieInfo::getResult)
                 .delay(1000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

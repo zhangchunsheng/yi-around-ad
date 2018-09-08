@@ -105,7 +105,7 @@ public class FoodResultsFragment extends RxLazyFragment {
         RetrofitHelper.getAdAppAPI()
                 .searchFood(content, pageNum, pageSize)
                 .compose(bindToLifecycle())
-                .map(SearchFoodInfo::getData)
+                .map(SearchFoodInfo::getResult)
                 .delay(1000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
