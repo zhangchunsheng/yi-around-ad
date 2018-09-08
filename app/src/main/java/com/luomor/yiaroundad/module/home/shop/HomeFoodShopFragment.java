@@ -95,6 +95,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     // 116397945,39908170
     private double latitude = 39.908170;
     private double longitude = 116.397945;
+    private boolean isLocationUpdate = false;
 
     public static HomeFoodShopFragment newInstance(String shopType) {
         HomeFoodShopFragment fragment = new HomeFoodShopFragment();
@@ -164,9 +165,47 @@ public class HomeFoodShopFragment extends RxLazyFragment {
         }
     }
 
+    private void refreshLocation() {
+        if(this.isLocationUpdate) {
+            return;
+        }
+        try {
+            this.locationManager = (LocationManager) this.getActivity().getSystemService(Context.LOCATION_SERVICE);
+            this.locationProvider = this.locationManager.getProvider(LocationManager.GPS_PROVIDER);
+        } catch (SecurityException e) {
+            Toast.makeText(this.getActivity(), "请前往设置界面打开定位权限", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (locationProvider != null) {
+            try {
+                Location location = this.locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                if(location != null) {
+                    this.latitude = location.getLatitude();
+                    this.longitude = location.getLongitude();
+                    Log.d("location network", "latitude: " + this.latitude + ", longitude: " + this.longitude);
+                } else {
+                    location = this.locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    if(location != null) {
+                        this.latitude = location.getLatitude();
+                        this.longitude = location.getLongitude();
+                        Log.d("location gps", "latitude: " + this.latitude + ", longitude: " + this.longitude);
+                    }
+                }
+            } catch (SecurityException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Toast.makeText(this.getActivity(),
+                    "Location Provider is not avilable at the moment!",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private void updateLatLng(double latitude, double longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
+        this.isLocationUpdate = true;
 
         Toast.makeText(this.getActivity(), "位置更新", Toast.LENGTH_SHORT).show();
     }
@@ -204,6 +243,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
             Toast.makeText(this.getActivity(), "Location listener unregistered!", Toast.LENGTH_SHORT).show();
             try {
                 this.locationManager.removeUpdates(this.locationListener);
+                this.isLocationUpdate = false;
             } catch (SecurityException e) {
                 e.printStackTrace();
             }
@@ -306,7 +346,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
-        accessLocation();
+        refreshLocation();
         String shopType = this.shopType;
         double latitude = this.latitude;
         double longitude = this.longitude;
