@@ -217,8 +217,8 @@ public class HomeFoodShopFragment extends RxLazyFragment {
                     accessLocation();
                 } else {
                     // 权限被用户拒绝了。
-                    //若是点击了拒绝和不再提醒
-                    //关于shouldShowRequestPermissionRationale
+                    // 若是点击了拒绝和不再提醒
+                    // 关于shouldShowRequestPermissionRationale
                     // 1、当用户第一次被询问是否同意授权的时候，返回false
                     // 2、当之前用户被询问是否授权，点击了false,并且点击了不在询问（第一次询问不会出现“不再询问”的选项），
                     // 之后便会返回false
@@ -226,7 +226,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
                     // 4、当用户上一次不同意授权，没有点击“不再询问”的时候，下一次返回true
                     if (!ActivityCompat.shouldShowRequestPermissionRationale(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)
                             || !ActivityCompat.shouldShowRequestPermissionRationale(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)) {
-                        //提示用户前往设置界面自己打开权限
+                        // 提示用户前往设置界面自己打开权限
                         Toast.makeText(this.getActivity(), "请前往设置界面打开定位权限", Toast.LENGTH_SHORT).show();
                         return;
                     }
