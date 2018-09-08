@@ -92,8 +92,9 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     LocationProvider locationProvider;
     private String provider;
     Location location = null;
-    private double latitude = 0;
-    private double longitude = 0;
+    // 116397945,39908170
+    private double latitude = 39.908170;
+    private double longitude = 116.397945;
 
     public static HomeFoodShopFragment newInstance(String shopType) {
         HomeFoodShopFragment fragment = new HomeFoodShopFragment();
