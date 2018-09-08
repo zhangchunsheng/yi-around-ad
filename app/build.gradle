@@ -14,10 +14,20 @@ apply plugin: 'me.tatarka.retrolambda'
 Properties props = new Properties()
 props.load(new FileInputStream(file("configuration.properties")))
 
+Properties props1 = new Properties()
+props1.load(new FileInputStream(file("key.properties")))
+
 android {
+    signingConfigs {
+        yiaroundad {
+            keyAlias props1['keyAlias']
+            keyPassword props1['keyPassword']
+            storeFile file(props1['storeFile'])
+            storePassword props1['storePassword']
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion '25.0.2'
-
     defaultConfig {
         applicationId "com.luomor.yiaroundad"
         minSdkVersion 21
@@ -26,7 +36,6 @@ android {
         versionName props['versionName']
 
     }
-
     buildTypes {
         release {
             zipAlignEnabled true
@@ -34,6 +43,7 @@ android {
             buildConfigField("boolean", "LOG_DEBUG", "false")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.yiaroundad
         }
         debug {
             zipAlignEnabled true
@@ -45,15 +55,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    dexOptions{
+    dexOptions {
         javaMaxHeapSize "4g"
     }
-
     lintOptions {
         abortOnError false
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -92,7 +99,6 @@ dependencies {
     compile 'jp.wasabeef:glide-transformations:2.0.1'
     compile 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
-
 
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
