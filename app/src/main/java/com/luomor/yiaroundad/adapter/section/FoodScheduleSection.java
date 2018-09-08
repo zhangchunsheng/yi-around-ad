@@ -67,7 +67,7 @@ public class FoodScheduleSection extends StatelessSection {
                 .into(itemViewHolder.mImageView);
 
         itemViewHolder.mTitle.setText(resultBean.getTitle());
-        itemViewHolder.mUpdate.setText("第" + resultBean.getEp_index() + "话");
+        itemViewHolder.mUpdate.setText(resultBean.getEp_index());
         itemViewHolder.mTimeLine.setText(resultBean.getOntime());
     }
 
