@@ -300,6 +300,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
+        accessLocation();
         String shopType = this.shopType;
         double latitude = this.latitude;
         double longitude = this.longitude;
