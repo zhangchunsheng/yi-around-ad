@@ -102,7 +102,7 @@ public class FoodResultsFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
-        RetrofitHelper.getYiAdAppAPI()
+        RetrofitHelper.getAdAppAPI()
                 .searchFood(content, pageNum, pageSize)
                 .compose(bindToLifecycle())
                 .map(SearchFoodInfo::getData)
