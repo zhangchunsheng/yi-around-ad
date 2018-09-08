@@ -11,7 +11,7 @@ import java.util.List;
 
 public class FoodScheduleInfo {
     private int code;
-    private String message;
+    private String msg;
     private List<ResultBean> result;
 
     public int getCode() {
@@ -22,12 +22,12 @@ public class FoodScheduleInfo {
         this.code = code;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public List<ResultBean> getResult() {
