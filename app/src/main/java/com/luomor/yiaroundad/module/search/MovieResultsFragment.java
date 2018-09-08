@@ -106,7 +106,7 @@ public class MovieResultsFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
-        RetrofitHelper.getYiAdAppAPI()
+        RetrofitHelper.getAdAppAPI()
                 .searchMovie(content, pageNum, pageSize)
                 .compose(bindToLifecycle())
                 .map(SearchMovieInfo::getResult)
