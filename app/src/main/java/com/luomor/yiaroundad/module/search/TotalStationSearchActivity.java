@@ -155,10 +155,10 @@ public class TotalStationSearchActivity extends RxBaseActivity {
     private void getSearchData() {
         int page = 1;
         int pageSize = 10;
-        RetrofitHelper.getYiAdAppAPI()
+        RetrofitHelper.getAdAppAPI()
                 .searchArchive(content, page, pageSize)
                 .compose(this.bindToLifecycle())
-                .map(SearchArchiveInfo::getData)
+                .map(SearchArchiveInfo::getResult)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(dataBean -> {
@@ -171,7 +171,7 @@ public class TotalStationSearchActivity extends RxBaseActivity {
     @Override
     public void finishTask() {
         hideSearchAnim();
-        titles.add("综合");
+        titles.add("全部");
         titles.add(navs.get(0).getName() + "(" + checkNumResults(navs.get(0).getTotal()) + ")");
         titles.add(navs.get(1).getName() + "(" + checkNumResults(navs.get(1).getTotal()) + ")");
         titles.add(navs.get(2).getName() + "(" + checkNumResults(navs.get(2).getTotal()) + ")");
