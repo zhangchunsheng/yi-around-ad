@@ -90,6 +90,7 @@
                 android:foreground="?attr/selectableItemBackground">
 
                 <TextView
+                    android:id="@+id/app_check_version"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
