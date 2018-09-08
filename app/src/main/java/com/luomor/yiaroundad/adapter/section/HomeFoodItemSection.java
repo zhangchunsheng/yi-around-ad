@@ -58,8 +58,8 @@ public class HomeFoodItemSection extends StatelessSection {
         HomeFoodItemSection.TopItemViewHolder topItemViewHolder
                 = (HomeFoodItemSection.TopItemViewHolder) holder;
         //前往追美食
-        topItemViewHolder.mWesternFood.setOnClickListener(v -> {
-        });
+        topItemViewHolder.mChineseFood.setOnClickListener(v -> mContext.startActivity(
+                new Intent(mContext, FoodScheduleActivity.class)));
         //前往美食放送表
         topItemViewHolder.mChineseFood.setOnClickListener(v -> mContext.startActivity(
                 new Intent(mContext, FoodScheduleActivity.class)));
