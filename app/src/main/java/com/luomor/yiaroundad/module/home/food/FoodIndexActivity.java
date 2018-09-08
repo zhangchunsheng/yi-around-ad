@@ -93,7 +93,7 @@ public class FoodIndexActivity extends RxBaseActivity {
 
   @Override
   public void loadData() {
-    RetrofitHelper.getFoodAPI()
+    RetrofitHelper.getFoodShopAPI()
         .getFoodIndex()
         .compose(this.bindToLifecycle())
         .doOnSubscribe(this::showProgressBar)

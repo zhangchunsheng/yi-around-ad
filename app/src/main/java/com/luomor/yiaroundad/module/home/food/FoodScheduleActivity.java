@@ -86,7 +86,7 @@ public class FoodScheduleActivity extends RxBaseActivity {
 
     @Override
     public void loadData() {
-        RetrofitHelper.getFoodAPI()
+        RetrofitHelper.getFoodShopAPI()
                 .getFoodSchedules()
                 .compose(bindToLifecycle())
                 .doOnSubscribe(this::showProgressBar)
