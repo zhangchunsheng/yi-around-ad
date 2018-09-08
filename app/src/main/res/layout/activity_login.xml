@@ -135,7 +135,7 @@
         android:textColor="@color/white"
         android:textSize="@dimen/default_medium_text_size" />
 
-    <Button
+    <!--<Button
         android:id="@+id/btn_register"
         android:layout_width="match_parent"
         android:layout_height="@dimen/login_button_height"
@@ -147,6 +147,6 @@
         android:gravity="center"
         android:text="@string/register"
         android:textColor="@color/white"
-        android:textSize="@dimen/default_medium_text_size" />
+        android:textSize="@dimen/default_medium_text_size" />-->
 
 </LinearLayout>
