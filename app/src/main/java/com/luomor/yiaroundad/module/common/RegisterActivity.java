@@ -151,6 +151,8 @@ public class RegisterActivity extends RxBaseActivity {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(configBean -> {
                     if(configBean.getCode() == 200) {
+                        ToastUtil.ShortToast("注册成功");
+
                         PreferenceUtil.putBoolean(ConstantUtil.KEY, true);
                         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                         finish();
