@@ -85,7 +85,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     private List<ShopListInfo.ResultBean.ShopBean> shops = new ArrayList<>();
     private ShopListInfo.ResultBean.LocationBean locationBean;
 
-    public static final int LOCATION_CODE = 10;
+    public static final int LOCATION_CODE = 2;
 
     //定位都要通过LocationManager这个类实现
     private LocationManager locationManager;
