@@ -9,19 +9,14 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.luomor.yiaroundad.BuildConfig;
+import com.luomor.yiaroundad.R;
 import com.luomor.yiaroundad.base.RxBaseActivity;
-import com.luomor.yiaroundad.network.RetrofitHelper;
 import com.luomor.yiaroundad.network.RetrofitNoCacheHelper;
 import com.luomor.yiaroundad.utils.CommonUtil;
 import com.luomor.yiaroundad.utils.ConstantUtil;
 import com.luomor.yiaroundad.utils.PreferenceUtil;
 import com.luomor.yiaroundad.utils.ToastUtil;
-import com.luomor.yiaroundad.R;
-import com.luomor.yiaroundad.utils.upgrade.CallbackImpl;
-import com.luomor.yiaroundad.utils.upgrade.VersionManagementUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -29,12 +24,10 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by Peter on 18/6/12 10:16
- * 1097692918@qq.com
- * <p/>
- * 登录界面
+ * Created by peterzhang on 10/09/2018.
  */
-public class LoginActivity extends RxBaseActivity {
+
+public class RegisterActivity extends RxBaseActivity {
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
     @BindView(R.id.iv_icon_left)
@@ -47,10 +40,12 @@ public class LoginActivity extends RxBaseActivity {
     EditText et_username;
     @BindView(R.id.et_password)
     EditText et_password;
+    @BindView(R.id.et_password2)
+    EditText et_password2;
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_login;
+        return R.layout.activity_register;
     }
 
 
@@ -69,11 +64,13 @@ public class LoginActivity extends RxBaseActivity {
             mLeftLogo.setImageResource(R.drawable.ic_22_hide);
             mRightLogo.setImageResource(R.drawable.ic_33_hide);
         });
+        et_password2.setOnFocusChangeListener((v, hasFocus) -> {
+            mLeftLogo.setImageResource(R.drawable.ic_22_hide);
+            mRightLogo.setImageResource(R.drawable.ic_33_hide);
+        });
         et_username.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // 如果用户名清空了 清空密码 清空记住密码选项
-                et_password.setText("");
                 if (s.length() > 0) {
                     // 如果用户名有内容时候 显示删除按钮
                     mDeleteUserName.setVisibility(View.VISIBLE);
@@ -97,30 +94,31 @@ public class LoginActivity extends RxBaseActivity {
     @Override
     public void initToolBar() {
         mToolbar.setNavigationIcon(R.drawable.ic_cancle);
-        mToolbar.setTitle("登录");
+        mToolbar.setTitle("注册");
         mToolbar.setNavigationOnClickListener(v -> finish());
     }
 
-    @OnClick({R.id.btn_login, R.id.btn_register, R.id.delete_username})
+    @OnClick({R.id.btn_register, R.id.btn_login, R.id.delete_username})
     void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_login:
+            case R.id.btn_register:
                 // 登录
                 boolean isNetConnected = CommonUtil.isNetworkAvailable(this);
                 if (!isNetConnected) {
                     ToastUtil.ShortToast("当前网络不可用,请检查网络设置");
                     return;
                 }
-                login();
-                break;
-            case R.id.btn_register:
-                // 注册
                 register();
+                break;
+            case R.id.btn_login:
+                // 注册
+                login();
                 break;
             case R.id.delete_username:
                 // 清空用户名以及密码
                 et_username.setText("");
                 et_password.setText("");
+                et_password2.setText("");
                 mDeleteUserName.setVisibility(View.GONE);
                 et_username.setFocusable(true);
                 et_username.setFocusableInTouchMode(true);
@@ -129,9 +127,10 @@ public class LoginActivity extends RxBaseActivity {
         }
     }
 
-    private void login() {
+    private void register() {
         String name = et_username.getText().toString();
         String password = et_password.getText().toString();
+        String password2 = et_password2.getText().toString();
         if (TextUtils.isEmpty(name)) {
             ToastUtil.ShortToast("用户名不能为空");
             return;
@@ -140,16 +139,20 @@ public class LoginActivity extends RxBaseActivity {
             ToastUtil.ShortToast("密码不能为空");
             return;
         }
+        if (TextUtils.isEmpty(password2)) {
+            ToastUtil.ShortToast("确认密码不能为空");
+            return;
+        }
         // TODO
         RetrofitNoCacheHelper.getLoginAPI()
-                .login(name, password)
+                .register(name, password, password2)
                 .compose(this.bindToLifecycle())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(configBean -> {
                     if(configBean.getCode() == 200) {
                         PreferenceUtil.putBoolean(ConstantUtil.KEY, true);
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                         finish();
                     } else {
                         ToastUtil.ShortToast(configBean.getMsg());
@@ -159,7 +162,7 @@ public class LoginActivity extends RxBaseActivity {
                 });
     }
 
-    private void register() {
-        startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+    private void login() {
+        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
     }
 }

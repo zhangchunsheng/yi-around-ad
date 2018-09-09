@@ -53,6 +53,11 @@
             android:name="com.luomor.yiaroundad.module.common.LoginActivity"
             android:screenOrientation="portrait" />
 
+        <!-- 注册界面 -->
+        <activity
+            android:name="com.luomor.yiaroundad.module.common.RegisterActivity"
+            android:screenOrientation="portrait" />
+
 
         <!-- APP简介界面 -->
         <activity
