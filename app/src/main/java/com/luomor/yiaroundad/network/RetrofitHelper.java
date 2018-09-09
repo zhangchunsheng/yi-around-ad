@@ -121,7 +121,7 @@ public class RetrofitHelper {
     }
 
     public static YiVipService getYiVipAPI() {
-        return createApi(YiVipService.class, ApiConstants.VIP_BASE_URL);
+        return createApi(YiVipService.class, ApiConstants.AROUND_BASE_URL);
     }
 
     public static ConfigService getConfigAPI() {
