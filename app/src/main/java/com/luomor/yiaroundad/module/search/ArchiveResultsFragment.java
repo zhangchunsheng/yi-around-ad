@@ -154,8 +154,8 @@ public class ArchiveResultsFragment extends RxLazyFragment {
         mHeadFoodRecycler.setHasFixedSize(false);
         mHeadFoodRecycler.setNestedScrollingEnabled(false);
         mHeadFoodRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-        //archiveHeadFoodAdapter = new ArchiveHeadFoodAdapter(mHeadFoodRecycler, seasons);
-        //mHeadFoodRecycler.setAdapter(archiveHeadFoodAdapter);
+        archiveHeadFoodAdapter = new ArchiveHeadFoodAdapter(mHeadFoodRecycler, seasons);
+        mHeadFoodRecycler.setAdapter(archiveHeadFoodAdapter);
         mHeaderViewRecyclerAdapter.addHeaderView(headView);
     }
 
