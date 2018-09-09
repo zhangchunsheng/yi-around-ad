@@ -9,9 +9,8 @@ package com.luomor.yiaroundad.entity.discover;
 
 public class VipGameInfo {
     private int code;
-    private DataBean data;
+    private DataBean result;
     private String msg;
-    private long ts;
 
     public int getCode() {
         return code;
@@ -19,14 +18,6 @@ public class VipGameInfo {
 
     public void setCode(int code) {
         this.code = code;
-    }
-
-    public DataBean getData() {
-        return data;
-    }
-
-    public void setData(DataBean data) {
-        this.data = data;
     }
 
     public String getMsg() {
@@ -37,12 +28,12 @@ public class VipGameInfo {
         this.msg = msg;
     }
 
-    public long getTs() {
-        return ts;
+    public DataBean getResult() {
+        return result;
     }
 
-    public void setTs(long ts) {
-        this.ts = ts;
+    public void setResult(DataBean result) {
+        this.result = result;
     }
 
     public static class DataBean {

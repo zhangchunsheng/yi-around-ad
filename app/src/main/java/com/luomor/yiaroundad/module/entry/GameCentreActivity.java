@@ -78,7 +78,7 @@ public class GameCentreActivity extends RxBaseActivity {
                 .flatMap(new Func1<VipGameInfo, Observable<String>>() {
                     @Override
                     public Observable<String> call(VipGameInfo vipGameInfo) {
-                        mVipGameInfoData = vipGameInfo.getData();
+                        mVipGameInfoData = vipGameInfo.getResult();
                         return Observable.just(readAssetsJson());
                     }
                 })
