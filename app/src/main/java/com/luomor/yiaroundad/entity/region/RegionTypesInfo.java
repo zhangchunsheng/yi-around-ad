@@ -252,6 +252,7 @@ public class RegionTypesInfo implements Parcelable {
                 dest.writeString(this.logo);
                 dest.writeString(this.gotoX);
                 dest.writeString(this.param);
+                dest.writeString(this.shop_type);
             }
 
 
@@ -299,6 +300,7 @@ public class RegionTypesInfo implements Parcelable {
             dest.writeString(this.logo);
             dest.writeString(this.gotoX);
             dest.writeString(this.param);
+            dest.writeString(this.shop_type);
             dest.writeList(this.children);
         }
 
