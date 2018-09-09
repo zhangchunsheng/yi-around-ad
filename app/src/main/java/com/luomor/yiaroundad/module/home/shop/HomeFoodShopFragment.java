@@ -173,7 +173,9 @@ public class HomeFoodShopFragment extends RxLazyFragment {
             this.locationManager = (LocationManager) this.getActivity().getSystemService(Context.LOCATION_SERVICE);
             this.locationProvider = this.locationManager.getProvider(LocationManager.GPS_PROVIDER);
         } catch (SecurityException e) {
-            Toast.makeText(this.getActivity(), "请前往设置界面打开定位权限", Toast.LENGTH_SHORT).show();
+            ActivityCompat.requestPermissions(this.getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION}, LOCATION_CODE);
+            // Toast.makeText(this.getActivity(), "请前往设置界面打开定位权限", Toast.LENGTH_SHORT).show();
             return;
         }
 
