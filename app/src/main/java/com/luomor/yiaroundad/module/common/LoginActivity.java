@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.luomor.yiaroundad.BuildConfig;
 import com.luomor.yiaroundad.base.RxBaseActivity;
 import com.luomor.yiaroundad.network.RetrofitHelper;
+import com.luomor.yiaroundad.network.RetrofitNoCacheHelper;
 import com.luomor.yiaroundad.utils.CommonUtil;
 import com.luomor.yiaroundad.utils.ConstantUtil;
 import com.luomor.yiaroundad.utils.PreferenceUtil;
@@ -137,7 +138,7 @@ public class LoginActivity extends RxBaseActivity {
             return;
         }
         // TODO
-        RetrofitHelper.getLoginAPI()
+        RetrofitNoCacheHelper.getLoginAPI()
                 .login(name, password)
                 .compose(this.bindToLifecycle())
                 .subscribeOn(Schedulers.io())

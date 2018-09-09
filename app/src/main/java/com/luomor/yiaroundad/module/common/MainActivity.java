@@ -36,6 +36,7 @@ import com.luomor.yiaroundad.module.entry.SettingFragment;
 import com.luomor.yiaroundad.module.entry.VipActivity;
 import com.luomor.yiaroundad.module.home.HomePageFragment;
 import com.luomor.yiaroundad.network.RetrofitHelper;
+import com.luomor.yiaroundad.network.RetrofitNoCacheHelper;
 import com.luomor.yiaroundad.utils.ConstantUtil;
 import com.luomor.yiaroundad.utils.PreferenceUtil;
 import com.luomor.yiaroundad.utils.ToastUtil;
@@ -216,7 +217,7 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
     }
 
     private void checkConfig() {
-        RetrofitHelper.getConfigAPI()
+        RetrofitNoCacheHelper.getConfigAPI()
                 .getConfig()
                 .compose(this.bindToLifecycle())
                 .subscribeOn(Schedulers.io())
