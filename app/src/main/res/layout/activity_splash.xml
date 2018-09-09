@@ -12,6 +12,15 @@
         android:layout_centerInParent="true"
         android:src="@drawable/ic_splash_default" />
 
+    <TextView
+        android:id="@+id/splash_slogen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/splash_default_iv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/splash_slogen" />
+
 
     <ImageView
         android:id="@+id/splash_logo"
