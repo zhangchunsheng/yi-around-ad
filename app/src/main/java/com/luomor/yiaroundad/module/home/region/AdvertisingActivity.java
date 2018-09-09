@@ -141,7 +141,7 @@ public class AdvertisingActivity extends RxBaseActivity {
         RetrofitHelper.getAdAppAPI()
                 .getRegionRecommends(ConstantUtil.ADVERTISING_TYPE)
                 .compose(bindToLifecycle())
-                .map(RegionRecommendInfo::getData)
+                .map(RegionRecommendInfo::getResult)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(dataBean -> {
@@ -162,8 +162,8 @@ public class AdvertisingActivity extends RxBaseActivity {
     public void finishTask() {
         setBanner();
         mSectionedRecyclerViewAdapter.addSection(new RegionRecommendBannerSection(bannerEntities));
-        mSectionedRecyclerViewAdapter.addSection(new RegionRecommendHotSection(AdvertisingActivity.this, ConstantUtil.ADVERTISING_RID, recommends));
-        mSectionedRecyclerViewAdapter.addSection(new RegionRecommendNewSection(AdvertisingActivity.this, ConstantUtil.ADVERTISING_RID, news));
+        mSectionedRecyclerViewAdapter.addSection(new RegionRecommendHotSection(AdvertisingActivity.this, ConstantUtil.ADVERTISING_TYPE, recommends));
+        mSectionedRecyclerViewAdapter.addSection(new RegionRecommendNewSection(AdvertisingActivity.this, ConstantUtil.ADVERTISING_TYPE, news));
         mSectionedRecyclerViewAdapter.addSection(new RegionRecommendDynamicSection(AdvertisingActivity.this, dynamics));
         mIsRefreshing = false;
         mRefreshLayout.setRefreshing(false);
