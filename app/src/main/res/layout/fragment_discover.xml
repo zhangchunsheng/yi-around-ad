@@ -175,7 +175,7 @@
             android:background="@color/window_background" />
 
 
-        <RelativeLayout
+        <!--<RelativeLayout
             android:id="@+id/topic_center_layout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/discover_item_layout_height"
@@ -203,7 +203,7 @@
                 android:textSize="@dimen/default_small_text_size" />
 
 
-        </RelativeLayout>
+        </RelativeLayout>-->
 
 
         <View
@@ -212,7 +212,7 @@
             android:background="@color/window_background" />
 
 
-        <RelativeLayout
+        <!--<RelativeLayout
             android:id="@+id/activity_center_layout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/discover_item_layout_height"
@@ -240,7 +240,7 @@
                 android:textSize="@dimen/default_small_text_size" />
 
 
-        </RelativeLayout>
+        </RelativeLayout>-->
 
 
         <RelativeLayout
