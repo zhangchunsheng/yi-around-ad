@@ -68,6 +68,50 @@ public class RegionTypesInfo implements Parcelable {
             return shop_type;
         }
 
+        public String getShopTypeByTid() {
+            String shopType = "001";
+            switch (tid) {
+                case 13:
+                    shopType = "001";
+                    break;
+                case 1:
+                    shopType = "002";
+                    break;
+                case 3:
+                    shopType = "003";
+                    break;
+                case 129:
+                    shopType = "004";
+                    break;
+                case 4:
+                    shopType = "005";
+                    break;
+                case 36:
+                    shopType = "006";
+                    break;
+                case 160:
+                    shopType = "007";
+                    break;
+                case 119:
+                    shopType = "008";
+                    break;
+                case 155:
+                    shopType = "009";
+                    break;
+                case 5:
+                    shopType = "010";
+                    break;
+                case 23:
+                    shopType = "011";
+                    break;
+                case 11:
+                    shopType = "012";
+                    break;
+            }
+
+            return shopType;
+        }
+
         public void setShop_type(String shop_type) {
             this.shop_type = shop_type;
         }
