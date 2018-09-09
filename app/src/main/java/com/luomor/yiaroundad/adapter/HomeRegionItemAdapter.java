@@ -22,8 +22,8 @@ public class HomeRegionItemAdapter extends AbsRecyclerViewAdapter {
             "直播", "美食", "休闲娱乐",
             "结婚", "电影演出赛事", "丽人",
             "酒店", "亲子", "周边游",
-            "运动健身", "广告", "家装",
-            "学习培训", "生活服务", "游戏中心",
+            "运动健身", "广告", "购物",
+            "家装", "教育", "游戏中心",
     };
 
     private int[] itemIcons = new int[]{

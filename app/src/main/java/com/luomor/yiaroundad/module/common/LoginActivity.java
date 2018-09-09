@@ -9,16 +9,23 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.luomor.yiaroundad.BuildConfig;
 import com.luomor.yiaroundad.base.RxBaseActivity;
+import com.luomor.yiaroundad.network.RetrofitHelper;
 import com.luomor.yiaroundad.utils.CommonUtil;
 import com.luomor.yiaroundad.utils.ConstantUtil;
 import com.luomor.yiaroundad.utils.PreferenceUtil;
 import com.luomor.yiaroundad.utils.ToastUtil;
 import com.luomor.yiaroundad.R;
+import com.luomor.yiaroundad.utils.upgrade.CallbackImpl;
+import com.luomor.yiaroundad.utils.upgrade.VersionManagementUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by Peter on 18/6/12 10:16
@@ -130,6 +137,16 @@ public class LoginActivity extends RxBaseActivity {
             return;
         }
         // TODO
+        RetrofitHelper.getConfigAPI()
+                .getConfig()
+                .compose(this.bindToLifecycle())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(configBean -> {
+
+                }, throwable -> {
+
+                });
         PreferenceUtil.putBoolean(ConstantUtil.KEY, true);
         startActivity(new Intent(LoginActivity.this, MainActivity.class));
         finish();

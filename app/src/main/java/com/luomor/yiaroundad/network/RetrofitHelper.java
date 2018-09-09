@@ -17,6 +17,7 @@ import com.luomor.yiaroundad.network.around.AdAppService;
 import com.luomor.yiaroundad.network.around.AdApiService;
 import com.luomor.yiaroundad.network.around.ConfigService;
 import com.luomor.yiaroundad.network.around.FoodShopService;
+import com.luomor.yiaroundad.network.around.LoginService;
 import com.luomor.yiaroundad.network.around.YiLiveService;
 import com.luomor.yiaroundad.network.around.YiRankService;
 import com.luomor.yiaroundad.network.around.YiSearchService;
@@ -126,6 +127,10 @@ public class RetrofitHelper {
 
     public static ConfigService getConfigAPI() {
         return createApi(ConfigService.class, ApiConstants.AROUND_BASE_URL);
+    }
+
+    public static LoginService getLoginAPI() {
+        return createApi(LoginService.class, ApiConstants.AROUND_BASE_URL);
     }
 
     /**
