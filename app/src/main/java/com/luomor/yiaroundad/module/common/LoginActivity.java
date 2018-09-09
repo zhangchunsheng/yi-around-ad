@@ -137,18 +137,21 @@ public class LoginActivity extends RxBaseActivity {
             return;
         }
         // TODO
-        RetrofitHelper.getConfigAPI()
-                .getConfig()
+        RetrofitHelper.getLoginAPI()
+                .login(name, password)
                 .compose(this.bindToLifecycle())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(configBean -> {
-
+                    if(configBean.getCode() == 200) {
+                        PreferenceUtil.putBoolean(ConstantUtil.KEY, true);
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
+                    } else {
+                        ToastUtil.ShortToast(configBean.getMsg());
+                    }
                 }, throwable -> {
-
+                    ToastUtil.ShortToast("服务器正在偷懒");
                 });
-        PreferenceUtil.putBoolean(ConstantUtil.KEY, true);
-        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-        finish();
     }
 }
