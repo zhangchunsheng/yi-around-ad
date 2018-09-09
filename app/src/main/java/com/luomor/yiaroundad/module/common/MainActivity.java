@@ -156,7 +156,7 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
                     if (!ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                             || !ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
                         // 提示用户前往设置界面自己打开权限
-                        Toast.makeText(this, "请前往设置界面打开定位权限", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "请前往设置界面打开定位权限Main", Toast.LENGTH_SHORT).show();
                         return;
                     }
                 }
