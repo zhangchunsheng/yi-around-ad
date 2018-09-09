@@ -154,7 +154,7 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
                     // 3、当用户被关闭了app的权限，该app不允许授权的时候，返回false
                     // 4、当用户上一次不同意授权，没有点击“不再询问”的时候，下一次返回true
                     if (!ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)
-                            || !ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
+                            || !ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
                         // 提示用户前往设置界面自己打开权限
                         Toast.makeText(this, "请前往设置界面打开定位权限Main", Toast.LENGTH_SHORT).show();
                         return;
