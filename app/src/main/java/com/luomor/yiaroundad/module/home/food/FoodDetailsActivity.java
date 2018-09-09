@@ -174,11 +174,11 @@ public class FoodDetailsActivity extends RxBaseActivity {
         mFoodTitle.setText(result.getTitle());
         //设置美食更新状态
         if (result.getIs_finish().equals("0")) {
-            mUpdateIndex.setText("更新至第" + result.getNewest_ep_index() + "话");
-            mFoodUpdate.setText("连载中");
+            mUpdateIndex.setText(result.getNewest_ep_index());
+            //mFoodUpdate.setText("连载中");
         } else {
-            mUpdateIndex.setText(result.getNewest_ep_index() + "话全");
-            mFoodUpdate.setText("已完结" + result.getNewest_ep_index() + "话全");
+            mUpdateIndex.setText(result.getNewest_ep_index());
+            mFoodUpdate.setText(result.getNewest_ep_index());
         }
         //设置美食播放和追美食数量
         mFoodPlay.setText("播放：" + NumberUtil.converString(Integer.valueOf(result.getPlay_count()))
@@ -186,7 +186,7 @@ public class FoodDetailsActivity extends RxBaseActivity {
         //设置美食简介
         mFoodIntroduction.setText(result.getEvaluate());
         //设置评论数量
-        mFoodCommentCount.setText("评论 第1话(" + mPageInfo.getAcount() + ")");
+        mFoodCommentCount.setText("评论 (" + mPageInfo.getAcount() + ")");
         //设置标签布局
         List<FoodDetailsInfo.ResultBean.TagsBean> tags = result.getTags();
         mTagsLayout.setAdapter(new TagAdapter<FoodDetailsInfo.ResultBean.TagsBean>(tags) {

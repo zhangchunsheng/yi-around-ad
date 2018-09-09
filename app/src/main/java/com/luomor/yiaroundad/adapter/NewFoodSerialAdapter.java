@@ -59,8 +59,8 @@ public class NewFoodSerialAdapter extends AbsRecyclerViewAdapter {
                     .into(itemViewHolder.mImage);
 
             itemViewHolder.mTitle.setText(listBean.getTitle());
-            itemViewHolder.mPlay.setText(NumberUtil.converString(listBean.getPlay_count()) + "人在看");
-            itemViewHolder.mUpdate.setText("更新至第" + listBean.getBgmcount() + "话");
+            itemViewHolder.mPlay.setText(NumberUtil.converString(listBean.getPlay_count()));
+            itemViewHolder.mUpdate.setText(listBean.getBgmcount());
         }
         super.onBindViewHolder(holder, position);
     }

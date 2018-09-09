@@ -55,10 +55,10 @@ public class ArchiveHeadFoodAdapter extends AbsRecyclerViewAdapter {
             itemViewHolder.mFoodTitle.setText(seasonBean.getTitle());
             if (seasonBean.getFinish() == 1) {
                 itemViewHolder.mFoodCount.setText(
-                        seasonBean.getNewest_season() + "," + seasonBean.getTotal_count() + "话全");
+                        seasonBean.getNewest_season() + "," + seasonBean.getTotal_count());
             } else {
                 itemViewHolder.mFoodCount.setText(
-                        seasonBean.getNewest_season() + "," + "更新至第" + seasonBean.getTotal_count() + "话");
+                        seasonBean.getNewest_season() + "," + seasonBean.getTotal_count());
             }
             itemViewHolder.mFoodDetails.setText(seasonBean.getCat_desc());
         }

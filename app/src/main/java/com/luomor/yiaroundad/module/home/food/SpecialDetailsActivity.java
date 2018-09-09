@@ -174,7 +174,7 @@ public class SpecialDetailsActivity extends RxBaseActivity {
             mDescText.setText("该专题没有任何介绍~");
         }
         mPlayTimeText.setText(String.valueOf(playCount));
-        mVideoCountText.setText(count + "话");
+        mVideoCountText.setText(count);
         mFavourite.setText(String.valueOf(favourite));
         mAttention.setText(String.valueOf(attention));
         //设置专题视频

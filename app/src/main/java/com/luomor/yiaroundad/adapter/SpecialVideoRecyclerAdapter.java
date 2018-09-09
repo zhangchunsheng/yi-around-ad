@@ -47,7 +47,7 @@ public class SpecialVideoRecyclerAdapter extends AbsRecyclerViewAdapter {
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
             SpecialTopic.Item item = spItems.get(position);
-            itemViewHolder.mSpNum.setText("第" + item.episode + "话");
+            itemViewHolder.mSpNum.setText(item.episode);
 
             Glide.with(getContext())
                     .load(Uri.parse(item.cover))
