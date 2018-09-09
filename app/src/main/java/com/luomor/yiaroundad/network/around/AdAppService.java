@@ -82,6 +82,6 @@ public interface AdAppService {
     /**
      * 分区类型详情
      */
-    @GET("recommend/getTypeRecommendDetail")
+    @GET("recommend/getSubTypeRecommend")
     Observable<RegionDetailsInfo> getRegionDetails(@Query("shop_type") String shopType);
 }
