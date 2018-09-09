@@ -20,6 +20,7 @@ import com.luomor.yiaroundad.network.around.FoodShopService;
 import com.luomor.yiaroundad.network.around.YiLiveService;
 import com.luomor.yiaroundad.network.around.YiRankService;
 import com.luomor.yiaroundad.network.around.YiSearchService;
+import com.luomor.yiaroundad.network.around.YiVipService;
 import com.luomor.yiaroundad.network.auxiliary.ApiConstants;
 import com.luomor.yiaroundad.utils.CommonUtil;
 
@@ -117,6 +118,10 @@ public class RetrofitHelper {
 
     public static FoodShopService getFoodShopAPI() {
         return createApi(FoodShopService.class, ApiConstants.AROUND_BASE_URL);
+    }
+
+    public static YiVipService getYiVipAPI() {
+        return createApi(YiVipService.class, ApiConstants.VIP_BASE_URL);
     }
 
     public static ConfigService getConfigAPI() {

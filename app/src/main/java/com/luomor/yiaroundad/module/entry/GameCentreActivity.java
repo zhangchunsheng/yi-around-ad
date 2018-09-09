@@ -70,7 +70,7 @@ public class GameCentreActivity extends RxBaseActivity {
 
     @Override
     public void loadData() {
-        RetrofitHelper.getVipAPI()
+        RetrofitHelper.getYiVipAPI()
                 .getVipGame()
                 .compose(bindToLifecycle())
                 .doOnSubscribe(this::showProgressBar)
