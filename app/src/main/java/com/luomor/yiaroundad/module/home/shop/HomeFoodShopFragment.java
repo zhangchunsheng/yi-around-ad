@@ -96,6 +96,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
     private double latitude = 39.908170;
     private double longitude = 116.397945;
     private boolean isLocationUpdate = false;
+    private boolean isBindListener = false;
 
     public static HomeFoodShopFragment newInstance(String shopType) {
         HomeFoodShopFragment fragment = new HomeFoodShopFragment();
@@ -138,6 +139,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
         if (locationProvider != null) {
             Toast.makeText(this.getActivity(), "Location listener registered!", Toast.LENGTH_SHORT).show();
             try {
+                this.isBindListener = true;
                 this.locationManager.requestLocationUpdates(locationProvider.getName(), 3000, 1,
                         this.locationListener);
                 this.locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000, 1,
@@ -179,6 +181,13 @@ public class HomeFoodShopFragment extends RxLazyFragment {
 
         if (locationProvider != null) {
             try {
+                if(!this.isBindListener) {
+                    this.locationManager.requestLocationUpdates(locationProvider.getName(), 3000, 1,
+                            this.locationListener);
+                    this.locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000, 1,
+                            this.locationListener);
+                    this.isBindListener = true;
+                }
                 Location location = this.locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                 if(location != null) {
                     this.latitude = location.getLatitude();
@@ -244,6 +253,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
             try {
                 this.locationManager.removeUpdates(this.locationListener);
                 this.isLocationUpdate = false;
+                this.isBindListener = false;
             } catch (SecurityException e) {
                 e.printStackTrace();
             }
