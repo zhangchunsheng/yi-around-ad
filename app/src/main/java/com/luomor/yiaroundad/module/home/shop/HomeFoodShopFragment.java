@@ -173,9 +173,7 @@ public class HomeFoodShopFragment extends RxLazyFragment {
             this.locationManager = (LocationManager) this.getActivity().getSystemService(Context.LOCATION_SERVICE);
             this.locationProvider = this.locationManager.getProvider(LocationManager.GPS_PROVIDER);
         } catch (SecurityException e) {
-            ActivityCompat.requestPermissions(this.getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.ACCESS_COARSE_LOCATION}, LOCATION_CODE);
-            // Toast.makeText(this.getActivity(), "请前往设置界面打开定位权限", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this.getActivity(), "请前往设置界面打开定位权限", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -252,36 +250,6 @@ public class HomeFoodShopFragment extends RxLazyFragment {
         } else {
             Toast.makeText(this.getActivity(), "Location Provider is not avilable at the moment!",
                     Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case LOCATION_CODE: {
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // 权限被用户同意。
-                    // 执形我们想要的操作
-                    accessLocation();
-                } else {
-                    // 权限被用户拒绝了。
-                    // 若是点击了拒绝和不再提醒
-                    // 关于shouldShowRequestPermissionRationale
-                    // 1、当用户第一次被询问是否同意授权的时候，返回false
-                    // 2、当之前用户被询问是否授权，点击了false,并且点击了不在询问（第一次询问不会出现“不再询问”的选项），
-                    // 之后便会返回false
-                    // 3、当用户被关闭了app的权限，该app不允许授权的时候，返回false
-                    // 4、当用户上一次不同意授权，没有点击“不再询问”的时候，下一次返回true
-                    if (!ActivityCompat.shouldShowRequestPermissionRationale(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)
-                            || !ActivityCompat.shouldShowRequestPermissionRationale(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)) {
-                        // 提示用户前往设置界面自己打开权限
-                        Toast.makeText(this.getActivity(), "请前往设置界面打开定位权限", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
-                }
-            }
         }
     }
 
