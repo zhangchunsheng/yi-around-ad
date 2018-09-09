@@ -57,7 +57,7 @@
                 android:id="@+id/search_duration_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="全部时长"
+                android:text="全部店铺"
                 android:textColor="@color/black_alpha_45"
                 android:textSize="@dimen/default_small_text_size" />
 
@@ -86,7 +86,7 @@
                 android:id="@+id/search_region_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="全部分区"
+                android:text="全部商圈"
                 android:textColor="@color/black_alpha_45"
                 android:textSize="@dimen/default_small_text_size" />
 

@@ -172,9 +172,9 @@ public class TotalStationSearchActivity extends RxBaseActivity {
     public void finishTask() {
         hideSearchAnim();
         titles.add("全部");
-        titles.add(navs.get(0).getName() + "(" + checkNumResults(navs.get(0).getTotal()) + ")");
-        titles.add(navs.get(1).getName() + "(" + checkNumResults(navs.get(1).getTotal()) + ")");
-        titles.add(navs.get(2).getName() + "(" + checkNumResults(navs.get(2).getTotal()) + ")");
+        //titles.add(navs.get(0).getName() + "(" + checkNumResults(navs.get(0).getTotal()) + ")");
+        //titles.add(navs.get(1).getName() + "(" + checkNumResults(navs.get(1).getTotal()) + ")");
+        //titles.add(navs.get(2).getName() + "(" + checkNumResults(navs.get(2).getTotal()) + ")");
 
         ArchiveResultsFragment archiveResultsFragment = ArchiveResultsFragment.newInstance(content);
         FoodResultsFragment foodResultsFragment = FoodResultsFragment.newInstance(content);
@@ -182,9 +182,9 @@ public class TotalStationSearchActivity extends RxBaseActivity {
         MovieResultsFragment movieResultsFragment = MovieResultsFragment.newInstance(content);
 
         fragments.add(archiveResultsFragment);
-        fragments.add(foodResultsFragment);
-        fragments.add(upperResultsFragment);
-        fragments.add(movieResultsFragment);
+        //fragments.add(foodResultsFragment);
+        //fragments.add(upperResultsFragment);
+        //fragments.add(movieResultsFragment);
 
         SearchTabAdapter mAdapter = new SearchTabAdapter(getSupportFragmentManager(), titles, fragments);
         mViewPager.setAdapter(mAdapter);
