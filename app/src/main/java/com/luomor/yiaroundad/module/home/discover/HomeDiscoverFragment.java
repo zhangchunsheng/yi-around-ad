@@ -133,19 +133,19 @@ public class HomeDiscoverFragment extends RxLazyFragment {
     /**
      * 前往话题中心界面
      */
-    @OnClick(R.id.topic_center_layout)
+    /*@OnClick(R.id.topic_center_layout)
     void startTopicCenterActivity() {
         startActivity(new Intent(getActivity(), TopicCenterActivity.class));
-    }
+    }*/
 
 
     /**
      * 前往活动中心界面
      */
-    @OnClick(R.id.activity_center_layout)
+    /*@OnClick(R.id.activity_center_layout)
     void startActivityCenterActivity() {
         startActivity(new Intent(getActivity(), ActivityCenterActivity.class));
-    }
+    }*/
 
 
     /**
