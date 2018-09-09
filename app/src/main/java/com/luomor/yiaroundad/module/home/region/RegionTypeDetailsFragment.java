@@ -102,8 +102,8 @@ public class RegionTypeDetailsFragment extends RxLazyFragment {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(regionDetailsInfo -> {
-                    recommendVideos.addAll(regionDetailsInfo.getData().getRecommend());
-                    newsVideos.addAll(regionDetailsInfo.getData().getNewX());
+                    recommendVideos.addAll(regionDetailsInfo.getResult().getRecommend());
+                    newsVideos.addAll(regionDetailsInfo.getResult().getNewX());
                     finishTask();
                 }, throwable -> {
                     LogUtil.all(throwable.getMessage());
