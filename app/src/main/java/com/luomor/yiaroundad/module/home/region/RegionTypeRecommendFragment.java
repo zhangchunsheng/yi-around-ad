@@ -123,7 +123,7 @@ public class RegionTypeRecommendFragment extends RxLazyFragment {
         RetrofitHelper.getAdAppAPI()
                 .getRegionRecommends(shopType)
                 .compose(bindToLifecycle())
-                .map(RegionRecommendInfo::getData)
+                .map(RegionRecommendInfo::getResult)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(dataBean -> {
