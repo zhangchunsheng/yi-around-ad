@@ -156,10 +156,10 @@
     <string name="about_feedback">意见反馈</string>
     <string name="hot_recommend">热门推荐</string>
     <string name="goin_and_see">进去看看</string>
-    <string name="all_dynamic">全区动态</string>
-    <string name="new_videos">最新视频</string>
-    <string name="hot_videos">最热视频</string>
-    <string name="news_videos">最新视频</string>
+    <string name="all_dynamic">周边动态</string>
+    <string name="new_videos">最新店铺</string>
+    <string name="hot_videos">最热店铺</string>
+    <string name="news_videos">最新店铺</string>
     <string name="github_url">https://github.com/zhangchunsheng/yi-around-ad</string>
     <string name="share_title">分享易周围App</string>
     <string name="feedback_titlle">意见反馈</string>

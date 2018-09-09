@@ -92,7 +92,7 @@ public class RegionRecommendNewSection extends StatelessSection {
         } else {
             headViewHolder.mMore.setVisibility(View.VISIBLE);
             headViewHolder.mTypeIcon.setImageResource(R.drawable.ic_header_new);
-            headViewHolder.mTypeTv.setText("最新视频");
+            headViewHolder.mTypeTv.setText("最新店铺");
             headViewHolder.mMore.setOnClickListener(v -> RxBus.getInstance().post(0));
         }
     }
