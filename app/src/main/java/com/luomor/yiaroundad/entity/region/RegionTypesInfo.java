@@ -61,7 +61,16 @@ public class RegionTypesInfo implements Parcelable {
         @SerializedName("goto")
         private String gotoX;
         private String param;
+        private String shop_type;
         private List<ChildrenBean> children;
+
+        public String getShop_type() {
+            return shop_type;
+        }
+
+        public void setShop_type(String shop_type) {
+            this.shop_type = shop_type;
+        }
 
         public int getTid() {
             return tid;
@@ -127,6 +136,15 @@ public class RegionTypesInfo implements Parcelable {
             @SerializedName("goto")
             private String gotoX;
             private String param;
+            private String shop_type;
+
+            public String getShop_type() {
+                return shop_type;
+            }
+
+            public void setShop_type(String shop_type) {
+                this.shop_type = shop_type;
+            }
 
             public int getTid() {
                 return tid;

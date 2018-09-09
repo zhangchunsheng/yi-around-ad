@@ -41,7 +41,7 @@ public class RegionTypeRecommendFragment extends RxLazyFragment {
     @BindView(R.id.swipe_refresh_layout)
     SwipeRefreshLayout mRefreshLayout;
 
-    private int rid;
+    private String shopType;
     private boolean mIsRefreshing = false;
     private List<BannerEntity> bannerEntities = new ArrayList<>();
     private SectionedRecyclerViewAdapter mSectionedRecyclerViewAdapter;
@@ -51,10 +51,10 @@ public class RegionTypeRecommendFragment extends RxLazyFragment {
     private List<RegionRecommendInfo.DataBean.DynamicBean> dynamics = new ArrayList<>();
 
 
-    public static RegionTypeRecommendFragment newInstance(int rid) {
+    public static RegionTypeRecommendFragment newInstance(String shopType) {
         RegionTypeRecommendFragment fragment = new RegionTypeRecommendFragment();
         Bundle bundle = new Bundle();
-        bundle.putInt(ConstantUtil.EXTRA_RID, rid);
+        bundle.putString(ConstantUtil.EXTRA_SHOP_TYPE, shopType);
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -66,7 +66,7 @@ public class RegionTypeRecommendFragment extends RxLazyFragment {
 
     @Override
     public void finishCreateView(Bundle state) {
-        rid = getArguments().getInt(ConstantUtil.EXTRA_RID);
+        shopType = getArguments().getString(ConstantUtil.EXTRA_SHOP_TYPE);
         initRefreshLayout();
         initRecyclerView();
     }
@@ -120,8 +120,8 @@ public class RegionTypeRecommendFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
-        RetrofitHelper.getYiAdAppAPI()
-                .getRegionRecommends(rid)
+        RetrofitHelper.getAdAppAPI()
+                .getRegionRecommends(shopType)
                 .compose(bindToLifecycle())
                 .map(RegionRecommendInfo::getData)
                 .subscribeOn(Schedulers.io())
@@ -144,9 +144,9 @@ public class RegionTypeRecommendFragment extends RxLazyFragment {
     protected void finishTask() {
         setBanner();
         mSectionedRecyclerViewAdapter.addSection(new RegionRecommendBannerSection(bannerEntities));
-        mSectionedRecyclerViewAdapter.addSection(new RegionRecommendTypesSection(getActivity(), rid));
-        mSectionedRecyclerViewAdapter.addSection(new RegionRecommendHotSection(getActivity(), rid, recommends));
-        mSectionedRecyclerViewAdapter.addSection(new RegionRecommendNewSection(getActivity(), rid, news));
+        mSectionedRecyclerViewAdapter.addSection(new RegionRecommendTypesSection(getActivity(), shopType));
+        mSectionedRecyclerViewAdapter.addSection(new RegionRecommendHotSection(getActivity(), shopType, recommends));
+        mSectionedRecyclerViewAdapter.addSection(new RegionRecommendNewSection(getActivity(), shopType, news));
         mSectionedRecyclerViewAdapter.addSection(new RegionRecommendDynamicSection(getActivity(), dynamics));
         mIsRefreshing = false;
         mRefreshLayout.setRefreshing(false);

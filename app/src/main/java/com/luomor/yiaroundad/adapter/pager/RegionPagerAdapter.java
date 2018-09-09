@@ -21,15 +21,15 @@ import rx.Observable;
  */
 public class RegionPagerAdapter extends FragmentStatePagerAdapter {
 
-    private int rid;
+    private String shopType;
     private List<String> titles;
     private List<RegionTypesInfo.DataBean.ChildrenBean> childrens;
     private List<Fragment> fragments = new ArrayList<>();
 
-    public RegionPagerAdapter(FragmentManager fm, int rid, List<String> titles,
+    public RegionPagerAdapter(FragmentManager fm, String shopType, List<String> titles,
                               List<RegionTypesInfo.DataBean.ChildrenBean> childrens) {
         super(fm);
-        this.rid = rid;
+        this.shopType = shopType;
         this.titles = titles;
         this.childrens = childrens;
         initFragments();
@@ -37,10 +37,10 @@ public class RegionPagerAdapter extends FragmentStatePagerAdapter {
 
 
     private void initFragments() {
-        fragments.add(RegionTypeRecommendFragment.newInstance(rid));
+        fragments.add(RegionTypeRecommendFragment.newInstance(shopType));
         Observable.from(childrens)
             .subscribe(childrenBean -> fragments.add(RegionTypeDetailsFragment.
-                newInstance(childrenBean.getTid())));
+                newInstance(childrenBean.getShop_type())));
     }
 
 

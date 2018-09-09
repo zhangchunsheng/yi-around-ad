@@ -63,5 +63,7 @@ public class ConstantUtil {
     public static final String SWITCH_MODE_KEY = "mode_key";
     public static final String EXTRA_RID = "extra_rid";
     public static final String EXTRA_POSITION = "extra_pos";
+    public static final String EXTRA_SHOP_TYPE = "extra_shop_type";
     public static final int ADVERTISING_RID = 165;
+    public static final String ADVERTISING_TYPE = "001";
 }

@@ -15,6 +15,7 @@
       "logo": "",
       "goto": "",
       "param": "",
+      "shop_type": "001",
       "children": [
         {
           "tid": 33,
@@ -22,7 +23,8 @@
           "name": "火锅",
           "logo": "http://i0.hdslb.com/u_user/54f589cd0573f9ab5c735698ae156d19.png",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "001001001"
         },
         {
           "tid": 32,
@@ -30,7 +32,8 @@
           "name": "本帮江浙菜",
           "logo": "http://i0.hdslb.com/u_user/18ad593e4b2f90b233f817e028bee71d.png",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "001001002"
         },
         {
           "tid": 153,
@@ -38,7 +41,8 @@
           "name": "日本菜",
           "logo": "http://i0.hdslb.com/u_user/405774aed11d0538a3548109a598fd80.png",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "001001003"
         },
         {
           "tid": 51,
@@ -46,7 +50,8 @@
           "name": "面包甜点",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "001001004"
         },
         {
           "tid": 152,
@@ -54,7 +59,8 @@
           "name": "咖啡厅",
           "logo": "http://i0.hdslb.com/u_user/a78fa47e8f25772d51db1a19fe8b310f.png",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "001001005"
         }
       ]
     },
@@ -65,6 +71,7 @@
       "logo": "",
       "goto": "",
       "param": "",
+      "shop_type": "002",
       "children": [
         {
           "tid": 24,
@@ -72,7 +79,8 @@
           "name": "KTV",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "002002001"
         },
         {
           "tid": 25,
@@ -80,7 +88,8 @@
           "name": "酒吧",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "002002002"
         },
         {
           "tid": 47,
@@ -88,7 +97,8 @@
           "name": "密室逃脱",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "002002003"
         },
         {
           "tid": 27,
@@ -96,7 +106,8 @@
           "name": "轰趴馆",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "002002004"
         }
       ]
     },
@@ -107,6 +118,7 @@
       "logo": "",
       "goto": "",
       "param": "",
+      "shop_type": "003",
       "children": [
         {
           "tid": 31,
@@ -114,7 +126,8 @@
           "name": "婚纱摄影",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "003001001"
         },
         {
           "tid": 30,
@@ -122,7 +135,8 @@
           "name": "旅拍",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "003001002"
         },
         {
           "tid": 59,
@@ -130,7 +144,8 @@
           "name": "婚宴",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "003001003"
         },
         {
           "tid": 54,
@@ -138,7 +153,8 @@
           "name": "婚礼策划",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "003001004"
         },
         {
           "tid": 28,
@@ -146,7 +162,8 @@
           "name": "婚纱礼服",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "003001005"
         },
         {
           "tid": 29,
@@ -154,7 +171,8 @@
           "name": "西服定制",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "003001006"
         },
         {
           "tid": 130,
@@ -162,7 +180,8 @@
           "name": "婚戒首饰",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "003001007"
         }
       ]
     },
@@ -173,6 +192,7 @@
       "logo": "",
       "goto": "",
       "param": "",
+      "shop_type": "004",
       "children": [
         {
           "tid": 20,
@@ -180,7 +200,8 @@
           "name": "电影院",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "004001001"
         },
         {
           "tid": 154,
@@ -188,7 +209,8 @@
           "name": "演出场馆",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "004002001"
         },
         {
           "tid": 156,
@@ -196,7 +218,8 @@
           "name": "剧场/影院",
           "logo": "http://i0.hdslb.com/u_user/f2f446184c967b47dd8ceb19e8ad634c.png",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "004002002"
         }
       ]
     },
@@ -207,6 +230,7 @@
       "logo": "",
       "goto": "",
       "param": "",
+      "shop_type": "丽人",
       "children": [
         {
           "tid": 17,
@@ -214,7 +238,8 @@
           "name": "美发",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "005001001"
         },
         {
           "tid": 65,
@@ -222,7 +247,8 @@
           "name": "美甲美睫",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "005001002"
         },
         {
           "tid": 136,
@@ -230,7 +256,8 @@
           "name": "美容／SPA",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "005001003"
         },
         {
           "tid": 19,
@@ -238,7 +265,8 @@
           "name": "瘦身纤体",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "005001004"
         },
         {
           "tid": 121,
@@ -246,7 +274,8 @@
           "name": "瑜伽",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "005001005"
         }
       ]
     },
@@ -257,6 +286,7 @@
       "logo": "",
       "goto": "",
       "param": "",
+      "shop_type": "006",
       "children": [
         {
           "tid": 37,
@@ -264,7 +294,8 @@
           "name": "五星级/豪华型",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "006001001"
         },
         {
           "tid": 124,
@@ -272,15 +303,8 @@
           "name": "四星级/高档型",
           "logo": "",
           "goto": "",
-          "param": ""
-        },
-        {
-          "tid": 122,
-          "reid": 36,
-          "name": "野生技术协会",
-          "logo": "",
-          "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "006001002"
         },
         {
           "tid": 39,
@@ -288,7 +312,8 @@
           "name": "三星级/舒适型",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "006002001"
         },
         {
           "tid": 96,
@@ -296,7 +321,8 @@
           "name": "经济连锁",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "006002002"
         },
         {
           "tid": 95,
@@ -304,7 +330,8 @@
           "name": "青年旅社",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "006003002"
         },
         {
           "tid": 98,
@@ -312,7 +339,8 @@
           "name": "客栈",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "006003003"
         }
       ]
     },
@@ -323,6 +351,7 @@
       "logo": "http://i0.hdslb.com/bfs/archive/c2387196e2a4d1e7b2d77c6774ff398005e4953f.png",
       "goto": "",
       "param": "",
+      "shop_type": "007",
       "children": [
         {
           "tid": 138,
@@ -330,7 +359,8 @@
           "name": "儿童摄影",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "007001001"
         },
         {
           "tid": 21,
@@ -338,7 +368,8 @@
           "name": "孕妇写真",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "007001002"
         },
         {
           "tid": 76,
@@ -346,7 +377,8 @@
           "name": "满月照",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "007001003"
         },
         {
           "tid": 75,
@@ -354,7 +386,8 @@
           "name": "百天照",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "007001004"
         },
         {
           "tid": 161,
@@ -362,7 +395,8 @@
           "name": "上门拍",
           "logo": "http://i0.hdslb.com/bfs/archive/f87bb34913e8f7eeef216aba813961c47117e783.png",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "007001005"
         },
         {
           "tid": 162,
@@ -370,7 +404,8 @@
           "name": "儿童乐园",
           "logo": "http://i0.hdslb.com/bfs/archive/e6b66a76eb07f2acffd00b8f8c1cc0ff57e75e53.png",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "007002001"
         },
         {
           "tid": 163,
@@ -378,7 +413,8 @@
           "name": "婴儿游泳",
           "logo": "http://i0.hdslb.com/bfs/archive/5cfa7ac649cc6b292e876a483062c04c4a2d9b6c.png",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "007002002"
         }
       ]
     },
@@ -389,6 +425,7 @@
       "logo": "",
       "goto": "",
       "param": "",
+      "shop_type": "008",
       "children": [
         {
           "tid": 22,
@@ -396,7 +433,8 @@
           "name": "展馆展览",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "008001001"
         },
         {
           "tid": 26,
@@ -404,7 +442,8 @@
           "name": "采摘/农家乐",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "008001002"
         },
         {
           "tid": 126,
@@ -412,7 +451,8 @@
           "name": "动植物园",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "008001004"
         },
         {
           "tid": 127,
@@ -420,7 +460,8 @@
           "name": "水上娱乐",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "008001005"
         }
       ]
     },
@@ -431,6 +472,7 @@
       "logo": "http://i0.hdslb.com/bfs/static/abea372535e68ce4206f8bad68741380.png",
       "goto": "",
       "param": "",
+      "shop_type": "009",
       "children": [
         {
           "tid": 157,
@@ -438,7 +480,8 @@
           "name": "健身中心",
           "logo": "http://i0.hdslb.com/u_user/6c6b75e7fa62b5a9711676aa1d58d40d.png",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "009001001"
         },
         {
           "tid": 158,
@@ -446,7 +489,8 @@
           "name": "武术场馆",
           "logo": "http://i0.hdslb.com/u_user/49ae98cf31cf190f8df27fdd665839ba.png",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "009001002"
         },
         {
           "tid": 159,
@@ -454,7 +498,8 @@
           "name": "游泳馆",
           "logo": "http://i0.hdslb.com/u_user/909e5df75af68fc953d8dc847f7918e9.png",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "009001003"
         },
         {
           "tid": 164,
@@ -462,7 +507,8 @@
           "name": "羽毛球馆",
           "logo": "http://i0.hdslb.com/bfs/archive/c5da2d170056227118594ab2c70d40ad9d0eed5c.png",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "009002001"
         }
       ]
     },
@@ -473,6 +519,7 @@
       "logo": "http://i0.hdslb.com/bfs/archive/31fa219e86c646a45a3a054609892de1e7071f97.png",
       "goto": "",
       "param": "",
+      "shop_type": "010",
       "children": [
         {
           "tid": 71,
@@ -480,7 +527,8 @@
           "name": "综合商场",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "010001001"
         },
         {
           "tid": 137,
@@ -488,7 +536,8 @@
           "name": "服饰鞋包",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "010001002"
         },
         {
           "tid": 131,
@@ -496,7 +545,8 @@
           "name": "运动户外",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "010001003"
         }
       ]
     },
@@ -507,6 +557,7 @@
       "logo": "",
       "goto": "",
       "param": "",
+      "shop_type": "011",
       "children": [
         {
           "tid": 82,
@@ -514,7 +565,8 @@
           "name": "装修公司",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "011001001"
         },
         {
           "tid": 85,
@@ -522,7 +574,8 @@
           "name": "装修美图",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "011001002"
         },
         {
           "tid": 145,
@@ -530,7 +583,8 @@
           "name": "装修资讯",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "011001003"
         },
         {
           "tid": 146,
@@ -538,7 +592,8 @@
           "name": "全屋定制",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "011002001"
         },
         {
           "tid": 147,
@@ -546,7 +601,8 @@
           "name": "家具定制",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "011002002"
         },
         {
           "tid": 83,
@@ -554,7 +610,8 @@
           "name": "橱柜",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "011002003"
         }
       ]
     },
@@ -565,6 +622,7 @@
       "logo": "",
       "goto": "",
       "param": "",
+      "shop_type": "012",
       "children": [
         {
           "tid": 15,
@@ -572,7 +630,8 @@
           "name": "英语",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "012001001"
         },
         {
           "tid": 34,
@@ -580,7 +639,8 @@
           "name": "日语",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "012001002"
         },
         {
           "tid": 86,
@@ -588,7 +648,8 @@
           "name": "韩语",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "012001003"
         },
         {
           "tid": 128,
@@ -596,7 +657,8 @@
           "name": "雅思托福",
           "logo": "",
           "goto": "",
-          "param": ""
+          "param": "",
+          "shop_type": "012001004"
         }
       ]
     },

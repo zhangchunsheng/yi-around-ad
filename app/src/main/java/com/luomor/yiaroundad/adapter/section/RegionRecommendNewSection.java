@@ -31,13 +31,13 @@ import butterknife.ButterKnife;
 
 public class RegionRecommendNewSection extends StatelessSection {
     private Context mContext;
-    private int rid;
+    private String shopType;
     private List<RegionRecommendInfo.DataBean.NewBean> news;
 
-    public RegionRecommendNewSection(Context context, int rid, List<RegionRecommendInfo.DataBean.NewBean> news) {
+    public RegionRecommendNewSection(Context context, String shopType, List<RegionRecommendInfo.DataBean.NewBean> news) {
         super(R.layout.layout_region_recommend_new_head, R.layout.layout_region_recommend_card_item);
         this.news = news;
-        this.rid = rid;
+        this.shopType = shopType;
         this.mContext = context;
     }
 
@@ -85,10 +85,10 @@ public class RegionRecommendNewSection extends StatelessSection {
     @Override
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder) {
         HeadViewHolder headViewHolder = (HeadViewHolder) holder;
-        if (rid == ConstantUtil.ADVERTISING_RID) {
+        if (shopType == ConstantUtil.ADVERTISING_TYPE) {
             headViewHolder.mMore.setVisibility(View.GONE);
             headViewHolder.mTypeIcon.setImageResource(R.drawable.ic_header_movie_relate);
-            headViewHolder.mTypeTv.setText("最新投稿");
+            headViewHolder.mTypeTv.setText("最新美食");
         } else {
             headViewHolder.mMore.setVisibility(View.VISIBLE);
             headViewHolder.mTypeIcon.setImageResource(R.drawable.ic_header_new);

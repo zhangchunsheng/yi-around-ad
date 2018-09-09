@@ -32,12 +32,12 @@ import butterknife.ButterKnife;
 
 public class RegionRecommendHotSection extends StatelessSection {
     private Context mContext;
-    private int rid;
+    private String shopType;
     private List<RegionRecommendInfo.DataBean.RecommendBean> recommends;
 
-    public RegionRecommendHotSection(Context context, int rid, List<RegionRecommendInfo.DataBean.RecommendBean> recommends) {
+    public RegionRecommendHotSection(Context context, String shopType, List<RegionRecommendInfo.DataBean.RecommendBean> recommends) {
         super(R.layout.layout_region_recommend_hot_head, R.layout.layout_region_recommend_card_item);
-        this.rid = rid;
+        this.shopType = shopType;
         this.recommends = recommends;
         this.mContext = context;
     }
@@ -86,7 +86,7 @@ public class RegionRecommendHotSection extends StatelessSection {
     @Override
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder) {
         HeadViewHolder headViewHolder = (HeadViewHolder) holder;
-        if (rid == ConstantUtil.ADVERTISING_RID) {
+        if (shopType == ConstantUtil.ADVERTISING_TYPE) {
             headViewHolder.mRankBtn.setVisibility(View.GONE);
         } else {
             headViewHolder.mRankBtn.setOnClickListener(v -> startRankActivityById());
@@ -95,52 +95,52 @@ public class RegionRecommendHotSection extends StatelessSection {
 
 
     private void startRankActivityById() {
-        switch (rid) {
-            case 13:
+        switch (shopType) {
+            case "001":
                 //美食
                 AllAreasRankActivity.launch((Activity) mContext, 0);
                 break;
-            case 1:
+            case "002":
                 //动画
                 AllAreasRankActivity.launch((Activity) mContext, 1);
                 break;
-            case 3:
+            case "003":
                 //音乐
                 AllAreasRankActivity.launch((Activity) mContext, 2);
                 break;
-            case 129:
+            case "004":
                 //舞蹈
                 AllAreasRankActivity.launch((Activity) mContext, 3);
                 break;
-            case 4:
+            case "005":
                 //游戏
                 AllAreasRankActivity.launch((Activity) mContext, 4);
                 break;
-            case 36:
+            case "006":
                 //科技
                 AllAreasRankActivity.launch((Activity) mContext, 5);
                 break;
-            case 160:
+            case "007":
                 //生活
                 AllAreasRankActivity.launch((Activity) mContext, 6);
                 break;
-            case 119:
+            case "008":
                 //鬼畜
                 AllAreasRankActivity.launch((Activity) mContext, 7);
                 break;
-            case 155:
+            case "009":
                 //时尚
                 AllAreasRankActivity.launch((Activity) mContext, 8);
                 break;
-            case 5:
+            case "010":
                 //娱乐
                 AllAreasRankActivity.launch((Activity) mContext, 9);
                 break;
-            case 23:
+            case "011":
                 //电影
                 AllAreasRankActivity.launch((Activity) mContext, 10);
                 break;
-            case 11:
+            case "012":
                 //电视剧
                 AllAreasRankActivity.launch((Activity) mContext, 11);
                 break;

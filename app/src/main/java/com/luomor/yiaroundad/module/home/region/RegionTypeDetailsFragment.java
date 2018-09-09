@@ -36,16 +36,16 @@ public class RegionTypeDetailsFragment extends RxLazyFragment {
     @BindView(R.id.circle_progress)
     CircleProgressView mCircleProgressView;
 
-    private int rid;
+    private String shopType;
     private SectionedRecyclerViewAdapter mSectionedRecyclerViewAdapter;
     private List<RegionDetailsInfo.DataBean.NewBean> newsVideos = new ArrayList<>();
     private List<RegionDetailsInfo.DataBean.RecommendBean> recommendVideos = new ArrayList<>();
 
 
-    public static RegionTypeDetailsFragment newInstance(int rid) {
+    public static RegionTypeDetailsFragment newInstance(String shopType) {
         RegionTypeDetailsFragment fragment = new RegionTypeDetailsFragment();
         Bundle bundle = new Bundle();
-        bundle.putInt(ConstantUtil.EXTRA_RID, rid);
+        bundle.putString(ConstantUtil.EXTRA_SHOP_TYPE, shopType);
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -57,7 +57,7 @@ public class RegionTypeDetailsFragment extends RxLazyFragment {
 
     @Override
     public void finishCreateView(Bundle state) {
-        rid = getArguments().getInt(ConstantUtil.EXTRA_RID);
+        shopType = getArguments().getString(ConstantUtil.EXTRA_SHOP_TYPE);
         isPrepared = true;
         lazyLoad();
     }
@@ -96,8 +96,8 @@ public class RegionTypeDetailsFragment extends RxLazyFragment {
 
     @Override
     protected void loadData() {
-        RetrofitHelper.getYiAdAppAPI()
-                .getRegionDetails(rid)
+        RetrofitHelper.getAdAppAPI()
+                .getRegionDetails(shopType)
                 .compose(bindToLifecycle())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

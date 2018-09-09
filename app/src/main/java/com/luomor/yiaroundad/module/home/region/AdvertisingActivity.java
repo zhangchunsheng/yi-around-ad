@@ -139,7 +139,7 @@ public class AdvertisingActivity extends RxBaseActivity {
     @Override
     public void loadData() {
         RetrofitHelper.getAdAppAPI()
-                .getRegionRecommends(ConstantUtil.ADVERTISING_RID)
+                .getRegionRecommends(ConstantUtil.ADVERTISING_TYPE)
                 .compose(bindToLifecycle())
                 .map(RegionRecommendInfo::getData)
                 .subscribeOn(Schedulers.io())
