@@ -51,6 +51,7 @@ public class ConstantUtil {
     public static final String EXTRA_FACE = "face";
     public static final String EXTRA_NAME = "name";
     public static final String EXTRA_PARTITION = "extra_partition";
+    public static final String EXTRA_SHOPS = "extra_shops";
     public static final String TYPE_TOPIC = "weblink";
     public static final String TYPE_ACTIVITY_CENTER = "activity";
     public static final String STYLE_PIC = "gl_pic";

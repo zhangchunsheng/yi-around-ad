@@ -53,7 +53,7 @@ public class RegionTypeDetailsActivity extends RxBaseActivity {
     public void initViews(Bundle savedInstanceState) {
         Bundle mBundle = getIntent().getExtras();
         if (mBundle != null) {
-            mDataBean = mBundle.getParcelable(ConstantUtil.EXTRA_PARTITION);
+            mDataBean = mBundle.getParcelable(ConstantUtil.EXTRA_SHOPS);
         }
         initViewPager();
         initRxBus();
@@ -132,7 +132,7 @@ public class RegionTypeDetailsActivity extends RxBaseActivity {
     public static void launch(Activity activity, RegionTypesInfo.DataBean dataBean) {
         Intent mIntent = new Intent(activity, RegionTypeDetailsActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putParcelable(ConstantUtil.EXTRA_PARTITION, dataBean);
+        bundle.putParcelable(ConstantUtil.EXTRA_SHOPS, dataBean);
         mIntent.putExtras(bundle);
         activity.startActivity(mIntent);
     }
