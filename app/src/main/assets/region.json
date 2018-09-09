@@ -6,7 +6,8 @@
       "name": "直播",
       "logo": "",
       "goto": "",
-      "param": ""
+      "param": "",
+      "shop_type": "0"
     },
     {
       "tid": 13,
@@ -668,7 +669,8 @@
       "name": "游戏中心",
       "logo": "http://i0.hdslb.com/bfs/archive/656df3124c81dd0e19bdc0a3e017091268b3db73.jpg",
       "goto": "",
-      "param": ""
+      "param": "",
+      "shop_type": "0"
     }
   ],
   "message": "",
