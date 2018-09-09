@@ -1,9 +1,12 @@
 package com.luomor.yiaroundad.module.common;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -14,8 +17,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.luomor.yiaroundad.BuildConfig;
 import com.luomor.yiaroundad.base.RxBaseActivity;
+import com.luomor.yiaroundad.entity.config.ConfigBean;
+import com.luomor.yiaroundad.entity.shop.FoodShopRecommendInfo;
+import com.luomor.yiaroundad.entity.shop.ShopListInfo;
+import com.luomor.yiaroundad.entity.video.VideoCommentInfo;
 import com.luomor.yiaroundad.module.entry.AttentionPeopleFragment;
 import com.luomor.yiaroundad.module.entry.ConsumeHistoryFragment;
 import com.luomor.yiaroundad.module.entry.HistoryFragment;
@@ -24,13 +33,22 @@ import com.luomor.yiaroundad.module.entry.OffLineDownloadActivity;
 import com.luomor.yiaroundad.module.entry.SettingFragment;
 import com.luomor.yiaroundad.module.entry.VipActivity;
 import com.luomor.yiaroundad.module.home.HomePageFragment;
+import com.luomor.yiaroundad.network.RetrofitHelper;
 import com.luomor.yiaroundad.utils.ConstantUtil;
 import com.luomor.yiaroundad.utils.PreferenceUtil;
 import com.luomor.yiaroundad.utils.ToastUtil;
+import com.luomor.yiaroundad.utils.upgrade.CallbackImpl;
+import com.luomor.yiaroundad.utils.upgrade.VersionManagementUtil;
 import com.luomor.yiaroundad.widget.CircleImageView;
 import com.luomor.yiaroundad.R;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by Peter on 18/6/12 10:16
@@ -50,6 +68,13 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
     private long exitTime;
     private HomePageFragment mHomePageFragment;
 
+    private int appVersion;
+    private String versionName;
+
+    private static final int REQUEST_EXTERNAL_STORAGE = 1;
+    private static String[] PERMISSIONS_STORAGE = {
+            "android.permission.WRITE_EXTERNAL_STORAGE" };
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_main;
@@ -58,10 +83,24 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
 
     @Override
     public void initViews(Bundle savedInstanceState) {
+        try {
+            //检测是否有写的权限
+            int permission = ActivityCompat.checkSelfPermission(this,
+                    "android.permission.WRITE_EXTERNAL_STORAGE");
+            if (permission != PackageManager.PERMISSION_GRANTED) {
+                // 没有写的权限，去申请写的权限，会弹出对话框
+                ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         //初始化Fragment
         initFragments();
         //初始化侧滑菜单
         initNavigationView();
+
+        checkConfig();
     }
 
 
@@ -116,6 +155,36 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
         }
     }
 
+    private void checkConfig() {
+        RetrofitHelper.getConfigAPI()
+                .getConfig()
+                .compose(this.bindToLifecycle())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(configBean -> {
+                    appVersion = BuildConfig.VERSION_CODE;
+                    versionName = BuildConfig.VERSION_NAME;
+
+                    VersionManagementUtil versionManagementUtil = VersionManagementUtil.getInstance(this);
+                    if(VersionManagementUtil.VersionComparison(configBean.getResult().getApp_stable_version(), versionName) > 0) {
+                        versionManagementUtil.Update(configBean.getResult().getUpgrade_url(), new CallbackImpl() {
+                            @Override
+                            public void download() {
+
+                            }
+
+                            @Override
+                            public void quit() {
+
+                            }
+                        });
+                    } else {
+                        Toast.makeText(this, "已是最新版本", Toast.LENGTH_SHORT).show();
+                    }
+                }, throwable -> {
+
+                });
+    }
 
     /**
      * 日夜间模式切换

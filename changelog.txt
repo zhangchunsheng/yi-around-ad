@@ -25,6 +25,9 @@
 [yi-around-ad_1.0.0.1 2018-09-08 PeterZhang]
 1.新功能:增加搜索功能
 
+[yi-around-ad_1.0.0.1 2018-09-09 PeterZhang]
+1.新功能:增加App升级功能
+
 --备注分类
 1、新功能：
 2、Bug:
