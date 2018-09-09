@@ -14,8 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import com.yongche.sso.BuildConfig;
-import com.yongche.sso.R;
+import com.luomor.yiaroundad.BuildConfig;
+import com.luomor.yiaroundad.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
