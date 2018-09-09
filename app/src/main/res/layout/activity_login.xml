@@ -80,9 +80,10 @@
                 android:background="@android:color/transparent"
                 android:drawablePadding="@dimen/default_general_margin"
                 android:drawableStart="@drawable/ic_login_username_default"
-                android:singleLine="true"
                 android:hint="@string/login_hint_account"
                 android:inputType="textVisiblePassword"
+                android:singleLine="true"
+                android:text="luomor"
                 android:textColor="@color/black_80"
                 android:textColorHint="@color/gray_20"
                 android:textSize="@dimen/default_medium_text_size" />
@@ -115,6 +116,7 @@
             android:hint="@string/login_hint_password"
             android:inputType="textPassword"
             android:maxLines="1"
+            android:text="luomor"
             android:textColor="@color/black_80"
             android:textColorHint="@color/gray_20"
             android:textSize="@dimen/default_medium_text_size" />
