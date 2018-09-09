@@ -266,6 +266,7 @@ public class RegionTypesInfo implements Parcelable {
                 this.logo = in.readString();
                 this.gotoX = in.readString();
                 this.param = in.readString();
+                this.shop_type = in.readString();
             }
 
             public static final Creator<ChildrenBean> CREATOR = new Creator<ChildrenBean>() {
@@ -313,6 +314,7 @@ public class RegionTypesInfo implements Parcelable {
             this.logo = in.readString();
             this.gotoX = in.readString();
             this.param = in.readString();
+            this.shop_type = in.readString();
             this.children = new ArrayList<ChildrenBean>();
             in.readList(this.children, ChildrenBean.class.getClassLoader());
         }

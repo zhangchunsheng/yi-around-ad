@@ -70,7 +70,7 @@ public class RegionTypeDetailsActivity extends RxBaseActivity {
         titles.add("推荐");
         Observable.from(mDataBean.getChildren())
                 .subscribe(childrenBean -> titles.add(childrenBean.getName()));
-        RegionPagerAdapter mAdapter = new RegionPagerAdapter(getSupportFragmentManager(), mDataBean.getShopTypeByTid(), titles, mDataBean.getChildren());
+        RegionPagerAdapter mAdapter = new RegionPagerAdapter(getSupportFragmentManager(), mDataBean.getShop_type(), titles, mDataBean.getChildren());
         mViewPager.setOffscreenPageLimit(titles.size());
         mViewPager.setAdapter(mAdapter);
         mSlidingTab.setViewPager(mViewPager);
