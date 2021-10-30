@@ -3,7 +3,14 @@
 buildscript {
     repositories {
         jcenter()
-        maven { url "https://maven.google.com" }
+        // maven { url "https://maven.google.com" }
+        // https://dl.google.com/dl/android/maven2/
+        maven { url "https://dl.google.com/dl/android/maven2/" }
+
+        //maven { url "https://maven.aliyun.com/repository/google"}
+        //maven { url "https://maven.aliyun.com/repository/public" }
+        //maven { url "https://maven.aliyun.com/repository/jcenter" }
+        //maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.0'
