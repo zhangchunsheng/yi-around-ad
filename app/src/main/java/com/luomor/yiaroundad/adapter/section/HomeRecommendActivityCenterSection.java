@@ -1,8 +1,8 @@
 package com.luomor.yiaroundad.adapter.section;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.widget.LinearLayoutManager;
+import androidx.appcompat.widget.RecyclerView;
 import android.view.View;
 
 import com.luomor.yiaroundad.adapter.ActivityCenterRecyclerAdapter;

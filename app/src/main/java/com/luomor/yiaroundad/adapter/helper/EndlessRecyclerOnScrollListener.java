@@ -1,7 +1,7 @@
 package com.luomor.yiaroundad.adapter.helper;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.widget.LinearLayoutManager;
+import androidx.appcompat.widget.RecyclerView;
 
 /**
  * Created by Peter on 18/6/7 21:18

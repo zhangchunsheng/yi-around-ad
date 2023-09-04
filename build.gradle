@@ -6,6 +6,7 @@ buildscript {
         // maven { url "https://maven.google.com" }
         // https://dl.google.com/dl/android/maven2/
         maven { url "https://dl.google.com/dl/android/maven2/" }
+        google()
 
         // maven { url "https://maven.aliyun.com/repository/google"}
         // maven { url "https://maven.aliyun.com/repository/public" }
@@ -26,6 +27,7 @@ allprojects {
         maven { url "https://jitpack.io" }
         // maven { url "https://maven.google.com" }
         maven { url "https://maven.aliyun.com/repository/google" }
+        google()
     }
 
     apply plugin: 'checkstyle'

@@ -1,16 +1,12 @@
 package com.luomor.yiaroundad.adapter.section;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
 import com.luomor.yiaroundad.R;
 import com.luomor.yiaroundad.entity.shop.ShopListInfo;
-import com.luomor.yiaroundad.widget.banner.BannerEntity;
-import com.luomor.yiaroundad.widget.banner.BannerView;
 import com.luomor.yiaroundad.widget.sectioned.StatelessSection;
-
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

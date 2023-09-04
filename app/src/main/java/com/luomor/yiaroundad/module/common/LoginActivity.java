@@ -2,26 +2,21 @@ package com.luomor.yiaroundad.module.common;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.luomor.yiaroundad.BuildConfig;
 import com.luomor.yiaroundad.base.RxBaseActivity;
-import com.luomor.yiaroundad.network.RetrofitHelper;
 import com.luomor.yiaroundad.network.RetrofitNoCacheHelper;
 import com.luomor.yiaroundad.utils.CommonUtil;
 import com.luomor.yiaroundad.utils.ConstantUtil;
 import com.luomor.yiaroundad.utils.PreferenceUtil;
 import com.luomor.yiaroundad.utils.ToastUtil;
 import com.luomor.yiaroundad.R;
-import com.luomor.yiaroundad.utils.upgrade.CallbackImpl;
-import com.luomor.yiaroundad.utils.upgrade.VersionManagementUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;

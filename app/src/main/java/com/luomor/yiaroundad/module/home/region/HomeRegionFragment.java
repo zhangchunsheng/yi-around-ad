@@ -3,9 +3,9 @@ package com.luomor.yiaroundad.module.home.region;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.LayoutRes;
+import androidx.appcompat.widget.GridLayoutManager;
+import androidx.appcompat.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.luomor.yiaroundad.adapter.HomeRegionItemAdapter;

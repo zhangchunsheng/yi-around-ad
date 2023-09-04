@@ -1,11 +1,10 @@
 package com.luomor.yiaroundad.module.common;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -13,7 +12,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatDelegate;
+import androidx.appcompat.app.AppCompatDelegate;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,10 +22,6 @@ import android.widget.Toast;
 
 import com.luomor.yiaroundad.BuildConfig;
 import com.luomor.yiaroundad.base.RxBaseActivity;
-import com.luomor.yiaroundad.entity.config.ConfigBean;
-import com.luomor.yiaroundad.entity.shop.FoodShopRecommendInfo;
-import com.luomor.yiaroundad.entity.shop.ShopListInfo;
-import com.luomor.yiaroundad.entity.video.VideoCommentInfo;
 import com.luomor.yiaroundad.module.entry.AttentionPeopleFragment;
 import com.luomor.yiaroundad.module.entry.ConsumeHistoryFragment;
 import com.luomor.yiaroundad.module.entry.HistoryFragment;
@@ -35,7 +30,6 @@ import com.luomor.yiaroundad.module.entry.OffLineDownloadActivity;
 import com.luomor.yiaroundad.module.entry.SettingFragment;
 import com.luomor.yiaroundad.module.entry.VipActivity;
 import com.luomor.yiaroundad.module.home.HomePageFragment;
-import com.luomor.yiaroundad.network.RetrofitHelper;
 import com.luomor.yiaroundad.network.RetrofitNoCacheHelper;
 import com.luomor.yiaroundad.utils.ConstantUtil;
 import com.luomor.yiaroundad.utils.PreferenceUtil;
@@ -45,12 +39,8 @@ import com.luomor.yiaroundad.utils.upgrade.VersionManagementUtil;
 import com.luomor.yiaroundad.widget.CircleImageView;
 import com.luomor.yiaroundad.R;
 
-import java.util.ArrayList;
-
 import butterknife.BindView;
-import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**

@@ -1,8 +1,8 @@
 package com.luomor.yiaroundad.module.home.region;
 
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.widget.GridLayoutManager;
+import androidx.appcompat.widget.RecyclerView;
 import android.view.View;
 
 import com.luomor.yiaroundad.adapter.section.RegionDetailsHotVideoSection;

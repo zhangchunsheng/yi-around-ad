@@ -1,35 +1,27 @@
 package com.luomor.yiaroundad.module.home.shop;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
-import android.app.PendingIntent;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationProvider;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.Settings;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.widget.GridLayoutManager;
+import androidx.appcompat.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.luomor.yiaroundad.R;
 import com.luomor.yiaroundad.adapter.section.HomeFoodBannerSection;
-import com.luomor.yiaroundad.adapter.section.HomeFoodBodySection;
 import com.luomor.yiaroundad.adapter.section.HomeFoodItemSection;
-import com.luomor.yiaroundad.adapter.section.HomeFoodRecommendSection;
-import com.luomor.yiaroundad.adapter.section.HomeFoodSeasonNewSection;
 import com.luomor.yiaroundad.adapter.section.HomeFoodShopBodySection;
 import com.luomor.yiaroundad.adapter.section.HomeFoodShopLocationSection;
 import com.luomor.yiaroundad.adapter.section.HomeFoodShopNewSerialSection;
@@ -54,8 +46,6 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
-
-import static android.content.ContentValues.TAG;
 
 /**
  * Created by peterzhang on 20/08/2018.

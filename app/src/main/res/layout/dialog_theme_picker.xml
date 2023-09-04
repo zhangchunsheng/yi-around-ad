@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <android.support.v7.widget.DialogTitle
+    <androidx.appcompat.widget.DialogTitle
         android:id="@+id/title"
         style="?android:attr/windowTitleStyle"
         android:layout_width="match_parent"

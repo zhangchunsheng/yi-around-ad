@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
+    <androidx.appcompat.widget.CardView
         android:id="@+id/item_live_layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -89,6 +89,6 @@
 
         </LinearLayout>
 
-    </android.support.v7.widget.CardView>
+    </androidx.appcompat.widget.CardView>
 
 </LinearLayout>

@@ -1,6 +1,6 @@
 package com.luomor.yiaroundad.adapter.section;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.widget.RecyclerView;
 import android.view.View;
 
 import com.luomor.yiaroundad.widget.banner.BannerEntity;
